@@ -20,6 +20,10 @@ class Plate extends Model
             return $this->belongsTo('App\User');
         }
 
+        public function orders(){
+            return $this->belongsToMany('App\Order');
+        }
+
         // public static function get unique slug
         public static function getUniqueSlug($name) {
 

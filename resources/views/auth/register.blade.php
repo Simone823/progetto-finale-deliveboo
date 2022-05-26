@@ -100,7 +100,7 @@
                             <label for="p_iva" class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Inserisci la Partita Iva" id="p_iva" type="text" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva') }}" required autocomplete="p_iva" autofocus>
+                                <input placeholder="Inserisci la Partita Iva" id="p_iva" type="number" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva') }}" required autocomplete="p_iva" autofocus>
 
                                 @error('p_iva')
                                 <span class="invalid-feedback" role="alert">
@@ -130,7 +130,7 @@
                             <label for="business_cap" class="col-md-4 col-form-label text-md-right">{{ __('CAP') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="CAP" id="business_cap" type="text" class="form-control @error('business_cap') is-invalid @enderror" name="business_cap" value="{{ old('business_cap') }}" required autocomplete="business_cap" autofocus>
+                                <input placeholder="CAP" id="business_cap" type="number" class="form-control @error('business_cap') is-invalid @enderror" name="business_cap" value="{{ old('business_cap') }}" required autocomplete="business_cap" autofocus>
 
                                 @error('business_cap')
                                 <span class="invalid-feedback" role="alert">
@@ -154,6 +154,7 @@
                                 @enderror
                             </div>
                         </div>
+
 
                         {{-- Business image --}}
                         <div class="form-group row">

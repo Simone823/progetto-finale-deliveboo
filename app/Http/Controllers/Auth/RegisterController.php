@@ -55,10 +55,10 @@ class RegisterController extends Controller
             'surname' => ['required', 'string', 'max:255' ],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'p_iva' => ['required', 'string', 'max:11'],
+            'p_iva' => ['required', 'numeric', 'digits:11'],
             'business_name' => ['required', 'string', 'max:200'],
             'business_city' => ['required', 'string', 'max:100'],
-            'business_cap' => ['required', 'string', 'max:5'],
+            'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
             'business_image' => ['nullable', 'image', 'file', 'max:2048'],
         ]);

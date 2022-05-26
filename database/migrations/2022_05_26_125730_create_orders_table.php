@@ -15,6 +15,15 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string('guest_name', 150);
+            $table->string('guest_surname', 150);
+            $table->string('guest_city', 150);
+            $table->string('guest_cap', 5);
+            $table->string('guest_adress', 255);
+            $table->string('guest_email', 255);
+            $table->string('guest_phone', 15);
+            $table->float('total_price', 5,2);
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Type;
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -69,6 +70,10 @@ class UserSeeder extends Seeder
             ]
         ];
 
+        //recupero tipologie
+        $types = Type::all();
+        $typesId = $types->pluck('id')->all();
+
         // Foreach array users
         foreach($arrayUsers as $user) {
 
@@ -92,6 +97,9 @@ class UserSeeder extends Seeder
 
             // Salvo il nuovo utente
             $new_user->save();
+
+            $randomType = $faker->randomElements($typesId, 2);
+            $new_user->types()->attach($randomType);
         }
     }
 }

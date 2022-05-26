@@ -34,6 +34,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Plate');
     }
 
+    public function types(){
+        return $this->belongsToMany('App\Type');
+    }
+
     // public static function get unique slug
     public static function getUniqueSlug($business_name) {
 

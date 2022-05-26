@@ -49,7 +49,7 @@
                                 </li>
                             @endif
                         @else
-                            
+
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }}
@@ -60,6 +60,11 @@
                                                   document.getElementById('logout-form').submit();">
                                      {{ __('Logout') }}
                                  </a></li>
+
+                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+
                                 </ul>
                               </div>
                         @endguest

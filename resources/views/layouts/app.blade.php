@@ -37,11 +37,11 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto d-flex align-items-center gap-4">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -50,23 +50,37 @@
                             @endif
                         @else
 
+                            {{-- Link wrapper --}}
+                            <div class="link_wrapper">
+
+                                {{-- List link --}}
+                                <ul class="lists_link list-unstyled">
+                                    <li>
+                                        <a class="@if(Route::is('admin.homepage')) text-success @endif fw-bolder" href="{{route('admin.homepage')}}">Homepage</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {{-- Dropdown logout --}}
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </button>
+
+                                {{-- Drop item --}}
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                  <li><a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                  document.getElementById('logout-form').submit();">
-                                     {{ __('Logout') }}
-                                 </a></li>
-
-                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
                                 </ul>
-                              </div>
+                            </div>
                         @endguest
                     </ul>
                 </div>

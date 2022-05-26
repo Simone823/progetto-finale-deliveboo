@@ -16,6 +16,10 @@ class Plate extends Model
             'image'
         ];
 
+        public function user(){
+            return $this->belongsTo('App\User');
+        }
+
         // public static function get unique slug
         public static function getUniqueSlug($name) {
 

@@ -22,6 +22,7 @@ class CreatePlatesTable extends Migration
             $table->float('price', 5,2);
             $table->string('image')->nullable();
             $table->boolean('visibility')->default(1);
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

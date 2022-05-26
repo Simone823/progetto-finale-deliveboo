@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Plate;
+use App\User;
 
 class PlateSeeder extends Seeder
 {
@@ -112,6 +113,9 @@ class PlateSeeder extends Seeder
             $new_plate->ingredients = implode(',', $plate['ingredients']);
             $new_plate->price = $plate['price'];
             $new_plate-> image = $plate['image'];
+
+            $user = User::inRandomOrder()->first();
+            $new_plate->user_id = $user->id;
 
             $new_plate->save();
         };

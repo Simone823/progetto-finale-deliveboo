@@ -125,6 +125,19 @@
                             </div>
                         </div>
 
+                        {{-- Tipologia ristorante --}}
+                        <div class="form-group row">
+                            @foreach($types as $index => $type)
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input @error('types.{{$index}}') is-invalid @enderror" value="{{$type->id}}" name="types[{{$index}}]" id="types-{{$type->id}}">
+                                    <label class="form-check-label" for="types-{{$type->id}}">{{$type->name}}</label>
+                                </div>
+                                @error('types.{{$index}}')
+                                    <span class="alert alert-danger">{{ $message }}</span>
+                                @enderror
+                            @endforeach
+                        </div>
+
                         {{-- Business cap --}}
                         <div class="form-group row">
                             <label for="business_cap" class="col-md-4 col-form-label text-md-right">{{ __('CAP') }}</label>

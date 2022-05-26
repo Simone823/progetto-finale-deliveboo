@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Type;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -24,6 +25,15 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
+    public function showRegistrationForm()
+    {
+        // Recupero dal db le tipologie e le ordine per nome 
+        $types = Type::orderBy('name', 'ASC')->get();
+
+        // Return view auth register 
+        return view('auth.register', compact('types'));
+    }
 
     /**
      * Where to redirect users after registration.
@@ -57,6 +67,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'p_iva' => ['required', 'numeric', 'digits:11'],
             'business_name' => ['required', 'string', 'max:200'],
+            'types' => ['exists:types,id'],
             'business_city' => ['required', 'string', 'max:100'],
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
@@ -72,11 +83,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-        // dd($data);
+        // Slug
         $slug = User::getUniqueSlug($data['business_name']);
 
-        return User::create([
+        // Creo un nuovo utente con metedo create
+        $user = User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'email' => $data['email'],
@@ -89,5 +100,11 @@ class RegisterController extends Controller
             'business_address' => $data['business_address'],
             'business_image' => $data['business_image'],
         ]);
+
+        // Attach tiplogie ristorante inserite dall'utente tramite checkbox
+        $user->types()->attach($data['types']);
+
+        // Ritorno il nuovo utente
+        return $user;
     }
 }

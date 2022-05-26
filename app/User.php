@@ -30,6 +30,10 @@ class User extends Authenticatable
         'business_image'
     ];
 
+    public function plates(){
+        return $this->hasMany('App\Plate');
+    }
+
     // public static function get unique slug
     public static function getUniqueSlug($business_name) {
 

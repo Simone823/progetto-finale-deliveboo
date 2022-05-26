@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,10 @@ Auth::routes();
 // Route middleware auth admin
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group( function () {
 
-    // Rotta / Home controller index
+    // Rotta / controller index
     Route::get('/', 'HomeController@index')->name('logged');
+
+    // Rotta homepage
+    Route::get('/homepage', 'HomeController@homepage')->name('homepage');
 });
 

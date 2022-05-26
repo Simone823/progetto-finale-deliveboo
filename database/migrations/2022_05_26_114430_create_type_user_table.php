@@ -19,7 +19,7 @@ class CreateTypeUserTable extends Migration
             $table->unsignedBigInteger('user_id');
 
             //assegnazione delle FK
-            $table->foreign('type_id')->references('id')->on('types')->onDelete('set null');
+            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             //impostazione della PK

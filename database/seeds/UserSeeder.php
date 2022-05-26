@@ -4,7 +4,7 @@ use App\Type;
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+use Faker\Generator as Faker;
 
 class UserSeeder extends Seeder
 {
@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         // Array utenti
         $arrayUsers = [

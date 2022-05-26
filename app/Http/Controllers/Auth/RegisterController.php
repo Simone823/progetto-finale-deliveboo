@@ -72,6 +72,11 @@ class RegisterController extends Controller
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
             'business_image' => ['nullable', 'image', 'file', 'max:2048'],
+        ],
+        [
+            //messaggi d'errore custom
+            'name.regex' => 'Il nome può contenere solo lettere',
+            'surname.regex' => 'Il cognome può contenere solo lettere',
         ]);
     }
 

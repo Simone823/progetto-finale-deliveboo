@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Plate extends Model
 {
@@ -28,12 +29,12 @@ class Plate extends Model
             $counter = 1;
     
             // Slug present
-            $slug_present = User::where('slug', $slug)->first();
+            $slug_present = Plate::where('slug', $slug)->first();
     
             while($slug_present) {
                 $slug = $slug_base . '-' . $counter;
                 $counter++;
-                $slug_present = User::where('slug', $slug)->first();
+                $slug_present = Plate::where('slug', $slug)->first();
             }
     
             // Return slug

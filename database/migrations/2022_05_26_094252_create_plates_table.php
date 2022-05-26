@@ -13,6 +13,7 @@ class CreatePlatesTable extends Migration
      */
     public function up()
     {
+        //migration della tabella 'plates'
         Schema::create('plates', function (Blueprint $table) {
             $table->id();
             $table->string('name', 200);

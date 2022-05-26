@@ -132,10 +132,10 @@
                                     <input type="checkbox" class="form-check-input @error('types.{{$index}}') is-invalid @enderror" value="{{$type->id}}" name="types[{{$index}}]" id="types-{{$type->id}}">
                                     <label class="form-check-label" for="types-{{$type->id}}">{{$type->name}}</label>
                                 </div>
-                                @error('types.{{$index}}')
-                                    <span class="alert alert-danger">{{ $message }}</span>
-                                @enderror
                             @endforeach
+                            @error('types')
+                                    <span class="alert alert-danger">{{ $message . ' min: 1' }}</span>
+                            @enderror
                         </div>
 
                         {{-- Business cap --}}

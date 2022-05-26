@@ -72,6 +72,9 @@ class UserSeeder extends Seeder
         // Foreach array users
         foreach($arrayUsers as $user) {
 
+            // Business slug
+            $slug = User::getUniqueSlug($user['business_name']);
+
             // Creo un nuovo utente
             $new_user = new User();
 
@@ -82,7 +85,7 @@ class UserSeeder extends Seeder
             $new_user->password = Hash::make($user['password']);
             $new_user->p_iva = $user['p_iva'];
             $new_user->business_name = $user['business_name'];
-            $new_user->business_slug = Str::slug($new_user->business_name);
+            $new_user->business_slug = $slug;
             $new_user->business_city = $user['business_city'];
             $new_user->business_cap = $user['business_cap'];
             $new_user->business_address = $user['business_address'];

@@ -14,8 +14,16 @@ class CreateOrderPlateTable extends Migration
     public function up()
     {
         Schema::create('order_plate', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            //creazione colonne
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('plate_id');
+
+            //assegnazione FK
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->foreign('plate_id')->references('id')->on('plates')->onDelete('cascade');
+
+            //assegnazione PK
+            $table->primary(['order_id', 'plate_id']);
         });
     }
 

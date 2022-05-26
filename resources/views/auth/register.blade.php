@@ -155,6 +155,7 @@
                             </div>
                         </div>
 
+
                         {{-- Business image --}}
                         <div class="form-group row">
                             <label for="business_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>

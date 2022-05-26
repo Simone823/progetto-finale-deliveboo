@@ -61,8 +61,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255' ],
+            'name' => ['required', 'string', 'max:255', 'regex:/[a-z]\D$/'],
+            'surname' => ['required', 'string', 'max:255', 'regex:/[a-z]\D$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'p_iva' => ['required', 'numeric', 'digits:11', 'unique:users,p_iva'],
@@ -72,6 +72,11 @@ class RegisterController extends Controller
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
             'business_image' => ['nullable', 'image', 'file', 'max:2048'],
+        ],
+        [
+            //messaggi d'errore custom
+            'name.regex' => 'Il nome può contenere solo lettere',
+            'surname.regex' => 'Il cognome può contenere solo lettere',
         ]);
     }
 

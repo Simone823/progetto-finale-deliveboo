@@ -55,10 +55,10 @@ class RegisterController extends Controller
             'surname' => ['required', 'string', 'max:255' ],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'p_iva' => ['required', 'numeric', 'max:11'],
+            'p_iva' => ['required', 'string', 'max:11'],
             'business_name' => ['required', 'string', 'max:200'],
             'business_city' => ['required', 'string', 'max:100'],
-            'business_cap' => ['required', 'numeric', 'max:5'],
+            'business_cap' => ['required', 'string', 'max:5'],
             'business_address' => ['required', 'string', 'max:255'],
             'business_image' => ['nullable', 'image', 'file', 'max:2048'],
         ]);
@@ -72,6 +72,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        // dd($data);
+        $slug = User::getUniqueSlug($data['business_name']);
+
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
@@ -79,7 +83,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'p_iva' => $data['p_iva'],
             'business_name' => $data['business_name'],
-            'business_slug' => Str::slug($data['business_name']),
+            'business_slug' => $slug,
             'business_city' => $data['business_city'],
             'business_cap' => $data['business_cap'],
             'business_address' => $data['business_address'],

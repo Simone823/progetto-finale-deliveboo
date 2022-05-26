@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -51,8 +52,15 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255' ],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'p_iva' => ['required', 'numeric', 'max:11'],
+            'business_name' => ['required', 'string', 'max:200'],
+            'business_city' => ['required', 'string', 'max:100'],
+            'business_cap' => ['required', 'numeric', 'max:5'],
+            'business_address' => ['required', 'string', 'max:255'],
+            'business_image' => ['nullable', 'image', 'file', 'max:2048'],
         ]);
     }
 
@@ -66,8 +74,16 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'p_iva' => $data['p_iva'],
+            'business_name' => $data['business_name'],
+            'business_slug' => Str::slug($data['business_name']),
+            'business_city' => $data['business_city'],
+            'business_cap' => $data['business_cap'],
+            'business_address' => $data['business_address'],
+            'business_image' => $data['business_image'],
         ]);
     }
 }

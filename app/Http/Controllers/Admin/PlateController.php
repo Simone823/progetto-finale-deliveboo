@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Plate;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PlateController extends Controller
@@ -41,10 +41,10 @@ class PlateController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Plate  $plate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Plate $plate)
+    public function show($id)
     {
         //
     }
@@ -52,10 +52,10 @@ class PlateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Plate  $plate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Plate $plate)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +64,10 @@ class PlateController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Plate  $plate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Plate $plate)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +75,10 @@ class PlateController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Plate  $plate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Plate $plate)
+    public function destroy($id)
     {
         //
     }

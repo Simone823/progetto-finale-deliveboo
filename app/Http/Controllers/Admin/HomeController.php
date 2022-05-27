@@ -115,13 +115,10 @@ class HomeController extends Controller
             'business_city.regex' => 'La città può contenere solo lettere',
         ]);
 
-        // ---------------------DA SISTEMARE---------------------------------------------
-        // Imposto lo slug business
-        // $slug = User::getUniqueSlug($data['business_slug']);
-        // $user->business_slug = $slug;
-        // -------------------------DA SISTEMARE---------------------------------------- 
+        // Imposto user business_slug con metodo statico User model uguale a data -> business_name
+        $user->business_slug = User::getUniqueSlug($data['business_name']);
 
-        // Controllo se esiste la tipologia lo aggiorno altrimenti
+        // Controllo se esiste la tipologia la aggiorno
         if (array_key_exists('types', $data)) {
             // Sync
             $user->types()->sync($data['types']);

@@ -5,7 +5,7 @@
 
 @extends('layouts.app')
 
-@section('metaTitle', $plate->name)
+@section('metaTitle', 'DELIVEBOO DB | '. $plate->name)
 
 @section('content')
     <div class="container">

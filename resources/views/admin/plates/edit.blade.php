@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'Edit ' . $plate->name)
+@section('metaTitle', 'DELIVEBOO DB | ' . $plate->name)
 
 @section('content')
 <div class="container py-4">

@@ -137,8 +137,12 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        // User delete
+        $user->delete();
+
+        // Return redirect url /
+        return redirect()->away('/');
     }
 }

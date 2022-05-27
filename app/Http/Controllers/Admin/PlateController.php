@@ -36,6 +36,7 @@ class PlateController extends Controller
      */
     public function create(Plate $plate)
     {
+        //ritorno la view create
         return view('admin.plates.create', compact('plate'));
     }
 
@@ -77,9 +78,12 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Plate $plate)
     {
-        //
+        //salvo in una variabile l'id dell'utente loggato
+        // $id_user = Auth::id();
+        $plate = Plate::find($plate->id);
+        return view('admin.plates.show', compact('plate'));
     }
 
     /**
@@ -88,9 +92,10 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
-        //
+        //ritorno la view edit
+        return view('admin.plates.edit', compact('plate'));
     }
 
     /**
@@ -100,9 +105,33 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Plate $plate)
     {
-        //
+        //faccio la validazione dei dati inseriti nel form
+        $request->validate([
+            'name' => 'required|string|min:4|max:200',
+            'ingredients' => 'required',
+            'price' => 'required|numeric',
+            'image' => 'nullable|file',
+        ]);
+
+        $id_user = Auth::id();
+
+        //salvo in data tutti i dati arrivati dal form
+        $data = $request->all();
+
+        // controllo che il nome attuale è diverso da quello che ci arriva 
+        if( $plate->name != $data['name'] ){
+            //creo uno slug unico per il piatto
+            $slug = User::getUniqueSlug( $data['name'] );
+            $data['slug'] = $slug;
+        }
+        
+        //aggiorno i dati nel nuovo piatto
+        $plate->update( $data );
+
+        //reindirizzo alla pagina index dei piatti
+        return redirect()->route('admin.plates.index');
     }
 
     /**
@@ -111,8 +140,11 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Plate $plate)
     {
-        //
+        //rimuovo il piatto specifico
+        $plate->delete();
+        //reindirizzo alla view index
+        return redirect()->route('admin.plates.index');
     }
 }

@@ -18,6 +18,8 @@
                 <th scope="col">Image</th>
                 <th scope="col">Visibility</th>
                 <th scope="col">View plate</th>
+                <th scope="col">Edit plate</th>
+                <th scope="col">Delete plate</th>
             </tr>
         </thead>
         <tbody>
@@ -27,10 +29,21 @@
                     <td>{{ $plate->name }}</td>
                     <td>{{ $plate->slug }}</td>
                     <td>{{ $plate->ingredients }}</td>
-                    <td>{{ $plate->price }}</td>
+                    <td>{{ $plate->price }}&euro;</td>
                     <td>{{ $plate->image }}</td>
                     <td>{{ $plate->visibility }}</td>
-                    <td><a href="{{ route('admin.plate.show', $plate->id) }}"></a></td>
+                    <td><a class="btn btn-primary" href="{{ route('admin.plates.show', $plate->id) }}">view</a></td>
+                    <td><a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate->id) }}">edit</a></td>
+                    <td>
+                        <form onsubmit="return confirm('Sei sicuro di voler eliminare ({{$plate->name}}) dal tuo database?')" action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            
+                            <button class="btn btn-danger" type="submit">
+                                delete
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

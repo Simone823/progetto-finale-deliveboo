@@ -12224,8 +12224,17 @@ body {
   color: #00CCBC;
 }
 
-#navbar_dashboard {
+.navbar_dashboard {
   color: #FFFFFF;
+}
+
+.navbar_dashboard:hover {
+  color: #e4e2d0;
+  transition: all 300ms linear;
+}
+
+.navbar_dashboard.active {
+  color: #e4e2d0;
 }
 
 #homepage_main {

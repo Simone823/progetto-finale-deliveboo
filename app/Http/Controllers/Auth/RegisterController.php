@@ -61,14 +61,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]+$/'],
-            'surname' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]+$/'],
+            'name' => ['required', 'string', 'min:3', 'max:255', 'regex:/^[a-zA-Z]+$/'],
+            'surname' => ['required', 'string', 'min:3', 'max:255', 'regex:/^[a-zA-Z]+$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'p_iva' => ['required', 'numeric', 'digits:11', 'unique:users,p_iva'],
-            'business_name' => ['required', 'string', 'max:200'],
+            'business_name' => ['required', 'string', 'min:3', 'max:200'],
             'types' => ['required', 'exists:types,id'],
-            'business_city' => ['required', 'string', 'max:100'],
+            'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z]+$/'],
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
             'business_image' => ['nullable', 'image', 'file', 'max:2048'],
@@ -77,6 +77,7 @@ class RegisterController extends Controller
             //messaggi d'errore custom
             'name.regex' => 'Il nome può contenere solo lettere',
             'surname.regex' => 'Il cognome può contenere solo lettere',
+            'business_city.regex' => 'La città può contenere solo lettere',
         ]);
     }
 

@@ -32,5 +32,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     // Rotta resource homecontroller
     Route::resource('/user', 'HomeController');
+
+    //Rotta resource PlateController
+    Route::resource('/plates', 'PlateController');
 });
 

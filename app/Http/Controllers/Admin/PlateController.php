@@ -24,7 +24,9 @@ class PlateController extends Controller
             ->orderBy('name', 'ASC')
             ->get();
 
-        return view('admin.plates.index', compact('plates'));
+        $user = User::where('id', '=' , $id_user)->first();
+
+        return view('admin.plates.index', compact('plates','user'));
     }
 
     /**
@@ -32,9 +34,9 @@ class PlateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Plate $plate)
     {
-        //
+        return view('admin.plates.create', compact('plate'));
     }
 
     /**

@@ -5,8 +5,9 @@
 @section('content')
 
 <div class="container">
+    <h3>Elenco dei piatti del ristorante: {{$user->business_name}}</h3>
     {{-- faccio una tabella per la gestione dei piatti del ristoratore --}}
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">Plate id</th>
@@ -31,7 +32,14 @@
                 </tr>
             @endforeach
         </tbody>
-  </table>
+    </table>
+    <div class="container py-3">
+        <form>
+            <a href="{{ route('admin.plates.create') }}">
+                <input type="button" class="btn btn-primary" value="Create a new plate">
+            </a>
+        </form>
+    </div>
 </div>
 
 @endsection

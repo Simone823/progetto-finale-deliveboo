@@ -17,6 +17,7 @@
                 <th scope="col">Price</th>
                 <th scope="col">Image</th>
                 <th scope="col">Visibility</th>
+                <th scope="col">View plate</th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +30,7 @@
                     <td>{{ $plate->price }}</td>
                     <td>{{ $plate->image }}</td>
                     <td>{{ $plate->visibility }}</td>
+                    <td><a href="{{ route('admin.plate.show', $plate->id) }}"></a></td>
                 </tr>
             @endforeach
         </tbody>

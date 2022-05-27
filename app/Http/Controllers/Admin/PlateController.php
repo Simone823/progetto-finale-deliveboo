@@ -47,7 +47,28 @@ class PlateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //faccio la validazione dei dati inseriti nel form
+        $request->validate([
+            'name' => 'required|string|min:4|max:200',
+            'ingredients' => 'required',
+            'price' => 'required|numeric',
+            'image' => 'nullable|file',
+        ]);
+
+        $id_user = Auth::id();
+
+        //salvo in data tutti i dati arrivati dal form
+        $data = $request->all();
+        //creo uno slug unico per il piatto
+        $slug = User::getUniqueSlug( $data['name'] );
+        //salvo i dati nel nuovo piatto
+        $plate = new Plate();
+        $plate->fill( $data );
+        $plate->user_id = $id_user;
+        $plate->slug = $slug;
+        $plate->save();
+        //reindirizzo alla pagina index dei piatti
+        return redirect()->route('admin.plates.index');
     }
 
     /**

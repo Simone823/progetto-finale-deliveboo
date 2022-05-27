@@ -21,16 +21,16 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav id="navbar_app" class="navbar navbar-expand-md navbar-light shadow-sm d-flex align-center">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                   <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="">
+                </a> 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
@@ -56,15 +56,21 @@
                                 {{-- List link --}}
                                 <ul class="lists_link list-unstyled">
                                     <li>
-                                        <a class="@if(Route::is('admin.homepage')) text-success @endif fw-bolder text-uppercase text-decoration-none" href="{{route('admin.homepage')}}">Dashboard</a>
+                                        <a class="@if(Route::is('admin.homepage')) text-success @endif fw-bolder text-uppercase text-decoration-none" href="{{route('admin.homepage')}}">
+                                            <span id="navbar_dashboard">
+                                                Dashboard
+                                            </span>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
 
                             {{-- Dropdown logout --}}
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{ Auth::user()->name }}
+                                <button class="btn btn-secondary rounded-pill dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    <span id="navbar_user_color">
+                                        {{ Auth::user()->name }}
+                                    </span> 
                                 </button>
 
                                 {{-- Drop item --}}
@@ -87,7 +93,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>

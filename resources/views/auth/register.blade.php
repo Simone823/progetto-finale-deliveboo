@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('metaTitle', 'DELIVEBOO DB | REGISTRATION')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

@@ -81,7 +81,7 @@
 
                             {{-- Dropdown logout --}}
                             <div class="dropdown">
-                                <button class="btn btn-secondary rounded-pill dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
+                                <button class="btn rounded-pill dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
                                     <span id="navbar_user_color">
                                         {{ Auth::user()->name }}
                                     </span> 

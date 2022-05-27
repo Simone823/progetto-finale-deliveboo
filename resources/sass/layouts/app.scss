@@ -23,8 +23,13 @@ body {
 }
 
 #dropdownMenuButton1{
-    background-color: $white_1;
+    background-color: $violet;
     border: 0px transparent;
+
+    &:hover {
+        background-color: $green_2;
+        transition: all 300ms cubic-bezier(0.4, 0, 1, 1);
+    }
     
     &:focus{
         box-shadow: 0 0 0 0.25rem rgba( $white_1, 0.5);
@@ -44,16 +49,22 @@ body {
 
     #navbar_user_color{
         color: $green_1;
+    }
+}
 
-        
+.navbar_dashboard{
+    color: $white_1;
+
+    &:hover {
+        color: $green_3;
+        transition: all 300ms linear;
     }
 
-
+    &.active {
+        color: $green_3;
+    }
 }
 
-#navbar_dashboard{
-    color: $white_1;
-}
 
 //---------------HOMEPAGE USER-----------------
 #homepage_main{

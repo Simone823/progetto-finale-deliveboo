@@ -56,7 +56,7 @@
                                 {{-- List link --}}
                                 <ul class="lists_link list-unstyled">
                                     <li>
-                                        <a class="@if(Route::is('admin.homepage')) text-success @endif fw-bolder" href="{{route('admin.homepage')}}">Homepage</a>
+                                        <a class="@if(Route::is('admin.homepage')) text-success @endif fw-bolder text-uppercase text-decoration-none" href="{{route('admin.homepage')}}">Dashboard</a>
                                     </li>
                                 </ul>
                             </div>

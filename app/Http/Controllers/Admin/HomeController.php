@@ -97,25 +97,28 @@ class HomeController extends Controller
 
         // Validazione dati reuqest
         $request->validate([
-            'name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]+$/'],
-            'surname' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]+$/'],
+            'name' => ['required', 'string', 'max:255', 'min:3', 'regex:/^[a-zA-Z]+$/'],
+            'surname' => ['required', 'string', 'max:255', 'min:3', 'regex:/^[a-zA-Z]+$/'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'p_iva' => ['required', 'numeric', 'digits:11'],
+            'p_iva' => $user->p_iva,
             'business_name' => ['required', 'string', 'max:200'],
             'types' => ['required', 'exists:types,id'],
-            'business_city' => ['required', 'string', 'max:100'],
+            'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z]+$/'],
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
             'business_image' => ['nullable', 'image', 'file', 'max:2048'],
+        ],
+        [
+            //messaggi d'errore custom
+            'name.regex' => 'Il nome può contenere solo lettere',
+            'surname.regex' => 'Il cognome può contenere solo lettere',
+            'business_city.regex' => 'La città può contenere solo lettere',
         ]);
 
-        // ---------------------DA SISTEMARE---------------------------------------------
-        // Imposto lo slug business
-        // $slug = User::getUniqueSlug($data['business_slug']);
-        // $user->business_slug = $slug;
-        // -------------------------DA SISTEMARE---------------------------------------- 
+        // Imposto user business_slug con metodo statico User model uguale a data -> business_name
+        $user->business_slug = User::getUniqueSlug($data['business_name']);
 
-        // Controllo se esiste la tipologia lo aggiorno altrimenti
+        // Controllo se esiste la tipologia la aggiorno
         if (array_key_exists('types', $data)) {
             // Sync
             $user->types()->sync($data['types']);
@@ -134,8 +137,12 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        // User delete
+        $user->delete();
+
+        // Return redirect url /
+        return redirect()->away('/');
     }
 }

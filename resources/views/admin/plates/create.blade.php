@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'Create new plate')
+@section('metaTitle', 'DELIVEBOO DB | CREA NUOVO PIATTO')
 
 @section('content')
 <div class="container py-4">

@@ -97,16 +97,22 @@ class HomeController extends Controller
 
         // Validazione dati reuqest
         $request->validate([
-            'name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]+$/'],
-            'surname' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]+$/'],
+            'name' => ['required', 'string', 'max:255', 'min:3', 'regex:/^[a-zA-Z]+$/'],
+            'surname' => ['required', 'string', 'max:255', 'min:3', 'regex:/^[a-zA-Z]+$/'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'p_iva' => ['required', 'numeric', 'digits:11'],
+            'p_iva' => $user->p_iva,
             'business_name' => ['required', 'string', 'max:200'],
             'types' => ['required', 'exists:types,id'],
-            'business_city' => ['required', 'string', 'max:100'],
+            'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z]+$/'],
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
             'business_image' => ['nullable', 'image', 'file', 'max:2048'],
+        ],
+        [
+            //messaggi d'errore custom
+            'name.regex' => 'Il nome può contenere solo lettere',
+            'surname.regex' => 'Il cognome può contenere solo lettere',
+            'business_city.regex' => 'La città può contenere solo lettere',
         ]);
 
         // ---------------------DA SISTEMARE---------------------------------------------

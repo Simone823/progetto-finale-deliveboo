@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Plate;
+use App\User;
 
 class PlateController extends Controller
 {
@@ -14,7 +17,14 @@ class PlateController extends Controller
      */
     public function index()
     {
-        //
+        //salvo in una variabile l'id dell'utente loggato
+        $id_user = Auth::id();
+        //prendo dalla tabella plates i piatti corrispondenti all'id dell'utente loggato
+        $plates = Plate::where('user_id', '=' ,$id_user)
+            ->orderBy('name', 'ASC')
+            ->get();
+
+        return view('admin.plates.index', compact('plates'));
     }
 
     /**

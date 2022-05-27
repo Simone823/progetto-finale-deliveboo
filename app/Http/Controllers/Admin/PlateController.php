@@ -54,6 +54,7 @@ class PlateController extends Controller
             'ingredients' => 'required',
             'price' => 'required|numeric',
             'image' => 'nullable|file',
+            'visibility' => 'required|boolean',
         ]);
 
         $id_user = Auth::id();
@@ -113,6 +114,7 @@ class PlateController extends Controller
             'ingredients' => 'required',
             'price' => 'required|numeric',
             'image' => 'nullable|file',
+            'visibility' => 'required|boolean',
         ]);
 
         $id_user = Auth::id();

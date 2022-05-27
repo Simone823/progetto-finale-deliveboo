@@ -6,54 +6,56 @@
     {{-- @dd($user->types[0]); --}}
 
     {{-- Wrapper referenze utente (ristorante) --}}
-    <div class="wrapper_references_user text-center">
+    <div id="homepage_main" class="wrapper_references_user">
+        <div class="container">
 
-        {{-- User reference --}}
-        <div class="user_reference">
+            {{-- User reference --}}
+            <div class="user_reference">
+                {{-- Business image --}}
+                <figure id="user_image_wrapper" class="user_image">
+                    <img id="user_image" src="{{asset('/img/pexels-photo-1639562.jpeg')}}" alt="">
+                </figure>
+                 {{-- User Info --}}
+                <div class="d-flex py-2">
+                    <div id="homepage_card" class="card me-2 rounded-0" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3 text">Anagrafica:</h5>
+                          <h6 class="card-subtitle mb-2 fw-bold">{{$user->name}}  {{$user->surname}}</h6>
+                          <h6 class="card-subtitle mb-2 ">{{$user->email}} </h6>
+                          <h6 class="card-subtitle mb-2 fs-6">P.iva: {{$user->p_iva}} </h6>
+                          <h6 class="card-subtitle mb-2 ">{{$user->business_name}} </h6>
+                            <div class="d-flex justify-center align-center">
+                                <h6 class="card-subtitle mb-2 me-2 fw-bold">{{$user->business_city}} </h6>
+                                <h6 class="card-subtitle mb-2 ">{{$user->business_cap}} </h6>
+                            </div>
+                          <h6 class="card-subtitle  ">{{$user->business_address}} </h6>            
+                        </div>
+                    </div>
+                    {{-- User Info --}}
+                    <div id="homepage_card" class="card me-2 rounded-0" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3 text">Tipologie Ristorante:</h5>
+                          <div class="card-subtitle mb-2 fw-bold">
+                            <ul class="list_types list-unstyled d-flex ">
+                                @foreach ($user->types as $type)
+                                    <li id="homepage_user_type" class="type_name rounded-pill p-1 me-2 fs-6">{{$type->name}}</li>
+                                @endforeach
+                            </ul>
+                          </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            {{-- Business image --}}
-            <figure class="user_image">
-                <img src="" alt="">
-            </figure>
+            {{-- Modifica dati utente --}}
+            <div class="btn-edit">
+                <a href="{{route('admin.user.edit', $user)}}" id="homepage_btn_edit" class="btn btn-primary rounded-pill" >
+                    Modifica
+                </a>
+            </div>
 
-            {{-- User name --}}
-            <h3 class="user_name">{{$user->name}}  {{$user->surname}}</h3>
-
-            {{-- User email --}}
-            <p class="user_email">{{$user->email}}</p>
-
-            {{-- P.Iva --}}
-            <p class="p_iva">{{$user->p_iva}}</p>
-
-            {{-- Business name --}}
-            <p class="business_name">{{$user->business_name}}</p>
-
-            {{-- Business city --}}
-            <p class="business_city">{{$user->business_city}}</p>
-
-            {{-- Business cap --}}
-            <p class="business_cap">{{$user->business_cap}}</p>
-
-            {{-- Business address --}}
-            <p class="business_address">{{$user->business_address}}</p>
         </div>
-
-        {{-- Types user (restaurant) --}}
-        <div class="types_wrapper">
-            <h3>Tipologie Ristorante</h3>
-            <ul class="list_types list-unstyled">
-                @foreach ($user->types as $type)
-                    <li class="type_name">{{$type->name}}</li>
-                @endforeach
-            </ul>
-        </div>
-
-        {{-- Modifica dati utente --}}
-        <div class="btn-edit">
-            <a href="{{route('admin.user.edit', $user)}}" class="btn btn-primary">
-                Modifica
-            </a>
-        </div>
+    
     </div>
 
 @endsection

@@ -29,5 +29,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     // Rotta homepage
     Route::get('/homepage', 'HomeController@homepage')->name('homepage');
+
+    // Rotta resource homecontroller
+    Route::resource('/user', 'HomeController');
 });
 

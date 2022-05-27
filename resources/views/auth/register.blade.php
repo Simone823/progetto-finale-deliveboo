@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('metaTitle', 'DELIVEBOO DB | REGISTRATION')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -16,7 +18,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Inserisci il tuo Nome" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input placeholder="Inserisci il tuo Nome" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -31,7 +33,7 @@
                             <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Inserisci il tuo Cognome" id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
+                                <input placeholder="Inserisci il tuo Cognome" id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" autocomplete="surname" autofocus>
 
                                 @error('surname')
                                 <span class="invalid-feedback" role="alert">
@@ -46,7 +48,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Indirizzo Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input placeholder="Indirizzo Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -61,7 +63,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -76,7 +78,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Conferma Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input placeholder="Conferma Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
 
@@ -85,7 +87,7 @@
                             <label for="business_name" class="col-md-4 col-form-label text-md-right">{{ __('Nome ristorante*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Nome Ristorante" id="business_name" type="text" class="form-control @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name') }}" required autocomplete="business_name" autofocus>
+                                <input placeholder="Nome Ristorante" id="business_name" type="text" class="form-control @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name') }}" autocomplete="business_name" autofocus>
 
                                 @error('business_name')
                                 <span class="invalid-feedback" role="alert">
@@ -100,7 +102,7 @@
                             <label for="p_iva" class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Partita Iva" id="p_iva" type="number" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva') }}" required autocomplete="p_iva" autofocus>
+                                <input placeholder="Partita Iva" id="p_iva" type="number" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva') }}" autocomplete="p_iva" autofocus>
 
                                 @error('p_iva')
                                 <span class="invalid-feedback" role="alert">
@@ -115,7 +117,7 @@
                             <label for="business_city" class="col-md-4 col-form-label text-md-right">{{ __('Città*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Città" id="business_city" type="text" class="form-control @error('business_city') is-invalid @enderror" name="business_city" value="{{ old('business_city') }}" required autocomplete="business_city" autofocus>
+                                <input placeholder="Città" id="business_city" type="text" class="form-control @error('business_city') is-invalid @enderror" name="business_city" value="{{ old('business_city') }}" autocomplete="business_city" autofocus>
 
                                 @error('business_city')
                                 <span class="invalid-feedback" role="alert">
@@ -130,7 +132,7 @@
                             <label for="business_cap" class="col-md-4 col-form-label text-md-right">{{ __('CAP*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="CAP" id="business_cap" type="number" class="form-control @error('business_cap') is-invalid @enderror" name="business_cap" value="{{ old('business_cap') }}" required autocomplete="business_cap" autofocus>
+                                <input placeholder="CAP" id="business_cap" type="number" class="form-control @error('business_cap') is-invalid @enderror" name="business_cap" value="{{ old('business_cap') }}" autocomplete="business_cap" autofocus>
 
                                 @error('business_cap')
                                 <span class="invalid-feedback" role="alert">
@@ -145,7 +147,7 @@
                             <label for="business_address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo*') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Indirizzo Ristorante" id="business_address" type="text" class="form-control @error('business_address') is-invalid @enderror" name="business_address" value="{{ old('business_address') }}" required autocomplete="business_address" autofocus>
+                                <input placeholder="Indirizzo Ristorante" id="business_address" type="text" class="form-control @error('business_address') is-invalid @enderror" name="business_address" value="{{ old('business_address') }}" autocomplete="business_address" autofocus>
 
                                 @error('business_address')
                                 <span class="invalid-feedback" role="alert">

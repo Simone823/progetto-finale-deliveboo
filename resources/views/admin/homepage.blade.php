@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'DELIVEBOO DB | HOMEPAGE')
+@section('metaTitle', 'DELIVEBOO DB | DASHBOARD')
 
 @section('content')
     {{-- @dd($user->types[0]); --}}
@@ -48,6 +48,12 @@
             </ul>
         </div>
 
+        {{-- Modifica dati utente --}}
+        <div class="btn-edit">
+            <a href="{{route('admin.user.edit', $user)}}" class="btn btn-primary">
+                Modifica
+            </a>
+        </div>
     </div>
 
 @endsection

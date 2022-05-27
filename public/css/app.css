@@ -12178,3 +12178,88 @@ fieldset:disabled .btn {
   }
 }
 
+#navbar_app {
+  background-color: #00CCBC;
+}
+
+#header_logo_deliveboo {
+  height: 35px;
+  display: block;
+}
+
+#dropdownMenuButton1 {
+  background-color: #FFFFFF;
+  border: 0px transparent;
+}
+
+#dropdownMenuButton1:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+
+#dropdownMenuButton1.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  color: #00CCBC;
+}
+
+#dropdownMenuButton1 #navbar_user_color {
+  color: #00CCBC;
+}
+
+#navbar_dashboard {
+  color: #FFFFFF;
+}
+
+#homepage_main {
+  background-color: #FFFFFF;
+  height: calc(100vh - 55px);
+}
+
+#homepage_btn_edit {
+  background-color: #00CCBC;
+  border: 0px transparent;
+  color: #FFFFFF;
+}
+
+#user_image_wrapper {
+  height: 250px;
+  padding: 10px 0;
+}
+
+#user_image_wrapper #user_image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+#user_image_wrapper #user_image_title {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1111;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: white;
+}
+
+#homepage_card {
+  background-color: #00CCBC;
+  color: #FFFFFF;
+}
+
+#homepage_card #homepage_user_type {
+  background-color: #FFFFFF;
+  color: #00CCBC;
+  text-align: center;
+}
+

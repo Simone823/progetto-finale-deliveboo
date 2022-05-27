@@ -13,7 +13,8 @@ class Plate extends Model
             'slug',
             'ingredients',
             'price',
-            'image'
+            'image',
+            'visibility',
         ];
 
         public function user(){

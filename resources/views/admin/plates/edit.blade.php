@@ -37,6 +37,17 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
+        {{-- visibility --}}
+        <div class="form-group">
+            <select class="form-select @error('visibility') is-invalid @enderror" aria-label="Default select example" name="visibility" id="visibility">
+                <option selected>Open this select menu</option>
+                <option {{old('visibility',$plate->visibility) ? 'selected' : ''}} value="0">Not visible</option>
+                <option {{old('visibility',$plate->visibility) ? 'selected' : ''}} value="1">Visible</option>
+            </select>
+        </div>
+        @error('visibility')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         {{-- image --}}
         <div class="form-group">
             <label for="image" class="col-md-4 col-form-label text-md-right"></label>

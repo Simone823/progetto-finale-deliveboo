@@ -54,11 +54,25 @@
                             <div class="link_wrapper">
 
                                 {{-- List link --}}
-                                <ul class="lists_link list-unstyled">
+                                <ul class="lists_link list-unstyled d-flex align-items-center gap-4">
                                     <li>
-                                        <a class="@if(Route::is('admin.homepage')) text-success @endif fw-bolder text-uppercase text-decoration-none" href="{{route('admin.homepage')}}">
-                                            <span id="navbar_dashboard">
+                                        <a class="@if(Route::is('admin.homepage'))active @endif fw-bolder text-uppercase text-decoration-none" href="{{route('admin.homepage')}}">
+                                            <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
                                                 Dashboard
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="fw-bolder text-uppercase text-decoration-none" href="{{route('admin.plates.index')}}">
+                                            <span class="@if(Route::is('admin.plates.index'))active @endif navbar_dashboard">
+                                                Tutti i Piatti
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="fw-bolder text-uppercase text-decoration-none" href="{{route('admin.plates.create')}}">
+                                            <span class="@if(Route::is('admin.plates.create'))active @endif navbar_dashboard">
+                                                Crea nuovo piatto
                                             </span>
                                         </a>
                                     </li>

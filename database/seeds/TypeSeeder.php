@@ -13,23 +13,20 @@ class TypeSeeder extends Seeder
     public function run()
     {
         $arrayTypes = [
-
-          'Colazione',
+          'Internazionale',
           'Italiano',
           'Giapponese',
           'Cinese',
           'Indiano',
-          'Libanese',
+          'Messicano',
           'Americano',
-          'Pescheria',
+          'Pesce',
           'Steak House',
           'Osteria',
-          'Trattoria',
           'Pizzeria',
           'Bar',
           'Fast-Food',
           'All you can eat'
-        
         ];
 
         //foreach per simone cosi faccio il commento 

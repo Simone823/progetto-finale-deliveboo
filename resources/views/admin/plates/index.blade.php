@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'Plates')
+@section('metaTitle', 'DELIVEBOO DB | PIATTI')
 
 @section('content')
 

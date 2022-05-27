@@ -1,5 +1,18 @@
-//---------------NAVBAR USER DASHBOARD-----------------
+// ------------------------BODY---------------------------
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
+// ------------------------APP---------------------------
+#app {
+    flex-grow: 1;
+    background-color: $green_2;
+}
+
+//---------------NAVBAR USER DASHBOARD-----------------
 #navbar_app{
     background-color: $green_1;
 }

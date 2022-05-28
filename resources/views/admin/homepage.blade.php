@@ -13,7 +13,7 @@
             <div class="user_reference">
                 {{-- Business image --}}
                 <figure id="user_image_wrapper" class="user_image">
-                    <img id="user_image" src="{{asset('/img/pexels-photo-1639562.jpeg')}}" alt="">
+                    <img id="user_image" src="{{asset('storage/'.$user->business_image)}}" alt="">
                 </figure>
                  {{-- User Info --}}
                 <div class="d-flex py-2">

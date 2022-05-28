@@ -183,7 +183,7 @@
                             <label for="business_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
 
                             <div class="col-md-6">
-                                <input accept="image/*" placeholder="Immagine Ristorante" id="business_image" type="file" class="form-control @error('business_image') is-invalid @enderror" name="business_image" value="{{ old('business_image', $user->business_image) }}" autofocus>
+                                <input accept="image/*" placeholder="Immagine Ristorante" id="business_image" type="file" class="form-control @error('business_image') is-invalid @enderror" name="business_image" value="{{ old('business_image') }}" autofocus>
 
                                 @error('business_image')
                                 <span class="invalid-feedback" role="alert">

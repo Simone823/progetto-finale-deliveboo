@@ -12,7 +12,7 @@
 
                 <div class="card-body bkg-white_1">
 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         {{-- Name --}}
@@ -178,12 +178,12 @@
                             @enderror
                         </div>
 
-                        {{-- Business image --}}
-                        <div class="form-group row mb-4 flex-column align-items-center text-center">
+                        {{-- Business image input--}}
+                        <div class="form-group row mb-3 flex-column align-items-center text-center">
                             <label for="business_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
 
                             <div class="col-md-6">
-                                <input placeholder="Immagine Ristorante" id="business_image" type="file" class="form-control @error('business_image') is-invalid @enderror" name="business_image" value="{{ old('business_image') }}" autocomplete="business_image" autofocus>
+                                <input accept="image/*" placeholder="Immagine Ristorante" id="business_image" type="file" class="form-control @error('business_image') is-invalid @enderror" name="business_image" value="{{ old('business_image', $user->business_image) }}" autofocus>
 
                                 @error('business_image')
                                 <span class="invalid-feedback" role="alert">

@@ -33,7 +33,7 @@
                             </figure>
                         </div>
 
-                        {{-- Business image --}}
+                        {{-- Business image input--}}
                         <div class="form-group row mb-3 flex-column align-items-center text-center">
                             <label for="business_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
 

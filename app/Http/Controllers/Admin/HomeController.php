@@ -7,6 +7,7 @@ use App\Type;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -106,7 +107,7 @@ class HomeController extends Controller
             'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z]+$/'],
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
-            'business_image' => ['nullable', 'image', 'file', 'max:2048'],
+            'business_image' => ['nullable', 'file', 'image', 'mimetypes:image/jpeg,image/png,image/svg', 'max:2048'],
         ],
         [
             //messaggi d'errore custom
@@ -117,6 +118,23 @@ class HomeController extends Controller
 
         // Imposto user business_slug con metodo statico User model uguale a data -> business_name
         $user->business_slug = User::getUniqueSlug($data['business_name']);
+
+        // Se esiste il valore del campo business_image
+        if(array_key_exists('business_image', $data)) {
+
+            // Salvo il path dell'immagine e la pusho su storage uploads 
+            $img_path = Storage::put('uploads', $data['business_image']);
+
+            // Imposto il valore dell'immagine utente uguale a img_path
+            $data['business_image'] = $img_path;
+        } else {
+
+            // Img path image null
+            $img_path = "https://picsum.photos/200/300";
+
+            // Valore dato business_image uguale a img_path
+            $data['business_image'] = $img_path;
+        }
 
         // Controllo se esiste la tipologia la aggiorno
         if (array_key_exists('types', $data)) {

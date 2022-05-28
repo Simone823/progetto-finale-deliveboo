@@ -25,7 +25,7 @@ Auth::routes();
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group( function () {
 
     // Rotta / controller index
-    Route::get('/', 'HomeController@index')->name('logged');
+    // Route::get('/', 'HomeController@index')->name('logged');
 
     // Rotta homepage
     Route::get('/homepage', 'HomeController@homepage')->name('homepage');

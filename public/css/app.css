@@ -12190,6 +12190,10 @@ body {
   background-color: #D0EB99;
 }
 
+main {
+  padding-top: 4rem;
+}
+
 #navbar_app {
   background-color: #00CCBC;
 }

@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav id="navbar_app" class="navbar navbar-expand-md navbar-light shadow-sm d-flex align-center">
+        <nav id="navbar_app" class="navbar navbar-expand-md navbar-light shadow-lg d-flex align-center fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                    <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="">

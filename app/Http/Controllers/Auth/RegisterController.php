@@ -8,6 +8,7 @@ use App\Type;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -71,7 +72,7 @@ class RegisterController extends Controller
             'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z]+$/'],
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
-            'business_image' => ['nullable', 'image', 'file', 'max:2048'],
+            'business_image' => ['nullable', 'file', 'image', 'mimetypes:image/jpeg,image/png,image/svg', 'max:2048'],
         ],
         [
             //messaggi d'errore custom
@@ -104,7 +105,7 @@ class RegisterController extends Controller
             'business_city' => $data['business_city'],
             'business_cap' => $data['business_cap'],
             'business_address' => $data['business_address'],
-            'business_image' => $data['business_image'],
+            'business_image' => Storage::put('uploads', $data['business_image']),
         ]);
 
         // Attach tiplogie ristorante inserite dall'utente tramite checkbox

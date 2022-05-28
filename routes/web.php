@@ -37,3 +37,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::resource('/plates', 'PlateController');
 });
 
+//Rotta per gestire le tipologie in welcome
+Route::get('/','TypeController@welcome');
+

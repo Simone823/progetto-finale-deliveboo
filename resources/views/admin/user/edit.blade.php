@@ -6,18 +6,17 @@
 
 @section('content')
     {{-- @dd($user); --}}
-<div class="container py-5 px-3">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card fw-bolder drop-shadow-black-22 letter-spacing-2">
+            <div class="card fw-bolder">
 
                 {{-- Titolo sezione modifica --}}
-                <div class="card-header fs-6">
+                <div class="card-header">
                     <h4 class="mb-0">Modifica dati {{$user->name}}</h4>
                 </div>
 
-                <div class="card-body bkg-white_1">
-
+                <div class="card-body">
                     <form method="POST" action="{{ route('admin.user.update', $user) }}" enctype="multipart/form-data">
 
                         {{-- Key --}}
@@ -26,30 +25,8 @@
                         {{-- Method --}}
                         @method('PUT')
 
-                        {{-- Image wrapper business_image --}}
-                        <div class="wrapper_image">
-                            <figure class="image_business figure rounded overflow-hidden">
-                                <img class="img-thumbnail" src="{{asset('storage/'.$user->business_image)}}" alt="">
-                            </figure>
-                        </div>
-
-                        {{-- Business image --}}
-                        <div class="form-group row mb-3 flex-column align-items-center text-center">
-                            <label for="business_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
-
-                            <div class="col-md-6">
-                                <input accept="image/*" placeholder="Immagine Ristorante" id="business_image" type="file" class="form-control @error('business_image') is-invalid @enderror" name="business_image" value="{{ old('business_image', $user->business_image) }}" autofocus>
-
-                                @error('business_image')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
                         {{-- Name --}}
-                        <div class="form-group row mb-3 flex-column align-items-center text-center">
+                        <div class="form-group row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name*') }}</label>
 
                             <div class="col-md-6">
@@ -64,7 +41,7 @@
                         </div>
 
                         {{-- Surname --}}
-                        <div class="form-group row mb-3 flex-column align-items-center text-center">
+                        <div class="form-group row mb-3">
                             <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname*') }}</label>
 
                             <div class="col-md-6">
@@ -79,7 +56,7 @@
                         </div>
 
                         {{-- Email --}}
-                        <div class="form-group row mb-3 flex-column align-items-center text-center">
+                        <div class="form-group row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address*') }}</label>
 
                             <div class="col-md-6">
@@ -94,7 +71,7 @@
                         </div>
 
                         {{-- Business name --}}
-                        <div class="form-group row mb-3 flex-column align-items-center text-center">
+                        <div class="form-group row mb-3">
                             <label for="business_name" class="col-md-4 col-form-label text-md-right">{{ __('Nome ristorante*') }}</label>
 
                             <div class="col-md-6">
@@ -109,7 +86,7 @@
                         </div>
 
                         {{-- Partita iva --}}
-                        <div class="form-group row mb-3 flex-column align-items-center text-center">
+                        <div class="form-group row mb-3">
                             <label for="p_iva" class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva*') }}</label>
 
                             <div class="col-md-6">
@@ -124,7 +101,7 @@
                         </div>
 
                         {{-- Business city --}}
-                        <div class="form-group row mb-3 flex-column align-items-center text-center">
+                        <div class="form-group row mb-3">
                             <label for="business_city" class="col-md-4 col-form-label text-md-right">{{ __('Città*') }}</label>
 
                             <div class="col-md-6">
@@ -139,7 +116,7 @@
                         </div>
 
                         {{-- Business cap --}}
-                        <div class="form-group row mb-3 flex-column align-items-center text-center">
+                        <div class="form-group row mb-3">
                             <label for="business_cap" class="col-md-4 col-form-label text-md-right">{{ __('CAP*') }}</label>
 
                             <div class="col-md-6">
@@ -154,7 +131,7 @@
                         </div>
 
                         {{-- Business address --}}
-                        <div class="form-group row mb-4 flex-column align-items-center text-center">
+                        <div class="form-group row mb-4">
                             <label for="business_address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo*') }}</label>
 
                             <div class="col-md-6">
@@ -187,10 +164,25 @@
                             @enderror
                         </div>
 
+                        {{-- Business image --}}
+                        <div class="form-group row mb-3">
+                            <label for="business_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
+
+                            <div class="col-md-6">
+                                <input accept="image/*" placeholder="Immagine Ristorante" id="business_image" type="file" class="form-control @error('business_image') is-invalid @enderror" name="business_image" value="{{ old('business_image', $user->business_image) }}" autofocus>
+
+                                @error('business_image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         {{-- Button edit --}}
                         <div class="form-group mb-0">
                             <div class="col-md-6 mx-auto text-center">
-                                <button type="submit" class="btn btn-green_1 btn-hover-violet fw-bolder letter-spacing-2">
+                                <button type="submit" class="btn btn-primary">
                                     Modifica
                                 </button>
                             </div>

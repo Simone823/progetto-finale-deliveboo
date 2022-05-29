@@ -74,7 +74,7 @@
                     <img class="card-img-top" src="https://picsum.photos/1920/1080" alt="">
 
                     {{-- Description card body --}}
-                    <div class="description card-body">
+                    <div class="description card-body text-violet">
                         <h5 class="text-uppercase">{{'id: '.$plate->id}}</h5>
                         <h5 class="card-title">{{$plate->name}}</h5>
                         <h6 class="card-text">{{$plate->slug}}</h6>

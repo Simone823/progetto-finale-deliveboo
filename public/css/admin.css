@@ -12306,7 +12306,15 @@ main {
   background-color: #f4f7e5;
 }
 
+.text-violet {
+  color: #3e235d;
+}
+
 .letter-spacing-2 {
   letter-spacing: 2px;
+}
+
+.min-height-480 {
+  min-height: 480px;
 }
 

@@ -77,7 +77,7 @@ class HomeController extends Controller
         $user = Auth::user();
 
         // >Recupero le tipologie
-        $types = Type::orderBy('name', 'ASC')->get();
+        $types = Type::orderBy('type_name', 'ASC')->get();
 
         // Return view admin.user.edit
         return view('admin.user.edit', compact('user', 'types'));

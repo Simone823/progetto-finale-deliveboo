@@ -5,7 +5,7 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import Home from '../pages/Home.vue';
-import ResturantType from '../pages/ResturantVue.vue';
+import ResturantType from '../pages/ResturantType.vue';
 //faccio un array che conterrà le rotte
 const routes = [
     {
@@ -22,7 +22,7 @@ const routes = [
 
 //istanza del router
 const router = new VueRouter({
-    mode: history,
+    mode: 'history',
     routes: routes,
 });
 

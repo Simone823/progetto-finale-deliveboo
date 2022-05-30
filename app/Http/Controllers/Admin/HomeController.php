@@ -129,8 +129,8 @@ class HomeController extends Controller
             $data['business_image'] = $img_path;
         } else {
 
-            // Img path image null
-            $img_path = "https://picsum.photos/200/300";
+            // Img path = user->business_image 
+            $img_path = $user['business_image'];
 
             // Valore dato business_image uguale a img_path
             $data['business_image'] = $img_path;

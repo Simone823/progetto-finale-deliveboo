@@ -9,7 +9,7 @@ import ResturantType from '../pages/ResturantType.vue';
 //faccio un array che conterrà le rotte
 const routes = [
     {
-        path: '/home',
+        path: '/',
         name: 'home',
         component: Home,
     },

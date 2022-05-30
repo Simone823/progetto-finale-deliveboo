@@ -5225,8 +5225,7 @@ __webpack_require__.r(__webpack_exports__);
       //faccio una chiamata API passando come parametro l'id della tipologia cliccata
       axios.get("/api/resturant-type/".concat(this.$route.params.id)).then(function (res) {
         //salvo i dati della chiamata nell'array
-        _this.resturantsType = res.data.users;
-        console.log(_this.resturantsType);
+        _this.resturantsType = res.data.users; // console.log(this.resturantsType);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -42272,7 +42271,7 @@ var render = function () {
                 to: { name: "resturant-type", params: { id: type.id } },
               },
             },
-            [_vm._v("\n            " + _vm._s(type.name) + "\n        ")]
+            [_vm._v("\n            " + _vm._s(type.type_name) + "\n        ")]
           )
         }),
         1

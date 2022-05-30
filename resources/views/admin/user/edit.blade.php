@@ -177,7 +177,7 @@ DELIVEBOO DB | {{$user->name}} {{$user->surname}}
                                 @foreach($types as $index => $type)
                                 <li class="form-group form-check">
                                     <input {{$user->types->contains($type) ? 'checked' : '' }} type="checkbox" class="form-check-input @error('types.{{$index}}') is-invalid @enderror" value="{{$type->id}}" name="types[{{$index}}]" id="types-{{$type->id}}">
-                                    <label class="form-check-label" for="types-{{$type->id}}">{{$type->name}}</label>
+                                    <label class="form-check-label" for="types-{{$type->id}}">{{$type->type_name}}</label>
                                 </li>
                                 @endforeach
                             </ul>

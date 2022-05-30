@@ -7,7 +7,7 @@
             <!-- stampo tutte le tipologie -->
             <router-link class="link" tag="li" :to="{ name: 'resturant-type', params: { id: type.id } }"            
                 v-for="type in types" :key="type.id">
-                {{ type.name }}
+                {{ type.type_name }}
             </router-link>
         </ul>
     </div>

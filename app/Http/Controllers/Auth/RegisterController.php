@@ -30,7 +30,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         // Recupero dal db le tipologie e le ordine per nome 
-        $types = Type::orderBy('name', 'ASC')->get();
+        $types = Type::orderBy('type_name', 'ASC')->get();
 
         // Return view auth register 
         return view('auth.register', compact('types'));

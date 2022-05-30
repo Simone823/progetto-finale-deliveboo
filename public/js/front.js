@@ -42091,7 +42091,10 @@ var render = function () {
             {
               key: type.id,
               staticClass: "link",
-              attrs: { tag: "li", to: "/resturant-type" },
+              attrs: {
+                tag: "li",
+                to: { name: "resturant-type", params: { id: type.id } },
+              },
             },
             [_vm._v("\n            " + _vm._s(type.name) + "\n        ")]
           )
@@ -57795,7 +57798,7 @@ var routes = [{
   name: 'home',
   component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
-  path: '/resturant-type',
+  path: '/resturant-type/:id',
   name: 'resturant-type',
   component: _pages_ResturantType_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }]; //istanza del router

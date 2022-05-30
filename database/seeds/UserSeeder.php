@@ -98,7 +98,7 @@ class UserSeeder extends Seeder
             // Salvo il nuovo utente
             $new_user->save();
 
-            $randomType = $faker->randomElements($typesId, 2);
+            $randomType = $faker->randomElements($typesId, 4);
             $new_user->types()->attach($randomType);
         }
     }

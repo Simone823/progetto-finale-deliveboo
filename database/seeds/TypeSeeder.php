@@ -35,7 +35,7 @@ class TypeSeeder extends Seeder
 
             $type = new Type();
 
-            $type->name = $name;
+            $type->type_name = $name;
 
             $type->save();
         }

@@ -38,7 +38,7 @@
                           <div class="card-subtitle mb-2 fw-bold">
                             <ul class="list_types list-unstyled d-flex ">
                                 @foreach ($user->types as $type)
-                                    <li id="homepage_user_type" class="type_name rounded-pill p-1 me-2 fs-6">{{$type->name}}</li>
+                                    <li id="homepage_user_type" class="type_name rounded-pill p-1 me-2 fs-6">{{$type->type_name}}</li>
                                 @endforeach
                             </ul>
                           </div> 

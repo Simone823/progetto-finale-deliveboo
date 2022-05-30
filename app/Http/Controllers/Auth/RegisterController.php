@@ -93,6 +93,23 @@ class RegisterController extends Controller
         // Slug
         $slug = User::getUniqueSlug($data['business_name']);
 
+        // Se esiste il valore del campo business_image
+        if (array_key_exists('business_image', $data)) {
+
+            // Salvo il path dell'immagine e la pusho su storage uploads 
+            $img_path = Storage::put('uploads', $data['business_image']);
+
+            // Imposto il valore dell'immagine utente uguale a img_path
+            $data['business_image'] = $img_path;
+        } else {
+
+            // Img path image null
+            $img_path = "/public/img/fantasma.svg";
+
+            // Valore dato business_image uguale a img_path
+            $data['business_image'] = $img_path;
+        }
+
         // Creo un nuovo utente con metedo create
         $user = User::create([
             'name' => $data['name'],
@@ -105,7 +122,7 @@ class RegisterController extends Controller
             'business_city' => $data['business_city'],
             'business_cap' => $data['business_cap'],
             'business_address' => $data['business_address'],
-            'business_image' => Storage::put('uploads', $data['business_image']),
+            'business_image' => $img_path,
         ]);
 
         // Attach tiplogie ristorante inserite dall'utente tramite checkbox

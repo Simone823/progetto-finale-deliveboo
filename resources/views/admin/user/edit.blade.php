@@ -27,7 +27,7 @@ DELIVEBOO DB | {{$user->name}} {{$user->surname}}
                         @method('PUT')
 
                         {{-- Image wrapper business_image --}}
-                        <div class="wrapper_image">
+                        <div class="wrapper_image d-flex justify-content-center">
                             <figure class="image_business figure rounded overflow-hidden">
                                 <img class="img-thumbnail" src="{{asset('storage/'.$user->business_image)}}" alt="">
                             </figure>

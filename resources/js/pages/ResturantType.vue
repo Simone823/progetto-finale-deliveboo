@@ -1,16 +1,12 @@
 <template>
     <div>
-        <router-view></router-view>
+        Qui andranno i ristoranti con la tipologia selezionata
     </div>
 </template>
 
 <script>
-import HomePage from '../pages/Home.vue'
-
 export default {
-    components: {
-        HomePage,
-    }
+
 }
 </script>
 

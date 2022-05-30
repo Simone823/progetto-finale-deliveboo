@@ -5,9 +5,10 @@
         <h3>Tipologie di ristoranti:</h3>
         <ul>
             <!-- stampo tutte le tipologie -->
-            <li v-for="type in types" :key="type.id">
-                <a href="">{{ type.name }}</a>
-            </li>
+            <router-link class="link" tag="li" to="/resturant-type" 
+                v-for="type in types" :key="type.id">
+                {{ type.name }}
+            </router-link>
         </ul>
     </div>
     </div>
@@ -42,5 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .link{
+        cursor: pointer;
+    }
 </style>

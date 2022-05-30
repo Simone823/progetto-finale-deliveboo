@@ -5204,6 +5204,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -42299,20 +42303,26 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c(
-      "div",
-      {
-        staticClass:
-          "cards-wrapper d-flex flex-wrap gap-3 justify-content-center",
-      },
-      _vm._l(_vm.resturantsType, function (resturantType) {
-        return _c("ResturantTypeCard", {
-          key: resturantType.user_id,
-          attrs: { resturantType: resturantType },
-        })
-      }),
-      1
-    ),
+    _vm.resturantsType.length == 0
+      ? _c("div", [
+          _c("p", [
+            _vm._v("Per questa tipologia non è presente nessun ristorante."),
+          ]),
+        ])
+      : _c(
+          "div",
+          {
+            staticClass:
+              "cards-wrapper d-flex flex-wrap gap-3 justify-content-center",
+          },
+          _vm._l(_vm.resturantsType, function (resturantType) {
+            return _c("ResturantTypeCard", {
+              key: resturantType.user_id,
+              attrs: { resturantType: resturantType },
+            })
+          }),
+          1
+        ),
   ])
 }
 var staticRenderFns = []

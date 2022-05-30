@@ -1,7 +1,11 @@
 <template>
     <div class="container">
+        <!-- faccio un controllo per vedere se l'array contiene ristoranti -->
+        <div v-if="resturantsType.length == 0">
+            <p>Per questa tipologia non è presente nessun ristorante.</p>
+        </div>
         <!-- stampo tutte le card che contengono le info. dei ristoranti con la determinata tipologia  -->
-        <div class="cards-wrapper d-flex flex-wrap gap-3 justify-content-center">
+        <div v-else class="cards-wrapper d-flex flex-wrap gap-3 justify-content-center">
             <ResturantTypeCard v-for="resturantType in resturantsType" :key="resturantType.user_id"
                 :resturantType="resturantType" />
         </div>

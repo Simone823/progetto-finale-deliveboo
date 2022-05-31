@@ -1,9 +1,11 @@
 #section_plate_show {
     display: flex;
     justify-content: center;
+    padding-top: 40px;
 
     .card {
-        padding-top: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
 
         .wrapper_image {
 

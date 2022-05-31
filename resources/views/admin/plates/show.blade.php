@@ -8,7 +8,7 @@
 @section('metaTitle', 'DELIVEBOO DB | '. $plate->name)
 
 @section('content')
-    <div id="section_plate_show" class="container py-5 px-3">
+    <div id="section_plate_show" class="container px-3">
       
         {{-- Card plate  --}}
         <div class="card col-12 col-md-8 shadow-lg bkg-white_1 text-center text-violet">

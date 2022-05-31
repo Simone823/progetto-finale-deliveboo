@@ -74,10 +74,8 @@
                     <img class="card-img-top" src="https://picsum.photos/1920/1080" alt="">
 
                     {{-- Description card body --}}
-                    <div class="description card-body text-violet">
-                        <h5 class="text-uppercase">{{'id: '.$plate->id}}</h5>
-                        <h5 class="card-title">{{$plate->name}}</h5>
-                        <h6 class="card-text">{{$plate->slug}}</h6>
+                    <div class="description card-body text-violet fw-bolder">
+                        <h5 class="card-title fw-bold">{{$plate->name}}</h5>
                         <p class="card-text">{{$plate->ingredients}}</p>
                         <p class="card-text">Visibile: {{$plate->visibility == 1 ? 'SI' : 'NO'}}</p>
 
@@ -85,13 +83,13 @@
                     
                     {{-- Buttons --}}
                     <div class="btn_wrapper d-flex flex-wrap gap-3 justify-content-center mb-4">
-                        <a class="btn btn-primary" href="{{ route('admin.plates.show', $plate->id) }}">Visualizza</a>
-                        <a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate->id) }}">Modifica</a>
+                        <a class="btn btn-green_1 btn-hover-violet" href="{{ route('admin.plates.show', $plate->id) }}">Visualizza</a>
+                        <a class="btn btn-green_1 btn-hover-violet" href="{{ route('admin.plates.edit', $plate->id) }}">Modifica</a>
                         <form onsubmit="return confirm('Sei sicuro di voler eliminare ({{$plate->name}}) dal tuo database?')" action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button class="btn btn-danger" type="submit">
+                            <button class="btn btn-green_1 btn-hover-violet" type="submit">
                                 Elimina
                             </button>
                         </form>

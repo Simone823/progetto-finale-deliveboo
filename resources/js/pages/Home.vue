@@ -2,6 +2,17 @@
 
     <div>
         <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <label for="address">Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</label>
+                    <div class="d-flex align-items-center gap-2">
+                        <input class="form-control flex-grow-1" type="text" id="address" name="address" placeholder="Inserisci il tuo indirizzo completo">
+                        <button class="btn btn-green_1">Cerca</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
         <h3>Tipologie di ristoranti:</h3>
         <ul>
             <!-- stampo tutte le tipologie -->

@@ -8,8 +8,11 @@
 @section('metaTitle', 'DELIVEBOO DB | '. $plate->name)
 
 @section('content')
+
+    {{-- Section plate show --}}
     <div id="section_plate_show" class="container px-3">
 
+        {{-- Row --}}
         <div class="row justify-content-center">
 
             {{-- Card plate  --}}
@@ -50,7 +53,6 @@
                 </div>
             </div>
         </div>
-      
-
     </div>
+    
 @endsection

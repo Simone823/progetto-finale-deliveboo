@@ -1,14 +1,11 @@
 // ------------------------BODY---------------------------
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    background-color: $green_2;
 }
 
 // ------------------------APP---------------------------
 #app {
-    flex-grow: 1;
+    min-height: 100vh;
     background-color: $green_2;
 }
 

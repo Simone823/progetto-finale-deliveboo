@@ -12179,14 +12179,11 @@ fieldset:disabled .btn {
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  background-color: #D0EB99;
 }
 
 #app {
-  flex-grow: 1;
+  min-height: 100vh;
   background-color: #D0EB99;
 }
 
@@ -12294,6 +12291,18 @@ main {
 
 .btn-green_1 {
   background-color: #00CCBC;
+  color: #FFFFFF;
+}
+
+.btn-violet {
+  background-color: #3e235d;
+  color: #FFFFFF;
+}
+
+.btn-hover-green_1:hover {
+  background-color: #00CCBC;
+  color: black;
+  transition: all 300ms linear;
 }
 
 .btn-hover-violet:hover {
@@ -12316,5 +12325,46 @@ main {
 
 .letter-spacing-2 {
   letter-spacing: 2px;
+}
+
+#section_plate_show {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#section_plate_show .card {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#section_plate_show .card .wrapper_image .plate_image {
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#section_plate_show .card .wrapper_image .plate_image img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+#section_plate_show .card ul {
+  list-style-position: outside;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+#section_plate_show .card ul li {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 

@@ -34,7 +34,7 @@ export default {
             .then( res => {
                 //salvo i dati della chiamata nell'array
                 this.resturantsType = res.data.users;
-                // console.log(this.resturantsType);
+                console.log(res);
             })
             .catch( err => {
                 console.warn(err);

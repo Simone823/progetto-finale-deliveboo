@@ -1,6 +1,27 @@
 <template>
 
     <div>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <label for="address" class-form-label>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</label>
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="d-flex flex-column flex-grow-1">
+                            <input class="address form-control" v-model="inputAddress" type="text" id="address" name="address" placeholder="Inserisci il tuo indirizzo completo">
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <!-- TODO disabilitare il bottone -->
+                        <router-link tag="button" :to="inputAddress != '' ? '/city-resturants' : '/' "
+                            class="btn btn-green_1">
+                                Cerca
+                        </router-link>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
         <div class="container">
         <h3>Tipologie di ristoranti:</h3>
         <ul>
@@ -19,7 +40,8 @@
 export default {
     data() {
         return {
-            types: []
+            types: [],
+            inputAddress: '',
         }
     },
     methods: {
@@ -34,7 +56,7 @@ export default {
             .catch( err => {
                 console.warn(err);
             })
-        }
+        },
     },
     mounted() {
         this.fetchTypes();

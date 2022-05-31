@@ -5,10 +5,27 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Type;
 
 class UserController extends Controller
 {
-    public function index($id)
+
+    public function index(){
+        //prendo tutti gli utenti con tutte le rispettive categorie
+        $users_type = User::join('type_user','type_user.user_id','=','users.id')
+            ->join('types','types.id','=','type_user.type_id')
+            ->get();
+        $users = User::all();
+        $types = Type::all();
+
+        return response()->json([
+            'users_type' => $users_type,
+            'users' => $users,
+            'types' => $types,
+        ]);
+    }
+
+    public function showTypes($id)
     {
         //tramite query e  join prendo i ristoratori che hanno quella determinata tipologia
         $users = User::join('type_user','type_user.user_id','=','users.id')

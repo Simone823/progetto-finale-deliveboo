@@ -20,4 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/home','Api\TypeController@welcome');
 // creo la rotta per vedere i ristoranti che hanno la determinata tipologia
-Route::get('/resturant-type/{user}','Api\UserController@index');
+Route::get('/resturant-type/{user}','Api\UserController@showTypes');
+//creo la rotta che visualizzerà i ristoranti dopo la selzione della città
+Route::get('/city-resturants','Api\UserController@index');
+

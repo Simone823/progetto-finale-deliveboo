@@ -5131,6 +5131,160 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/CityResturants.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/CityResturants.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      resturants: [],
+      types: [],
+      checkedTypes: [],
+      resturantsTypes: [],
+      selectedResturantsTypes: [],
+      prova: []
+    };
+  },
+  watch: {
+    checkedTypes: function checkedTypes(newVal, oldVal) {
+      // svuoto l'array per ricomporlo da capo ogni volta che si preme una checkbox
+      this.selectedResturantsTypes = [];
+      console.log(this.selectedResturantsTypes);
+      var arrayTypesId = []; // ciclo il nuovo array che arriva selezionando le checkbox
+
+      for (var i = 0; i < newVal.length; i++) {
+        // pusho gli id delle checkbox selezionate in un nuovo array
+        arrayTypesId.push(newVal[i].id);
+      }
+
+      console.log(arrayTypesId);
+      console.log(this.resturantsTypes);
+
+      for (var _i = 0; _i < this.resturantsTypes.length; _i++) {
+        // se gli id, dell'array che contiene gli utenti con le rispettive categorie, 
+        // contiene gli id delle checkboxe allora pusho l'intero utente in un nuovo array
+        if (arrayTypesId.includes(this.resturantsTypes[_i].type_id)) {
+          this.selectedResturantsTypes.push(this.resturantsTypes[_i]);
+        }
+      } //rimuovo gli utenti duplicati tramite una funzione
+
+
+      function removeDuplicates(data, key) {
+        return _toConsumableArray(new Map(data.map(function (item) {
+          return [key(item), item];
+        })).values());
+      }
+
+      ; //aggiorno l'array senza i duplicati
+
+      this.selectedResturantsTypes = removeDuplicates(this.selectedResturantsTypes, function (item) {
+        return item.user_id;
+      }); // console.log(this.selectedResturantsTypes);
+    }
+  },
+  methods: {
+    fetchCityResturants: function fetchCityResturants() {
+      var _this = this;
+
+      // faccio una chiamata axios per recuperare i ristoranti
+      axios.get('/api/city-resturants').then(function (res) {
+        console.log(res);
+        _this.resturants = res.data.users;
+        _this.resturantsTypes = res.data.users_type;
+        _this.types = res.data.types;
+      })["catch"](function (err) {
+        console.warn(err);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.fetchCityResturants();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=script&lang=js& ***!
@@ -5157,10 +5311,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      types: []
+      types: [],
+      inputAddress: ''
     };
   },
   methods: {
@@ -5225,7 +5401,8 @@ __webpack_require__.r(__webpack_exports__);
       //faccio una chiamata API passando come parametro l'id della tipologia cliccata
       axios.get("/api/resturant-type/".concat(this.$route.params.id)).then(function (res) {
         //salvo i dati della chiamata nell'array
-        _this.resturantsType = res.data.users; // console.log(this.resturantsType);
+        _this.resturantsType = res.data.users;
+        console.log(res);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -42239,6 +42416,210 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/CityResturants.vue?vue&type=template&id=2208dc1e&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/CityResturants.vue?vue&type=template&id=2208dc1e& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", [_vm._v("Ristoranti a: *** ")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row flex-column flex-md-row py-4" }, [
+      _c("aside", { staticClass: "col-12 col-md-3" }, [
+        _c(
+          "ul",
+          {
+            staticClass:
+              "d-flex flex-row flex-md-column flex-wrap flex-md-nowrap gap-2 justify-content-center",
+          },
+          _vm._l(_vm.types, function (type) {
+            return _c(
+              "li",
+              { key: type.id, staticClass: "form-group form-check" },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.checkedTypes,
+                      expression: "checkedTypes",
+                    },
+                  ],
+                  staticClass: "form-check-input",
+                  attrs: {
+                    type: "checkbox",
+                    id: type.name,
+                    name: "type-checkboxe",
+                  },
+                  domProps: {
+                    value: type,
+                    checked: Array.isArray(_vm.checkedTypes)
+                      ? _vm._i(_vm.checkedTypes, type) > -1
+                      : _vm.checkedTypes,
+                  },
+                  on: {
+                    change: function ($event) {
+                      var $$a = _vm.checkedTypes,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = type,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.checkedTypes = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.checkedTypes = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
+                      } else {
+                        _vm.checkedTypes = $$c
+                      }
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: type.name } }, [
+                  _vm._v(_vm._s(type.type_name)),
+                ]),
+              ]
+            )
+          }),
+          0
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 col-md-9" }, [
+        _c(
+          "div",
+          { staticClass: "types-wrapper p-4 px-md-0 d-flex gap-4 flex-wrap" },
+          _vm._l(_vm.checkedTypes, function (el, index) {
+            return _c("div", { key: index }, [
+              _c("span", [_vm._v("#" + _vm._s(el.type_name))]),
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _vm.checkedTypes.length == 0
+          ? _c(
+              "div",
+              { staticClass: "d-flex flex-wrap gap-3 px-4 px-md-0" },
+              _vm._l(_vm.resturants, function (resturant) {
+                return _c(
+                  "div",
+                  {
+                    key: resturant.id,
+                    staticClass: "card col-12 col-md-4 col-lg-3 text-center",
+                  },
+                  [
+                    _c("figure", { staticClass: "post-card-img" }, [
+                      _c("img", {
+                        attrs: { src: resturant.business_image, alt: "" },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "post-card-body" }, [
+                      _c("h3", [_vm._v(_vm._s(resturant.business_name))]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "info-wrapper" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Di: " +
+                              _vm._s(resturant.name) +
+                              " " +
+                              _vm._s(resturant.surname)
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("In: " + _vm._s(resturant.business_address)),
+                        ]),
+                      ]),
+                    ]),
+                  ]
+                )
+              }),
+              0
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.checkedTypes.length != 0
+          ? _c(
+              "div",
+              { staticClass: "d-flex flex-wrap gap-3 px-4 px-md-0" },
+              _vm._l(
+                _vm.selectedResturantsTypes,
+                function (selectedRestuantType, index) {
+                  return _c(
+                    "div",
+                    {
+                      key: index,
+                      staticClass: "card col-12 col-md-4 col-lg-3 text-center",
+                    },
+                    [
+                      _c("figure", { staticClass: "post-card-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: selectedRestuantType.business_image,
+                            alt: "",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-card-body" }, [
+                        _c("h3", [
+                          _vm._v(_vm._s(selectedRestuantType.business_name)),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "info-wrapper" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Di: " +
+                                _vm._s(selectedRestuantType.name) +
+                                " " +
+                                _vm._s(selectedRestuantType.surname)
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "In: " +
+                                _vm._s(selectedRestuantType.business_address)
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]
+                  )
+                }
+              ),
+              0
+            )
+          : _vm._e(),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&scoped=true&":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=template&id=b3c5cf30&scoped=true& ***!
@@ -42255,6 +42636,76 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("div", { staticClass: "container py-5" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12 col-sm-6" }, [
+          _c("label", { attrs: { for: "address", "class-form-label": "" } }, [
+            _vm._v(
+              "Inserisci il tuo indirizzo per trovare ristoranti nei dintorni"
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "d-flex align-items-start gap-2" },
+            [
+              _c("div", { staticClass: "d-flex flex-column flex-grow-1" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.inputAddress,
+                      expression: "inputAddress",
+                    },
+                  ],
+                  staticClass: "address form-control",
+                  attrs: {
+                    type: "text",
+                    id: "address",
+                    name: "address",
+                    placeholder: "Inserisci il tuo indirizzo completo",
+                  },
+                  domProps: { value: _vm.inputAddress },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.inputAddress = $event.target.value
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n                            Please provide a valid city.\n                        "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-green_1",
+                  attrs: {
+                    tag: "button",
+                    to: _vm.inputAddress != "" ? "/city-resturants" : "/",
+                  },
+                },
+                [
+                  _vm._v(
+                    "\n                            Cerca\n                    "
+                  ),
+                ]
+              ),
+            ],
+            1
+          ),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "container" }, [
       _c("h3", [_vm._v("Tipologie di ristoranti:")]),
       _vm._v(" "),
@@ -57897,6 +58348,75 @@ var app = new Vue({
 
 /***/ }),
 
+/***/ "./resources/js/pages/CityResturants.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/pages/CityResturants.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CityResturants_vue_vue_type_template_id_2208dc1e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CityResturants.vue?vue&type=template&id=2208dc1e& */ "./resources/js/pages/CityResturants.vue?vue&type=template&id=2208dc1e&");
+/* harmony import */ var _CityResturants_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CityResturants.vue?vue&type=script&lang=js& */ "./resources/js/pages/CityResturants.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CityResturants_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CityResturants_vue_vue_type_template_id_2208dc1e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CityResturants_vue_vue_type_template_id_2208dc1e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/CityResturants.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/CityResturants.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/pages/CityResturants.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CityResturants_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CityResturants.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/CityResturants.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CityResturants_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/CityResturants.vue?vue&type=template&id=2208dc1e&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/pages/CityResturants.vue?vue&type=template&id=2208dc1e& ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CityResturants_vue_vue_type_template_id_2208dc1e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CityResturants.vue?vue&type=template&id=2208dc1e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/CityResturants.vue?vue&type=template&id=2208dc1e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CityResturants_vue_vue_type_template_id_2208dc1e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CityResturants_vue_vue_type_template_id_2208dc1e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/Home.vue":
 /*!*************************************!*\
   !*** ./resources/js/pages/Home.vue ***!
@@ -58067,10 +58587,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/Home.vue */ "./resources/js/pages/Home.vue");
 /* harmony import */ var _pages_ResturantType_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/ResturantType.vue */ "./resources/js/pages/ResturantType.vue");
+/* harmony import */ var _pages_CityResturants_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/CityResturants.vue */ "./resources/js/pages/CityResturants.vue");
  // importo l'istanza router esportata da index.js 
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
 
  //faccio un array che conterrà le rotte
 
@@ -58082,6 +58604,10 @@ var routes = [{
   path: '/resturant-type/:id',
   name: 'resturant-type',
   component: _pages_ResturantType_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, {
+  path: '/city-resturants',
+  name: 'city-resturants',
+  component: _pages_CityResturants_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
 }]; //istanza del router
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({

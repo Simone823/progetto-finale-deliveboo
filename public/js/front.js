@@ -5168,10 +5168,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      types: []
+      types: [],
+      inputAddress: undefined
     };
   },
   methods: {
@@ -5186,6 +5193,16 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (err) {
         console.warn(err);
       });
+    },
+    fetchAddressResturant: function fetchAddressResturant() {
+      // recupero l'input dal DOM
+      var domInputAddress = document.querySelector('.address'); // controllo che l'input sia stato compilato
+
+      if (this.inputAddress != undefined) {
+        axios.get('api/');
+      } else {
+        domInputAddress.classList.add('is-invalid');
+      }
     }
   },
   mounted: function mounted() {
@@ -42266,7 +42283,64 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { staticClass: "container py-5" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12 col-sm-6" }, [
+          _c("label", { attrs: { for: "address", "class-form-label": "" } }, [
+            _vm._v(
+              "Inserisci il tuo indirizzo per trovare ristoranti nei dintorni"
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "d-flex align-items-start gap-2" }, [
+            _c("div", { staticClass: "d-flex flex-column flex-grow-1" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.inputAddress,
+                    expression: "inputAddress",
+                  },
+                ],
+                staticClass: "address form-control",
+                attrs: {
+                  type: "text",
+                  id: "address",
+                  name: "address",
+                  placeholder: "Inserisci il tuo indirizzo completo",
+                },
+                domProps: { value: _vm.inputAddress },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.inputAddress = $event.target.value
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "invalid-feedback" }, [
+                _vm._v(
+                  "\n                            Please provide a valid city.\n                        "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-green_1",
+                attrs: { type: "submit" },
+                on: { click: _vm.fetchAddressResturant },
+              },
+              [_vm._v("Cerca")]
+            ),
+          ]),
+        ]),
+      ]),
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
       _c("h3", [_vm._v("Tipologie di ristoranti:")]),
@@ -42292,38 +42366,7 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 col-md-6" }, [
-          _c("label", { attrs: { for: "address" } }, [
-            _vm._v(
-              "Inserisci il tuo indirizzo per trovare ristoranti nei dintorni"
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "d-flex align-items-center gap-2" }, [
-            _c("input", {
-              staticClass: "form-control flex-grow-1",
-              attrs: {
-                type: "text",
-                id: "address",
-                name: "address",
-                placeholder: "Inserisci il tuo indirizzo completo",
-              },
-            }),
-            _vm._v(" "),
-            _c("button", { staticClass: "btn btn-green_1" }, [_vm._v("Cerca")]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -57941,6 +57984,17 @@ var app = new Vue({
 
 /***/ }),
 
+/***/ "./resources/js/pages/CityResturant.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/pages/CityResturant.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\alex-\\ProgettiBooleanCLI\\progetto-finale-deliveboo\\resources\\js\\pages\\CityResturant.vue'");
+
+/***/ }),
+
 /***/ "./resources/js/pages/Home.vue":
 /*!*************************************!*\
   !*** ./resources/js/pages/Home.vue ***!
@@ -58111,10 +58165,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/Home.vue */ "./resources/js/pages/Home.vue");
 /* harmony import */ var _pages_ResturantType_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/ResturantType.vue */ "./resources/js/pages/ResturantType.vue");
+/* harmony import */ var _pages_CityResturant_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/CityResturant.vue */ "./resources/js/pages/CityResturant.vue");
  // importo l'istanza router esportata da index.js 
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
 
  //faccio un array che conterrà le rotte
 
@@ -58126,6 +58182,10 @@ var routes = [{
   path: '/resturant-type/:id',
   name: 'resturant-type',
   component: _pages_ResturantType_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, {
+  path: '/city-resturants',
+  name: 'city-resturants',
+  component: _pages_CityResturant_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
 }]; //istanza del router
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({

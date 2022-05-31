@@ -1,14 +1,20 @@
 <template>
 
     <div>
-        <div class="container">
+        <div class="container py-5">
             <div class="row">
-                <div class="col-12 col-md-6">
-                    <label for="address">Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</label>
-                    <div class="d-flex align-items-center gap-2">
-                        <input class="form-control flex-grow-1" type="text" id="address" name="address" placeholder="Inserisci il tuo indirizzo completo">
-                        <button class="btn btn-green_1">Cerca</button>
+                <div class="col-12 col-sm-6">
+                    <label for="address" class-form-label>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</label>
+                    <div class="d-flex align-items-start gap-2">
+                        <div class="d-flex flex-column flex-grow-1">
+                            <input class="address form-control" v-model="inputAddress" type="text" id="address" name="address" placeholder="Inserisci il tuo indirizzo completo">
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <button class="btn btn-green_1" type="submit" @click="fetchAddressResturant">Cerca</button>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -30,7 +36,8 @@
 export default {
     data() {
         return {
-            types: []
+            types: [],
+            inputAddress: undefined,
         }
     },
     methods: {
@@ -45,6 +52,16 @@ export default {
             .catch( err => {
                 console.warn(err);
             })
+        },
+        fetchAddressResturant() {
+            // recupero l'input dal DOM
+            const domInputAddress = document.querySelector('.address');
+            // controllo che l'input sia stato compilato
+            if(this.inputAddress != undefined){
+                axios.get('api/')
+            }else{
+                domInputAddress.classList.add('is-invalid');
+            }
         }
     },
     mounted() {

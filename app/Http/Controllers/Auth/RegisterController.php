@@ -104,7 +104,7 @@ class RegisterController extends Controller
         } else {
 
             // Img path image null
-            $img_path = "/public/img/fantasma.svg";
+            $img_path = Storage::putFile('uploads', "img/fantasma.svg");
 
             // Valore dato business_image uguale a img_path
             $data['business_image'] = $img_path;

@@ -11,7 +11,7 @@
 
     {{-- Row --}}
     <div class="row gy-5">
-        
+
         {{-- Foreach plates --}}
         @foreach ($plates as $plate)
             <div class="col-12 col-sm-6 col-md-6 col-lg-4">
@@ -42,6 +42,11 @@
                 </div>
             </div>
         @endforeach
+
+        {{-- Paginate --}}
+        <div class="paginate d-flex justify-content-center">
+            {{$plates->links()}}
+        </div>
     </div>
 </div>
 

@@ -96,6 +96,13 @@ export default {
                     this.selectedResturantsTypes.push(this.resturantsTypes[i])
                 }
             }
+            //rimuovo gli utenti duplicati tramite una funzione
+            function removeDuplicates(data, key) {  
+                return [...new Map(data.map(item => [key(item), item])).values()]
+            };
+            //aggiorno l'array senza i duplicati
+            this.selectedResturantsTypes = removeDuplicates(this.selectedResturantsTypes, item => item.user_id)
+            // console.log(this.selectedResturantsTypes);
         }
     },
 

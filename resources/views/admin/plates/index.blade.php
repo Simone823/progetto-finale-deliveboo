@@ -24,7 +24,6 @@
                         <h5 class="card-title fw-bold">{{$plate->name}}</h5>
                         <p class="card-text">{{$plate->ingredients}}</p>
                         <p class="card-text">Visibile: {{$plate->visibility == 1 ? 'SI' : 'NO'}}</p>
-
                     </div>
                     
                     {{-- Buttons --}}

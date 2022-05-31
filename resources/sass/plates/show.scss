@@ -20,5 +20,15 @@
                 }
             }
         }
+
+        ul {
+            list-style-position: outside;
+            max-width: max-content;
+            margin: 0 auto;
+
+            li {
+                max-width: max-content;
+            }
+        }
     }
 }

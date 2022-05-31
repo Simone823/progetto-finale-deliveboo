@@ -11,10 +11,15 @@ class UserController extends Controller
 {
 
     public function index(){
+        //prendo tutti gli utenti con tutte le rispettive categorie
+        $users_type = User::join('type_user','type_user.user_id','=','users.id')
+            ->join('types','types.id','=','type_user.type_id')
+            ->get();
         $users = User::all();
         $types = Type::all();
 
         return response()->json([
+            'users_type' => $users_type,
             'users' => $users,
             'types' => $types,
         ]);

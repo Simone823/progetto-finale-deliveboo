@@ -5173,12 +5173,70 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       resturants: [],
-      types: []
+      types: [],
+      checkedTypes: [],
+      resturantsTypes: [],
+      selectedResturantsTypes: [],
+      prova: []
     };
+  },
+  watch: {
+    checkedTypes: function checkedTypes(newVal, oldVal) {
+      // svuoto l'array per ricomporlo da capo ogni volta che si preme una checkbox
+      this.selectedResturantsTypes = [];
+      console.log(this.selectedResturantsTypes);
+      var arrayTypesId = []; // ciclo il nuovo array che arriva selezionando le checkbox
+
+      for (var i = 0; i < newVal.length; i++) {
+        // pusho gli id delle checkbox selezionate in un nuovo array
+        arrayTypesId.push(newVal[i].id);
+      }
+
+      console.log(arrayTypesId);
+      console.log(this.resturantsTypes);
+
+      for (var _i = 0; _i < this.resturantsTypes.length; _i++) {
+        // se gli id, dell'array che contiene gli utenti con le rispettive categorie, 
+        // contiene gli id delle checkboxe allora pusho l'intero utente in un nuovo array
+        if (arrayTypesId.includes(this.resturantsTypes[_i].type_id)) {
+          this.selectedResturantsTypes.push(this.resturantsTypes[_i]);
+        }
+      }
+    }
   },
   methods: {
     fetchCityResturants: function fetchCityResturants() {
@@ -5188,6 +5246,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/api/city-resturants').then(function (res) {
         console.log(res);
         _this.resturants = res.data.users;
+        _this.resturantsTypes = res.data.users_type;
         _this.types = res.data.types;
       })["catch"](function (err) {
         console.warn(err);
@@ -5317,7 +5376,8 @@ __webpack_require__.r(__webpack_exports__);
       //faccio una chiamata API passando come parametro l'id della tipologia cliccata
       axios.get("/api/resturant-type/".concat(this.$route.params.id)).then(function (res) {
         //salvo i dati della chiamata nell'array
-        _this.resturantsType = res.data.users; // console.log(this.resturantsType);
+        _this.resturantsType = res.data.users;
+        console.log(res);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -42347,7 +42407,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Ristoranti a: ***")]),
+    _c("h1", [_vm._v("Ristoranti a: *** ")]),
     _vm._v(" "),
     _c("div", { staticClass: "row flex-column flex-md-row py-4" }, [
       _c("aside", { staticClass: "col-12 col-md-3" }, [
@@ -42363,19 +42423,52 @@ var render = function () {
               { key: type.id, staticClass: "form-group form-check" },
               [
                 _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.checkedTypes,
+                      expression: "checkedTypes",
+                    },
+                  ],
                   staticClass: "form-check-input",
-                  attrs: { type: "checkbox", id: _vm.types - type.id },
-                  domProps: { value: type.id },
+                  attrs: {
+                    type: "checkbox",
+                    id: type.name,
+                    name: "type-checkboxe",
+                  },
+                  domProps: {
+                    value: type,
+                    checked: Array.isArray(_vm.checkedTypes)
+                      ? _vm._i(_vm.checkedTypes, type) > -1
+                      : _vm.checkedTypes,
+                  },
+                  on: {
+                    change: function ($event) {
+                      var $$a = _vm.checkedTypes,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = type,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.checkedTypes = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.checkedTypes = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
+                      } else {
+                        _vm.checkedTypes = $$c
+                      }
+                    },
+                  },
                 }),
                 _vm._v(" "),
-                _c(
-                  "label",
-                  {
-                    staticClass: "form-check-label",
-                    attrs: { for: _vm.types - type.id },
-                  },
-                  [_vm._v(_vm._s(type.type_name))]
-                ),
+                _c("label", { attrs: { for: type.name } }, [
+                  _vm._v(_vm._s(type.type_name)),
+                ]),
               ]
             )
           }),
@@ -42386,44 +42479,111 @@ var render = function () {
       _c("div", { staticClass: "col-12 col-md-9" }, [
         _c(
           "div",
-          { staticClass: "d-flex flex-wrap gap-3 px-4 px-md-0" },
-          _vm._l(_vm.resturants, function (resturant) {
-            return _c(
-              "div",
-              {
-                key: resturant.id,
-                staticClass: "card col-12 col-md-4 col-lg-3 text-center",
-              },
-              [
-                _c("figure", { staticClass: "post-card-img" }, [
-                  _c("img", {
-                    attrs: { src: resturant.business_image, alt: "" },
-                  }),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "post-card-body" }, [
-                  _c("h3", [_vm._v(_vm._s(resturant.business_name))]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "info-wrapper" }, [
-                    _c("p", [
-                      _vm._v(
-                        "Di: " +
-                          _vm._s(resturant.name) +
-                          " " +
-                          _vm._s(resturant.surname)
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v("In: " + _vm._s(resturant.business_address)),
-                    ]),
-                  ]),
-                ]),
-              ]
-            )
+          { staticClass: "types-wrapper p-4 px-md-0 d-flex gap-4 flex-wrap" },
+          _vm._l(_vm.checkedTypes, function (el, index) {
+            return _c("div", { key: index }, [
+              _c("span", [_vm._v("#" + _vm._s(el.type_name))]),
+            ])
           }),
           0
         ),
+        _vm._v(" "),
+        _vm.checkedTypes.length == 0
+          ? _c(
+              "div",
+              { staticClass: "d-flex flex-wrap gap-3 px-4 px-md-0" },
+              _vm._l(_vm.resturants, function (resturant) {
+                return _c(
+                  "div",
+                  {
+                    key: resturant.id,
+                    staticClass: "card col-12 col-md-4 col-lg-3 text-center",
+                  },
+                  [
+                    _c("figure", { staticClass: "post-card-img" }, [
+                      _c("img", {
+                        attrs: { src: resturant.business_image, alt: "" },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "post-card-body" }, [
+                      _c("h3", [_vm._v(_vm._s(resturant.business_name))]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "info-wrapper" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Di: " +
+                              _vm._s(resturant.name) +
+                              " " +
+                              _vm._s(resturant.surname)
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("In: " + _vm._s(resturant.business_address)),
+                        ]),
+                      ]),
+                    ]),
+                  ]
+                )
+              }),
+              0
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.checkedTypes.length != 0
+          ? _c(
+              "div",
+              { staticClass: "d-flex flex-wrap gap-3 px-4 px-md-0" },
+              _vm._l(
+                _vm.selectedResturantsTypes,
+                function (selectedRestuantType, index) {
+                  return _c(
+                    "div",
+                    {
+                      key: index,
+                      staticClass: "card col-12 col-md-4 col-lg-3 text-center",
+                    },
+                    [
+                      _c("figure", { staticClass: "post-card-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: selectedRestuantType.business_image,
+                            alt: "",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-card-body" }, [
+                        _c("h3", [
+                          _vm._v(_vm._s(selectedRestuantType.business_name)),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "info-wrapper" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Di: " +
+                                _vm._s(selectedRestuantType.name) +
+                                " " +
+                                _vm._s(selectedRestuantType.surname)
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "In: " +
+                                _vm._s(selectedRestuantType.business_address)
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]
+                  )
+                }
+              ),
+              0
+            )
+          : _vm._e(),
       ]),
     ]),
   ])

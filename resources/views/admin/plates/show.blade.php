@@ -35,13 +35,13 @@
                     <p class="card-text mb-3 fs-5">Prezzo: <span>{{ $plate->price }}&euro;</span></p>
     
                     {{-- Buttons --}}
-                    <div class="buttons d-flex flex-wrap gap-2 justify-content-center align-items-center">
-                        <a class="btn btn-warning" href="{{ route('admin.plates.edit', $plate->id) }}">Modifica</a>
+                    <div class="buttons d-flex flex-wrap gap-4 justify-content-center align-items-center">
+                        <a class="btn btn-violet btn-hover-green_1" href="{{ route('admin.plates.edit', $plate->id) }}">Modifica</a>
                         <form onsubmit="return confirm('Sei sicuro di voler eliminare ({{$plate->name}}) dal tuo database?')" action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
     
-                            <button class="btn btn-danger" type="submit">
+                            <button class="btn btn-violet btn-hover-green_1" type="submit">
                                 Elimina
                             </button>
                         </form>

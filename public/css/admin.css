@@ -12179,14 +12179,11 @@ fieldset:disabled .btn {
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  background-color: #D0EB99;
 }
 
 #app {
-  flex-grow: 1;
+  min-height: 100vh;
   background-color: #D0EB99;
 }
 
@@ -12319,9 +12316,8 @@ main {
 }
 
 #section_plate_show {
-  display: flex;
-  justify-content: center;
   padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 #section_plate_show .card {

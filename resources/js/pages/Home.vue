@@ -12,7 +12,11 @@
                                 Please provide a valid city.
                             </div>
                         </div>
-                        <button class="btn btn-green_1" type="submit" @click="fetchAddressResturant">Cerca</button>
+                        <!-- TODO disabilitare il bottone -->
+                        <router-link tag="button" :to="inputAddress != '' ? '/city-resturants' : '/' "
+                            class="btn btn-green_1">
+                                Cerca
+                        </router-link>
                     </div>
                     
                 </div>
@@ -37,7 +41,7 @@ export default {
     data() {
         return {
             types: [],
-            inputAddress: undefined,
+            inputAddress: '',
         }
     },
     methods: {
@@ -53,16 +57,6 @@ export default {
                 console.warn(err);
             })
         },
-        fetchAddressResturant() {
-            // recupero l'input dal DOM
-            const domInputAddress = document.querySelector('.address');
-            // controllo che l'input sia stato compilato
-            if(this.inputAddress != undefined){
-                axios.get('api/')
-            }else{
-                domInputAddress.classList.add('is-invalid');
-            }
-        }
     },
     mounted() {
         this.fetchTypes();

@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 import Home from '../pages/Home.vue';
 import ResturantType from '../pages/ResturantType.vue';
-import CityResturants from '../pages/CityResturant.vue';
+import CityResturants from '../pages/CityResturants.vue';
 //faccio un array che conterrà le rotte
 const routes = [
     {

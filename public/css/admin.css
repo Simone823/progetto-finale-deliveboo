@@ -12321,10 +12321,12 @@ main {
 #section_plate_show {
   display: flex;
   justify-content: center;
+  padding-top: 40px;
 }
 
 #section_plate_show .card {
-  padding-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #section_plate_show .card .wrapper_image .plate_image {

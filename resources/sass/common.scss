@@ -18,7 +18,7 @@
     }
 }
 
-//BTN TRANSPARENT
+//BTN TRANSPARENT - WHITE
 .btn-tr-white{
     background-color: transparent;
     border: 1px solid white;
@@ -44,7 +44,13 @@
 
 // BTN WHITE
 .btn-white{
-    background-color: $white_1;
+    background-color: $white;
+    opacity: 0.8;
+    transition: all 250ms linear;
+
+    &:hover{
+        opacity: 1;
+    }
 }
 
 //BACKGROUND PURPLE

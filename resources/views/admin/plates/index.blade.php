@@ -3,8 +3,8 @@
 @section('metaTitle', 'DELIVEBOO DB | PIATTI')
 
 @section('content')
-{{-- Wrapper cards plate --}}
-<div class="wrapper_cards_plate container py-5 px-3">
+{{-- Section plates index--}}
+<div id="section_plates_index" class="wrapper_cards_plate container py-5 px-3">
 
     {{-- Title --}}
     <h3 class="mb-4 text-violet fw-bold fs-3">Elenco dei piatti del ristorante: {{$user->business_name}}</h3>
@@ -17,7 +17,11 @@
             <div class="col-12 col-sm-6 col-md-6 col-lg-4">
                 {{-- Card --}}
                 <div class="card bkg-white_1 shadow-lg h-100">
-                    <img class="card-img-top" src="https://picsum.photos/1920/1080" alt="">
+
+                    {{-- Plate image --}}
+                    <figure class="plate_image">
+                        <img src="{{asset('storage/'.$plate->image)}}" alt="">
+                    </figure>
 
                     {{-- Description card body --}}
                     <div class="description card-body text-violet fw-bolder">

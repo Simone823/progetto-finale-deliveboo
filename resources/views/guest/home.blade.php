@@ -24,8 +24,8 @@
             </button>
 
             {{-- MENU ESTESO --}}
-            <div class="d-none d-md-block justify-content-end">
-                <ul class="navbar-nav">            
+            <div class="d-none d-md-flex justify-content-end">
+                <ul class="navbar-nav flex-md-row gap-4">            
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -35,7 +35,7 @@
                             </button>
                         </a>
 
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
                             <li>
                                 <a class="dropdown-item" href="#">
                                     <i class="icon-color me-2 fa-solid fa-utensils"></i>
@@ -44,13 +44,13 @@
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#">
-                                    <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                    <i class="icon-color me-2 fa-solid fa-briefcase"></i>
                                     Lavora con noi
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#">
-                                    <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                    <i class="icon-color me-2 fa-solid fa-building"></i>
                                     Deliveroo for Work
                                 </a>
                             </li>

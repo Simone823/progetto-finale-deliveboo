@@ -56,14 +56,25 @@
                             </li>
                         </ul>
                     </li>
-
+                    
                     <li class="nav-item">
-                        <a class="nav-link">
-                            <button class="btn-white">
-                                <i class="icon-color me-2 fa-solid fa-house"></i>
-                                Registrati o accedi
-                            </button>
-                        </a>
+                        @if (Route::has('login'))
+                            @auth
+                                <a class="nav-link" href="{{ url('/admin/homepage') }}">
+                                    <button class="btn-white">
+                                        <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                        Dashboard                                 
+                                    </button>
+                                </a>
+                            @else
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    <button class="btn-white">
+                                        <i class="icon-color me-2 fa-solid fa-home"></i>
+                                        Registrati o accedi                                
+                                    </button>
+                                </a>
+                            @endauth
+                        @endif
                     </li>
 
                 </ul>
@@ -72,20 +83,16 @@
             {{-- MENU BURGER --}}
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-    
-                
-    
+                    
                     <li class="nav-item">
                         <a class="nav-link">
                             <i class="me-2 fa-solid fa-house"></i>
-                            gggg
-                            
+                            gggg                            
                         </a>
                     </li>
                     
                 </ul>
             </div>
-
 
         </div>
     </nav>
@@ -97,24 +104,26 @@
 
 
 
-    {{-- Container --}}
+
+
     <div class="container">
 
-        {{-- Link login register home --}}
+
         @if (Route::has('login'))
+        
         <div class="top-right links">
             @auth
-            <a href="{{ url('/admin/homepage') }}">Home</a>
+                <a href="{{ url('/admin/homepage') }}">Home</a>
             @else
-            <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('login') }}">Login</a>
     
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
-            @endif
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}">Register</a>
+                @endif
             @endauth
         </div>
         @endif
-    </div>
+    </div> 
    
 
     {{-- faccio il div con l'id per Vue --}}

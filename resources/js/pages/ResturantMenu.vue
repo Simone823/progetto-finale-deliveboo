@@ -22,10 +22,10 @@
         <section id="resturant-menu">
             <div class="container pt-5">
                 <h3>Ecco il nostro menù</h3>
-                <div class="row">
-                    <div class="col">
-                        qui andranno i piatti del menù
-                    </div>
+                <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
+                <div class="cards-wrapper row justify-content-center">
+                    <MenuCard v-for="(menuPlate,index) in menuPlates" :key="index"
+                        :menuPlate="menuPlate" />
                 </div>
             </div>
         </section>
@@ -33,11 +33,18 @@
 </template>
 
 <script>
+import MenuCard from '../components/MenuCard.vue'
+
 export default {
+
+    components: {
+        MenuCard,
+    },
+
     data() {
         return {
             resturant: [],
-            menu: [],
+            menuPlates: [],
         }
     },
     methods: {
@@ -46,7 +53,8 @@ export default {
             .then( res => {
                 console.log(res);
                 this.resturant = res.data.user[0];
-                this.resturant = res.data.user_plates[0];
+                this.menuPlates = res.data.user_plates;
+                console.log(this.menuPlates)
             })
             .catch( err => {
                 console.warn(err);
@@ -69,6 +77,5 @@ export default {
             object-fit: cover;
             object-position: center;
         }
-
     }
 </style>

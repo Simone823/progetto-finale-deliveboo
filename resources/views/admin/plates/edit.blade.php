@@ -8,7 +8,7 @@
     @if ($plate->user_id == Auth::id())    
         <h1>Edit</h1>
 
-        <form action="{{ route('admin.plates.update', $plate->id) }}" method="POST">
+        <form action="{{ route('admin.plates.update', $plate->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             {{-- name --}}
@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label for="image" class="col-md-4 col-form-label text-md-right"></label>
                 <div class="col-md-6">
-                    <input placeholder="Immagine Ristorante" id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" autocomplete="business_image" autofocus>
+                    <input accept="image/*" placeholder="Immagine Piatto" id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image', $plate->image) }}" autofocus>
 
                     @error('image')
                         <div class="alert alert-danger">{{ $message }}</div>

@@ -18,7 +18,7 @@
             </a>
 
             {{-- BURGER ICON --}}
-            <button class="d-md-none btn-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="d-md-none btn-standard btn-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="icon-color me-2 fa-solid fa-bars"></i>
                 Menu            
             </button>

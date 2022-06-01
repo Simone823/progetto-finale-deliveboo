@@ -127,7 +127,6 @@
                             @endguest    
                     </ul>
                 </div>
-
                 
     
                 {{-- MENU BURGER --}}
@@ -146,16 +145,14 @@
     
             </div>
         </nav>
-    </header>
-    
-    
-    
-    
+    </header>  
 
-    <div id="app">
-        <main class="">
+    <main>
+
+        <section class="main-content">
             @yield('content')
-        </main>
-    </div>
+        </section>
+
+    </main>
 </body>
 </html>

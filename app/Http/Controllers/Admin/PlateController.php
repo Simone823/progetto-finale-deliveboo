@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Plate;
 use App\User;
+use Illuminate\Support\Facades\Storage;
 
 class PlateController extends Controller
 {
@@ -59,12 +60,15 @@ class PlateController extends Controller
             'visibility' => 'required|boolean',
         ]);
 
+        // Id utente loggato
         $id_user = Auth::id();
-
+        
         //salvo in data tutti i dati arrivati dal form
         $data = $request->all();
+
         //creo uno slug unico per il piatto
         $slug = User::getUniqueSlug( $data['name'] );
+
         //salvo i dati nel nuovo piatto
         $plate = new Plate();
         $plate->fill( $data );
@@ -115,7 +119,7 @@ class PlateController extends Controller
             'name' => 'required|string|min:4|max:200',
             'ingredients' => 'required',
             'price' => 'required|numeric',
-            'image' => 'nullable|file',
+            'image' => 'nullable|image|file|mimetypes:image/jpeg,image/png,image/svg|max:2048',
             'visibility' => 'required|boolean',
         ]);
 
@@ -129,6 +133,17 @@ class PlateController extends Controller
             //creo uno slug unico per il piatto
             $slug = User::getUniqueSlug( $data['name'] );
             $data['slug'] = $slug;
+        }
+
+        // Se esiste il valore del campo image
+        if(array_key_exists('image', $data)) {
+            $img_path = Storage::put('uploads', $data['image']);
+
+            $data['image'] = $img_path;
+        } else {
+            $img_path = $plate['image'];
+
+            $data['image'] = $img_path;
         }
         
         //aggiorno i dati nel nuovo piatto

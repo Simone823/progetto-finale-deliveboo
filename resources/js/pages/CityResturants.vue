@@ -7,9 +7,9 @@
             <!-- checkboxe sidebar -->
             <aside class="col-12 col-md-3">
                 <ul class="d-flex flex-row flex-md-column flex-wrap flex-md-nowrap gap-2 justify-content-center">
-                    <li class="form-group form-check" v-for="type in types" :key="type.id">
-                        <input type="checkbox" class="form-check-input" :value="type" :id="type.name" name="type-checkboxe" v-model="checkedTypes">
-                        <label :for="type.name">{{type.type_name}}</label>
+                    <li class="form-group form-check" v-for="(type,index) in types" :key="type.id">
+                        <input type="checkbox" class="form-check-input" :value="type.id" :id="`types-${type.id}`" :name="types[index]" v-model="checkedTypes">
+                        <label :for="`types-${type.id}`">{{type.type_name}}</label>
                     </li>
                 </ul>
             </aside>

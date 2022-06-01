@@ -5139,6 +5139,53 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MyJumbotron.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MyJumbotron.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ResturantTypeCard.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ResturantTypeCard.vue?vue&type=script&lang=js& ***!
@@ -5350,6 +5397,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_MyJumbotron_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/MyJumbotron.vue */ "./resources/js/components/MyJumbotron.vue");
 //
 //
 //
@@ -5368,27 +5416,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    MyJumbotron: _components_MyJumbotron_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       types: [],
@@ -10610,6 +10642,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "figure[data-v-45819a0c] {\n  width: 100%;\n  aspect-ratio: 5/4;\n  overflow: hidden;\n}\nfigure img[data-v-45819a0c] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\nfigure:hover img[data-v-45819a0c] {\n  transform: scale(1.1, 1.1);\n  transition: all 500ms;\n}\n.card-wrapper[data-v-45819a0c] {\n  cursor: pointer;\n  border-radius: 10px;\n  overflow: hidden;\n  width: 100%;\n  aspect-ratio: 9/16;\n  position: relative;\n  background-color: beige;\n}\n.card-wrapper .ingredients[data-v-45819a0c] {\n  font-weight: 600;\n}\n.card-wrapper .ingredients-list[data-v-45819a0c] {\n  height: 50px;\n  overflow-y: auto;\n  overflow-x: hidden;\n  padding: 0 10px 0 0;\n}\n.card-wrapper .card-footer[data-v-45819a0c] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n}\n.card-wrapper[data-v-45819a0c] ::-webkit-scrollbar {\n  width: 5px;\n}\n.card-wrapper[data-v-45819a0c] ::-webkit-scrollbar-track {\n  background-color: #D0EB99;\n  border-radius: 100px;\n  margin-right: 0;\n}\n.card-wrapper[data-v-45819a0c] ::-webkit-scrollbar-thumb {\n  background-color: #00CCBC;\n  border-radius: 100px;\n}\n.card-wrapper[data-v-45819a0c] ::-webkit-scrollbar-thumb:hover {\n  background-color: #14ebd9;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".bg-green[data-v-07777776] {\n  background-color: #00CCBC;\n  position: relative;\n}\n.bg-green[data-v-07777776]::after {\n  display: block;\n  content: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920.78 273.12'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d0eb99;%7D%3C/style%3E%3C/defs%3E%3Cg id='Livello_2' data-name='Livello 2'%3E%3Cg id='Livello_1-2' data-name='Livello 1'%3E%3Cpolygon class='cls-1' points='1920.78 273.12 0 273.12 0 157.14 1920.78 0 1920.78 273.12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  bottom: -7px;\n}\n.bg-green .jumbotron_title[data-v-07777776] {\n  color: #3e235d;\n  font-weight: 800;\n}\n.bg-green .jumbotron_image[data-v-07777776] {\n  width: 60%;\n  display: block;\n  z-index: 999;\n}\n.bg-green .col-sx[data-v-07777776] {\n  z-index: 999;\n}", ""]);
 
 // exports
 
@@ -41919,6 +41970,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--8-2!../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../node_modules/vue-loader/lib??vue-loader-options!./MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ResturantTypeCard.vue?vue&type=style&index=0&id=1e670f85&lang=scss&scoped=true&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ResturantTypeCard.vue?vue&type=style&index=0&id=1e670f85&lang=scss&scoped=true& ***!
@@ -42663,6 +42744,133 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MyJumbotron.vue?vue&type=template&id=07777776&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MyJumbotron.vue?vue&type=template&id=07777776&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "bg-green p-0" }, [
+    _c("div", { staticClass: "container p-0" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "row flex-wrap justify-content-center align-items-center p-0",
+        },
+        [
+          _c("div", { staticClass: "col-12 col-sm-6 col-sx py-sm-2 px-4" }, [
+            _c("h4", { staticClass: "jumbotron_title fs-2 " }, [
+              _vm._v("I piatti che vuoi, a casa tua."),
+            ]),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "text-white fs-5",
+                attrs: { for: "address", "class-form-label": "" },
+              },
+              [
+                _vm._v(
+                  "Inserisci il tuo indirizzo per trovare ristoranti nei dintorni"
+                ),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "d-flex align-items-start gap-2 " },
+              [
+                _c("div", { staticClass: "d-flex flex-column flex-grow-1" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.inputAddress,
+                        expression: "inputAddress",
+                      },
+                    ],
+                    staticClass: "address form-control",
+                    attrs: {
+                      type: "text",
+                      id: "address",
+                      name: "address",
+                      placeholder: "Inserisci il tuo indirizzo completo",
+                    },
+                    domProps: { value: _vm.inputAddress },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.inputAddress = $event.target.value
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "invalid-feedback" }, [
+                    _vm._v(
+                      "\n                                Please provide a valid city.\n                            "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-white",
+                    attrs: {
+                      tag: "button",
+                      to: _vm.inputAddress != "" ? "/city-resturants" : "/",
+                    },
+                  },
+                  [
+                    _vm._v(
+                      "\n                                Cerca\n                        "
+                    ),
+                  ]
+                ),
+              ],
+              1
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12 col-sm-6" }, [
+            _c(
+              "div",
+              {
+                staticClass: "d-flex justify-content-center align-items-center",
+              },
+              [
+                _c("img", {
+                  staticClass: "jumbotron_image",
+                  attrs: { src: __webpack_require__(/*! /public/img/motocycle.png */ "./public/img/motocycle.png"), alt: "" },
+                }),
+              ]
+            ),
+          ]),
+        ]
+      ),
+    ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ResturantTypeCard.vue?vue&type=template&id=1e670f85&scoped=true&":
 /*!********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ResturantTypeCard.vue?vue&type=template&id=1e670f85&scoped=true& ***!
@@ -42987,100 +43195,36 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container py-5" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 col-sm-6" }, [
-          _c("label", { attrs: { for: "address", "class-form-label": "" } }, [
-            _vm._v(
-              "Inserisci il tuo indirizzo per trovare ristoranti nei dintorni"
-            ),
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "d-flex align-items-start gap-2" },
-            [
-              _c("div", { staticClass: "d-flex flex-column flex-grow-1" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.inputAddress,
-                      expression: "inputAddress",
-                    },
-                  ],
-                  staticClass: "address form-control",
-                  attrs: {
-                    type: "text",
-                    id: "address",
-                    name: "address",
-                    placeholder: "Inserisci il tuo indirizzo completo",
-                  },
-                  domProps: { value: _vm.inputAddress },
-                  on: {
-                    input: function ($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.inputAddress = $event.target.value
-                    },
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "invalid-feedback" }, [
-                  _vm._v(
-                    "\n                            Please provide a valid city.\n                        "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "btn btn-green_1",
-                  attrs: {
-                    tag: "button",
-                    to: _vm.inputAddress != "" ? "/city-resturants" : "/",
-                  },
-                },
-                [
-                  _vm._v(
-                    "\n                            Cerca\n                    "
-                  ),
-                ]
-              ),
-            ],
-            1
-          ),
-        ]),
-      ]),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "container" }, [
-      _c("h3", [_vm._v("Tipologie di ristoranti:")]),
+  return _c(
+    "div",
+    [
+      _c("MyJumbotron"),
       _vm._v(" "),
-      _c(
-        "ul",
-        _vm._l(_vm.types, function (type) {
-          return _c(
-            "router-link",
-            {
-              key: type.id,
-              staticClass: "link",
-              attrs: {
-                tag: "li",
-                to: { name: "resturant-type", params: { id: type.id } },
+      _c("div", { staticClass: "container" }, [
+        _c("h3", [_vm._v("Tipologie di ristoranti:")]),
+        _vm._v(" "),
+        _c(
+          "ul",
+          _vm._l(_vm.types, function (type) {
+            return _c(
+              "router-link",
+              {
+                key: type.id,
+                staticClass: "link",
+                attrs: {
+                  tag: "li",
+                  to: { name: "resturant-type", params: { id: type.id } },
+                },
               },
-            },
-            [_vm._v("\n            " + _vm._s(type.type_name) + "\n        ")]
-          )
-        }),
-        1
-      ),
-    ]),
-  ])
+              [_vm._v("\n            " + _vm._s(type.type_name) + "\n        ")]
+            )
+          }),
+          1
+        ),
+      ]),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -58639,6 +58783,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./public/img/motocycle.png":
+/*!**********************************!*\
+  !*** ./public/img/motocycle.png ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/motocycle.png?9095359bd710733b1f345e98cb95c83f";
+
+/***/ }),
+
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -58766,6 +58921,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuCard_vue_vue_type_template_id_45819a0c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuCard_vue_vue_type_template_id_45819a0c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/MyJumbotron.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/MyJumbotron.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MyJumbotron_vue_vue_type_template_id_07777776_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MyJumbotron.vue?vue&type=template&id=07777776&scoped=true& */ "./resources/js/components/MyJumbotron.vue?vue&type=template&id=07777776&scoped=true&");
+/* harmony import */ var _MyJumbotron_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MyJumbotron.vue?vue&type=script&lang=js& */ "./resources/js/components/MyJumbotron.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _MyJumbotron_vue_vue_type_style_index_0_id_07777776_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true& */ "./resources/js/components/MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _MyJumbotron_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MyJumbotron_vue_vue_type_template_id_07777776_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MyJumbotron_vue_vue_type_template_id_07777776_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "07777776",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/MyJumbotron.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/MyJumbotron.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/MyJumbotron.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./MyJumbotron.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MyJumbotron.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/components/MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_style_index_0_id_07777776_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--8-2!../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../node_modules/vue-loader/lib??vue-loader-options!./MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MyJumbotron.vue?vue&type=style&index=0&id=07777776&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_style_index_0_id_07777776_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_style_index_0_id_07777776_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_style_index_0_id_07777776_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_style_index_0_id_07777776_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/components/MyJumbotron.vue?vue&type=template&id=07777776&scoped=true&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/MyJumbotron.vue?vue&type=template&id=07777776&scoped=true& ***!
+  \********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_template_id_07777776_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./MyJumbotron.vue?vue&type=template&id=07777776&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MyJumbotron.vue?vue&type=template&id=07777776&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_template_id_07777776_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MyJumbotron_vue_vue_type_template_id_07777776_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

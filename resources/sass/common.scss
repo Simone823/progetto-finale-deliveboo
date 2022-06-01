@@ -1,3 +1,15 @@
+/* SCROLL-BAR STYLE */
+::-webkit-scrollbar {
+    width: 8px;
+}
+/* MANIGLIA DI SCORRIMENTO */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: $green_1;
+}
+
+
+
 // BTN STANDARD
 .btn-standard{
     border: none;
@@ -53,25 +65,11 @@
     }
 }
 
-//BACKGROUND PURPLE
-.bg-purple{
-    background-color: $purple_1;
-}
-
 //BACKGROUND GREEN
 .bg-green{
     background-color: $green_1;
 }
 
-//BACKGROUND ORANGE
-.bg-orange{
-    background-color: $orange_1;
-}
-
-//BACKGROUND VIOLET
-.bg-violet{
-    background-color: $violet;
-}
 
 
 

@@ -11,21 +11,25 @@
 </head>
 <body>
     <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
+        <div class="container-md">
             {{-- LOGO --}}
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="Deliveboo">
             </a>
 
             {{-- BURGER ICON --}}
-            <button class="d-md-none btn-standard btn-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="icon-color me-2 fa-solid fa-bars"></i>
-                Menu            
-            </button>
+            <div id="burger-icon" class="d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <label for="check">
+                    <input type="checkbox" id="check"/> 
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>        
+            </div>
 
             {{-- MENU ESTESO --}}
             <div class="d-none d-md-flex justify-content-end">
-                <ul class="navbar-nav flex-md-row gap-4">            
+                <ul class="navbar-nav flex-md-row gap-2">            
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,10 +73,17 @@
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">
+                                <a class="nav-link" href="{{ route('login') }}">
                                     <button class="btn-standard btn-white">
                                         <i class="icon-color me-2 fa-solid fa-home"></i>
-                                        Registrati o accedi                                
+                                        Accedi          
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    <button class="btn-standard btn-white">
+                                        Diventa nostro partner     
                                     </button>
                                 </a>
                             </li>

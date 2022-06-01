@@ -13,8 +13,7 @@
     <script src="{{ asset('js/admin.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
@@ -26,11 +25,11 @@
 <body>
 
     <header>
-        <nav id="navbar_auth" class="navbar navbar-expand-lg navbar-light">
+        <nav id="navbar_auth" class="navbar navbar-expand-lg navbar-light ">
             <div class="container">
                 {{-- LOGO --}}
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img id="header_logo_deliveboo" src="{{ asset('img/logo_turchese.png') }}" alt="Deliveboo">
+                    <img id="header_logo_deliveboo" src="{{ asset('img/logo_turquoise.svg') }}" alt="Deliveboo">
                 </a>
     
                 {{-- BURGER ICON --}}
@@ -44,7 +43,7 @@
                 </div>
     
                 {{-- MENU ESTESO --}}
-                <div class="d-none d-md-flex justify-content-end">
+                <div class="d-none d-md-flex justify-content-end align-items-center">
                     <ul class="navbar-nav flex-md-row gap-4">            
                         
                         <!-- Authentication Links -->
@@ -72,26 +71,26 @@
                             @else
                             
                                 {{-- Link wrapper --}}
-                                <div class="link_wrapper">
+                                <div class="link_wrapper d-flex align-items-center">
                                     
                                     {{-- List link --}}
                                     <ul class="lists_link list-unstyled d-flex align-items-center gap-4">
                                         <li>
-                                            <a class="@if(Route::is('admin.homepage'))active @endif fw-bolder text-uppercase text-decoration-none" href="{{route('admin.homepage')}}">
+                                            <a class="@if(Route::is('admin.homepage'))active @endif text-decoration-none" href="{{route('admin.homepage')}}">
                                                 <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
                                                     Dashboard
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="fw-bolder text-uppercase text-decoration-none" href="{{route('admin.plates.index')}}">
+                                            <a class=" text-decoration-none" href="{{route('admin.plates.index')}}">
                                                 <span class="@if(Route::is('admin.plates.index'))active @endif navbar_dashboard">
                                                     Tutti i Piatti
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="fw-bolder text-uppercase text-decoration-none" href="{{route('admin.plates.create')}}">
+                                            <a class=" text-decoration-none" href="{{route('admin.plates.create')}}">
                                                 <span class="@if(Route::is('admin.plates.create'))active @endif navbar_dashboard">
                                                     Crea nuovo piatto
                                                 </span>
@@ -99,19 +98,21 @@
                                         </li>
                                     </ul>
                                 </div>
-                                
+
                                 {{-- Dropdown logout --}}
-                                <div class="dropdown">
-                                    <button class="btn rounded-pill dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
-                                        <span id="navbar_user_color">
+                                <div class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="btn-standard btn-green_1 fw-bold">
                                             {{ Auth::user()->name }}
-                                        </span> 
-                                    </button>
-                            
+                                            <i class="ms-2 fa-solid fa-caret-down"></i>
+                                        </button>
+                                    </a>
+            
                                     {{-- Drop item --}}
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
                                         <li>
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
                                                 {{ __('Logout') }}
                                             </a>
                                         </li>
@@ -122,6 +123,7 @@
                                         </li>
                                     </ul>
                                 </div>
+                                
                             @endguest    
                     </ul>
                 </div>

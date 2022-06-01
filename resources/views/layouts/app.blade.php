@@ -26,7 +26,7 @@
 
     <header>
         <nav id="navbar_auth" class="navbar navbar-expand-lg navbar-light ">
-            <div class="container">
+            <div class="container-md">
                 {{-- LOGO --}}
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img id="header_logo_deliveboo" src="{{ asset('img/logo_turquoise.svg') }}" alt="Deliveboo">
@@ -56,7 +56,7 @@
                                 </a>
                             </li>
                             
-                            @if (Route::has('register'))
+                        @if (Route::has('register'))
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">
@@ -66,80 +66,147 @@
                                 </a>
                             </li>
                             
-                            @endif
+                        @endif
                             
-                            @else
+                        @else
                             
-                                {{-- Link wrapper --}}
-                                <div class="link_wrapper d-flex align-items-center">
+                            {{-- Link wrapper --}}
+                            <div class="link_wrapper d-flex align-items-center">
                                     
-                                    {{-- List link --}}
-                                    <ul class="lists_link list-unstyled d-flex align-items-center gap-4">
-                                        <li>
-                                            <a class="@if(Route::is('admin.homepage'))active @endif text-decoration-none" href="{{route('admin.homepage')}}">
-                                                <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
-                                                    Dashboard
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class=" text-decoration-none" href="{{route('admin.plates.index')}}">
-                                                <span class="@if(Route::is('admin.plates.index'))active @endif navbar_dashboard">
-                                                    Tutti i Piatti
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class=" text-decoration-none" href="{{route('admin.plates.create')}}">
-                                                <span class="@if(Route::is('admin.plates.create'))active @endif navbar_dashboard">
-                                                    Crea nuovo piatto
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                {{-- List link --}}
+                                <ul class="lists_link list-unstyled d-flex align-items-center gap-4">
+                                    <li>
+                                        <a class="@if(Route::is('admin.homepage'))active @endif text-decoration-none" href="{{route('admin.homepage')}}">
+                                            <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
+                                                Dashboard
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class=" text-decoration-none" href="{{route('admin.plates.index')}}">
+                                            <span class="@if(Route::is('admin.plates.index'))active @endif navbar_dashboard">
+                                                Tutti i Piatti
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class=" text-decoration-none" href="{{route('admin.plates.create')}}">
+                                            <span class="@if(Route::is('admin.plates.create'))active @endif navbar_dashboard">
+                                                Crea nuovo piatto
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
 
-                                {{-- Dropdown logout --}}
-                                <div class="nav-item dropdown">
-                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <button class="btn-standard btn-green_1 fw-bold">
-                                            {{ Auth::user()->name }}
-                                            <i class="ms-2 fa-solid fa-caret-down"></i>
-                                        </button>
-                                    </a>
+                            {{-- Dropdown logout --}}
+                            <div class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn-standard btn-green_1 fw-bold">
+                                        {{ Auth::user()->name }}
+                                        <i class="ms-2 fa-solid fa-caret-down"></i>
+                                    </button>
+                                </a>
             
-                                    {{-- Drop item --}}
-                                    <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                                        <li>
-                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
-                                                {{ __('Logout') }}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-                            @endguest    
+                                {{-- Drop item --}}
+                                <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
+                                            {{ __('Logout') }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>                                
+                        @endguest    
                     </ul>
                 </div>
                 
     
                 {{-- MENU BURGER --}}
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                <div class="nav-burger collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav">            
                         
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="me-2 fa-solid fa-house"></i>
-                                gggg                            
-                            </a>
-                        </li>
-                        
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item text-center bg-purple">
+                                <a class="nav-link text-reset" href="{{ route('login') }}">
+                                    Accedi
+                                </a>
+                            </li>
+                            
+                        @if (Route::has('register'))
+
+                            <li class="nav-item text-center bg-green">
+                                <a class="nav-link text-reset" href="{{ route('register') }}">
+                                    Diventa nostro partner                                    
+                                </a>
+                            </li>
+                            
+                        @endif
+                            
+                        @else
+                            
+                            {{-- Link wrapper --}}
+                            <div class="link_wrapper d-flex align-items-center">
+                                    
+                                {{-- List link --}}
+                                <ul class="lists_link list-unstyled d-flex align-items-center gap-4">
+                                    <li>
+                                        <a class="@if(Route::is('admin.homepage'))active @endif text-decoration-none" href="{{route('admin.homepage')}}">
+                                            <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
+                                                Dashboard
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class=" text-decoration-none" href="{{route('admin.plates.index')}}">
+                                            <span class="@if(Route::is('admin.plates.index'))active @endif navbar_dashboard">
+                                                Tutti i Piatti
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class=" text-decoration-none" href="{{route('admin.plates.create')}}">
+                                            <span class="@if(Route::is('admin.plates.create'))active @endif navbar_dashboard">
+                                                Crea nuovo piatto
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {{-- Dropdown logout --}}
+                            <div class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn-standard btn-green_1 fw-bold">
+                                        {{ Auth::user()->name }}
+                                        <i class="ms-2 fa-solid fa-caret-down"></i>
+                                    </button>
+                                </a>
+            
+                                {{-- Drop item --}}
+                                <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
+                                            {{ __('Logout') }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>                                
+                        @endguest    
                     </ul>
                 </div>
     

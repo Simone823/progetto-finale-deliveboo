@@ -34,6 +34,15 @@
     background-color: $white_1;
 }
 
+//BACKGROUND PURPLE
+.bg-purple{
+    background-color: $purple;
+}
+
+//BACKGROUND GREEN
+.bg-green{
+    background-color: $green_1;
+}
 
 
 
@@ -87,8 +96,8 @@
     }
 }
 
-@media (min-width: 990px){
-    #navbarNav {
+@media (min-width: 768px){
+    #navbarNav, .nav-burger {
         display: none !important;
     }
 }

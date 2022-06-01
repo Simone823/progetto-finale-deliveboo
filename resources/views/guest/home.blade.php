@@ -81,7 +81,7 @@
             </div>
 
             {{-- MENU BURGER --}}
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="nav-burger collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     
                     <li class="nav-item">

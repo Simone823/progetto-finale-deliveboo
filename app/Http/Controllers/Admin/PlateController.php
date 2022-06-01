@@ -56,7 +56,7 @@ class PlateController extends Controller
             'name' => 'required|string|min:4|max:200',
             'ingredients' => 'required',
             'price' => 'required|numeric',
-            'image' => 'nullable|file',
+            'image' => 'nullable|image|file|mimetypes:image/jpeg,image/png,image/svg|max:2048',
             'visibility' => 'required|boolean',
         ]);
 
@@ -66,15 +66,34 @@ class PlateController extends Controller
         //salvo in data tutti i dati arrivati dal form
         $data = $request->all();
 
+        // Se esiste il valore del campo image
+        if (array_key_exists('image', $data)) {
+            $img_path = Storage::put('uploads', $data['image']);
+
+            $data['image'] = $img_path;
+        } else {
+            $img_path = Storage::putFile('uploads', 'img/placeholder_plate.png');
+
+            $data['image'] = $img_path;
+        }
+        
         //creo uno slug unico per il piatto
         $slug = User::getUniqueSlug( $data['name'] );
 
         //salvo i dati nel nuovo piatto
         $plate = new Plate();
+
+        // Fill data
         $plate->fill( $data );
+
         $plate->user_id = $id_user;
+
+        // Slug
         $plate->slug = $slug;
+
+        // Save
         $plate->save();
+
         //reindirizzo alla pagina index dei piatti
         return redirect()->route('admin.plates.index');
     }

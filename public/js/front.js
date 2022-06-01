@@ -58936,11 +58936,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\Giovanni\Desktop\Boolean\Progetto_finale\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
-=======
 module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
->>>>>>> b9c7ae1c000c4195e5f045d0a89b5e0cca317b0a
 
 
 /***/ })

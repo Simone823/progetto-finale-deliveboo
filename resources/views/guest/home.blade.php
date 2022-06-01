@@ -17,15 +17,32 @@
                 <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="Deliveboo">
             </a>
 
-            {{-- BURGER ICON --}}
-            <div id="burger-icon" class="d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <label for="check">
-                    <input type="checkbox" id="check"/> 
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>        
+            {{-- cart e burger versione tablet - mobile --}}
+            <div class="cart-burger d-flex align-items-center">
+                @if (Route::has('login'))
+                @guest
+                {{-- cart --}}
+                <div class="nav-item">
+                    <a class="nav-link" href="">
+                        <button class="btn-standard btn-white opacity-100">
+                            <i class="icon-color fa-solid fa-cart-shopping"></i>                          
+                        </button>
+                    </a>
+                </div>
+                @endguest
+                @endif    
+    
+                {{-- BURGER ICON --}}
+                <div id="burger-icon" class="d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <label for="check">
+                        <input type="checkbox" id="check"/> 
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>        
+                </div>
             </div>
+
 
             {{-- MENU ESTESO --}}
             <div class="d-none d-md-flex justify-content-end">
@@ -87,6 +104,7 @@
                                     </button>
                                 </a>
                             </li>
+                            {{-- cart --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="">
                                     <button class="btn-standard btn-tr-white">
@@ -99,17 +117,70 @@
                 </ul>
             </div>
 
+
+
             {{-- MENU BURGER --}}
             <div class="nav-burger collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <i class="me-2 fa-solid fa-house"></i>
-                            gggg                            
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn-standard btn-white">
+                                <i class="icon-color me-2 fa-solid fa-caret-down"></i>
+                                Collabora con noi
+                            </button>
                         </a>
+
+                        <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                    Ristoranti
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="icon-color me-2 fa-solid fa-briefcase"></i>
+                                    Lavora con noi
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="icon-color me-2 fa-solid fa-building"></i>
+                                    Deliveroo for Work
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     
+                    @if (Route::has('login'))
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/admin/homepage') }}">
+                                    <button class="btn-standard btn-white">
+                                        <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                        Dashboard                                 
+                                    </button>
+                                </a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">
+                                    <button class="btn-standard btn-white">
+                                        <i class="icon-color me-2 fa-solid fa-home"></i>
+                                        Accedi          
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    <button class="btn-standard btn-white">
+                                        Diventa nostro partner     
+                                    </button>
+                                </a>
+                            </li>
+                        @endauth
+                    @endif                    
                 </ul>
             </div>
 
@@ -122,27 +193,6 @@
 
 
 
-
-
-
-    <div class="container">
-
-
-        @if (Route::has('login'))
-        
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/admin/homepage') }}">Home</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
-    
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            @endauth
-        </div>
-        @endif
-    </div> 
    
 
     {{-- faccio il div con l'id per Vue --}}

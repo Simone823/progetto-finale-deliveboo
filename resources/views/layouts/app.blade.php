@@ -24,7 +24,7 @@
         <nav id="navbar_app" class="navbar navbar-expand-md navbar-light shadow-lg d-flex align-center fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                   <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="">
+                   <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="DeliveBoo logo">
                 </a> 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

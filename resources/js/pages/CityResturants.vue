@@ -7,10 +7,10 @@
             <!-- checkboxe sidebar -->
             <aside class="col-12 col-md-3">
                 <ul class="d-flex flex-row flex-md-column flex-wrap flex-md-nowrap gap-2 justify-content-center">
-                        <li class="form-group form-check" v-for="type in types" :key="type.id">
-                            <input type="checkbox" class="form-check-input" :value="type" :id="type.name" name="type-checkboxe" v-model="checkedTypes">
-                            <label :for="type.name">{{type.type_name}}</label>
-                        </li>
+                    <li class="form-group form-check" v-for="type in types" :key="type.id">
+                        <input type="checkbox" class="form-check-input" :value="type" :id="type.name" name="type-checkboxe" v-model="checkedTypes">
+                        <label :for="type.name">{{type.type_name}}</label>
+                    </li>
                 </ul>
             </aside>
 
@@ -67,28 +67,28 @@ export default {
 
     data() {
         return{
+            //array che contiente tutti i ristoratori(user)
             resturants: [],
+            //array che contiene tutte le tipologie
             types: [],
+            //array che dinamicamente viene aggiornato ogni volta che viene cliccata una checkbox
             checkedTypes: [],
             resturantsTypes: [],
             selectedResturantsTypes: [],
-            prova: [],
         }
     },
 
     watch: {
+        //ascolto ogni cambiamento dell'array di checkbox
         checkedTypes(newVal, oldVal) {
             // svuoto l'array per ricomporlo da capo ogni volta che si preme una checkbox
             this.selectedResturantsTypes = [];
-            console.log(this.selectedResturantsTypes);
             let arrayTypesId = [];
             // ciclo il nuovo array che arriva selezionando le checkbox
             for (let i = 0; i < newVal.length; i++) {
                 // pusho gli id delle checkbox selezionate in un nuovo array
                 arrayTypesId.push(newVal[i].id );
             }
-            console.log(arrayTypesId);
-            console.log(this.resturantsTypes)
             for(let i = 0; i < this.resturantsTypes.length; i++){
                 // se gli id, dell'array che contiene gli utenti con le rispettive categorie, 
                 // contiene gli id delle checkboxe allora pusho l'intero utente in un nuovo array

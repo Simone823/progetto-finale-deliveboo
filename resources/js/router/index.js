@@ -26,7 +26,7 @@ const routes = [
         component: CityResturants,
     },
     {
-        path: '/resturant-manu/:id',
+        path: '/resturant-menu/:id',
         name: 'resturant-menu',
         component: ResturantMenu,
     }

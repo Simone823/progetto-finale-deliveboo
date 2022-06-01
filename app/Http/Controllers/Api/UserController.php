@@ -44,4 +44,9 @@ class UserController extends Controller
         // ON `types`.`id` = `type_user`.`type_id`
         // WHERE `type_user`.`type_id` = $id
     }
+
+    public function showMenu($id)
+    {
+        
+    }
 }

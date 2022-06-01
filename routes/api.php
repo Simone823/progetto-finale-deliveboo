@@ -23,4 +23,6 @@ Route::get('/home','Api\TypeController@welcome');
 Route::get('/resturant-type/{user}','Api\UserController@showTypes');
 //creo la rotta che visualizzerà i ristoranti dopo la selzione della città
 Route::get('/city-resturants','Api\UserController@index');
+// creo la rotaa che visualizzerà la pagina resturant/menù 
+Route::get('/resturant-menu/{user}', 'Api\UserController@showMenu');
 

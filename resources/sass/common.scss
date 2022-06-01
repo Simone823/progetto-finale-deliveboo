@@ -4,6 +4,13 @@
     color: $white_1;
 }
 
+// BTN WHITE
+.btn-white{
+    border: none;
+    border-radius: 6px;
+    padding: 7px 15px;
+}
+
 // BTN VIOLET
 .btn-violet {
     background-color: $violet;
@@ -48,5 +55,11 @@
 @media (min-width: 1200px){
     .container-xl, .container-lg, .container-md, .container-sm, .container {
         max-width: 1120px;
+    }
+}
+
+@media (min-width: 992px){
+    #navbarNav {
+        display: none !important;
     }
 }

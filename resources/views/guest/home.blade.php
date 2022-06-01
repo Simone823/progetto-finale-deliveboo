@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/front.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Deliveboo</title>
 </head>
 <body>
@@ -16,24 +17,49 @@
                 <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="Deliveboo">
             </a>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <button class="d-md-none btn-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="icon-color fa-solid fa-bars"></i>
+            Menu            
           </button>
 
 
 
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div class="d-none d-md-block justify-content-end">
             <ul class="navbar-nav">
 
+            
+
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                    
-                    Registrati o accedi
+                <a class="nav-link">
+                    <button class="btn-white">
+                        <i class="icon-color me-2 fa-solid fa-house"></i>
+                        Registrati o accedi
+                    </button>
                 </a>
               </li>
-
+              
             </ul>
           </div>
+
+
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+  
+              
+  
+                <li class="nav-item">
+                  <a class="nav-link">
+                      <i class="me-2 fa-solid fa-house"></i>
+                      gggg
+                      
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+
+
         </div>
     </nav>
 

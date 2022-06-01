@@ -106,7 +106,7 @@
 
 
 
-    <div class="container">
+    {{-- <div class="container">
 
 
         @if (Route::has('login'))
@@ -123,7 +123,7 @@
             @endauth
         </div>
         @endif
-    </div> 
+    </div>  --}}
    
 
     {{-- faccio il div con l'id per Vue --}}

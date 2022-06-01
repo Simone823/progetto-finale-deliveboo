@@ -12294,6 +12294,13 @@ main {
   color: #FFFFFF;
 }
 
+.btn-white {
+  border: none;
+  border-radius: 6px;
+  padding: 7px 15px;
+  background-color: white;
+}
+
 .btn-violet {
   background-color: #3e235d;
   color: #FFFFFF;
@@ -12325,6 +12332,22 @@ main {
 
 .letter-spacing-2 {
   letter-spacing: 2px;
+}
+
+@media (min-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1120px;
+  }
+}
+
+@media (min-width: 990px) {
+  #navbarNav {
+    display: none !important;
+  }
 }
 
 #section_plate_show {

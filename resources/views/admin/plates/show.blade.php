@@ -21,7 +21,7 @@
                 {{-- Image wrapper plate image --}}
                 <div class="wrapper_image d-flex justify-content-center px-3">
                     <figure class="plate_image shadow-lg">
-                        <img src="https://picsum.photos/1920/1080" alt="">
+                        <img src="{{asset('storage/'.$plate->image)}}" alt="">
                     </figure>
                 </div>
     

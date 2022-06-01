@@ -47,6 +47,11 @@ class UserController extends Controller
 
     public function showMenu($id)
     {
-        
+        // prendo l'utente specifico, tramite l'id dell'utente che viene cliccato in CityResturant
+        $user = User::where('id', '=', $id)->get();
+
+        return response()->json([
+            'user' => $user,
+        ]);
     }
 }

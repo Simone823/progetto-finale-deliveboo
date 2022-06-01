@@ -5416,7 +5416,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      resturant: []
+      resturant: [],
+      menu: []
     };
   },
   methods: {
@@ -5426,6 +5427,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/resturant-menu/".concat(this.$route.params.id)).then(function (res) {
         console.log(res);
         _this.resturant = res.data.user[0];
+        _this.resturant = res.data.user_plates[0];
       })["catch"](function (err) {
         console.warn(err);
       });

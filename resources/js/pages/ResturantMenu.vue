@@ -37,6 +37,7 @@ export default {
     data() {
         return {
             resturant: [],
+            menu: [],
         }
     },
     methods: {
@@ -45,6 +46,7 @@ export default {
             .then( res => {
                 console.log(res);
                 this.resturant = res.data.user[0];
+                this.resturant = res.data.user_plates[0];
             })
             .catch( err => {
                 console.warn(err);

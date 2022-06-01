@@ -49,9 +49,14 @@ class UserController extends Controller
     {
         // prendo l'utente specifico, tramite l'id dell'utente che viene cliccato in CityResturant
         $user = User::where('id', '=', $id)->get();
+        //prendo tutti i piatti che hanno lo user_id corrispondente all'id dell'utente
+        $user_plates = User::join('plates','plates.user_id','=','users.id')
+            ->where('plates.user_id', '=', $id)
+            ->get();
 
         return response()->json([
             'user' => $user,
+            'user_plates' => $user_plates,
         ]);
     }
 }

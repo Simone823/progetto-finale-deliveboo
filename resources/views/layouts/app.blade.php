@@ -152,60 +152,41 @@
                         @endif
                             
                         @else
-                            
-                            {{-- Link wrapper --}}
-                            <div class="link_wrapper d-flex align-items-center">
-                                    
-                                {{-- List link --}}
-                                <ul class="lists_link list-unstyled d-flex align-items-center gap-4">
-                                    <li>
-                                        <a class="@if(Route::is('admin.homepage'))active @endif text-decoration-none" href="{{route('admin.homepage')}}">
-                                            <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
-                                                Dashboard
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class=" text-decoration-none" href="{{route('admin.plates.index')}}">
-                                            <span class="@if(Route::is('admin.plates.index'))active @endif navbar_dashboard">
-                                                Tutti i Piatti
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class=" text-decoration-none" href="{{route('admin.plates.create')}}">
-                                            <span class="@if(Route::is('admin.plates.create'))active @endif navbar_dashboard">
-                                                Crea nuovo piatto
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            {{-- Dropdown logout --}}
-                            <div class="nav-item dropdown">
-                                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{-- List link --}}
+                            <li class="nav-item text-center p-2 @if(Route::is('admin.homepage')) bg-green @endif">
+                                <a class="text-decoration-none" href="{{route('admin.homepage')}}">
+                                    <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
+                                        Dashboard
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item text-center p-2 @if(Route::is('admin.plates.index')) bg-green @endif">
+                                <a class="text-decoration-none" href="{{route('admin.plates.index')}}">
+                                    <span class="@if(Route::is('admin.plates.index')) active @endif navbar_dashboard">
+                                        Tutti i Piatti
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item text-center p-2 @if(Route::is('admin.plates.create')) bg-green @endif">
+                                <a class=" text-decoration-none" href="{{route('admin.plates.create')}}">
+                                    <span class="@if(Route::is('admin.plates.create'))active @endif navbar_dashboard">
+                                        Crea nuovo piatto
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item text-center m-3">
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <button class="btn-standard btn-green_1 fw-bold">
-                                        {{ Auth::user()->name }}
-                                        <i class="ms-2 fa-solid fa-caret-down"></i>
+                                        <i class="me-2 fa-solid fa-right-from-bracket"></i>
+                                        {{ __('Logout') }}
                                     </button>
                                 </a>
-            
-                                {{-- Drop item --}}
-                                <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
-                                            {{ __('Logout') }}
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>                                
+                            </li>
+                            <li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>                              
                         @endguest    
                     </ul>
                 </div>

@@ -76,7 +76,7 @@
         font-weight: bold;
     }
 
-    &.active {
+    &:hover, &.active  {
         color: $green_1;
         font-weight: bold;
     }
@@ -85,7 +85,19 @@
 .nav-burger{
     font-size: 20px;
     font-weight: bold;
-    color: white;
+    border-bottom: 2px solid $green_1;
+
+    .navbar_dashboard{
+        color: black;
+
+        &:hover{
+            color: $green_1;
+        }
+
+        &.active  {
+            color: white;
+        }
+    }
 }
 
 

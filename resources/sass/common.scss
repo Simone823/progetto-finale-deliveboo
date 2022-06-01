@@ -18,6 +18,19 @@
     }
 }
 
+//BTN TRANSPARENT
+.btn-tr-white{
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    transition: all 250ms linear;
+
+    &:hover{
+        background-color: white;
+        color: $green_1;
+    }
+}
+
 // BTN GREEN 1
 .btn-green_1 {
     background-color: $green_1;

@@ -57,26 +57,34 @@
                         </ul>
                     </li>
                     
-                    <li class="nav-item">
-                        @if (Route::has('login'))
-                            @auth
+                    @if (Route::has('login'))
+                        @auth
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/admin/homepage') }}">
                                     <button class="btn-standard btn-white">
                                         <i class="icon-color me-2 fa-solid fa-utensils"></i>
                                         Dashboard                                 
                                     </button>
                                 </a>
-                            @else
+                            </li>
+                        @else
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">
                                     <button class="btn-standard btn-white">
                                         <i class="icon-color me-2 fa-solid fa-home"></i>
                                         Registrati o accedi                                
                                     </button>
                                 </a>
-                            @endauth
-                        @endif
-                    </li>
-
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">
+                                    <button class="btn-standard btn-tr-white">
+                                        <i class="fa-solid fa-cart-shopping"></i>                          
+                                    </button>
+                                </a>
+                            </li>
+                        @endauth
+                    @endif
                 </ul>
             </div>
 

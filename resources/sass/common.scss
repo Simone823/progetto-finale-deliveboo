@@ -1,15 +1,44 @@
-// BTN GREEN 1
-.btn-green_1 {
-    background-color: $green_1;
-    color: $white_1;
-}
-
-// BTN WHITE
-.btn-white{
+// BTN STANDARD
+.btn-standard{
     border: none;
     border-radius: 6px;
     padding: 7px 15px;
 }
+
+//BTN TRANSPARENT
+.btn-transparent{
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: $green_1;
+    transition: all 250ms linear;
+
+    &:hover{
+        border-color: #aaa;
+        color: $green_0;
+    }
+}
+
+// BTN GREEN 1
+.btn-green_1 {
+    background-color: $green_1;
+    color: $white_1;
+    transition: all 250ms linear;
+
+    &:hover{
+        background-color: $green_0;
+    }
+}
+
+// BTN WHITE
+.btn-white{
+    background-color: $white_1;
+}
+
+
+
+
+
+
 
 // BTN VIOLET
 .btn-violet {

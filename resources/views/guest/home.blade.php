@@ -29,7 +29,7 @@
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <button class="btn-white">
+                            <button class="btn-standard btn-white">
                                 <i class="icon-color me-2 fa-solid fa-caret-down"></i>
                                 Collabora con noi
                             </button>
@@ -61,14 +61,14 @@
                         @if (Route::has('login'))
                             @auth
                                 <a class="nav-link" href="{{ url('/admin/homepage') }}">
-                                    <button class="btn-white">
+                                    <button class="btn-standard btn-white">
                                         <i class="icon-color me-2 fa-solid fa-utensils"></i>
                                         Dashboard                                 
                                     </button>
                                 </a>
                             @else
                                 <a class="nav-link" href="{{ route('register') }}">
-                                    <button class="btn-white">
+                                    <button class="btn-standard btn-white">
                                         <i class="icon-color me-2 fa-solid fa-home"></i>
                                         Registrati o accedi                                
                                     </button>

@@ -47,41 +47,11 @@
                 <div class="d-none d-md-flex justify-content-end">
                     <ul class="navbar-nav flex-md-row gap-4">            
                         
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <button class="btn-white">
-                                    <i class="icon-color me-2 fa-solid fa-caret-down"></i>
-                                    Collabora con noi
-                                </button>
-                            </a>
-    
-                            <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="icon-color me-2 fa-solid fa-utensils"></i>
-                                        Ristoranti
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="icon-color me-2 fa-solid fa-briefcase"></i>
-                                        Lavora con noi
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="icon-color me-2 fa-solid fa-building"></i>
-                                        Deliveroo for Work
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">
-                                    <button class="btn-white">
+                                    <button class="btn-standard btn-transparent">
                                         Accedi
                                     </button>
                                 </a>
@@ -90,8 +60,8 @@
                         @if (Route::has('register'))
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">
-                                <button class="btn-white">
+                            <a class="nav-link" href="{{ route('register') }}">
+                                <button class="btn-standard btn-green_1 fw-bold">
                                     Diventa nostro partner
                                 </button>
                             </a>

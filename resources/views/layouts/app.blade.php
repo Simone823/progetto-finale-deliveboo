@@ -18,10 +18,126 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+
+    {{-- font-awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
+
+    <header>
+        <nav id="navbar_auth" class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                {{-- LOGO --}}
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img id="header_logo_deliveboo" src="{{ asset('img/logo_turchese.png') }}" alt="Deliveboo">
+                </a>
+    
+                {{-- BURGER ICON --}}
+                <div id="burger-icon" class="d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <label for="check">
+                        <input type="checkbox" id="check"/> 
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>        
+                </div>
+    
+                {{-- MENU ESTESO --}}
+                <div class="d-none d-md-flex justify-content-end">
+                    <ul class="navbar-nav flex-md-row gap-4">            
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn-white">
+                                    <i class="icon-color me-2 fa-solid fa-caret-down"></i>
+                                    Collabora con noi
+                                </button>
+                            </a>
+    
+                            <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                        Ristoranti
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="icon-color me-2 fa-solid fa-briefcase"></i>
+                                        Lavora con noi
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="icon-color me-2 fa-solid fa-building"></i>
+                                        Deliveroo for Work
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">
+                                    <button class="btn-white">
+                                        Accedi
+                                    </button>
+                                </a>
+                            </li>
+                            
+                        @if (Route::has('register'))
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">
+                                <button class="btn-white">
+                                    Diventa nostro partner
+                                </button>
+                            </a>
+                        </li>
+
+                        @endif
+
+                        @endguest
+                        
+    
+                    </ul>
+                </div>
+    
+                {{-- MENU BURGER --}}
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="me-2 fa-solid fa-house"></i>
+                                gggg                            
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+    
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+    boooo
+
+
+
+
+
+
+
+
     <div id="app">
-        <nav id="navbar_app" class="navbar navbar-expand-md navbar-light shadow-lg d-flex align-center fixed-top">
+        <nav id="navbar_app" class="navbar navbar-expand-md navbar-light shadow-lg d-flex {{-- align-center fixed-top --}}">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                    <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="DeliveBoo logo">

@@ -25,7 +25,9 @@
 
                 <!-- Se l'array composto dai valori delle checkboxe è vuoto mostro tutti i ristoranti -->
                 <div v-if="checkedTypes.length == 0" class="d-flex flex-wrap gap-3 px-4 px-md-0">
-                    <div class="card col-12 col-md-4 col-lg-3 text-center" 
+                    <!-- cliccando la card verrò reindirizzato alla rotta resturant-menu -->
+                    <router-link tag="div" :to="{ name: 'resturant-menu', params: { id: resturant.id } }" 
+                        class="card col-12 col-md-4 col-lg-3 text-center" 
                         v-for="resturant in resturants" :key="resturant.id">
                             <figure class="post-card-img">
                                 <img :src="resturant.business_image" alt="">
@@ -37,12 +39,14 @@
                                     <p>In: {{ resturant.business_address }}</p>
                                 </div>
                             </div>        
-                    </div>
+                    </router-link>
                 </div>
 
                 <!-- Se l'array composto dai valori delle checkboxe non è vuoto mostro i ristoranti con le tipologie selezionate -->
                 <div v-if="checkedTypes.length != 0" class="d-flex flex-wrap gap-3 px-4 px-md-0">
-                    <div class="card col-12 col-md-4 col-lg-3 text-center" 
+                    <!-- cliccando la card verrò reindirizzato alla rotta resturant-menu -->
+                    <router-link tag="div" :to="{ name: 'resturant-menu', params: { id: selectedRestuantType.user_id } }" 
+                        class="card col-12 col-md-4 col-lg-3 text-center" 
                         v-for="(selectedRestuantType, index) in selectedResturantsTypes" :key="index">     
                             <figure class="post-card-img">
                                 <img :src="selectedRestuantType.business_image" alt="">
@@ -54,7 +58,7 @@
                                     <p>In: {{ selectedRestuantType.business_address }}</p>
                                 </div>
                             </div>   
-                    </div>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -111,7 +115,6 @@ export default {
             // faccio una chiamata axios per recuperare i ristoranti
             axios.get('/api/city-resturants')
             .then( res => {
-                console.log(res);
                 this.resturants = res.data.users;
                 this.resturantsTypes = res.data.users_type
                 this.types = res.data.types;
@@ -129,5 +132,7 @@ export default {
 </script>
 
 <style lang"scss" scoped>
-
+    .card{
+        cursor: pointer;
+    }
 </style>

@@ -17,46 +17,73 @@
                 <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="Deliveboo">
             </a>
 
-          <button class="d-md-none btn-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="icon-color fa-solid fa-bars"></i>
-            Menu            
-          </button>
+            {{-- BURGER ICON --}}
+            <button class="d-md-none btn-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="icon-color me-2 fa-solid fa-bars"></i>
+                Menu            
+            </button>
 
+            {{-- MENU ESTESO --}}
+            <div class="d-none d-md-block justify-content-end">
+                <ul class="navbar-nav">            
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn-white">
+                                <i class="icon-color me-2 fa-solid fa-caret-down"></i>
+                                Collabora con noi
+                            </button>
+                        </a>
 
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                    Ristoranti
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                    Lavora con noi
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                    Deliveroo for Work
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-          <div class="d-none d-md-block justify-content-end">
-            <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <button class="btn-white">
+                                <i class="icon-color me-2 fa-solid fa-house"></i>
+                                Registrati o accedi
+                            </button>
+                        </a>
+                    </li>
 
-            
+                </ul>
+            </div>
 
-              <li class="nav-item">
-                <a class="nav-link">
-                    <button class="btn-white">
-                        <i class="icon-color me-2 fa-solid fa-house"></i>
-                        Registrati o accedi
-                    </button>
-                </a>
-              </li>
-              
-            </ul>
-          </div>
-
-
-
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-  
-              
-  
-                <li class="nav-item">
-                  <a class="nav-link">
-                      <i class="me-2 fa-solid fa-house"></i>
-                      gggg
-                      
-                  </a>
-                </li>
+            {{-- MENU BURGER --}}
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+    
                 
-              </ul>
+    
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="me-2 fa-solid fa-house"></i>
+                            gggg
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
             </div>
 
 

@@ -46,7 +46,7 @@
 
             {{-- MENU ESTESO --}}
             <div class="d-none d-md-flex justify-content-end">
-                <ul class="navbar-nav flex-md-row gap-2">            
+                <ul class="navbar-nav flex-md-row gap-2 align-items-center">            
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,6 +87,19 @@
                                         Dashboard                                 
                                     </button>
                                 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <button class="btn-standard btn-white">
+                                        <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
+                                        {{ __('Logout') }}
+                                    </button>
+                                </a>
+                            </li>
+                            <li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
                         @else
                             <li class="nav-item">

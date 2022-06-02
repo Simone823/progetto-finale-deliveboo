@@ -1,13 +1,13 @@
 //----------------------------SCROLLBAR
 /* SCROLL-BAR STYLE */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 /* MANIGLIA DI SCORRIMENTO */
 ::-webkit-scrollbar-thumb {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    background: $green_1;
+    background: $violet;
 }
 
 

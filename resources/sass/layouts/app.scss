@@ -106,6 +106,12 @@
 
 
 
+//--------------- MAIN -----------------
+main{
+    padding-top: 69px;
+}
+
+
 
 //--------------- MAIN BACKGROUND -----------------
 .main-content{
@@ -129,10 +135,67 @@
 
 
 
-//--------------- MAIN -----------------
-main{
-    padding-top: 69px;
+//--------------- LOGIN PAGE -----------------
+.login-content{
+    min-height: calc(100vh - 69px);
+
+    .login-img{
+        position: relative;
+
+        .img-wrapper{
+            padding: 20px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+
+            img{
+                max-width: 85%;
+            }
+        }
+
+        .login-background{
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -999;         
+            clip-path: polygon(80% 0, 100% 0, 100% 100%, 0 100%);
+            background-color: $green_1;
+        }
+
+        @media (max-width: 768px) {
+
+            flex-grow: 1;
+
+            .img-wrapper{
+                align-items: flex-end;
+            }
+    
+            .login-background{       
+                clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            }
+            
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

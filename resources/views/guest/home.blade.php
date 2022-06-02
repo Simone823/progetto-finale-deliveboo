@@ -153,28 +153,33 @@
                     
                     @if (Route::has('login'))
                         @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/admin/homepage') }}">
-                                    <button class="btn-standard btn-white">
-                                        <i class="icon-color me-2 fa-solid fa-utensils"></i>
-                                        Dashboard                                 
+                            <li class="nav-item bg-orange">
+                                <a class="nav-link text-center text-reset" href="{{ url('/admin/homepage') }}">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item text-center m-3">
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <button class="btn-standard btn-violet fw-bold">
+                                        <i class="me-2 fa-solid fa-right-from-bracket"></i>
+                                        {{ __('Logout') }}
                                     </button>
                                 </a>
+                            </li>
+                            <li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">
-                                    <button class="btn-standard btn-white">
-                                        <i class="icon-color me-2 fa-solid fa-home"></i>
-                                        Accedi          
-                                    </button>
+                            <li class="nav-item bg-orange">
+                                <a class="nav-link text-center text-reset" href="{{ route('login') }}">
+                                    Accedi
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">
-                                    <button class="btn-standard btn-white">
-                                        Diventa nostro partner     
-                                    </button>
+                            <li class="nav-item bg-violet">
+                                <a class="nav-link text-center text-reset" href="{{ route('register') }}">
+                                    Diventa nostro partner     
                                 </a>
                             </li>
                         @endauth

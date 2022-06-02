@@ -27,13 +27,14 @@
     <header>
         <nav id="navbar_auth" class="navbar navbar-expand-lg navbar-light ">
             <div class="container-md">
+
                 {{-- LOGO --}}
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="ms-3 ms-md-0 navbar-brand" href="{{ url('/') }}">
                     <img id="header_logo_deliveboo" src="{{ asset('img/logo_turquoise.svg') }}" alt="Deliveboo">
                 </a>
     
                 {{-- BURGER ICON --}}
-                <div id="burger-icon" class="d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div id="burger-icon" class="me-3 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <label for="check">
                         <input type="checkbox" id="check"/> 
                         <span></span>
@@ -135,17 +136,21 @@
                         
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item text-center bg-purple">
+                            <li class="nav-item text-center @if(Route::is('login')) bg-purple @endif">
                                 <a class="nav-link text-reset" href="{{ route('login') }}">
-                                    Accedi
+                                    <span class="@if(Route::is('login')) active @endif navbar_dashboard">
+                                        Accedi
+                                    </span>  
                                 </a>
                             </li>
                             
                         @if (Route::has('register'))
 
-                            <li class="nav-item text-center bg-green">
+                            <li class="nav-item text-center mb-2 @if(Route::is('register')) bg-purple @endif">
                                 <a class="nav-link text-reset" href="{{ route('register') }}">
-                                    Diventa nostro partner                                    
+                                    <span class="@if(Route::is('register')) active @endif navbar_dashboard">
+                                        Diventa nostro partner
+                                    </span>                                    
                                 </a>
                             </li>
                             
@@ -153,21 +158,21 @@
                             
                         @else
                             {{-- List link --}}
-                            <li class="nav-item text-center p-2 @if(Route::is('admin.homepage')) bg-green @endif">
+                            <li class="nav-item text-center p-2 @if(Route::is('admin.homepage')) bg-purple @endif">
                                 <a class="text-decoration-none" href="{{route('admin.homepage')}}">
                                     <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
                                         Dashboard
                                     </span>
                                 </a>
                             </li>
-                            <li class="nav-item text-center p-2 @if(Route::is('admin.plates.index')) bg-green @endif">
+                            <li class="nav-item text-center p-2 @if(Route::is('admin.plates.index')) bg-purple @endif">
                                 <a class="text-decoration-none" href="{{route('admin.plates.index')}}">
                                     <span class="@if(Route::is('admin.plates.index')) active @endif navbar_dashboard">
                                         Tutti i Piatti
                                     </span>
                                 </a>
                             </li>
-                            <li class="nav-item text-center p-2 @if(Route::is('admin.plates.create')) bg-green @endif">
+                            <li class="nav-item text-center p-2  @if(Route::is('admin.plates.create')) bg-purple @endif">
                                 <a class=" text-decoration-none" href="{{route('admin.plates.create')}}">
                                     <span class="@if(Route::is('admin.plates.create'))active @endif navbar_dashboard">
                                         Crea nuovo piatto

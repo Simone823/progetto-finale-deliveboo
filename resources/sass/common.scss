@@ -65,10 +65,21 @@
     }
 }
 
-//BACKGROUND GREEN
-.bg-green{
-    background-color: $green_1;
+// BTN VIOLET
+.btn-violet{
+    background-color: $violet;
+    color: $white_1;
+    transition: all 250ms linear;
+
+    &:hover{
+        background-color: white;
+        color: $green_1;
+    }
 }
+
+
+
+
 
 //BACKGROUND PURPLE
 .bg-purple{
@@ -85,16 +96,9 @@
     background-color: $orange_1;
 }
 
-// BTN VIOLET
-.btn-violet{
-    background-color: $violet;
-    color: $white_1;
-    transition: all 250ms linear;
-
-    &:hover{
-        background-color: white;
-        color: $green_1;
-    }
+//BACKGROUND GREEN
+.bg-green{
+    background-color: $green_1;
 }
 
 

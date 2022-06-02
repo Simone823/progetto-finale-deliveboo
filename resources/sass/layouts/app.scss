@@ -139,6 +139,10 @@ main{
 .login-content{
     min-height: calc(100vh - 69px);
 
+    .form-wrapper{
+        max-width: 430px;
+    }
+
     .login-img{
         position: relative;
 

@@ -15,7 +15,7 @@
 
     .container-md{
 
-        @media (max-width: 768px){
+        @media (max-width: 767px){
             padding: 0;
         }
     }
@@ -141,8 +141,34 @@ main{
 
     .form-wrapper{
         max-width: 430px;
+
+        .form-control{
+            max-width: 80%;
+        }
+
+        .login-button{
+            width: 80%;
+        }
+
+        .forgot-psw{
+            color: $green_0;
+        }
+
+        @media (max-width: 767px){
+
+            max-width: 350px;
+
+            .form-control{
+                max-width: 100%;
+            }
+    
+            .login-button{
+                width: 100%;
+            }
+        }        
     }
 
+    
     .login-img{
         position: relative;
 
@@ -171,15 +197,22 @@ main{
             background-color: $green_1;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
 
             flex-grow: 1;
+            display: flex;
+            align-items: flex-end;
 
             .img-wrapper{
-                align-items: flex-end;
+                padding: 20px;
+                position: relative;
+                display: block;
+                text-align: center;
+                z-index: 0;
             }
     
-            .login-background{       
+            .login-background{   
+                top: 0;    
                 clip-path: polygon(100% 0, 0% 100%, 100% 100%);
             }
             

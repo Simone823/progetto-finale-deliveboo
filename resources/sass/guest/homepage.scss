@@ -11,6 +11,12 @@
         color: $green_1;
     }
 
+    .container-md{
+        @media (max-width: 768px){
+            padding: 0;
+        }
+    }
+
     //--------------BURGER ICON--------------
     #burger-icon{
 
@@ -88,7 +94,6 @@
         }
 
         .dropdown-menu[data-bs-popper] {
-            left: -12px;
             margin-top: 0;
         }
 

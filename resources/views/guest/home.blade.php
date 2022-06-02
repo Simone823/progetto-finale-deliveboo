@@ -13,12 +13,12 @@
     <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light">
         <div class="container-md">
             {{-- LOGO --}}
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="ms-3 ms-md-0 navbar-brand" href="{{ url('/') }}">
                 <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="Deliveboo">
             </a>
 
             {{-- cart e burger versione tablet - mobile --}}
-            <div class="cart-burger d-flex align-items-center">
+            <div class="me-3 cart-burger d-flex align-items-center">
                 @if (Route::has('login'))
                 @guest
                 {{-- cart --}}
@@ -123,7 +123,7 @@
             <div class="nav-burger collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
 
-                    <li class="nav-item text-center dropdown">
+                    <li class="nav-item text-center dropdown bg-purple">
                         <a class="nav-link text-reset" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Collabora con noi
                             <i class="ms-2 fa-solid fa-caret-down"></i>

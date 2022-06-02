@@ -123,29 +123,27 @@
             <div class="nav-burger collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <button class="btn-standard btn-white">
-                                <i class="icon-color me-2 fa-solid fa-caret-down"></i>
-                                Collabora con noi
-                            </button>
+                    <li class="nav-item text-center dropdown">
+                        <a class="nav-link text-reset" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Collabora con noi
+                            <i class="ms-2 fa-solid fa-caret-down"></i>
                         </a>
 
-                        <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item text-center" href="#">
                                     <i class="icon-color me-2 fa-solid fa-utensils"></i>
                                     Ristoranti
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item text-center" href="#">
                                     <i class="icon-color me-2 fa-solid fa-briefcase"></i>
                                     Lavora con noi
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item text-center" href="#">
                                     <i class="icon-color me-2 fa-solid fa-building"></i>
                                     Deliveroo for Work
                                 </a>

@@ -11,7 +11,7 @@
         color: $green_1;
     }
 
-    //---------------Burger icon--------------
+    //--------------BURGER ICON--------------
     #burger-icon{
 
         label{
@@ -63,6 +63,41 @@
             width:50%;
             transform: translate(12.5px,-5.5px) rotatez(45deg);
         }       
+    }
+
+    //---------------BURGER MENU--------------
+    .nav-burger{
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    
+        .navbar_dashboard{
+            color: black;
+    
+            &:hover{
+                color: $green_1;
+            }
+    
+            &.active  {
+                color: white;
+            }
+        }
+
+        .navbar-nav .dropdown-menu {
+            position: relative;
+        }
+
+        .dropdown-menu[data-bs-popper] {
+            left: -12px;
+            margin-top: 0;
+        }
+
+        .dropdown-menu {
+            width: 100vw;
+            font-size: 020px;
+            border: 0;
+            border-radius: 0;
+        }
     }
 }
 

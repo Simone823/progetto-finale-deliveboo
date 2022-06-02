@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'DELIVEBOO DB | REGISTRATION')
+@section('metaTitle', 'Deliveboo - Registration')
 
 @section('content')
 <div class="container py-5 px-3">

@@ -7,9 +7,9 @@
             <!-- checkboxe sidebar -->
             <aside class="col-12 col-md-3">
                 <ul class="d-flex flex-row flex-md-column flex-wrap flex-md-nowrap gap-2 justify-content-center">
-                    <li class="form-group form-check" v-for="(type,index) in types" :key="type.id">
-                        <input type="checkbox" class="form-check-input" :value="type.id" :id="`types-${type.id}`" :name="types[index]" v-model="checkedTypes">
-                        <label :for="`types-${type.id}`">{{type.type_name}}</label>
+                    <li class="form-group form-check" v-for="type in types" :key="type.id">
+                        <input type="checkbox" class="form-check-input" :value="type" :id="type.name" name="type-checkboxe" v-model="checkedTypes">
+                        <label :for="type.name">{{type.type_name}}</label>
                     </li>
                 </ul>
             </aside>
@@ -25,6 +25,7 @@
 
                 <!-- Se l'array composto dai valori delle checkboxe è vuoto mostro tutti i ristoranti -->
                 <div v-if="checkedTypes.length == 0" class="d-flex flex-wrap gap-3 px-4 px-md-0">
+                    <!-- cliccando la card verrò reindirizzato alla rotta resturant-menu -->
                     <div class="card col-12 col-md-4 col-lg-3 text-center" 
                         v-for="resturant in resturants" :key="resturant.id">
                             <figure class="post-card-img">
@@ -36,12 +37,18 @@
                                     <p>Di: {{ resturant.name }} {{ resturant.surname }}</p>
                                     <p>In: {{ resturant.business_address }}</p>
                                 </div>
+                            </div>
+                            <div class="button-wrapper">
+                                <router-link tag="button" class="btn btn-green_1" :to="{ name: 'resturant-menu', params: { id: resturant.id } }">
+                                    View this Resturant
+                                </router-link>
                             </div>        
                     </div>
                 </div>
 
                 <!-- Se l'array composto dai valori delle checkboxe non è vuoto mostro i ristoranti con le tipologie selezionate -->
                 <div v-if="checkedTypes.length != 0" class="d-flex flex-wrap gap-3 px-4 px-md-0">
+                    <!-- cliccando la card verrò reindirizzato alla rotta resturant-menu -->
                     <div class="card col-12 col-md-4 col-lg-3 text-center" 
                         v-for="(selectedRestuantType, index) in selectedResturantsTypes" :key="index">     
                             <figure class="post-card-img">
@@ -53,6 +60,11 @@
                                     <p>Di: {{ selectedRestuantType.name }} {{ selectedRestuantType.surname }}</p>
                                     <p>In: {{ selectedRestuantType.business_address }}</p>
                                 </div>
+                            </div>
+                            <div class="button-wrapper">
+                                <router-link tag="button" class="btn btn-green_1" :to="{ name: 'resturant-menu', params: { id: selectedRestuantType.user_id } }">
+                                    View this Resturant
+                                </router-link>
                             </div>   
                     </div>
                 </div>
@@ -102,7 +114,6 @@ export default {
             };
             //aggiorno l'array senza i duplicati
             this.selectedResturantsTypes = removeDuplicates(this.selectedResturantsTypes, item => item.user_id)
-            // console.log(this.selectedResturantsTypes);
         }
     },
 
@@ -111,7 +122,6 @@ export default {
             // faccio una chiamata axios per recuperare i ristoranti
             axios.get('/api/city-resturants')
             .then( res => {
-                console.log(res);
                 this.resturants = res.data.users;
                 this.resturantsTypes = res.data.users_type
                 this.types = res.data.types;

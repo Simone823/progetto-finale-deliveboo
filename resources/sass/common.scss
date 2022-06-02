@@ -1,15 +1,18 @@
+//----------------------------SCROLLBAR
 /* SCROLL-BAR STYLE */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 /* MANIGLIA DI SCORRIMENTO */
 ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     background: $green_1;
 }
 
 
 
+//----------------------------BTN
 // BTN STANDARD
 .btn-standard{
     border: none;
@@ -79,8 +82,7 @@
 
 
 
-
-
+//----------------------------BACKGROUND
 //BACKGROUND PURPLE
 .bg-purple{
     background-color: $purple_1;

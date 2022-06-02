@@ -25,7 +25,7 @@
 <body>
 
     <header>
-        <nav id="navbar_auth" class="navbar navbar-expand-lg navbar-light ">
+        <nav id="navbar_auth" class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="container-md">
 
                 {{-- LOGO --}}
@@ -203,6 +203,7 @@
     <main>
 
         <section class="main-content">
+            <div class="main-background"></div>
             @yield('content')
         </section>
 

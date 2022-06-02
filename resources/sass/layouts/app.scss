@@ -2,6 +2,8 @@
 //---------------NAVBAR USER DASHBOARD-----------------
 #navbar_auth{
 
+    background-color: $white_1;
+
     #header_logo_deliveboo{
         height: 35px;
         display: block;
@@ -12,6 +14,7 @@
     }
 
     .container-md{
+
         @media (max-width: 768px){
             padding: 0;
         }
@@ -104,8 +107,32 @@
 
 
 
+//--------------- MAIN BACKGROUND -----------------
+.main-content{
+    position: relative;
+    min-height: calc(100vh - 69px);
+    
+    .main-background{
+        position: absolute;
+        right: 0;
+        left: -20%;
+        height: 100%;
+        
+        z-index: -999;
+        background-image: url('img/bg_users.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
 
 
+
+
+//--------------- MAIN -----------------
+main{
+    padding-top: 69px;
+}
 
 
 

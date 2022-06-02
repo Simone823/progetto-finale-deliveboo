@@ -32,6 +32,7 @@ img{
     border: 1px solid #ddd;
     color: $green_1;
     transition: all 250ms linear;
+    font-weight: bold;
 
     &:hover{
         border-color: #aaa;

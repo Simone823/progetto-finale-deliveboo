@@ -20,7 +20,7 @@
         }
     }
 
-    //---------------Burger icon--------------
+    //---------------BURGER ICON--------------
     #burger-icon{
 
         label{
@@ -117,6 +117,9 @@ main{
 .main-content{
     position: relative;
     min-height: calc(100vh - 69px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     .main-background{
         position: absolute;
@@ -233,6 +236,54 @@ main{
 
 
 
+//--------------- REGISTER PAGE -----------------
+.register-wrapper{
+
+    .btn-green_1{
+        border: 1px solid white;
+    }
+
+    .types{
+
+
+        .btn-type{
+            display: block;
+
+            .btn-outline-primary{
+                color: $green_1;
+                background-color: white;
+                font-weight: bold;
+                border-color: #ddd;
+
+                &:hover{
+                    background-color: $green_1;
+                    color: white;
+                }
+            }
+
+            .btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
+                background-color: $green_1;
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+
+//--------------- MODIFY USER PAGE -----------------
+.modify-wrapper{
+
+    .image-modify {
+        transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
+    }
+}
+
+
+
+
+//---------------DAHBOARD USER-----------------
 
 
 
@@ -244,12 +295,6 @@ main{
 
 
 
-
-//---------------HOMEPAGE USER-----------------
-// #homepage_main{
-    // background-color: $white_1;
-    // height: calc(100vh - 55px);
-// }
 
 #homepage_btn_edit{
     background-color: $green_1;

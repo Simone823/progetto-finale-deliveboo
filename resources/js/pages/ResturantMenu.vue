@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </section>
-            <!-- gestione del componente attivo -->
+            <!-- gestione del componente(piatto) attivo -->
             <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper'] ">
                 <div :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "
                     v-for="(menuPlate,index) in menuPlates" :key="index">
@@ -56,7 +56,7 @@
                     <figure class="info-plate-img">
                         <img src="https://i.picsum.photos/id/431/5398/3599.jpg?hmac=bc325kFqsm626RGhgs-XwG_GFqd4x3VmXtramO12qL8" alt="">
                     </figure>
-                    <div class="info-plate-body">
+                    <div class="info-plate-body p-5">
                         <h1>{{ menuPlate.name }}</h1>
                         <div class="info-plate-ingredients py-5">
                             <span>Ingredienti:</span>
@@ -174,6 +174,17 @@ export default {
 
     .info-wrapper.active{
         display: block;
+
+        &::after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.552);
+            z-index: 0;
+        }
     }
 
     .info-plate-card{
@@ -182,11 +193,12 @@ export default {
         left: 50%;
         transform: translate(-50% , -50%);
         border-radius: 8px;
-        max-width: 839px;
+        max-width: 750px;
         width: 100%;
         display: none;
-        background-color: azure;
+        background-color: white;
         overflow: hidden;
+        z-index: 1;
 
         .close-info{
             position: absolute;

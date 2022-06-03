@@ -22,11 +22,12 @@ class TypeSeeder extends Seeder
           'Americano',
           'Pesce',
           'Steak House',
-          'Osteria',
+          'Greco',
           'Pizzeria',
           'Bar',
           'Fast-Food',
-          'All you can eat'
+          'All you can eat',
+          'Spagnolo'
         ];
 
         //foreach per simone cosi faccio il commento 

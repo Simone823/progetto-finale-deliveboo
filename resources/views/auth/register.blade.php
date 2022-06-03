@@ -3,8 +3,8 @@
 @section('metaTitle', 'Deliveboo - Registration')
 
 @section('content')
-<div class="container-md">
-    <div class="register-wrapper col-10 col-sm-8 col-md-6 m-auto m-md-0">
+<div class="register-wrapper container-md pt-4">
+    <div class="col-10 col-sm-8 col-md-6 m-auto m-md-0">
         
         <h1 class="fw-bold mb-4">Diventa un partner di Deliveboo</h1>
         
@@ -167,10 +167,10 @@
         
         
             {{-- Business image input--}}
-            <div class="form-group row mb-3 flex-column align-items-center text-center">
-                <label for="business_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
+            <div class="form-group mb-4">
+                <h6 class="fw-bold">Immagine del ristorante</h6>
         
-                <div class="col-md-6">
+                <div class="col-lg-8">
                     <input accept="image/*" placeholder="Immagine Ristorante" id="business_image" type="file" class="form-control @error('business_image') is-invalid @enderror" name="business_image" value="{{ old('business_image') }}" autofocus>
         
                     @error('business_image')
@@ -182,12 +182,10 @@
             </div>
         
             {{-- Button register --}}
-            <div class="form-group mb-0">
-                <div class="col-md-6 mx-auto text-center">
-                    <button type="submit" class="btn btn-green_1 btn-hover-violet fw-bolder letter-spacing-2">
-                        {{ __('Register') }}
-                    </button>
-                </div>
+            <div class="form-group mb-0 pb-5">
+                <button type="submit" class="btn-standard btn-green_1">
+                    {{ __('Invia') }}
+                </button>
             </div>
         </form>
 

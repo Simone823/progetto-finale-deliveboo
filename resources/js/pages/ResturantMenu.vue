@@ -28,7 +28,7 @@
                     <h3>Ecco il nostro menù</h3>
                     <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
                     <div class="cards-wrapper row justify-content-start">
-                        <div class="card-menu col-12 col-md-6 col-lg-4 gap-2 mb-3"
+                        <div class="card-menu col-12 col-md-6 col-lg-4 gap-2 mb-4"
                             v-for="(menuPlate,index) in menuPlates" :key="index"
                             v-on:click="viewPlate(index)">
                             <div class="card-wrapper p-3 d-flex justify-content-between">
@@ -50,7 +50,7 @@
             </section>
             <!-- TODO quando sono sull'elemento active si deve bloccare la possibilità di scrollare la pagina  -->
             <!-- gestione del componente(piatto) attivo -->
-            <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper'] ">
+            <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper d-flex justify-content-center align-items-center'] ">
                 <div :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "
                     v-for="(menuPlate,index) in menuPlates" :key="index">
                     <button class="close-info" @click="closePlateInfo()">X</button>
@@ -128,6 +128,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
     .resturant-img{
         height: 385px;
         width: 100%;
@@ -141,10 +142,16 @@ export default {
 
     .card-wrapper{
         cursor: pointer;
-        border-radius: 5px;
+        border-radius: 3px;
         overflow: hidden;
-        background-color: beige;
+        background-color: white;
         height: 132px;
+        box-shadow: 0px 0px 5px 0px #b5b5b563;
+
+        &:hover{
+            box-shadow: 0px 16px 16px 2px rgb(181 181 181 / 39%);
+            transition: all 300ms;
+        }
 
         &:hover img{
             transform: scale(1.1,1.1);
@@ -156,6 +163,7 @@ export default {
             height: 100px;
             flex-shrink: 0;
             overflow: hidden;
+            border-radius: 3px;
             img{
                 width: 100%;
                 height: 100%;
@@ -166,15 +174,18 @@ export default {
     }
 
     .info-wrapper{
-        width: 100%;
+        width: 100vw;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
         display: none;
     }
 
     .info-wrapper.active{
-        display: block;
+        z-index: 0;
 
         &::after{
             content: "";
@@ -185,17 +196,25 @@ export default {
             left: 0;
             background-color: rgba(0, 0, 0, 0.552);
             z-index: 0;
+            animation: bkc 300ms linear 1;
+        }
+
+        @keyframes bkc{
+            from{
+                background-color: transparent;
+            }
+            to{
+                background-color: rgba(0, 0, 0, 0.552);
+            }
         }
     }
 
     .info-plate-card{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50% , -50%);
+        position: relative;
+        outline: none;
         border-radius: 8px;
-        max-width: 750px;
-        width: 100%;
+        max-width: 560px;
+        width: 90%;
         display: none;
         background-color: white;
         overflow: hidden;
@@ -219,6 +238,12 @@ export default {
             width: 100%;
             height: 400px;
             overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
         }
 
         .info-plate-body{
@@ -228,6 +253,16 @@ export default {
 
         .info-plate-card.active{
             display: block;
+            animation: zoom 300ms linear 1;
+        }
+
+        @keyframes zoom{
+            from{
+                transform: scale(0.3, 0.3);
+            }
+            to{
+                transform: scale(1, 1);
+            }
         }
 
         .info-plate-ingredients{

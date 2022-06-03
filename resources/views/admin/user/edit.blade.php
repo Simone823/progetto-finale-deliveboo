@@ -5,7 +5,7 @@ Deliveboo - {{$user->business_name}}
 @endsection
 
 @section('content')
-<div class="register-wrapper modify-wrapper container-md pt-4 d-flex gap-5">
+<div class="register-wrapper modify-wrapper container-md pt-4 d-flex">
     <div class="col-10 col-sm-8 col-md-6 m-auto m-md-0">
         
         <h1 class="fw-bold mb-4">{{$user->business_name}}</h1>

@@ -48,6 +48,7 @@
                     </div>
                 </div>
             </section>
+            <!-- TODO quando sono sull'elemento active si deve bloccare la possibilità di scrollare la pagina  -->
             <!-- gestione del componente(piatto) attivo -->
             <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper'] ">
                 <div :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "

@@ -32,8 +32,9 @@
                             v-for="(menuPlate,index) in menuPlates" :key="index"
                             v-on:click="viewPlate(index)">
                             <div class="card-wrapper p-3 d-flex justify-content-between">
-                                <div class="card-title flex-grow-1">
-                                    <h5>{{ menuPlate.name }}</h5>
+                                <div class="card-body flex-grow-1">
+                                    <h5 class="card-title">{{ menuPlate.name }}</h5>
+                                    <span>{{ menuPlate.price }}&euro;</span>
                                 </div>
                                 <div class="align-self-center justify-content-center">
                                     <figure class="post-card-img m-0">
@@ -48,9 +49,32 @@
                 </div>
             </section>
             <!-- gestione del componente attivo -->
-            <div class="info-wrapper">
-                <div :class=" [activeElement != undefined ? 'active' : '','info-plate-card'] ">
-                    <h1>cavallo</h1>
+            <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper'] ">
+                <div :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "
+                    v-for="(menuPlate,index) in menuPlates" :key="index">
+                    <button class="close-info" @click="closePlateInfo()">X</button>
+                    <figure class="info-plate-img">
+                        <img src="https://i.picsum.photos/id/431/5398/3599.jpg?hmac=bc325kFqsm626RGhgs-XwG_GFqd4x3VmXtramO12qL8" alt="">
+                    </figure>
+                    <div class="info-plate-body">
+                        <h1>{{ menuPlate.name }}</h1>
+                        <div class="info-plate-ingredients">
+                            <span>Ingredienti:</span>
+                            <ul>
+                                <li v-for="(ingredient,index) in ingredients" :key="index">
+                                    {{ ingredient }}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cart-management">
+                            <div class="plates-number">
+                                <button class="number-button"></button>
+                                
+                                <button class="number-button"></button>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </main>
@@ -67,6 +91,7 @@ export default {
             activeElement: undefined,
             resturant: [],
             menuPlates: [],
+            ingredients: [],
         }
     },
     methods: {
@@ -84,7 +109,10 @@ export default {
         },
         viewPlate(i){
             this.activeElement = i;
-            console.log(this.activeElement)
+            this.ingredients = this.menuPlates[i].ingredients.split(',');
+        },
+        closePlateInfo(){
+            this.activeElement = undefined;
         }
     },
     mounted() {
@@ -136,7 +164,11 @@ export default {
         height: 100vh;
         position: absolute;
         top: 0;
-        z-index: -9999;
+        display: none;
+    }
+
+    .info-wrapper.active{
+        display: block;
     }
 
     .info-plate-card{
@@ -144,7 +176,43 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50% , -50%);
-        padding: 15px;
         border-radius: 8px;
+        max-width: 839px;
+        width: 100%;
+        display: none;
+        background-color: azure;
+        overflow: hidden;
+
+        .close-info{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+            color: #00CCBC;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .info-plate-img{
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .info-plate-body{
+            padding: 25px 20px;
+        }
     }
+
+        .info-plate-card.active{
+            display: block;
+        }
+
+        .info-plate-ingredients{
+            border-bottom: 1px solid rgb(209, 209, 209);
+        }
 </style>

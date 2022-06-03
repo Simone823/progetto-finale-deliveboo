@@ -64,7 +64,7 @@
                             {{-- Drop item --}}
                             <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="{{ url('/admin/homepage') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ url('/admin/homepage') }}">
                                         <i class="icon-color me-2 fa-solid fa-utensils"></i>
                                         Dashboard
                                     </a>
@@ -163,7 +163,7 @@
                         
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item text-center" href="{{ url('/admin/homepage') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <a class="dropdown-item text-center" href="{{ url('/admin/homepage') }}">
                                     <i class="icon-color me-2 fa-solid fa-utensils"></i>
                                     Dashboard
                                 </a>

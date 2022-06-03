@@ -74,7 +74,7 @@
                     </div>
 
                     {{-- Dropdown logout --}}
-                    <div class="nav-item text-center m-3">
+                    <div class="nav-item text-center">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <button class="btn-standard btn-green_1 fw-bold">
                                 <i class="me-2 fa-solid fa-right-from-bracket"></i>
@@ -142,7 +142,7 @@
                             </span>
                         </a>
                     </li>
-                    <li class="nav-item text-center m-3">
+                    <li class="nav-item text-center mb-3">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <button class="btn-standard btn-green_1 fw-bold">
                                 <i class="me-2 fa-solid fa-right-from-bracket"></i>

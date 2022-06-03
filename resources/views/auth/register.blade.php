@@ -12,7 +12,7 @@
             @csrf
             
             {{-- Business name --}}
-            <div class="form-group row mb-2 flex-column text-center">
+            <div class="form-group row mb-2 flex-column">
                 
                 <div class="">
                     <input placeholder="Nome del ristorante" id="business_name" type="text" class="form-control @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name') }}" autocomplete="business_name" autofocus>
@@ -26,7 +26,7 @@
             </div>
             
             {{-- Business address --}}
-            <div class="form-group row mb-2 flex-column text-center">   
+            <div class="form-group row mb-2 flex-column">   
                 <div class="">
                     <input placeholder="Indirizzo e numero civico del ristorante" id="business_address" type="text" class="form-control @error('business_address') is-invalid @enderror" name="business_address" value="{{ old('business_address') }}" autocomplete="business_address" autofocus>
                 
@@ -64,7 +64,7 @@
             </div>
             
             {{-- Partita iva --}}
-            <div class="form-group row mb-2 flex-column text-center">
+            <div class="form-group row mb-2 flex-column">
         
                 <div class="">
                     <input placeholder="Partita Iva" id="p_iva" type="number" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva') }}" autocomplete="p_iva" autofocus>
@@ -94,7 +94,9 @@
 
                 {{-- Errors types --}}
                 @error('types')
-                    <span class="alert alert-danger">{{ $message . ' min: 1' }}</span>
+                    <span class="alert alert-danger">
+                        {{ $message . ' min: 1' }}
+                    </span>
                 @enderror
             </div>
 
@@ -130,7 +132,7 @@
         
         
             {{-- Email --}}
-            <div class="form-group row mb-2 flex-column text-center">
+            <div class="form-group row mb-2 flex-column">
         
                 <div class="">
                     <input placeholder="Indirizzo email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
@@ -144,7 +146,7 @@
             </div>
         
             {{-- Passowrd --}}
-            <div class="form-group row mb-2 flex-column text-center">
+            <div class="form-group row mb-2 flex-column">
         
                 <div class="">
                     <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
@@ -158,7 +160,7 @@
             </div>
         
             {{-- Password confirm --}}
-            <div class="form-group row mb-2 flex-column text-center">
+            <div class="form-group row mb-2 flex-column">
         
                 <div class="">
                     <input placeholder="Conferma Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">

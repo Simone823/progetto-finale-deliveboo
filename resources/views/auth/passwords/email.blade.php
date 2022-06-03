@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-11 col-sm-8">
             <div class="card p-2 p-sm-4">
-                <h2 class="fw-bold text-center">Invia la mail per reimpostare la password</h2>
+                <h2 class="fw-bold text-center ps-2 pe-2">Invia la mail per reimpostare la password</h2>
 
                 <div class="card-body">
                     @if (session('status'))

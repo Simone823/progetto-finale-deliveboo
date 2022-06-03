@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('metaTitle', 'Deliveboo - Reset password')
+
 @section('content')
 <div class="lost-psw container-md d-flex justify-content-center align-items-center">
     <div class="row justify-content-center">

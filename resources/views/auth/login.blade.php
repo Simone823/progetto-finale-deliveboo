@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('metaTitle')</title>
+    <title>Deliveboo - Log in</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/admin.js') }}" defer></script>

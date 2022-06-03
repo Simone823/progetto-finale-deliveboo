@@ -13,7 +13,7 @@
         @csrf
 
         {{-- name --}}
-        <div class="form-group">
+        <div class="form-group mb-3">
             <label for="name">Nome Piatto</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" placeholder="Insert plate name">
             @error('name')
@@ -22,7 +22,7 @@
         </div>
 
         {{-- ingredients --}}
-        <div class="form-group">
+        <div class="form-group mb-3">
             <label for="ingredients">Ingredienti / Descrizione</label>
             <textarea type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" id="ingredients" rows="3" placeholder="Enter the ingredients separated by ','">
                 {{ old('ingredients') }}
@@ -33,7 +33,7 @@
         </div>
 
         {{-- price --}}
-        <div class="form-group">
+        <div class="form-group mb-3">
             <label for="price">Prezzo</label>
             <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}" placeholder="Inserisci il prezzo in formato: XX.XX">
             @error('price')
@@ -42,7 +42,7 @@
         </div>
 
         {{-- visibility --}}
-        <div class="form-group">
+        <div class="form-group mb-3">
             <label for="visibility">Visibilità</label>
             <select class="form-select @error('visibility') is-invalid @enderror" aria-label="Default select example" name="visibility" id="visibility">
                 <option selected disabled>Seleziona una visibilità</option>
@@ -55,7 +55,7 @@
         </div>
 
         {{-- image --}}
-        <div class="form-group">
+        <div class="form-group mb-3">
             <label for="image" class="col-md-4 col-form-label text-md-right">Immagine</label>
             <div class="col-md-6">
                 <input accept="image/*" placeholder="Immagine Ristorante" id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" autofocus>

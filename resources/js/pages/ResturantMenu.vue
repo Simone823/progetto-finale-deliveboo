@@ -58,7 +58,7 @@
                     </figure>
                     <div class="info-plate-body">
                         <h1>{{ menuPlate.name }}</h1>
-                        <div class="info-plate-ingredients">
+                        <div class="info-plate-ingredients py-5">
                             <span>Ingredienti:</span>
                             <ul>
                                 <li v-for="(ingredient,index) in ingredients" :key="index">
@@ -67,10 +67,15 @@
                             </ul>
                         </div>
                         <div class="cart-management">
-                            <div class="plates-number">
-                                <button class="number-button"></button>
-                                
-                                <button class="number-button"></button>
+                            <div class="plates-number d-flex justify-content-center align-items-center gap-5 py-5">
+                                <!-- TODO gestione da sistemare con dei metodi  -->
+                                <button class="number-button">-</button>
+                                <span>N</span>
+                                <button class="number-button">+</button>
+                            </div>
+                            <!-- TODO gestire il prezzo dinamicamente  -->
+                            <div class="add-cart d-flex justify-content-center">
+                                <button class="btn btn-green_1 py-2 px-5">Aggiungi per {{menuPlate.price}}&euro;</button>
                             </div>
                         </div>
                     </div>

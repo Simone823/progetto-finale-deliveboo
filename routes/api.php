@@ -24,7 +24,9 @@ Route::namespace('Api')->group( function () {
     Route::get('/resturant-type/{user}','UserController@showTypes');
     //creo la rotta che visualizzerà i ristoranti dopo la selzione della città
     Route::get('/city-resturants','UserController@index');
-    // creo la rotaa che visualizzerà la pagina resturant/menù 
+    // creo la rotta che visualizzerà la pagina resturant/menù 
     Route::get('/resturant-menu/{user}', 'UserController@showMenu');
+    //creo le torre per la crud completa degli ordini
+    Route::resource('/orders','OrderController');
 });
 

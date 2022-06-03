@@ -5,7 +5,7 @@ Deliveboo - {{$user->business_name}}
 @endsection
 
 @section('content')
-<div class="register-wrapper modify-wrapper container-md pt-4 d-flex gap-5">
+<div class="register-wrapper modify-wrapper container-md pt-4 d-flex">
     <div class="col-10 col-sm-8 col-md-6 m-auto m-md-0">
         
         <h1 class="fw-bold mb-4">{{$user->business_name}}</h1>
@@ -164,7 +164,7 @@ Deliveboo - {{$user->business_name}}
             <div class="form-group row mb-2 flex-column">
         
                 <div class="">
-                    <input disabled placeholder="Indirizzo email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" autocomplete="email">
+                    <input placeholder="Indirizzo email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" autocomplete="email">
         
                     @error('email')
                         <span class="invalid-feedback" role="alert">

@@ -48,60 +48,74 @@
             <div class="d-none d-md-flex justify-content-end">
                 <ul class="navbar-nav flex-md-row gap-2 align-items-center">            
                     
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <button class="btn-standard btn-white">
-                                <i class="icon-color me-2 fa-solid fa-caret-down"></i>
-                                Collabora con noi
-                            </button>
-                        </a>
-
-                        <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <i class="icon-color me-2 fa-solid fa-utensils"></i>
-                                    Ristoranti
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <i class="icon-color me-2 fa-solid fa-briefcase"></i>
-                                    Lavora con noi
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <i class="icon-color me-2 fa-solid fa-building"></i>
-                                    Deliveroo for Work
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                     
                     @if (Route::has('login'))
                         @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/admin/homepage') }}">
-                                    <button class="btn-standard btn-white">
+                        
+                        {{-- Dropdown logout --}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn-standard btn-white">
+                                    <i class="icon-color me-2 fa-solid fa-caret-down"></i>
+                                    {{ Auth::user()->business_name }}
+                                </button>
+                            </a>
+                                
+                            {{-- Drop item --}}
+                            <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="{{ url('/admin/homepage') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         <i class="icon-color me-2 fa-solid fa-utensils"></i>
-                                        Dashboard                                 
-                                    </button>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <button class="btn-standard btn-white">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                    
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
-                                        {{ __('Logout') }}
+                                        Logout
+                                    </a>
+                                </li>
+                                <li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                            
+                            @else
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn-standard btn-white">
+                                        <i class="icon-color me-2 fa-solid fa-caret-down"></i>
+                                        Collabora con noi
                                     </button>
                                 </a>
+        
+                                <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                            Ristoranti
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="icon-color me-2 fa-solid fa-briefcase"></i>
+                                            Lavora con noi
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="icon-color me-2 fa-solid fa-building"></i>
+                                            Deliveroo for Work
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        @else
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">
                                     <button class="btn-standard btn-white">
@@ -136,47 +150,28 @@
             <div class="nav-burger collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
 
-                    <li class="nav-item text-center dropdown bg-purple">
-                        <a class="nav-link text-reset" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Collabora con noi
-                            <i class="ms-2 fa-solid fa-caret-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item text-center" href="#">
-                                    <i class="icon-color me-2 fa-solid fa-utensils"></i>
-                                    Ristoranti
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-center" href="#">
-                                    <i class="icon-color me-2 fa-solid fa-briefcase"></i>
-                                    Lavora con noi
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-center" href="#">
-                                    <i class="icon-color me-2 fa-solid fa-building"></i>
-                                    Deliveroo for Work
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                     
                     @if (Route::has('login'))
-                        @auth
-                            <li class="nav-item bg-orange">
-                                <a class="nav-link text-center text-reset" href="{{ url('/admin/homepage') }}">
+                    @auth
+                    
+                    {{-- Dropdown logout --}}
+                    <li class="nav-item text-center dropdown bg-purple">
+                        <a class="nav-link text-reset" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ Auth::user()->business_name }}
+                            <i class="ms-2 fa-solid fa-caret-down"></i>
+                        </a>
+                        
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item text-center" href="{{ url('/admin/homepage') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="icon-color me-2 fa-solid fa-utensils"></i>
                                     Dashboard
                                 </a>
                             </li>
-                            <li class="nav-item text-center m-3">
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <button class="btn-standard btn-violet fw-bold">
-                                        <i class="me-2 fa-solid fa-right-from-bracket"></i>
-                                        {{ __('Logout') }}
-                                    </button>
+                            <li>
+                                <a class="dropdown-item text-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
+                                    Logout
                                 </a>
                             </li>
                             <li>
@@ -184,31 +179,57 @@
                                     @csrf
                                 </form>
                             </li>
+                        </ul>
+                    </li>
+
                         @else
-                            <li class="nav-item bg-orange">
-                                <a class="nav-link text-center text-reset" href="{{ route('login') }}">
-                                    Accedi
-                                </a>
-                            </li>
-                            <li class="nav-item bg-violet">
-                                <a class="nav-link text-center text-reset" href="{{ route('register') }}">
-                                    Diventa nostro partner     
-                                </a>
-                            </li>
+
+                        <li class="nav-item text-center dropdown bg-purple">
+                            <a class="nav-link text-reset" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Collabora con noi
+                                <i class="ms-2 fa-solid fa-caret-down"></i>
+                            </a>
+                
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item text-center" href="#">
+                                        <i class="icon-color me-2 fa-solid fa-utensils"></i>
+                                        Ristoranti
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-center" href="#">
+                                        <i class="icon-color me-2 fa-solid fa-briefcase"></i>
+                                        Lavora con noi
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-center" href="#">
+                                        <i class="icon-color me-2 fa-solid fa-building"></i>
+                                        Deliveroo for Work
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item bg-orange">
+                            <a class="nav-link text-center text-reset" href="{{ route('login') }}">
+                                Accedi
+                            </a>
+                        </li>
+                        <li class="nav-item bg-violet">
+                            <a class="nav-link text-center text-reset" href="{{ route('register') }}">
+                                Diventa nostro partner     
+                            </a>
+                        </li>
                         @endauth
-                    @endif                    
-                </ul>
+                        @endif                    
+                    </ul>
+                </div>
+                    
             </div>
-
-        </div>
     </nav>
-
-
-
-
-
-
-
+            
    
 
     {{-- faccio il div con l'id per Vue --}}

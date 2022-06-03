@@ -52,7 +52,7 @@
                             <li>
                                 <a class="@if(Route::is('admin.homepage'))active @endif text-decoration-none" href="{{route('admin.homepage')}}">
                                     <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
-                                        Dashboard
+                                        {{ Auth::user()->business_name }}
                                     </span>
                                 </a>
                             </li>
@@ -74,29 +74,19 @@
                     </div>
 
                     {{-- Dropdown logout --}}
-                    <div class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="nav-item text-center m-3">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <button class="btn-standard btn-green_1 fw-bold">
-                                {{ Auth::user()->name }}
-                                <i class="ms-2 fa-solid fa-caret-down"></i>
+                                <i class="me-2 fa-solid fa-right-from-bracket"></i>
+                                {{ __('Logout') }}
                             </button>
                         </a>
-    
-                        {{-- Drop item --}}
-                        <ul class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
-                                    {{ __('Logout') }}
-                                </a>
-                            </li>
-                            <li>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
-                    </div>                                
+                    </div>
+                    <div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>                              
                 @endguest    
             </ul>
         </div>
@@ -134,7 +124,7 @@
                     <li class="nav-item text-center p-2 @if(Route::is('admin.homepage')) bg-purple @endif">
                         <a class="text-decoration-none" href="{{route('admin.homepage')}}">
                             <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
-                                Dashboard
+                                {{ Auth::user()->business_name }}
                             </span>
                         </a>
                     </li>

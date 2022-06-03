@@ -12276,6 +12276,9 @@ main {
 .main-content {
   position: relative;
   min-height: calc(100vh - 69px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-content .main-background {
@@ -12374,6 +12377,43 @@ main {
     -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 100% 100%);
   }
+}
+
+.lost-psw {
+  height: calc(100vh - 69px);
+}
+
+.register-wrapper .btn-green_1 {
+  border: 1px solid white;
+}
+
+.register-wrapper .types .btn-type {
+  display: block;
+}
+
+.register-wrapper .types .btn-type .btn-outline-primary {
+  color: #00CCBC;
+  background-color: white;
+  font-weight: bold;
+  border-color: #ddd;
+}
+
+.register-wrapper .types .btn-type .btn-outline-primary:hover {
+  background-color: #00CCBC;
+  color: white;
+}
+
+.register-wrapper .types .btn-type .btn-check:checked + .btn-outline-primary,
+.register-wrapper .types .btn-type .btn-check:active + .btn-outline-primary,
+.register-wrapper .types .btn-type .btn-outline-primary:active,
+.register-wrapper .types .btn-type .btn-outline-primary.active,
+.register-wrapper .types .btn-type .btn-outline-primary.dropdown-toggle.show {
+  background-color: #00CCBC;
+  color: white;
+}
+
+.modify-wrapper .image-modify {
+  transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
 }
 
 #homepage_btn_edit {

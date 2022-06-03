@@ -164,7 +164,7 @@ Deliveboo - {{$user->business_name}}
             <div class="form-group row mb-2 flex-column">
         
                 <div class="">
-                    <input placeholder="Indirizzo email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" autocomplete="email">
+                    <input disabled placeholder="Indirizzo email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" autocomplete="email">
         
                     @error('email')
                         <span class="invalid-feedback" role="alert">

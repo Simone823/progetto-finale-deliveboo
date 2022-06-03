@@ -18,12 +18,12 @@
             </a>
 
             {{-- cart e burger versione tablet - mobile --}}
-            <div class="me-3 cart-burger d-flex align-items-center">
+            <div class="me-3 cart-burger d-flex align-items-center gap-2">
                 @if (Route::has('login'))
                 @guest
                 {{-- cart --}}
                 <div class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="#">
                         <button class="btn-standard btn-white opacity-100">
                             <i class="icon-color fa-solid fa-cart-shopping"></i>                          
                         </button>

@@ -11,16 +11,21 @@
         {{-- INFO USER --}}
         <div class="references-info col-12 col-md-6">
 
-
-
             {{-- Business image --}}
-            <figure id="user_image_wrapper" class="user_image">
-                <img id="user_image" src="{{asset('storage/'.$user->business_image)}}" alt="">
+            <figure id="user_image_wrapper">
+                <img class="user_image" src="{{asset('storage/'.$user->business_image)}}" alt="user_img">
             </figure>
+            
+            
+            {{-- User Info --}}
+            <div>
+                <h3 class="fw-bold">{{$user->business_name}}</h3>
+            </div>
 
 
 
-             {{-- User Info --}}
+
+
             <div class="d-flex py-2">
                 <div id="homepage_card" class="card me-2 rounded-0" style="width: 18rem;">
                     <div class="card-body">
@@ -28,7 +33,7 @@
                       <h6 class="card-subtitle mb-2 fw-bold">{{$user->name}}  {{$user->surname}}</h6>
                       <h6 class="card-subtitle mb-2 ">{{$user->email}} </h6>
                       <h6 class="card-subtitle mb-2 fs-6">P.iva: {{$user->p_iva}} </h6>
-                      <h6 class="card-subtitle mb-2 ">{{$user->business_name}} </h6>
+                    
                         <div class="d-flex justify-center align-center">
                             <h6 class="card-subtitle mb-2 me-2 fw-bold">{{$user->business_city}} </h6>
                             <h6 class="card-subtitle mb-2 ">{{$user->business_cap}} </h6>

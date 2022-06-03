@@ -117,6 +117,9 @@ main{
 .main-content{
     position: relative;
     min-height: calc(100vh - 69px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     .main-background{
         position: absolute;
@@ -270,23 +273,17 @@ main{
 
 
 //--------------- MODIFY USER PAGE -----------------
-.image-modify {
-    transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
+.modify-wrapper{
+
+    .image-modify {
+        transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
+    }
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-//---------------HOMEPAGE USER-----------------
+//---------------DAHBOARD USER-----------------
 // #homepage_main{
     // background-color: $white_1;
     // height: calc(100vh - 55px);

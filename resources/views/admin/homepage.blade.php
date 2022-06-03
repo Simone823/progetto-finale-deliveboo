@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'DELIVEBOO DB | DASHBOARD')
+@section('metaTitle', 'Deliveboo - dashboard')
 
 @section('content')
     {{-- @dd($user->types[0]); --}}
 
     {{-- Wrapper referenze utente (ristorante) --}}
     <div id="homepage_main" class="wrapper_references_user">
-        <div class="container">
+        <div class="container-md">
 
             {{-- User reference --}}
             <div class="user_reference">

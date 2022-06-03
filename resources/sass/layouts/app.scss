@@ -248,6 +248,7 @@ main{
 
             .btn-outline-primary{
                 color: $green_1;
+                background-color: white;
                 font-weight: bold;
                 border-color: #ddd;
 
@@ -263,6 +264,14 @@ main{
             }
         }
     }
+}
+
+
+
+
+//--------------- MODIFY USER PAGE -----------------
+.image-modify {
+    transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
 }
 
 

@@ -234,7 +234,31 @@ main{
 
 
 //--------------- REGISTER PAGE -----------------
+.register-wrapper{
 
+    .types{
+
+        .btn-type{
+            display: block;
+
+            .btn-outline-primary{
+                color: $green_1;
+                font-weight: bold;
+                border-color: #ddd;
+
+                &:hover{
+                    background-color: $green_1;
+                    color: white;
+                }
+            }
+
+            .btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
+                background-color: $green_1;
+                color: white;
+            }
+        }
+    }
+}
 
 
 

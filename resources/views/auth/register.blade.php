@@ -84,11 +84,11 @@
                 <h6 class="fw-bolder">Tipo di cucina (min 1)</h6>
                 {{-- Form checkbox --}}
 
-                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <div class="btn-type" role="group">
                     @foreach($types as $index => $type)
                         <input type="checkbox" class="btn-check" id="types-{{$type->id}}" value="{{$type->id}}" name="types[{{$index}}]"autocomplete="off">
 
-                        <label class="btn btn-outline-primary" for="types-{{$type->id}}">{{$type->type_name}}</label>
+                        <label class="btn btn-outline-primary mb-2 me-1" for="types-{{$type->id}}">{{$type->type_name}}</label>
                     @endforeach
                 </div>
 

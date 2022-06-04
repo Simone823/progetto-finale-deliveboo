@@ -5136,7 +5136,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "MyJumbotron",
+  data: function data() {
+    return {
+      // Input address
+      inputAddress: ""
+    };
+  }
+});
 
 /***/ }),
 
@@ -10655,7 +10663,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".bg-green[data-v-07777776] {\n  background-color: #00CCBC;\n  position: relative;\n}\n.bg-green[data-v-07777776]::after {\n  display: block;\n  content: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920.78 273.12'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d0eb99;%7D%3C/style%3E%3C/defs%3E%3Cg id='Livello_2' data-name='Livello 2'%3E%3Cg id='Livello_1-2' data-name='Livello 1'%3E%3Cpolygon class='cls-1' points='1920.78 273.12 0 273.12 0 157.14 1920.78 0 1920.78 273.12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  bottom: -7px;\n}\n.bg-green .jumbotron_title[data-v-07777776] {\n  color: #3e235d;\n  font-weight: 800;\n}\n.bg-green .jumbotron_image[data-v-07777776] {\n  width: 60%;\n  display: block;\n  z-index: 999;\n}\n.bg-green .col-sx[data-v-07777776] {\n  z-index: 999;\n}", ""]);
+exports.push([module.i, ".bg-green[data-v-07777776] {\n  background-color: #00CCBC;\n  position: relative;\n  z-index: 0;\n}\n.bg-green[data-v-07777776]::after {\n  display: block;\n  content: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920.78 273.12'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d0eb99;%7D%3C/style%3E%3C/defs%3E%3Cg id='Livello_2' data-name='Livello 2'%3E%3Cg id='Livello_1-2' data-name='Livello 1'%3E%3Cpolygon class='cls-1' points='1920.78 273.12 0 273.12 0 157.14 1920.78 0 1920.78 273.12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  bottom: -7px;\n}\n.bg-green .jumbotron_title[data-v-07777776] {\n  color: #3e235d;\n  font-weight: 800;\n}\n.bg-green .jumbotron_image[data-v-07777776] {\n  width: 60%;\n  display: block;\n  z-index: 999;\n}\n.bg-green .col-sx[data-v-07777776] {\n  z-index: 999;\n}", ""]);
 
 // exports
 
@@ -59546,7 +59554,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

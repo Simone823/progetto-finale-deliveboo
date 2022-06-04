@@ -20,7 +20,7 @@ Deliveboo - {{$user->business_name}}
             {{-- Image wrapper business_image --}}
             <div class="wrapper_image d-flex justify-content-center d-md-none">
                 <figure class="image_business figure rounded overflow-hidden">
-                    <img class="img-thumbnail" src="{{asset('storage/'.$user->business_image)}}" alt="">
+                    <img class="img-thumbnail" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="">
                 </figure>
             </div>
 
@@ -186,7 +186,7 @@ Deliveboo - {{$user->business_name}}
     <div class="image-modify col-6 image-modify-wrapper d-none d-md-flex justify-content-center align-items-center">
         {{-- Image wrapper business_image --}}
         <figure class="image_business figure rounded overflow-hidden">
-            <img class="img-thumbnail" src="{{asset('storage/'.$user->business_image)}}" alt="">
+            <img class="img-thumbnail" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="">
         </figure>
     </div>
 

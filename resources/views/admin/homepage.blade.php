@@ -13,7 +13,7 @@
             
             {{-- Business image --}}
             <figure id="user_image_wrapper">
-                <img class="user_image" src="{{asset('storage/'.$user->business_image)}}" alt="user_img">
+                <img class="user_image" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="user_img">
             </figure>
             
             
@@ -31,7 +31,15 @@
             </div>
 
             {{-- OTHER INFO --}}
-            <div>
+            <div class="card-body">
+              <h5 class="card-subtitle fw-bold mb-2">{{$user->name}}  {{$user->surname}}</h5>
+              <h5 class="card-subtitle mb-2">{{$user->p_iva}} </h5>
+              <h5 class="card-subtitle mb-2">{{$user->email}} </h5>
+              <h5 class="card-subtitle mb-2">{{$user->business_address}} </h5>            
+                <div class="d-flex align-center">
+                    <h5 class="card-subtitle me-2">{{$user->business_city}} </h5>
+                    <h5 class="card-subtitle">{{$user->business_cap}} </h5>
+                </div>
             </div>
 
 
@@ -42,13 +50,13 @@
                 </div>
 
                 {{-- lista --}}
-                <ul class="list_types list-unstyled d-flex ">
+                <div class="d-flex justify-content-between gap-2 m-3 flex-wrap">
                     @foreach ($user->types as $type)
-                        <li class="m-2">
-                            {{$type->type_name}}
-                        </li>
+                    <h5>
+                        {{$type->type_name}}
+                    </h5>
                     @endforeach
-                </ul>
+                </div>
             </div>
 
 
@@ -56,28 +64,6 @@
             <div class="business_header-wrapper">
                 <h5 class="fw-bold mb-0">Piatti</h5>
             </div>
-
-
-
-
-            <div class="d-flex py-2">
-                <div id="homepage_card" class="card me-2 rounded-0" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title fs-3 text">Anagrafica:</h5>
-                      <h6 class="card-subtitle mb-2 fw-bold">{{$user->name}}  {{$user->surname}}</h6>
-                      <h6 class="card-subtitle mb-2 ">{{$user->email}} </h6>
-                      <h6 class="card-subtitle mb-2 fs-6">P.iva: {{$user->p_iva}} </h6>
-                    
-                        <div class="d-flex justify-center align-center">
-                            <h6 class="card-subtitle mb-2 me-2 fw-bold">{{$user->business_city}} </h6>
-                            <h6 class="card-subtitle mb-2 ">{{$user->business_cap}} </h6>
-                        </div>
-                      <h6 class="card-subtitle  ">{{$user->business_address}} </h6>            
-                    </div>
-                </div>
-            </div>
-
-
 
 
 

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('p_iva', 11)->unique();
+            $table->string('p_iva', 13)->unique();
             $table->string('business_name', 200);
             $table->string('business_slug', 255)->unique();
             $table->string('business_city', 100);

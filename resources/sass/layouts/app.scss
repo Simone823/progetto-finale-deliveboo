@@ -302,14 +302,14 @@ main{
         }
 
         .business_header-wrapper{
-            border-bottom: 2px solid $green_1;
+            border-bottom: 2px solid $green_0;
 
-            .modify-text{
-                color: $purple_1;
-                transition: all 300ms linear;
+            .animated-button1{
+                transition: all 250ms linear;
 
                 &:hover{
-                    color: $green_1;
+                    transform: scale(1.1);
+                    background: linear-gradient(-30deg, $green_0 50%, $green_1 50%);
                 }
             }
         }
@@ -320,9 +320,35 @@ main{
                 border-radius: 8px;
                 overflow: hidden;
 
-                .carousel-inner{
+                .carousel-inner, .carousel-item {
                     height: 300px;
                 }
+
+                .carousel-caption {
+                    bottom: -10px;
+                    left: 0;
+                    right: 0;
+                    background: rgb(0,204,188);
+                    background: linear-gradient(0deg, rgba(0,204,188,1) 0%, rgba(253,187,45,0) 100%);
+
+                }
+
+                @media (max-width: 325px){
+                    aspect-ratio: 1;
+
+                    .carousel-caption{
+                        display: none;
+                    }
+                }
+            }
+
+            .no-plates-wrapper{
+                background-image: url('img/placeholder_plate.svg');
+                background-position: center;
+                background-size: cover;
+                border-radius: 8px;
+                height: 300px;
+                width: 100%;
             }
         }
     }

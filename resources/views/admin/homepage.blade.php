@@ -8,116 +8,156 @@
 {{-- Wrapper referenze utente (ristorante) --}}
 <div class="wrapper_references_user container-md align-self-start d-md-flex pt-3 gap-3">
     
-        {{-- INFO USER --}}
-        <div class="references-info col-12 col-md-6">
+  {{-- INFO USER --}}
+    <div class="references-info col-12 col-md-6">
             
-            {{-- Business image --}}
-            <figure id="user_image_wrapper">
-                <img class="user_image" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="user_img">
-            </figure>
+      {{-- Business image --}}
+      <figure id="user_image_wrapper">
+        <img class="user_image" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="user_img">
+      </figure>
             
             
-            {{-- BUSINESS NAME --}}
-            <div class="business_header-wrapper d-flex justify-content-between">
-                <h3 class="text-uppercase fw-bold">{{$user->business_name}}</h3>
+      {{-- BUSINESS NAME --}}
+      <div class="business_header-wrapper d-flex justify-content-between">
+        <h3 class="text-uppercase fw-bold">{{$user->business_name}}</h3>
 
-                {{-- Modifica dati utente --}}
-                <a href="{{route('admin.user.edit', $user)}}" class="align-self-end text-decoration-none">
-                    <span class="modify-text">
-                        <i class="fa-solid fa-pen"></i>
-                        Modifica
-                    </span>
+        {{-- Modifica dati utente --}}
+        <a href="{{route('admin.user.edit', $user)}}" class="align-self-end animated-button1 text-reset">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <i class="fa-solid fa-pen"></i>
+        </a>
+
+        </div>
+
+        {{-- OTHER INFO --}}
+        <div class="card-body">              
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="fw-bold">Nome - Cognome</td>
+                <td>{{$user->name}}  {{$user->surname}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">E-mail</td>
+                <td>{{ $user->email }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">P.iva</td>
+                <td>{{$user->p_iva}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Nome ristorante</td>
+                <td>{{ $user->business_name }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Città</td>
+                <td>{{ $user->business_city }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Indirizzo</td>
+                <td>{{ $user->business_address }}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">CAP</td>
+                <td>{{ $user->business_cap }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        {{-- TIPOLOGIE --}}
+        <div>
+          <div class="business_header-wrapper">
+            <h5 class="fw-bold mb-0">Tipo di cucina</h5>
+          </div>
+
+          {{-- lista --}}
+          <div class="d-flex justify-content-between gap-2 m-3 mb-4 flex-wrap">
+            @foreach ($user->types as $type)
+
+            <a href="#" class="animated-button1 text-reset">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              {{$type->type_name}}
+            </a>
+
+            @endforeach
+          </div>
+        </div>
+
+
+        {{-- PLATES --}}
+        <div class="plates-wrapper mb-3 pt-2">
+          <div class="business_header-wrapper mb-3">
+            <h5 class="fw-bold mb-0">Ultimi piatti</h5>
+          </div>
+
+          {{-- CAROUSEL se sono presenti piatti da visualizzare--}}
+          @if(count($user->plates) != 0)
+          
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+  
+
+              @foreach ($lastPlates->take(5) as $key=>$plate)
+                          
+              <div class="carousel-item {{ $key == count($lastPlates) - 1 ? 'active' : ''}}">
+                <img src="{{$plate->image ? asset('storage/'.$plate->image) : asset('img/placeholder_plate.svg')}}" class="d-block w-100">
+                <div class="carousel-caption">
+                  <h5 class="caption-text">{{ $plate->name }}</h5>
+                </div>
+              </div>
+              @endforeach
+
+            </div>
+
+              {{-- BTN PRE --}}
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+
+              {{-- BTN NEXT --}}
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+
+            @else
+
+            {{-- div se non ci sono piatti --}}
+            <div class="no-plates-wrapper d-flex flex-wrap justify-content-center align-items-center">
+              <h4 class="col-12 align-self-end fw-bold ps-4 pe-4 text-center">NON SONO PRESENTI PIATTI DA VISUALIZZARE</h4>
+
+              <div class="align-self-start m-2">
+                <a href="{{route('admin.plates.create')}}">
+                  <button class="btn-standard btn-green_1 fw-bold">
+                      Crea nuovo piatto
+                  </button>
                 </a>
-            </div>
 
-            {{-- OTHER INFO --}}
-            <div class="card-body">
-              <h5 class="card-subtitle fw-bold mb-2">{{$user->name}}  {{$user->surname}}</h5>
-              <h5 class="card-subtitle mb-2">{{$user->p_iva}} </h5>
-              <h5 class="card-subtitle mb-2">{{$user->email}} </h5>
-              <h5 class="card-subtitle mb-2">{{$user->business_address}} </h5>            
-                <div class="d-flex align-center">
-                    <h5 class="card-subtitle me-2">{{$user->business_city}} </h5>
-                    <h5 class="card-subtitle">{{$user->business_cap}} </h5>
-                </div>
-            </div>
-
-
-            {{-- TIPOLOGIE --}}
-            <div class="pt-3">
-                <div class="business_header-wrapper">
-                    <h5 class="fw-bold mb-0">Tipo di cucina</h5>
-                </div>
-
-                {{-- lista --}}
-                <div class="d-flex justify-content-between gap-2 m-3 mb-4 flex-wrap">
-                    @foreach ($user->types as $type)
-                    <button class="btn-standard btn-gradient fw-bold">
-                        {{$type->type_name}}
-                    </button>
-                    @endforeach
-                </div>
-            </div>
-
-
-            {{-- PLATES --}}
-            <div class="plates-wrapper mb-3">
-                <div class="business_header-wrapper mb-3">
-                    <h5 class="fw-bold mb-0">Ultimi piatti</h5>
-                </div>
-
-                {{-- CAROUSEL --}}
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>First slide label</h5>
-                          <p>Some representative placeholder content for the first slide.</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>Second slide label</h5>
-                          <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>Third slide label</h5>
-                          <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-
+              </div>
 
             </div>
 
+            @endif
+
+          </div>
+      </div>
 
 
-        </div>
-
-
-        {{-- STATISTICHE --}}
-        <div class="references-statistiche col-12 col-md-6">
-            <h1 class="text-center">STATISTICHE</h1>
-        </div>
-    </div>
+      {{-- STATISTICHE --}}
+      <div class="references-statistiche col-12 col-md-6">
+          <h1 class="text-center">STATISTICHE</h1>
+      </div>
+  </div>
     
 @endsection

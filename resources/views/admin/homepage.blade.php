@@ -18,7 +18,7 @@
             
             
       {{-- BUSINESS NAME --}}
-      <div class="business_header-wrapper d-flex justify-content-between">
+      <div class="business_header-wrapper d-flex justify-content-between align-items-center">
         <h3 class="text-uppercase fw-bold">{{$user->business_name}}</h3>
 
         {{-- Modifica dati utente --}}
@@ -71,8 +71,17 @@
 
         {{-- TIPOLOGIE --}}
         <div>
-          <div class="business_header-wrapper">
+          <div class="business_header-wrapper d-flex justify-content-between align-items-center">
             <h5 class="fw-bold mb-0">Tipo di cucina</h5>
+
+            {{-- Modifica dati utente --}}
+              <a href="{{route('admin.user.edit', $user)}}" class="align-self-end animated-button1 text-reset">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fa-solid fa-pen"></i>
+              </a>
           </div>
 
           {{-- lista --}}
@@ -94,8 +103,21 @@
 
         {{-- PLATES --}}
         <div class="plates-wrapper mb-5 pt-2">
-          <div class="business_header-wrapper mb-3">
+          <div class="business_header-wrapper mb-3 d-flex justify-content-between align-items-center">
             <h5 class="fw-bold mb-0">Ultimi piatti</h5>
+
+            @if(count($user->plates) != 0)
+            
+            {{-- ADD PLATES --}}
+            <a href="{{route('admin.plates.create')}}" class="align-self-end animated-button1 text-reset">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <i class="fa-solid fa-pen"></i>
+            </a>
+
+            @endif
           </div>
 
           {{-- CAROUSEL se sono presenti piatti da visualizzare--}}

@@ -175,10 +175,17 @@ Deliveboo - {{$user->business_name}}
             </div>
         
             {{-- Button register --}}
-            <div class="form-group mb-0 pb-5">
+            <div class="form-group mb-0 pb-5 d-flex gap-3">
                 <button type="submit" class="btn-standard btn-green_1">
                     {{ __('Invia') }}
                 </button>
+
+                <div class="turn-back-wrapper align-self-end">
+                    <a href="{{route('admin.homepage')}}" class="text-reset text-decoration-none">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <span>Torna alla dashboard</span>
+                    </a>
+                </div>
             </div>
         </form>
     </div>

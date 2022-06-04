@@ -278,6 +278,14 @@ main{
     .image-modify {
         transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
     }
+
+    .turn-back-wrapper{
+        cursor: pointer;
+
+        &:hover{
+            color: $purple_1;
+        }
+    }
 }
 
 

@@ -113,11 +113,11 @@ Deliveboo - {{$user->business_name}}
                 <h6 class="fw-bolder">Tipo di cucina (min 1)</h6>
                 {{-- Form checkbox --}}
 
-                <div class="btn-type" role="group">
+                <div class="btn-type d-flex flex-wrap" role="group">
                     @foreach($types as $index => $type)
                         <input {{$user->types->contains($type) ? 'checked' : '' }} type="checkbox" class="btn-check" id="types-{{$type->id}}" value="{{$type->id}}" name="types[{{$index}}]"autocomplete="off">
 
-                        <label class="btn btn-outline-primary mb-2 me-1" for="types-{{$type->id}}">{{$type->type_name}}</label>
+                        <label class="btn btn-outline-primary mb-2 me-1 flex-grow-1" for="types-{{$type->id}}">{{$type->type_name}}</label>
                     @endforeach
                 </div>
 

@@ -5499,8 +5499,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5523,6 +5521,8 @@ __webpack_require__.r(__webpack_exports__);
         console.warn(err);
       });
     },
+    // a questa funzione viene passato come parametro l'indice del piatto cliccato, '
+    // ed assegna all'array ingredients i corrispettivi ingredienti
     viewPlate: function viewPlate(i) {
       this.activeElement = i;
       this.ingredients = this.menuPlates[i].ingredients.split(',');
@@ -10655,7 +10655,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".bg-green[data-v-07777776] {\n  background-color: #00CCBC;\n  position: relative;\n}\n.bg-green[data-v-07777776]::after {\n  display: block;\n  content: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920.78 273.12'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d0eb99;%7D%3C/style%3E%3C/defs%3E%3Cg id='Livello_2' data-name='Livello 2'%3E%3Cg id='Livello_1-2' data-name='Livello 1'%3E%3Cpolygon class='cls-1' points='1920.78 273.12 0 273.12 0 157.14 1920.78 0 1920.78 273.12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  bottom: -7px;\n}\n.bg-green .jumbotron_title[data-v-07777776] {\n  color: #3e235d;\n  font-weight: 800;\n}\n.bg-green .jumbotron_image[data-v-07777776] {\n  width: 60%;\n  display: block;\n  z-index: 999;\n}\n.bg-green .col-sx[data-v-07777776] {\n  z-index: 999;\n}", ""]);
+exports.push([module.i, ".bg-green[data-v-07777776] {\n  background-color: #00CCBC;\n  position: relative;\n  z-index: 0;\n}\n.bg-green[data-v-07777776]::after {\n  display: block;\n  content: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920.78 273.12'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d0eb99;%7D%3C/style%3E%3C/defs%3E%3Cg id='Livello_2' data-name='Livello 2'%3E%3Cg id='Livello_1-2' data-name='Livello 1'%3E%3Cpolygon class='cls-1' points='1920.78 273.12 0 273.12 0 157.14 1920.78 0 1920.78 273.12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");\n  position: absolute;\n  width: 100%;\n  bottom: -7px;\n}\n.bg-green .jumbotron_title[data-v-07777776] {\n  color: #3e235d;\n  font-weight: 800;\n}\n.bg-green .jumbotron_image[data-v-07777776] {\n  width: 60%;\n  display: block;\n  z-index: 999;\n}\n.bg-green .col-sx[data-v-07777776] {\n  z-index: 999;\n}", ""]);
 
 // exports
 
@@ -10712,7 +10712,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".resturant-img[data-v-77c5cfc8] {\n  height: 385px;\n  width: 100%;\n}\n.resturant-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.card-wrapper[data-v-77c5cfc8] {\n  cursor: pointer;\n  border-radius: 3px;\n  overflow: hidden;\n  background-color: white;\n  height: 132px;\n  box-shadow: 0px 0px 5px 0px rgba(181, 181, 181, 0.3882352941);\n}\n.card-wrapper[data-v-77c5cfc8]:hover {\n  box-shadow: 0px 16px 16px 2px rgba(181, 181, 181, 0.39);\n  transition: all 300ms;\n}\n.card-wrapper:hover img[data-v-77c5cfc8] {\n  transform: scale(1.1, 1.1);\n  transition: all 500ms;\n}\n.card-wrapper .post-card-img[data-v-77c5cfc8] {\n  width: 100px;\n  height: 100px;\n  flex-shrink: 0;\n  overflow: hidden;\n  border-radius: 3px;\n}\n.card-wrapper .post-card-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-wrapper[data-v-77c5cfc8] {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  z-index: -1;\n  display: none;\n}\n.info-wrapper.active[data-v-77c5cfc8] {\n  z-index: 0;\n}\n.info-wrapper.active[data-v-77c5cfc8]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.552);\n  z-index: 0;\n  -webkit-animation: bkc-data-v-77c5cfc8 300ms linear 1;\n          animation: bkc-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n@keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n.info-plate-card[data-v-77c5cfc8] {\n  position: relative;\n  outline: none;\n  border-radius: 8px;\n  max-width: 560px;\n  width: 90%;\n  display: none;\n  background-color: white;\n  overflow: hidden;\n  z-index: 1;\n}\n.info-plate-card .close-info[data-v-77c5cfc8] {\n  position: absolute;\n  top: 15px;\n  right: 15px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  border: none;\n  background-color: white;\n  color: #00CCBC;\n  font-size: 18px;\n  font-weight: 600;\n}\n.info-plate-card .info-plate-img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 400px;\n  overflow: hidden;\n}\n.info-plate-card .info-plate-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-plate-card .info-plate-body[data-v-77c5cfc8] {\n  padding: 25px 20px;\n}\n.info-plate-card.active[data-v-77c5cfc8] {\n  display: block;\n  -webkit-animation: zoom-data-v-77c5cfc8 300ms linear 1;\n          animation: zoom-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n@keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n.info-plate-ingredients[data-v-77c5cfc8] {\n  border-bottom: 1px solid rgb(209, 209, 209);\n}", ""]);
+exports.push([module.i, ".container-fluid[data-v-77c5cfc8] {\n  border-bottom: 1px solid rgba(202, 202, 202, 0.3882352941);\n  box-shadow: 0px 4px 10px rgba(202, 202, 202, 0.3882352941);\n  position: relative;\n  z-index: 10;\n}\n#resturant-menu[data-v-77c5cfc8] {\n  background-color: #f9fafa;\n}\n.resturant-name[data-v-77c5cfc8] {\n  font-size: 40px;\n  font-weight: 700;\n}\n.resturant-img[data-v-77c5cfc8] {\n  height: 385px;\n  width: 100%;\n}\n.resturant-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.card-wrapper[data-v-77c5cfc8] {\n  cursor: pointer;\n  border-radius: 3px;\n  overflow: hidden;\n  background-color: white;\n  height: 132px;\n  box-shadow: 0px 0px 5px 0px rgba(181, 181, 181, 0.3882352941);\n}\n.card-wrapper[data-v-77c5cfc8]:hover {\n  box-shadow: 0px 12px 17px 10px rgba(181, 181, 181, 0.39);\n  transition: all 300ms;\n}\n.card-wrapper:hover img[data-v-77c5cfc8] {\n  transform: scale(1.1, 1.1);\n  transition: all 500ms;\n}\n.card-wrapper .post-card-img[data-v-77c5cfc8] {\n  width: 100px;\n  height: 100px;\n  flex-shrink: 0;\n  overflow: hidden;\n  border-radius: 3px;\n}\n.card-wrapper .post-card-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-wrapper[data-v-77c5cfc8] {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  z-index: -1;\n  display: none;\n}\n.info-wrapper.active[data-v-77c5cfc8] {\n  z-index: 999;\n}\n.info-wrapper.active[data-v-77c5cfc8]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.552);\n  z-index: 0;\n  -webkit-animation: bkc-data-v-77c5cfc8 300ms linear 1;\n          animation: bkc-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n@keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n.info-plate-card[data-v-77c5cfc8] {\n  position: relative;\n  outline: none;\n  border-radius: 8px;\n  max-width: 560px;\n  width: 90%;\n  max-height: 75vh;\n  display: none;\n  background-color: white;\n  overflow: hidden;\n  z-index: 9999;\n  overflow-y: auto;\n}\n.info-plate-card .close-info[data-v-77c5cfc8] {\n  position: absolute;\n  top: 1vh;\n  right: 1vh;\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  border: none;\n  background-color: white;\n  color: #00CCBC;\n  font-size: 18px;\n  font-weight: 600;\n  opacity: 0.65;\n}\n.info-plate-card .close-info[data-v-77c5cfc8]:hover {\n  opacity: 1;\n  transition: all 300ms;\n}\n.info-plate-card .info-plate-img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 320px;\n  overflow: hidden;\n}\n.info-plate-card .info-plate-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-plate-card .info-plate-body[data-v-77c5cfc8] {\n  padding: 25px 20px;\n}\n.info-plate-card.active[data-v-77c5cfc8] {\n  display: block;\n  -webkit-animation: zoom-data-v-77c5cfc8 300ms linear 1;\n          animation: zoom-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n@keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n.info-plate-ingredients[data-v-77c5cfc8] {\n  border-bottom: 1px solid rgb(209, 209, 209);\n}", ""]);
 
 // exports
 
@@ -43146,14 +43146,18 @@ var render = function () {
   return _c("div", [
     _c("main", [
       _c("section", { attrs: { id: "resturant-info" } }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12 col-md-8 col-lg-6" }, [
-              _c("h1", [_vm._v(_vm._s(_vm.resturant.business_name))]),
+        _c("div", { staticClass: "container-fluid p-0" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "resturant-details container p-4 px-md-4 py-md-5" },
+            [
+              _c("h1", { staticClass: "resturant-name" }, [
+                _vm._v(_vm._s(_vm.resturant.business_name)),
+              ]),
               _vm._v(" "),
-              _c("p", { staticClass: "m-0" }, [
+              _c("p", { staticClass: "m-0 fs-5" }, [
                 _vm._v(
                   "Di " +
                     _vm._s(
@@ -43162,7 +43166,7 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "m-0" }, [
+              _c("p", { staticClass: "m-0 fs-6" }, [
                 _vm._v(
                   "In " +
                     _vm._s(
@@ -43175,7 +43179,7 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c("span", [
+              _c("span", { staticClass: "fs-6" }, [
                 _vm._v(
                   "CAP: " +
                     _vm._s(_vm.resturant.business_cap) +
@@ -43184,17 +43188,17 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c("span", { staticClass: "d-block" }, [
+              _c("span", { staticClass: "d-block fs-6" }, [
                 _vm._v("Email: " + _vm._s(_vm.resturant.email)),
               ]),
-            ]),
-          ]),
+            ]
+          ),
         ]),
       ]),
       _vm._v(" "),
-      _c("section", { attrs: { id: "resturant-menu" } }, [
-        _c("div", { staticClass: "container pt-5" }, [
-          _c("h3", [_vm._v("Ecco il nostro menù")]),
+      _c("section", { staticClass: "pt-4", attrs: { id: "resturant-menu" } }, [
+        _c("div", { staticClass: "container p-4 p-md-3" }, [
+          _c("h3", { staticClass: "mb-3 fs-2" }, [_vm._v("Il nostro menù")]),
           _vm._v(" "),
           _c(
             "div",
@@ -43219,12 +43223,14 @@ var render = function () {
                         "card-wrapper p-3 d-flex justify-content-between",
                     },
                     [
-                      _c("div", { staticClass: "card-body flex-grow-1" }, [
-                        _c("h5", { staticClass: "card-title" }, [
+                      _c("div", { staticClass: "card-body flex-grow-1 p-0" }, [
+                        _c("h5", { staticClass: "card-title fw-bold mb-3" }, [
                           _vm._v(_vm._s(menuPlate.name)),
                         ]),
                         _vm._v(" "),
-                        _c("span", [_vm._v(_vm._s(menuPlate.price) + "€")]),
+                        _c("span", { staticClass: "fs-5" }, [
+                          _vm._v(_vm._s(menuPlate.price) + "€"),
+                        ]),
                       ]),
                       _vm._v(" "),
                       _vm._m(1, true),
@@ -43262,7 +43268,8 @@ var render = function () {
               _c(
                 "button",
                 {
-                  staticClass: "close-info",
+                  staticClass:
+                    "close-info d-flex justify-content-center align-items-center",
                   on: {
                     click: function ($event) {
                       return _vm.closePlateInfo()
@@ -43328,16 +43335,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "constainer-fluid main-image" }, [
-      _c("figure", { staticClass: "resturant-img" }, [
+    return _c(
+      "figure",
+      { staticClass: "resturant-img col-12 col-md-4 p-0 m-0" },
+      [
         _c("img", {
           attrs: {
             src: "https://i.picsum.photos/id/292/3852/2556.jpg?hmac=cPYEh0I48Xpek2DPFLxTBhlZnKVhQCJsbprR-Awl9lo",
             alt: "",
           },
         }),
-      ]),
-    ])
+      ]
+    )
   },
   function () {
     var _vm = this

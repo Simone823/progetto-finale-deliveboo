@@ -46,7 +46,7 @@
               </tr>
               <tr>
                 <td class="fw-bold">P.iva</td>
-                <td>{{$user->p_iva}}</td>
+                <td class="text-uppercase">{{$user->p_iva}}</td>
               </tr>
               <tr>
                 <td class="fw-bold">Nome ristorante</td>
@@ -93,7 +93,7 @@
 
 
         {{-- PLATES --}}
-        <div class="plates-wrapper mb-3 pt-2">
+        <div class="plates-wrapper mb-5 pt-2">
           <div class="business_header-wrapper mb-3">
             <h5 class="fw-bold mb-0">Ultimi piatti</h5>
           </div>
@@ -102,14 +102,12 @@
           @if(count($user->plates) != 0)
           
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-
-  
+            <div class="carousel-inner">  
 
               @foreach ($lastPlates->take(5) as $key=>$plate)
                           
               <div class="carousel-item {{ $key == count($lastPlates) - 1 ? 'active' : ''}}">
-                <img src="{{$plate->image ? asset('storage/'.$plate->image) : asset('img/placeholder_plate.svg')}}" class="d-block w-100">
+                <img src="{{$plate->image ? asset('storage/'.$plate->image) : asset('img/placeholder_plate.png')}}" class="d-block w-100">
                 <div class="carousel-caption">
                   <h5 class="caption-text">{{ $plate->name }}</h5>
                 </div>

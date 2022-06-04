@@ -1,40 +1,38 @@
 <template>
     <div>
-
+        
         <main>
             <!-- sezioni che contiene le info del ristorante selezionato -->
             <section id="resturant-info">
-                <div class="constainer-fluid main-image">
-                    <figure class="resturant-img">
+                <!-- container che contiene l'immagine del ristorante e le sue info principale  -->
+                <div class="container-fluid p-0">
+                    <figure class="resturant-img col-12 col-md-4 p-0 m-0">
                         <!-- TODO aggiungere immagine -->
                         <img src="https://i.picsum.photos/id/292/3852/2556.jpg?hmac=cPYEh0I48Xpek2DPFLxTBhlZnKVhQCJsbprR-Awl9lo" alt="">
                     </figure>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-8 col-lg-6">
-                            <h1>{{ resturant.business_name }}</h1>
-                            <p class="m-0">Di {{ `${ resturant.name + ' ' + resturant.surname }` }}</p>
-                            <p class="m-0">In {{ `${ resturant.business_address + ' (' + resturant.business_city + ') '}` }}</p>
-                            <span>CAP: {{resturant.business_cap}} / P.Iva: {{resturant.p_iva }}</span>
-                            <span class="d-block">Email: {{ resturant.email }}</span>
-                        </div>
+                    <!-- info ristorante prese dal DB  -->
+                    <div class="resturant-details container p-4 px-md-4 py-md-5">
+                        <h1 class="resturant-name">{{ resturant.business_name }}</h1>
+                        <p class="m-0 fs-5">Di {{ `${ resturant.name + ' ' + resturant.surname }` }}</p>
+                        <p class="m-0 fs-6">In {{ `${ resturant.business_address + ' (' + resturant.business_city + ') '}` }}</p>
+                        <span class="fs-6">CAP: {{resturant.business_cap}} / P.Iva: {{resturant.p_iva }}</span>
+                        <span class="d-block fs-6">Email: {{ resturant.email }}</span>
                     </div>
-                </div> 
+                </div>
             </section>
             <!-- sezione che contiene il menù del ristorante -->
-            <section id="resturant-menu">
-                <div class="container pt-5">
-                    <h3>Ecco il nostro menù</h3>
+            <section id="resturant-menu" class="pt-4">
+                <div class="container p-4 p-md-3">
+                    <h3 class="mb-3 fs-2">Il nostro menù</h3>
                     <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
                     <div class="cards-wrapper row justify-content-start">
                         <div class="card-menu col-12 col-md-6 col-lg-4 gap-2 mb-4"
                             v-for="(menuPlate,index) in menuPlates" :key="index"
                             v-on:click="viewPlate(index)">
                             <div class="card-wrapper p-3 d-flex justify-content-between">
-                                <div class="card-body flex-grow-1">
-                                    <h5 class="card-title">{{ menuPlate.name }}</h5>
-                                    <span>{{ menuPlate.price }}&euro;</span>
+                                <div class="card-body flex-grow-1 p-0">
+                                    <h5 class="card-title fw-bold mb-3">{{ menuPlate.name }}</h5>
+                                    <span class="fs-5">{{ menuPlate.price }}&euro;</span>
                                 </div>
                                 <div class="align-self-center justify-content-center">
                                     <figure class="post-card-img m-0">
@@ -53,7 +51,7 @@
             <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper d-flex justify-content-center align-items-center'] ">
                 <div :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "
                     v-for="(menuPlate,index) in menuPlates" :key="index">
-                    <button class="close-info" @click="closePlateInfo()">X</button>
+                    <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">X</button>
                     <figure class="info-plate-img">
                         <img src="https://i.picsum.photos/id/431/5398/3599.jpg?hmac=bc325kFqsm626RGhgs-XwG_GFqd4x3VmXtramO12qL8" alt="">
                     </figure>
@@ -113,6 +111,8 @@ export default {
                 console.warn(err);
             })
         },
+        // a questa funzione viene passato come parametro l'indice del piatto cliccato, '
+        // ed assegna all'array ingredients i corrispettivi ingredienti
         viewPlate(i){
             this.activeElement = i;
             this.ingredients = this.menuPlates[i].ingredients.split(',');
@@ -128,6 +128,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+    .container-fluid{
+        border-bottom: 1px solid #cacaca63;
+        box-shadow: 0px 4px 10px #cacaca63;
+        position: relative;
+        z-index: 10;
+    }
+
+    #resturant-menu{
+        background-color: #f9fafa;
+    }
+
+    .resturant-name{
+        font-size: 40px;
+        font-weight: 700;
+    }
 
     .resturant-img{
         height: 385px;
@@ -149,7 +165,7 @@ export default {
         box-shadow: 0px 0px 5px 0px #b5b5b563;
 
         &:hover{
-            box-shadow: 0px 16px 16px 2px rgb(181 181 181 / 39%);
+            box-shadow: 0px 12px 17px 10px rgb(181 181 181 / 39%);
             transition: all 300ms;
         }
 
@@ -185,7 +201,7 @@ export default {
     }
 
     .info-wrapper.active{
-        z-index: 0;
+        z-index: 999;
 
         &::after{
             content: "";
@@ -215,28 +231,36 @@ export default {
         border-radius: 8px;
         max-width: 560px;
         width: 90%;
+        max-height: 75vh;
         display: none;
         background-color: white;
         overflow: hidden;
-        z-index: 1;
+        z-index: 9999;
+        overflow-y: auto;
 
         .close-info{
             position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 40px;
-            height: 40px;
+            top: 1vh;
+            right: 1vh;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             border: none;
             background-color: white;
             color: #00CCBC;
             font-size: 18px;
             font-weight: 600;
+            opacity: 0.65;
+
+            &:hover{
+                opacity: 1;
+                transition: all 300ms;
+            }
         }
 
         .info-plate-img{
             width: 100%;
-            height: 400px;
+            height: 320px;
             overflow: hidden;
             img{
                 width: 100%;

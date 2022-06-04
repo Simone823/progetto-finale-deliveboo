@@ -96,7 +96,7 @@ Deliveboo - {{$user->business_name}}
             <div class="form-group row mb-2 flex-column">
         
                 <div class="">
-                    <input disabled placeholder="Partita Iva" id="p_iva" type="number" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva', $user->p_iva) }}" autocomplete="p_iva" autofocus>
+                    <input disabled placeholder="Partita Iva" id="p_iva" type="text" class="text-uppercase form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva', $user->p_iva) }}" autocomplete="p_iva" autofocus>
         
                     @error('p_iva')
                     <span class="invalid-feedback" role="alert">

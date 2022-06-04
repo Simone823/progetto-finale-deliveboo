@@ -18,8 +18,8 @@
             
             
             {{-- BUSINESS NAME --}}
-            <div class="business_name-wrapper d-flex justify-content-between">
-                <h3 class="fw-bold">{{$user->business_name}}</h3>
+            <div class="business_header-wrapper d-flex justify-content-between">
+                <h3 class="text-uppercase fw-bold">{{$user->business_name}}</h3>
 
                 {{-- Modifica dati utente --}}
                 <a href="{{route('admin.user.edit', $user)}}" class="align-self-end text-decoration-none">
@@ -30,6 +30,32 @@
                 </a>
             </div>
 
+            {{-- OTHER INFO --}}
+            <div>
+            </div>
+
+
+            {{-- TIPOLOGIE --}}
+            <div class="pt-3">
+                <div class="business_header-wrapper">
+                    <h5 class="fw-bold mb-0">Tipo di cucina:</h5>
+                </div>
+
+                {{-- lista --}}
+                <ul class="list_types list-unstyled d-flex ">
+                    @foreach ($user->types as $type)
+                        <li class="m-2">
+                            {{$type->type_name}}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+
+
+            {{-- PLATES --}}
+            <div class="business_header-wrapper">
+                <h5 class="fw-bold mb-0">Piatti</h5>
+            </div>
 
 
 
@@ -53,19 +79,6 @@
 
 
 
-            {{-- User Info --}}
-            <div id="homepage_card" class="card me-2 rounded-0" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title fs-3 text">Tipologie Ristorante:</h5>
-                    <div class="card-subtitle mb-2 fw-bold">
-                    <ul class="list_types list-unstyled d-flex ">
-                        @foreach ($user->types as $type)
-                            <li id="homepage_user_type" class="type_name rounded-pill p-1 me-2 fs-6">{{$type->type_name}}</li>
-                        @endforeach
-                    </ul>
-                    </div> 
-                </div>
-            </div>
 
 
         </div>
@@ -75,6 +88,10 @@
         <div class="references-statistiche col-12 col-md-6">
             <h1 class="text-center">STATISTICHE</h1>
         </div>
+
+
+
+
 
     </div>
     

@@ -300,7 +300,7 @@ main{
             }
         }
 
-        .business_name-wrapper{
+        .business_header-wrapper{
             border-bottom: 2px solid $green_1;
 
             .modify-text{
@@ -317,35 +317,5 @@ main{
     .references-statistiche{
 
         background-color: rgba($color: $violet, $alpha: 0.6);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-#homepage_btn_edit{
-    background-color: $green_1;
-    border: 0px transparent;
-    color: $white_1;
-    
-}
-
-
-#homepage_card{
-    background-color: $green_1;
-    color: $white_1;
-
-    #homepage_user_type{
-        background-color: $white_1;
-        color: $green_1;
-        text-align: center;
-
     }
 }

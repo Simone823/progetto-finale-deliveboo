@@ -5385,8 +5385,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      types: [],
-      inputAddress: ''
+      types: []
     };
   },
   methods: {
@@ -5396,8 +5395,7 @@ __webpack_require__.r(__webpack_exports__);
       // faccio una chiamata axios per recuperare le tipologie
       axios.get('/api/home').then(function (res) {
         //salvo i dati della chiamata nell'array
-        _this.types = res.data.typres;
-        console.log(res.data.typres);
+        _this.types = res.data.typres; // console.log(res.data.typres);
       })["catch"](function (err) {
         console.warn(err);
       });

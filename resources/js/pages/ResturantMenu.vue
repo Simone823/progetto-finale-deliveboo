@@ -5,13 +5,13 @@
             <!-- sezioni che contiene le info del ristorante selezionato -->
             <section id="resturant-info">
                 <!-- container che contiene l'immagine del ristorante e le sue info principale  -->
-                <div class="container-custom row p-0 p-md-3 px-lg-5 py-lg-4">
+                <div class="container-fluid p-0">
                     <figure class="resturant-img col-12 col-md-4 p-0 m-0">
                         <!-- TODO aggiungere immagine -->
                         <img src="https://i.picsum.photos/id/292/3852/2556.jpg?hmac=cPYEh0I48Xpek2DPFLxTBhlZnKVhQCJsbprR-Awl9lo" alt="">
                     </figure>
                     <!-- info ristorante prese dal DB  -->
-                    <div class="resturant-details col-12 col-md-8 p-4 px-md-4 py-md-0">
+                    <div class="resturant-details container p-4 px-md-4 py-md-5">
                         <h1 class="resturant-name">{{ resturant.business_name }}</h1>
                         <p class="m-0 fs-5">Di {{ `${ resturant.name + ' ' + resturant.surname }` }}</p>
                         <p class="m-0 fs-6">In {{ `${ resturant.business_address + ' (' + resturant.business_city + ') '}` }}</p>
@@ -22,8 +22,8 @@
             </section>
             <!-- sezione che contiene il menù del ristorante -->
             <section id="resturant-menu">
-                <div class="container-custom p-4 p-md-3 px-lg-5 py-lg-4">
-                    <h3>Ecco il nostro menù</h3>
+                <div class="container p-4 p-md-3">
+                    <h3 class="mb-3">Il nostro menù</h3>
                     <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
                     <div class="cards-wrapper row justify-content-start">
                         <div class="card-menu col-12 col-md-6 col-lg-4 gap-2 mb-4"
@@ -111,6 +111,8 @@ export default {
                 console.warn(err);
             })
         },
+        // a questa funzione viene passato come parametro l'indice del piatto cliccato, '
+        // ed assegna all'array ingredients i corrispettivi ingredienti
         viewPlate(i){
             this.activeElement = i;
             this.ingredients = this.menuPlates[i].ingredients.split(',');
@@ -127,11 +129,6 @@ export default {
 
 <style lang="scss" scoped>
 
-    .container-custom{
-        max-width: 1940px;
-        margin: 0 auto;
-    }
-
     .resturant-name{
         font-size: 35px;
         font-weight: 700;
@@ -139,17 +136,12 @@ export default {
 
     .resturant-img{
         height: 385px;
-        border-radius: 5px;
-        overflow: hidden;
+        width: 100%;
         img{
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
-        }
-        &:hover img{
-            transform: scale(1.05,1.05);
-            transition: all 800ms;
         }
     }
 

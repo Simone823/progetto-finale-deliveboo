@@ -66,7 +66,7 @@
             {{-- Partita iva --}}
             <div class="form-group row mb-2 flex-column">
         
-                <div class="">
+                <div>
                     <input placeholder="Partita Iva" id="p_iva" type="number" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva') }}" autocomplete="p_iva" autofocus>
         
                     @error('p_iva')
@@ -94,7 +94,7 @@
 
                 {{-- Errors types --}}
                 @error('types')
-                    <span class="alert alert-danger">
+                    <span class="text-danger fw-bold">
                         {{ $message . ' min: 1' }}
                     </span>
                 @enderror

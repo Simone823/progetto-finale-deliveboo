@@ -245,7 +245,6 @@ main{
 
     .types{
 
-
         .btn-type{
             display: block;
 
@@ -298,6 +297,15 @@ main{
                 height: 100%;
                 object-fit: cover;
                 display: block;
+            }
+        }
+
+        .business_name-wrapper{
+            border-bottom: 2px solid $green_1;
+            color: red;
+
+            #modify-text{
+                color: red;
             }
         }
     }

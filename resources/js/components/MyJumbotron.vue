@@ -34,9 +34,6 @@
 
 <script>
     export default {
-
-        
-        
     }
 </script>
 
@@ -44,6 +41,7 @@
     .bg-green{
         background-color:#00CCBC;
         position: relative;
+        z-index: 0;
 
         &::after{
             display: block;

@@ -66,7 +66,7 @@ class RegisterController extends Controller
             'surname' => ['required', 'string', 'min:3', 'max:255', 'regex:/^[a-zA-Z\s]+$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'p_iva' => ['required', 'numeric', 'digits:11', 'unique:users,p_iva'],
+            'p_iva' => ['required', 'unique:users,p_iva', 'regex:/^[a-zA-Z][a-zA-Z]([0-9]{11})$/'],
             'business_name' => ['required', 'string', 'min:3', 'max:200'],
             'types' => ['required', 'exists:types,id'],
             'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z\s]+$/'],
@@ -79,6 +79,7 @@ class RegisterController extends Controller
             'name.regex' => 'Il nome può contenere solo lettere',
             'surname.regex' => 'Il cognome può contenere solo lettere',
             'business_city.regex' => 'La città può contenere solo lettere',
+            'p_iva.regex' => 'il formato di P.Iva deve avere 2 lettere iniziali seguite da 11 numeri'
         ]);
     }
 

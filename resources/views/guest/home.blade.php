@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light">
-        <div class="container-md container-custom">
+        <div class="container-md">
             {{-- LOGO --}}
             <a class="ms-3 ms-md-0 navbar-brand" href="{{ url('/') }}">
                 <img id="header_logo_deliveboo" src="{{ asset('img/logo_white.svg') }}" alt="Deliveboo">

@@ -29,7 +29,6 @@ export default {
     data() {
         return {
             types: [],
-            inputAddress: '',
         }
     },
     methods: {
@@ -39,13 +38,14 @@ export default {
             .then( res => {
                 //salvo i dati della chiamata nell'array
                 this.types = res.data.typres;
-                console.log(res.data.typres);
+                // console.log(res.data.typres);
             })
             .catch( err => {
                 console.warn(err);
             })
         },
     },
+
     mounted() {
         this.fetchTypes();
     }

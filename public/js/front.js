@@ -5136,7 +5136,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "MyJumbotron",
+  data: function data() {
+    return {
+      // Input address
+      inputAddress: ""
+    };
+  }
+});
 
 /***/ }),
 
@@ -5377,8 +5385,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      types: [],
-      inputAddress: ''
+      types: []
     };
   },
   methods: {
@@ -5388,8 +5395,7 @@ __webpack_require__.r(__webpack_exports__);
       // faccio una chiamata axios per recuperare le tipologie
       axios.get('/api/home').then(function (res) {
         //salvo i dati della chiamata nell'array
-        _this.types = res.data.typres;
-        console.log(res.data.typres);
+        _this.types = res.data.typres; // console.log(res.data.typres);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -59555,7 +59561,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

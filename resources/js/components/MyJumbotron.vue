@@ -34,6 +34,15 @@
 
 <script>
     export default {
+        name: "MyJumbotron",
+
+        data() {
+            return {
+
+                // Input address
+                inputAddress: "",
+            }
+        },
     }
 </script>
 
@@ -67,8 +76,5 @@
         .col-sx{
             z-index: 999;
         }
-        
-        
-
     }
 </style>

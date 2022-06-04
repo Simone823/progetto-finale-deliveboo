@@ -94,7 +94,7 @@
 
                 {{-- Errors types --}}
                 @error('types')
-                    <span class="alert alert-danger">
+                    <span class="text-danger fw-bold">
                         {{ $message . ' min: 1' }}
                     </span>
                 @enderror

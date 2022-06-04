@@ -3,23 +3,31 @@
 @section('metaTitle', 'Deliveboo - dashboard')
 
 @section('content')
-    {{-- @dd($user->types[0]); --}}
+{{-- @dd($user->types[0]); --}}
 
-    {{-- Wrapper referenze utente (ristorante) --}}
-    <div class="wrapper_references_user container-md align-self-start d-md-flex pt-3 gap-3">
-
+{{-- Wrapper referenze utente (ristorante) --}}
+<div class="wrapper_references_user container-md align-self-start d-md-flex pt-3 gap-3">
+    
         {{-- INFO USER --}}
         <div class="references-info col-12 col-md-6">
-
+            
             {{-- Business image --}}
             <figure id="user_image_wrapper">
                 <img class="user_image" src="{{asset('storage/'.$user->business_image)}}" alt="user_img">
             </figure>
             
             
-            {{-- User Info --}}
-            <div>
+            {{-- BUSINESS NAME --}}
+            <div class="business_name-wrapper d-flex justify-content-between">
                 <h3 class="fw-bold">{{$user->business_name}}</h3>
+
+                {{-- Modifica dati utente --}}
+                <a href="{{route('admin.user.edit', $user)}}" class="align-self-end text-decoration-none">
+                    <span class="modify-text">
+                        <i class="fa-solid fa-pen"></i>
+                        Modifica
+                    </span>
+                </a>
             </div>
 
 
@@ -60,12 +68,6 @@
             </div>
 
 
-            {{-- Modifica dati utente --}}
-            <div class="btn-edit">
-                <a href="{{route('admin.user.edit', $user)}}" id="homepage_btn_edit" class="btn btn-primary rounded-pill" >
-                    Modifica
-                </a>
-            </div>
         </div>
 
 

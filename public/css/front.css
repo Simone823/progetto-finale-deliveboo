@@ -12310,8 +12310,19 @@ img {
   }
 }
 
+.form-control:focus {
+  border-color: #3E235D;
+  box-shadow: 0 0 0 0.25rem rgba(62, 35, 93, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: #00CCBC;
+  border-color: #3E235D;
+}
+
 #navbar_guest {
   background-color: #00CCBC;
+  z-index: 999;
 }
 
 #navbar_guest #header_logo_deliveboo {

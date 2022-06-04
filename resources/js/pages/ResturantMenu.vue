@@ -1,30 +1,28 @@
 <template>
     <div>
-
+        
         <main>
             <!-- sezioni che contiene le info del ristorante selezionato -->
             <section id="resturant-info">
-                <div class="constainer-fluid main-image">
-                    <figure class="resturant-img">
+                <!-- container che contiene l'immagine del ristorante e le sue info principale  -->
+                <div class="container-custom row p-0 p-md-3 px-lg-5 py-lg-4">
+                    <figure class="resturant-img col-12 col-md-4 p-0 m-0">
                         <!-- TODO aggiungere immagine -->
                         <img src="https://i.picsum.photos/id/292/3852/2556.jpg?hmac=cPYEh0I48Xpek2DPFLxTBhlZnKVhQCJsbprR-Awl9lo" alt="">
                     </figure>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-8 col-lg-6">
-                            <h1>{{ resturant.business_name }}</h1>
-                            <p class="m-0">Di {{ `${ resturant.name + ' ' + resturant.surname }` }}</p>
-                            <p class="m-0">In {{ `${ resturant.business_address + ' (' + resturant.business_city + ') '}` }}</p>
-                            <span>CAP: {{resturant.business_cap}} / P.Iva: {{resturant.p_iva }}</span>
-                            <span class="d-block">Email: {{ resturant.email }}</span>
-                        </div>
+                    <!-- info ristorante prese dal DB  -->
+                    <div class="resturant-details col-12 col-md-8 p-4 px-md-4 py-md-0">
+                        <h1 class="resturant-name">{{ resturant.business_name }}</h1>
+                        <p class="m-0 fs-5">Di {{ `${ resturant.name + ' ' + resturant.surname }` }}</p>
+                        <p class="m-0 fs-6">In {{ `${ resturant.business_address + ' (' + resturant.business_city + ') '}` }}</p>
+                        <span class="fs-6">CAP: {{resturant.business_cap}} / P.Iva: {{resturant.p_iva }}</span>
+                        <span class="d-block fs-6">Email: {{ resturant.email }}</span>
                     </div>
-                </div> 
+                </div>
             </section>
             <!-- sezione che contiene il menù del ristorante -->
             <section id="resturant-menu">
-                <div class="container pt-5">
+                <div class="container-custom p-4 p-md-3 px-lg-5 py-lg-4">
                     <h3>Ecco il nostro menù</h3>
                     <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
                     <div class="cards-wrapper row justify-content-start">
@@ -129,14 +127,29 @@ export default {
 
 <style lang="scss" scoped>
 
+    .container-custom{
+        max-width: 1940px;
+        margin: 0 auto;
+    }
+
+    .resturant-name{
+        font-size: 35px;
+        font-weight: 700;
+    }
+
     .resturant-img{
         height: 385px;
-        width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
         img{
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
+        }
+        &:hover img{
+            transform: scale(1.05,1.05);
+            transition: all 800ms;
         }
     }
 
@@ -185,7 +198,7 @@ export default {
     }
 
     .info-wrapper.active{
-        z-index: 0;
+        z-index: 10;
 
         &::after{
             content: "";
@@ -218,7 +231,7 @@ export default {
         display: none;
         background-color: white;
         overflow: hidden;
-        z-index: 1;
+        z-index: 9999;
 
         .close-info{
             position: absolute;

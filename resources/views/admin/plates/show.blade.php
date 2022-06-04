@@ -21,7 +21,12 @@
                 {{-- Image wrapper plate image --}}
                 <div class="wrapper_image d-flex justify-content-center px-3">
                     <figure class="plate_image shadow-lg">
-                        <img src="{{asset('storage/'.$plate->image)}}" alt="">
+                        @if($plate->image == null)
+                            <img src="{{asset('img/placeholder_plate.png')}}" alt="">
+
+                        @else
+                            <img src="{{asset('storage/'.$plate->image)}}" alt="">
+                        @endif
                     </figure>
                 </div>
     

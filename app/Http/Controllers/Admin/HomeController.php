@@ -98,13 +98,13 @@ class HomeController extends Controller
 
         // Validazione dati reuqest
         $request->validate([
-            'name' => ['required', 'string', 'max:255', 'min:3', 'regex:/^[a-zA-Z]+$/'],
-            'surname' => ['required', 'string', 'max:255', 'min:3', 'regex:/^[a-zA-Z]+$/'],
+            'name' => ['required', 'string', 'max:255', 'min:3', 'regex:/^[a-zA-Z\s]+$/'],
+            'surname' => ['required', 'string', 'max:255', 'min:3', 'regex:/^[a-zA-Z\s]+$/'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'p_iva' => $user->p_iva,
             'business_name' => ['required', 'string', 'max:200'],
             'types' => ['required', 'exists:types,id'],
-            'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z]+$/'],
+            'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z\s]+$/'],
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
             'business_image' => ['nullable', 'file', 'image', 'mimetypes:image/jpeg,image/png,image/svg', 'max:2048'],

@@ -62,14 +62,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'min:3', 'max:255', 'regex:/^[a-zA-Z]+$/'],
-            'surname' => ['required', 'string', 'min:3', 'max:255', 'regex:/^[a-zA-Z]+$/'],
+            'name' => ['required', 'string', 'min:3', 'max:255', 'regex:/^[a-zA-Z\s]+$/'],
+            'surname' => ['required', 'string', 'min:3', 'max:255', 'regex:/^[a-zA-Z\s]+$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'p_iva' => ['required', 'numeric', 'digits:11', 'unique:users,p_iva'],
             'business_name' => ['required', 'string', 'min:3', 'max:200'],
             'types' => ['required', 'exists:types,id'],
-            'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z]+$/'],
+            'business_city' => ['required', 'string', 'max:100', 'regex:/^[a-zA-Z\s]+$/'],
             'business_cap' => ['required', 'numeric', 'digits:5'],
             'business_address' => ['required', 'string', 'max:255'],
             'business_image' => ['nullable', 'file', 'image', 'mimetypes:image/jpeg,image/png,image/svg', 'max:2048'],

@@ -20,7 +20,7 @@ Deliveboo - {{$user->business_name}}
             {{-- Image wrapper business_image --}}
             <div class="wrapper_image d-flex justify-content-center d-md-none">
                 <figure class="image_business figure rounded overflow-hidden">
-                    <img class="img-thumbnail" src="{{asset('storage/'.$user->business_image)}}" alt="">
+                    <img class="img-thumbnail" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="">
                 </figure>
             </div>
 
@@ -96,7 +96,7 @@ Deliveboo - {{$user->business_name}}
             <div class="form-group row mb-2 flex-column">
         
                 <div class="">
-                    <input disabled placeholder="Partita Iva" id="p_iva" type="number" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva', $user->p_iva) }}" autocomplete="p_iva" autofocus>
+                    <input disabled placeholder="Partita Iva" id="p_iva" type="text" class="text-uppercase form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva', $user->p_iva) }}" autocomplete="p_iva" autofocus>
         
                     @error('p_iva')
                     <span class="invalid-feedback" role="alert">
@@ -175,10 +175,17 @@ Deliveboo - {{$user->business_name}}
             </div>
         
             {{-- Button register --}}
-            <div class="form-group mb-0 pb-5">
+            <div class="form-group mb-0 pb-5 d-flex gap-3">
                 <button type="submit" class="btn-standard btn-green_1">
                     {{ __('Invia') }}
                 </button>
+
+                <div class="turn-back-wrapper align-self-end">
+                    <a href="{{route('admin.homepage')}}" class="text-reset text-decoration-none">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <span>Torna alla dashboard</span>
+                    </a>
+                </div>
             </div>
         </form>
     </div>
@@ -186,7 +193,7 @@ Deliveboo - {{$user->business_name}}
     <div class="image-modify col-6 image-modify-wrapper d-none d-md-flex justify-content-center align-items-center">
         {{-- Image wrapper business_image --}}
         <figure class="image_business figure rounded overflow-hidden">
-            <img class="img-thumbnail" src="{{asset('storage/'.$user->business_image)}}" alt="">
+            <img class="img-thumbnail" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="">
         </figure>
     </div>
 

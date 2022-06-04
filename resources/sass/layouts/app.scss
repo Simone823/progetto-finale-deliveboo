@@ -177,6 +177,7 @@ main{
 
         .img-wrapper{
             padding: 20px;
+            max-width: 900px;
             position: absolute;
             display: flex;
             justify-content: center;
@@ -277,6 +278,14 @@ main{
     .image-modify {
         transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
     }
+
+    .turn-back-wrapper{
+        cursor: pointer;
+
+        &:hover{
+            color: $purple_1;
+        }
+    }
 }
 
 
@@ -300,16 +309,54 @@ main{
             }
         }
 
-        .business_name-wrapper{
-            border-bottom: 2px solid $green_1;
+        .business_header-wrapper{
+            border-bottom: 2px solid $green_0;
 
-            .modify-text{
-                color: $purple_1;
-                transition: all 300ms linear;
+            .animated-button1{
+                transition: all 250ms linear;
 
                 &:hover{
-                    color: $green_1;
+                    transform: scale(1.1);
+                    background: linear-gradient(-30deg, $green_0 50%, $green_1 50%);
                 }
+            }
+        }
+
+        .plates-wrapper{
+
+            #carouselExampleCaptions{
+                border-radius: 8px;
+                overflow: hidden;
+
+                .carousel-inner, .carousel-item {
+                    height: 300px;
+                }
+
+                .carousel-caption {
+                    bottom: -10px;
+                    left: 0;
+                    right: 0;
+                    background: rgb(0,204,188);
+                    background: linear-gradient(0deg, rgba(0,204,188,1) 0%, rgba(253,187,45,0) 100%);
+
+                }
+
+                @media (max-width: 325px){
+                    aspect-ratio: 1;
+
+                    .carousel-caption{
+                        display: none;
+                    }
+                }
+            }
+
+            .no-plates-wrapper{
+                background-image: url('img/placeholder_plate.png');
+                background-position: center;
+                background-size: cover;
+                border-radius: 8px;
+                height: 300px;
+                width: 100%;
             }
         }
     }
@@ -317,35 +364,5 @@ main{
     .references-statistiche{
 
         background-color: rgba($color: $violet, $alpha: 0.6);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-#homepage_btn_edit{
-    background-color: $green_1;
-    border: 0px transparent;
-    color: $white_1;
-    
-}
-
-
-#homepage_card{
-    background-color: $green_1;
-    color: $white_1;
-
-    #homepage_user_type{
-        background-color: $white_1;
-        color: $green_1;
-        text-align: center;
-
     }
 }

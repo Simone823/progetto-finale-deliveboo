@@ -24,8 +24,11 @@ class HomeController extends Controller
         // Recupero i dati dell'utente autenticato
         $user = Auth::user();
 
+        // RECUPERO ULTIMI 5 PIATTI UTENTE AUTENTICATO
+        $lastPlates = $user->plates->sortByDesc("id");
+
         // Return view admin homepage
-        return view('admin.homepage', compact('user'));
+        return view('admin.homepage', compact('user', 'lastPlates'));
     }
 
     public function index()

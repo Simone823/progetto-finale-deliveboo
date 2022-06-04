@@ -18,7 +18,7 @@
 
         {{-- MENU ESTESO --}}
         <div class="d-none d-md-flex justify-content-end align-items-center">
-            <ul class="navbar-nav flex-md-row gap-4">            
+            <ul class="navbar-nav flex-md-row gap-3">            
                 
                 <!-- Authentication Links -->
                 @guest
@@ -48,7 +48,14 @@
                     <div class="link_wrapper d-flex align-items-center">
                             
                         {{-- List link --}}
-                        <ul class="lists_link list-unstyled d-flex align-items-center gap-4">
+                        <ul class="lists_link list-unstyled d-flex align-items-center gap-3">
+                            <li>
+                                <a class=" text-decoration-none" href="{{ url('/') }}">
+                                    <span class="navbar_dashboard">
+                                        Home
+                                    </span>
+                                </a>
+                            </li>
                             <li>
                                 <a class="@if(Route::is('admin.homepage'))active @endif text-decoration-none" href="{{route('admin.homepage')}}">
                                     <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">
@@ -121,6 +128,13 @@
                     
                 @else
                     {{-- List link --}}
+                    <li class="nav-item text-center p-2">
+                        <a class="text-decoration-none" href="{{ url('/') }}">
+                            <span class="navbar_dashboard">
+                                Home
+                            </span>
+                        </a>
+                    </li>
                     <li class="nav-item text-center p-2 @if(Route::is('admin.homepage')) bg-purple @endif">
                         <a class="text-decoration-none" href="{{route('admin.homepage')}}">
                             <span class="@if(Route::is('admin.homepage')) active @endif navbar_dashboard">

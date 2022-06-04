@@ -177,6 +177,7 @@ main{
 
         .img-wrapper{
             padding: 20px;
+            max-width: 900px;
             position: absolute;
             display: flex;
             justify-content: center;
@@ -309,6 +310,18 @@ main{
 
                 &:hover{
                     color: $green_1;
+                }
+            }
+        }
+
+        .plates-wrapper{
+
+            #carouselExampleCaptions{
+                border-radius: 8px;
+                overflow: hidden;
+
+                .carousel-inner{
+                    height: 300px;
                 }
             }
         }

@@ -46,23 +46,67 @@
             {{-- TIPOLOGIE --}}
             <div class="pt-3">
                 <div class="business_header-wrapper">
-                    <h5 class="fw-bold mb-0">Tipo di cucina:</h5>
+                    <h5 class="fw-bold mb-0">Tipo di cucina</h5>
                 </div>
 
                 {{-- lista --}}
-                <div class="d-flex justify-content-between gap-2 m-3 flex-wrap">
+                <div class="d-flex justify-content-between gap-2 m-3 mb-4 flex-wrap">
                     @foreach ($user->types as $type)
-                    <h5>
+                    <button class="btn-standard btn-gradient fw-bold">
                         {{$type->type_name}}
-                    </h5>
+                    </button>
                     @endforeach
                 </div>
             </div>
 
 
             {{-- PLATES --}}
-            <div class="business_header-wrapper">
-                <h5 class="fw-bold mb-0">Piatti</h5>
+            <div class="plates-wrapper mb-3">
+                <div class="business_header-wrapper mb-3">
+                    <h5 class="fw-bold mb-0">Ultimi piatti</h5>
+                </div>
+
+                {{-- CAROUSEL --}}
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>First slide label</h5>
+                          <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Second slide label</h5>
+                          <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://picsum.photos/200/300" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Third slide label</h5>
+                          <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+
             </div>
 
 
@@ -74,11 +118,6 @@
         <div class="references-statistiche col-12 col-md-6">
             <h1 class="text-center">STATISTICHE</h1>
         </div>
-
-
-
-
-
     </div>
     
 @endsection

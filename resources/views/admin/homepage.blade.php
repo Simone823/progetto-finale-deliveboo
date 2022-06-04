@@ -22,9 +22,11 @@
                 <h3 class="fw-bold">{{$user->business_name}}</h3>
 
                 {{-- Modifica dati utente --}}
-                <a href="{{route('admin.user.edit', $user)}}" class="align-self-end">
-                    <i class="fa-solid fa-pen"></i>
-                    Modifica
+                <a href="{{route('admin.user.edit', $user)}}" class="align-self-end text-decoration-none">
+                    <span class="modify-text">
+                        <i class="fa-solid fa-pen"></i>
+                        Modifica
+                    </span>
                 </a>
             </div>
 
@@ -38,7 +40,7 @@
                       <h5 class="card-title fs-3 text">Anagrafica:</h5>
                       <h6 class="card-subtitle mb-2 fw-bold">{{$user->name}}  {{$user->surname}}</h6>
                       <h6 class="card-subtitle mb-2 ">{{$user->email}} </h6>
-                      <h6 class="card-subtitle mb-2 fs-6">P.iva: IT{{$user->p_iva}} </h6>
+                      <h6 class="card-subtitle mb-2 fs-6">P.iva: {{$user->p_iva}} </h6>
                     
                         <div class="d-flex justify-center align-center">
                             <h6 class="card-subtitle mb-2 me-2 fw-bold">{{$user->business_city}} </h6>

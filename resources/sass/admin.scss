@@ -12,14 +12,8 @@
 // Import auth login scss
 @import './common/common.scss';
 
-// Import plates show scss
-@import './plates/show.scss';
-
-// Import plates edit scss
-@import './plates/edit.scss';
-
-// Import plates index scss
-@import './plates/index.scss';
+//plate index + show + edit
+@import './admin/plate.scss';
 
 //style btn
 @import './common/style_btn.scss';

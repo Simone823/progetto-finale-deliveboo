@@ -6,6 +6,14 @@
 
 <div class="register-wrapper modify-wrapper container-md pt-4 d-flex justify-content-center">
     <div class="col-10 col-sm-8 col-md-6 m-auto m-md-0">
+
+        {{-- TURN BACK --}}
+        <div class="turn-back-wrapper pb-3 align-self-end">
+            <a href="{{route('admin.homepage')}}" class="text-reset text-decoration-none">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                <span>Torna alla dashboard</span>
+            </a>
+        </div>
         
         <h1 class="fw-bold mb-4">Crea un nuovo Piatto</h1>
         
@@ -88,7 +96,7 @@
 
 
             {{-- plate image input--}}
-            <div class="form-group mb-4">
+            <div class="form-group mb-2">
                 <h6 class="fw-bold">Immagine del piatto</h6>
         
                 <div class="col-lg-8">
@@ -104,11 +112,12 @@
 
         
             {{-- Button --}}
-            <div class="form-group mb-0 pb-5 d-flex gap-3">
+            <div class="form-group mb-0 pb-5">
                 <button type="submit" class="btn-standard btn-green_1">
                     Aggiungi
                 </button>
             </div>
+
         </form>
     </div>
 </div>

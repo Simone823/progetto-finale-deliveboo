@@ -1,0 +1,79 @@
+//---------------DAHBOARD USER-----------------
+.wrapper_references_user{
+    
+    .references-info{
+        
+        #user_image_wrapper{
+            height: 250px;
+            border-radius: 5px;
+            overflow: hidden;
+        
+            .user_image{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .business_header-wrapper{
+            border-bottom: 2px solid $green_0;
+
+            .animated-button1{
+                transition: all 250ms linear;
+
+                &:hover{
+                    transform: scale(1.1);
+                    background: linear-gradient(-30deg, $green_0 50%, $green_1 50%);
+                }
+            }
+        }
+
+        .plates-wrapper{
+
+            #carouselExampleCaptions{
+                border-radius: 8px;
+                overflow: hidden;
+                height: 300px;
+                width: 100%;
+
+                .carousel-inner, .carousel-item, img {
+
+                    height: 300px;
+                    object-fit: cover;
+                }
+
+                .carousel-caption {
+                    bottom: -10px;
+                    left: 0;
+                    right: 0;
+                    background: rgb(0,204,188);
+                    background: linear-gradient(0deg, rgba(0,204,188,1) 0%, rgba(253,187,45,0) 100%);
+
+                }
+
+                @media (max-width: 325px){
+                    aspect-ratio: 1;
+
+                    .carousel-caption{
+                        display: none;
+                    }
+                }
+            }
+
+            .no-plates-wrapper{
+                background-image: url('img/placeholder_plate.png');
+                background-position: center;
+                background-size: cover;
+                border-radius: 8px;
+                height: 300px;
+                width: 100%;
+            }
+        }
+    }
+
+    .references-statistiche{
+
+        background-color: rgba($color: $violet, $alpha: 0.6);
+    }
+}

@@ -8,6 +8,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Import auth login scss
-@import './common.scss';
+@import './common/common.scss';
 
 @import './guest/homepage.scss';
+
+//style btn
+@import './common/style_btn.scss'

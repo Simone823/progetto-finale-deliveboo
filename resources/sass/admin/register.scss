@@ -1,0 +1,82 @@
+//--------------- REGISTER PAGE -----------------
+.register-wrapper{
+
+    overflow: hidden;
+
+    .btn-green_1{
+        border: 1px solid white;
+    }
+
+    .types{
+
+        .btn-type{
+            display: block;
+
+            .btn-outline-primary{
+                color: $green_1;
+                background-color: white;
+                font-weight: bold;
+                border-color: #ddd;
+
+                &:hover{
+                    background-color: $green_1;
+                    color: white;
+                }
+            }
+
+            .btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
+                background-color: $green_1;
+                color: white;
+            }
+        }
+    }
+
+    .video-modify-1 {
+        position: relative;
+        transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
+
+        .filigrana-wrapper{
+            opacity: 0.3;
+            position: absolute;
+        }
+    }
+
+}
+
+.video-modify-2 {
+
+    clip-path: polygon(0 16%, 100% 0, 100% 100%, 0% 100%);
+    overflow: hidden;
+    padding: 0;
+
+    .video-2{
+
+        position: relative;
+
+        .filigrana-wrapper{
+            opacity: 0.3;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+            position: absolute;
+        }
+    }
+}
+
+
+//--------------- MODIFY USER PAGE -----------------
+.modify-wrapper{
+
+    .image-modify {
+        transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
+    }
+
+    .turn-back-wrapper{
+        cursor: pointer;
+
+        &:hover{
+            color: $purple_1;
+        }
+    }
+}

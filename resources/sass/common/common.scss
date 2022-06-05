@@ -1,0 +1,144 @@
+//----------------------------SETTING SCROLLBAR
+/* SCROLL-BAR STYLE */
+::-webkit-scrollbar {
+    width: 8px;
+}
+/* MANIGLIA DI SCORRIMENTO */
+::-webkit-scrollbar-thumb {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: $violet;
+}
+
+
+//----------------------------SETTING IMG
+img{
+    max-width: 100%;
+}
+
+
+
+//----------------------------SETTIN HEADER
+#header_logo_deliveboo{
+    height: 35px;
+    display: block;
+}
+
+.icon-color{
+    color: $green_1;
+}
+
+.container-md{
+    @media (max-width: 767px){
+        padding: 0;
+    }
+}
+
+
+
+
+
+//----------------------------BURGER MENU
+#burger-icon{
+
+    label{
+        display:flex;
+        flex-direction:column;
+        width:27px;
+        cursor:pointer;
+    }
+       
+    label span{
+        border-radius:10px;
+        height:3px;
+        margin: 3px 0;
+        transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }       
+       
+    span:nth-of-type(1){
+        width:50%;
+         
+    }
+       
+    span:nth-of-type(2){
+        width:100%;
+    }       
+       
+    span:nth-of-type(3){
+        width:75%;
+        
+    }       
+       
+    input[type="checkbox"]{
+        display:none;
+    }       
+       
+    input[type="checkbox"]:checked ~ span:nth-of-type(1){
+        transform-origin:bottom;
+        transform:rotatez(45deg) translate(4px,0px)
+    }           
+       
+    input[type="checkbox"]:checked ~ span:nth-of-type(2){
+         
+        transform-origin:top;
+        transform:rotatez(-45deg)
+    }       
+       
+    input[type="checkbox"]:checked ~ span:nth-of-type(3){         
+        transform-origin:bottom;
+        width:50%;
+        transform: translate(12.5px,-5.5px) rotatez(45deg);
+    }       
+}
+
+
+
+
+//----------------------------BACKGROUND
+//BACKGROUND PURPLE
+.bg-purple{
+    background-color: $purple_1;
+}
+
+//BACKGROUND VIOLET
+.bg-violet{
+    background-color: $violet;
+}
+
+//BACKGROUND ORANGE
+.bg-orange{
+    background-color: $orange_1;
+}
+
+//BACKGROUND GREEN
+.bg-green{
+    background-color: $green_1;
+}
+
+
+
+//----------------------------MEDIA
+@media (min-width: 1200px){
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 768px){
+    #navbarNav, .nav-burger, .cart-burger {
+        display: none !important;
+    }
+}
+
+
+//----------------------------CLASS BOOTSTRAP MODIFY
+.form-control:focus {
+    border-color: $violet;
+    box-shadow: 0 0 0 0.25rem rgb(62 35 93 / 25%);
+}
+
+
+.form-check-input:checked {
+    background-color: $green_1;
+    border-color: $violet;
+}

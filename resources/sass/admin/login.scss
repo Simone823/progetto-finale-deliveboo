@@ -1,0 +1,93 @@
+//--------------- LOGIN PAGE -----------------
+.login-content{
+    min-height: calc(100vh - 69px);
+
+    .form-wrapper{
+        max-width: 430px;
+
+        .form-control{
+            max-width: 80%;
+        }
+
+        .login-button{
+            width: 80%;
+        }
+
+        .forgot-psw{
+            color: $green_0;
+        }
+
+        @media (max-width: 767px){
+
+            max-width: 350px;
+
+            .form-control{
+                max-width: 100%;
+            }
+    
+            .login-button{
+                width: 100%;
+            }
+        }        
+    }
+
+    
+    .login-img{
+        position: relative;
+
+        .img-wrapper{
+            padding: 20px;
+            max-width: 900px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+
+            img{
+                max-width: 85%;
+            }
+        }
+
+        .login-background{
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -999;         
+            clip-path: polygon(80% 0, 100% 0, 100% 100%, 0 100%);
+            background-color: $green_1;
+        }
+
+        @media (max-width: 767px) {
+
+            flex-grow: 1;
+            display: flex;
+            align-items: flex-end;
+
+            .img-wrapper{
+                padding: 20px;
+                position: relative;
+                display: block;
+                text-align: center;
+                z-index: 0;
+            }
+    
+            .login-background{   
+                top: 0;    
+                clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            }
+            
+        }
+    }
+}
+
+
+
+//--------------- PASSWORD LOST -----------------
+.lost-psw{
+
+    height: calc(100vh - 69px);
+}

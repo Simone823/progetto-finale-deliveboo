@@ -5174,6 +5174,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   //tramite props prendo le info dei singoli ristoranti
   props: {
@@ -42815,6 +42820,28 @@ var render = function () {
           ]),
         ]),
       ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "button-wrapper" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "btn btn-green_1",
+              attrs: {
+                tag: "button",
+                to: {
+                  name: "resturant-menu",
+                  params: { id: _vm.resturantType.user_id },
+                },
+              },
+            },
+            [_vm._v("\n            View this Resturant\n        ")]
+          ),
+        ],
+        1
+      ),
     ]
   )
 }
@@ -59561,7 +59588,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

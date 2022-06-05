@@ -11,6 +11,11 @@
                 <p>In: {{ resturantType.business_address }}</p>
             </div>
         </div>
+        <div class="button-wrapper">
+            <router-link tag="button" class="btn btn-green_1" :to="{ name: 'resturant-menu', params: { id: resturantType.user_id } }">
+                View this Resturant
+            </router-link>
+        </div> 
     </div>
 
 </template>

@@ -362,28 +362,22 @@ main{
                 border-radius: 8px;
                 overflow: hidden;
                 height: 300px;
+                width: 100%;
 
-                .carousel-inner{
+                .carousel-inner, .carousel-item, img {
 
-                  
+                    height: 100%;    
+                    width: 100%;
+                    object-fit: cover;
+                }
 
-                    .carousel-item{
+                .carousel-caption {
+                    bottom: -10px;
+                    left: 0;
+                    right: 0;
+                    background: rgb(0,204,188);
+                    background: linear-gradient(0deg, rgba(0,204,188,1) 0%, rgba(253,187,45,0) 100%);
 
-                  
-                        
-                        img{
-                         
-                            object-fit: cover;
-                        }
-                    }
-
-                    .carousel-caption {
-                        bottom: -10px;
-                        left: 0;
-                        right: 0;
-                        background: rgb(0,204,188);
-                        background: linear-gradient(0deg, rgba(0,204,188,1) 0%, rgba(253,187,45,0) 100%);
-                    }
                 }
 
                 @media (max-width: 325px){

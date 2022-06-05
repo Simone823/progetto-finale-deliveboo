@@ -42881,7 +42881,7 @@ var render = function () {
           "ul",
           {
             staticClass:
-              "d-flex flex-row flex-md-column flex-wrap flex-md-nowrap gap-2 justify-content-center",
+              "d-flex flex-row flex-md-column flex-wrap flex-md-nowrap gap-2 justify-content-center p-0",
           },
           _vm._l(_vm.types, function (type) {
             return _c(
@@ -42943,16 +42943,21 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-12 col-md-9" }, [
-        _c(
-          "div",
-          { staticClass: "types-wrapper p-4 px-md-0 d-flex gap-4 flex-wrap" },
-          _vm._l(_vm.checkedTypes, function (el, index) {
-            return _c("div", { key: index }, [
-              _c("span", [_vm._v("#" + _vm._s(el.type_name))]),
-            ])
-          }),
-          0
-        ),
+        _vm.checkedTypes.length != 0
+          ? _c(
+              "div",
+              {
+                staticClass:
+                  "types-wrapper pb-4 px-md-0 d-flex gap-4 flex-wrap justify-content-center justify-content-md-start",
+              },
+              _vm._l(_vm.checkedTypes, function (el, index) {
+                return _c("div", { key: index }, [
+                  _c("span", [_vm._v("#" + _vm._s(el.type_name))]),
+                ])
+              }),
+              0
+            )
+          : _vm._e(),
         _vm._v(" "),
         _vm.checkedTypes.length == 0
           ? _c(
@@ -59595,7 +59600,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

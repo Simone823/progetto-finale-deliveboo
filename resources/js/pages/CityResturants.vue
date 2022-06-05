@@ -6,7 +6,7 @@
 
             <!-- checkboxe sidebar -->
             <aside class="col-12 col-md-3">
-                <ul class="d-flex flex-row flex-md-column flex-wrap flex-md-nowrap gap-2 justify-content-center">
+                <ul class="d-flex flex-row flex-md-column flex-wrap flex-md-nowrap gap-2 justify-content-center p-0">
                     <li class="form-group form-check" v-for="type in types" :key="type.id">
                         <input type="checkbox" class="form-check-input" :value="type" :id="type.name" name="type-checkboxe" v-model="checkedTypes">
                         <label :for="type.name">{{type.type_name}}</label>
@@ -16,7 +16,7 @@
 
             <!-- resturants list -->
             <div class="col-12 col-md-9">
-                <div class="types-wrapper p-4 px-md-0 d-flex gap-4 flex-wrap">
+                <div v-if="checkedTypes.length != 0" class="types-wrapper pb-4 px-md-0 d-flex gap-4 flex-wrap justify-content-center justify-content-md-start">
                     <!-- stampo il nome delle tipologie che vengono selezionare -->
                     <div v-for="(el,index) in checkedTypes" :key="index">
                         <span>#{{el.type_name}}</span>

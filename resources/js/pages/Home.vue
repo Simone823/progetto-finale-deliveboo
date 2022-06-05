@@ -38,7 +38,7 @@ export default {
             .then( res => {
                 //salvo i dati della chiamata nell'array
                 this.types = res.data.typres;
-                // console.log(res.data.typres);
+                // console.log(this.types);
             })
             .catch( err => {
                 console.warn(err);

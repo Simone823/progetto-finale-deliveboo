@@ -75,7 +75,7 @@
             <div class="form-group mb-2">
                 <h6 class="fw-bold">Disponibile</h6>          
   
-                <div class="radio @error('visibility') is-invalid @enderror">
+                <div class="radio-visibility @error('visibility') is-invalid @enderror">
                     <input class="radio-yes" label="Si" type="radio" id="si" name="visibility" value="1" checked>
                     <input class="radio-no" label="No" type="radio" id="no" name="visibility" value="0">
                 </div>

@@ -73,13 +73,12 @@
 
             {{-- visibile --}}
             <div class="form-group mb-2">
-                <h6 class="fw-bold">Disponibile</h6>
-
-                <select class="form-select @error('visibility') is-invalid @enderror" aria-label="Default select example" name="visibility" id="visibility">
-                    <option selected disabled>Seleziona una visibilità</option>
-                    <option {{ old('visibility') == '0' ? 'selected' : '' }} value="0">Non Visibile</option>
-                    <option {{ old('visibility') == '1' ? 'selected' : '' }} value="1">Visibile</option>
-                </select>
+                <h6 class="fw-bold">Disponibile</h6>          
+  
+                <div class="radio @error('visibility') is-invalid @enderror">
+                    <input class="radio-yes" label="Si" type="radio" id="si" name="visibility" value="1" checked>
+                    <input class="radio-no" label="No" type="radio" id="no" name="visibility" value="0">
+                </div>
 
                 @error('visibility')
                     <div class="alert alert-danger">{{ $message }}</div>

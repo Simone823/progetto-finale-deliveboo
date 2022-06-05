@@ -163,6 +163,9 @@ class HomeController extends Controller
         // User delete
         $user->delete();
 
+        // Elimino l'immagine del ristorante da storage uploads
+        Storage::delete('uploads', $user->business_image);
+
         // Return redirect url /
         return redirect()->away('/');
     }

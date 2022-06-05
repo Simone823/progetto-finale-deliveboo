@@ -182,6 +182,10 @@ class PlateController extends Controller
     {
         //rimuovo il piatto specifico
         $plate->delete();
+
+        // Elimino l'immagine da storage uploads
+        Storage::delete('uploads', $plate->image);
+
         //reindirizzo alla view index
         return redirect()->route('admin.plates.index');
     }

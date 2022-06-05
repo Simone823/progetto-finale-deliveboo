@@ -5174,6 +5174,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   //tramite props prendo le info dei singoli ristoranti
   props: {
@@ -5395,7 +5400,7 @@ __webpack_require__.r(__webpack_exports__);
       // faccio una chiamata axios per recuperare le tipologie
       axios.get('/api/home').then(function (res) {
         //salvo i dati della chiamata nell'array
-        _this.types = res.data.typres; // console.log(res.data.typres);
+        _this.types = res.data.typres; // console.log(this.types);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -5568,6 +5573,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -5575,7 +5583,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      resturantsType: []
+      resturantsType: [],
+      typeName: ''
     };
   },
   methods: {
@@ -5586,6 +5595,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/resturant-type/".concat(this.$route.params.id)).then(function (res) {
         //salvo i dati della chiamata nell'array
         _this.resturantsType = res.data.users;
+        _this.typeName = _this.resturantsType[0].type_name;
         console.log(res);
       })["catch"](function (err) {
         console.warn(err);
@@ -42815,6 +42825,28 @@ var render = function () {
           ]),
         ]),
       ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "button-wrapper" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "btn btn-green_1",
+              attrs: {
+                tag: "button",
+                to: {
+                  name: "resturant-menu",
+                  params: { id: _vm.resturantType.user_id },
+                },
+              },
+            },
+            [_vm._v("\n            View this Resturant\n        ")]
+          ),
+        ],
+        1
+      ),
     ]
   )
 }
@@ -43430,24 +43462,26 @@ var render = function () {
   return _c("div", { staticClass: "container" }, [
     _vm.resturantsType.length == 0
       ? _c("div", [
-          _c("p", [
-            _vm._v("Per questa tipologia non è presente nessun ristorante."),
-          ]),
+          _c("p", [_vm._v("Per questa tipologia non ci sono ristoranti")]),
         ])
-      : _c(
-          "div",
-          {
-            staticClass:
-              "cards-wrapper d-flex flex-wrap gap-3 justify-content-center",
-          },
-          _vm._l(_vm.resturantsType, function (resturantType) {
-            return _c("ResturantTypeCard", {
-              key: resturantType.user_id,
-              attrs: { resturantType: resturantType },
-            })
-          }),
-          1
-        ),
+      : _c("div", [
+          _c("h1", [_vm._v("Ristoranti #" + _vm._s(_vm.typeName))]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "cards-wrapper d-flex flex-wrap gap-3 justify-content-center",
+            },
+            _vm._l(_vm.resturantsType, function (resturantType) {
+              return _c("ResturantTypeCard", {
+                key: resturantType.user_id,
+                attrs: { resturantType: resturantType },
+              })
+            }),
+            1
+          ),
+        ]),
   ])
 }
 var staticRenderFns = []
@@ -59561,7 +59595,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

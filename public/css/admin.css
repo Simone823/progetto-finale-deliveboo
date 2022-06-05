@@ -12333,6 +12333,7 @@ main {
 
 .login-content .login-img .img-wrapper {
   padding: 20px;
+  max-width: 900px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -12416,6 +12417,14 @@ main {
   transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
 }
 
+.modify-wrapper .turn-back-wrapper {
+  cursor: pointer;
+}
+
+.modify-wrapper .turn-back-wrapper:hover {
+  color: #99006B;
+}
+
 .wrapper_references_user .references-info #user_image_wrapper {
   height: 250px;
   border-radius: 5px;
@@ -12430,38 +12439,58 @@ main {
   display: block;
 }
 
-.wrapper_references_user .references-info .business_name-wrapper {
-  border-bottom: 2px solid #00CCBC;
+.wrapper_references_user .references-info .business_header-wrapper {
+  border-bottom: 2px solid #00C2B3;
 }
 
-.wrapper_references_user .references-info .business_name-wrapper .modify-text {
-  color: #99006B;
-  transition: all 300ms linear;
+.wrapper_references_user .references-info .business_header-wrapper .animated-button1 {
+  transition: all 250ms linear;
 }
 
-.wrapper_references_user .references-info .business_name-wrapper .modify-text:hover {
-  color: #00CCBC;
+.wrapper_references_user .references-info .business_header-wrapper .animated-button1:hover {
+  transform: scale(1.1);
+  background: linear-gradient(-30deg, #00C2B3 50%, #00CCBC 50%);
+}
+
+.wrapper_references_user .references-info .plates-wrapper #carouselExampleCaptions {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.wrapper_references_user .references-info .plates-wrapper #carouselExampleCaptions .carousel-inner,
+.wrapper_references_user .references-info .plates-wrapper #carouselExampleCaptions .carousel-item {
+  height: 300px;
+}
+
+.wrapper_references_user .references-info .plates-wrapper #carouselExampleCaptions .carousel-caption {
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background: rgb(0, 204, 188);
+  background: linear-gradient(0deg, rgb(0, 204, 188) 0%, rgba(253, 187, 45, 0) 100%);
+}
+
+@media (max-width: 325px) {
+  .wrapper_references_user .references-info .plates-wrapper #carouselExampleCaptions {
+    aspect-ratio: 1;
+  }
+
+  .wrapper_references_user .references-info .plates-wrapper #carouselExampleCaptions .carousel-caption {
+    display: none;
+  }
+}
+
+.wrapper_references_user .references-info .plates-wrapper .no-plates-wrapper {
+  background-image: url(/images/placeholder_plate.png?d21deffc6f8119db2a0294b14d4c1967);
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  height: 300px;
+  width: 100%;
 }
 
 .wrapper_references_user .references-statistiche {
   background-color: rgba(62, 35, 93, 0.6);
-}
-
-#homepage_btn_edit {
-  background-color: #00CCBC;
-  border: 0px transparent;
-  color: #FFFFFF;
-}
-
-#homepage_card {
-  background-color: #00CCBC;
-  color: #FFFFFF;
-}
-
-#homepage_card #homepage_user_type {
-  background-color: #FFFFFF;
-  color: #00CCBC;
-  text-align: center;
 }
 
 /* SCROLL-BAR STYLE */
@@ -12561,35 +12590,13 @@ img {
   background-color: #00CCBC;
 }
 
-.btn-hover-green_1:hover {
-  background-color: #00CCBC;
-  color: black;
-  transition: all 300ms linear;
-}
-
-.drop-shadow-black-22 {
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.226));
-}
-
-.bkg-white_1 {
-  background-color: #f4f7e5;
-}
-
-.text-violet {
-  color: #3E235D;
-}
-
-.letter-spacing-2 {
-  letter-spacing: 2px;
-}
-
 @media (min-width: 1200px) {
   .container-xl,
   .container-lg,
   .container-md,
   .container-sm,
   .container {
-    max-width: 1120px;
+    max-width: 1200px;
   }
 }
 
@@ -12609,6 +12616,156 @@ img {
 .form-check-input:checked {
   background-color: #00CCBC;
   border-color: #3E235D;
+}
+
+.animated-button1 {
+  background: linear-gradient(-30deg, #00CCBC 50%, #00C2B3 50%);
+  padding: 5px 10px;
+  display: inline-block;
+  transform: translate(0%, 0%);
+  overflow: hidden;
+  color: black;
+  letter-spacing: 2.5px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.animated-button1::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #ad8585;
+  opacity: 0;
+  transition: 0.2s opacity ease-in-out;
+}
+
+.animated-button1 span {
+  position: absolute;
+}
+
+.animated-button1 span:nth-child(1) {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, rgba(43, 8, 8, 0), #D0EB99);
+  -webkit-animation: 2s animateTop linear infinite;
+  animation: 2s animateTop linear infinite;
+}
+
+@-webkit-keyframes animateTop {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animateTop {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animated-button1 span:nth-child(2) {
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to top, rgba(43, 8, 8, 0), #D0EB99);
+  -webkit-animation: 2s animateRight linear -1s infinite;
+  animation: 2s animateRight linear -1s infinite;
+}
+
+@-webkit-keyframes animateRight {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes animateRight {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animated-button1 span:nth-child(3) {
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, rgba(43, 8, 8, 0), #D0EB99);
+  -webkit-animation: 2s animateBottom linear infinite;
+  animation: 2s animateBottom linear infinite;
+}
+
+@-webkit-keyframes animateBottom {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes animateBottom {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animated-button1 span:nth-child(4) {
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(43, 8, 8, 0), #D0EB99);
+  -webkit-animation: 2s animateLeft linear -1s infinite;
+  animation: 2s animateLeft linear -1s infinite;
+}
+
+@-webkit-keyframes animateLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes animateLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
 }
 
 #section_plate_show {

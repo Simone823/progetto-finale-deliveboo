@@ -2,12 +2,15 @@
     <div class="container">
         <!-- faccio un controllo per vedere se l'array contiene ristoranti -->
         <div v-if="resturantsType.length == 0">
-            <p>Per questa tipologia non è presente nessun ristorante.</p>
+            <p>Per questa tipologia non ci sono ristoranti</p>
         </div>
         <!-- stampo tutte le card che contengono le info. dei ristoranti con la determinata tipologia  -->
-        <div v-else class="cards-wrapper d-flex flex-wrap gap-3 justify-content-center">
-            <ResturantTypeCard v-for="resturantType in resturantsType" :key="resturantType.user_id"
-                :resturantType="resturantType" />
+        <div v-else>
+            <h1>Ristoranti #{{ typeName }}</h1>
+            <div class="cards-wrapper d-flex flex-wrap gap-3 justify-content-center">
+                <ResturantTypeCard v-for="resturantType in resturantsType" :key="resturantType.user_id"
+                    :resturantType="resturantType" />
+            </div>
         </div>
     </div>
 </template>
@@ -22,8 +25,10 @@ export default {
     },
 
     data(){
+
         return{
             resturantsType: [],
+            typeName: '',
         }
     },
 
@@ -34,6 +39,7 @@ export default {
             .then( res => {
                 //salvo i dati della chiamata nell'array
                 this.resturantsType = res.data.users;
+                this.typeName = this.resturantsType[0].type_name;
                 console.log(res);
             })
             .catch( err => {

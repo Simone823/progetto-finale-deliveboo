@@ -2,7 +2,7 @@
     <div class="container">
         <!-- faccio un controllo per vedere se l'array contiene ristoranti -->
         <div v-if="resturantsType.length == 0">
-            <p>Non sono presenti ristoranti per #{{ typeName }}</p>
+            <p>Per questa tipologia non ci sono ristoranti</p>
         </div>
         <!-- stampo tutte le card che contengono le info. dei ristoranti con la determinata tipologia  -->
         <div v-else>
@@ -25,6 +25,7 @@ export default {
     },
 
     data(){
+
         return{
             resturantsType: [],
             typeName: '',

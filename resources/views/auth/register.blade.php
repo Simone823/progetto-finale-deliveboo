@@ -198,8 +198,9 @@
         <iframe
         src="https://player.vimeo.com/video/341514802?h=12d8780e12&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;background=1&amp;app_id=122963" width="426" height="240" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="width: 100%;height: 100%;">
         </iframe>
-        <div>
-            <img src="" alt="">
+        {{-- filigrana --}}
+        <div class="filigrana-wrapper">
+            <img src="{{ asset('img/deliveboo_filigrana.png') }}" alt="">
         </div>
     </div>
 
@@ -211,6 +212,11 @@
         <iframe
         src="https://player.vimeo.com/video/341514802?h=12d8780e12&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;background=1&amp;app_id=122963" width="770" height="430" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="display: block;">
         </iframe>
+        
+        {{-- filigrana --}}
+        <div class="filigrana-wrapper">
+            <img src="{{ asset('img/deliveboo_filigrana.png') }}" alt="">
+        </div>
     </div>
 </div>
 @endsection

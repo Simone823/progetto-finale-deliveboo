@@ -272,7 +272,13 @@ main{
     }
 
     .video-modify-1 {
+        position: relative;
         transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
+
+        .filigrana-wrapper{
+            opacity: 0.3;
+            position: absolute;
+        }
     }
 
 }
@@ -284,7 +290,17 @@ main{
     padding: 0;
 
     .video-2{
-        background-color: red;
+
+        position: relative;
+
+        .filigrana-wrapper{
+            opacity: 0.3;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+            position: absolute;
+        }
     }
 }
 

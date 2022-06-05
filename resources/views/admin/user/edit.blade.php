@@ -190,7 +190,7 @@ Deliveboo - {{$user->business_name}}
         </form>
     </div>
 
-    <div class="image-modify col-6 image-modify-wrapper d-none d-md-flex justify-content-center align-items-center">
+    <div class="image-modify col-6 d-none d-md-flex justify-content-center align-items-center">
         {{-- Image wrapper business_image --}}
         <figure class="image_business figure rounded overflow-hidden">
             <img class="img-thumbnail" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="">

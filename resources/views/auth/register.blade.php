@@ -3,7 +3,7 @@
 @section('metaTitle', 'Deliveboo - Registration')
 
 @section('content')
-<div class="register-wrapper container-md pt-4">
+<div class="col-12 register-wrapper container-md pt-4 d-block d-md-flex">
     <div class="col-10 col-sm-8 col-md-6 m-auto m-md-0">
         
         <h1 class="fw-bold mb-4">Diventa un partner di Deliveboo</h1>
@@ -192,6 +192,31 @@
         </form>
 
     </div>
+
+    <div class="video-modify-1 d-none d-md-flex col-6 justify-content-center align-items-center">
+        {{-- video --}}
+        <iframe
+        src="https://player.vimeo.com/video/341514802?h=12d8780e12&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;background=1&amp;app_id=122963" width="426" height="240" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="width: 100%;height: 100%;">
+        </iframe>
+        {{-- filigrana --}}
+        <div class="filigrana-wrapper">
+            <img src="{{ asset('img/deliveboo_filigrana.png') }}" alt="">
+        </div>
+    </div>
+
 </div>
 
+<div class="video-modify-2 container-fluid d-flex d-md-none justify-content-center align-items-center">
+    {{-- video --}}
+    <div class="video-2">
+        <iframe
+        src="https://player.vimeo.com/video/341514802?h=12d8780e12&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;background=1&amp;app_id=122963" width="770" height="430" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="display: block;">
+        </iframe>
+        
+        {{-- filigrana --}}
+        <div class="filigrana-wrapper">
+            <img src="{{ asset('img/deliveboo_filigrana.png') }}" alt="">
+        </div>
+    </div>
+</div>
 @endsection

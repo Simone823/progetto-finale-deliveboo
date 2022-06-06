@@ -19,7 +19,7 @@
                             <router-link class="wrapper_card" tag="li" :to="{ name: 'resturant-type', params: { id: type.id } }">
                                 <!-- Type image -->
                                 <figure class="types_img">
-                                    <img :src="required(`storage/${type.type_image}`)" alt="">
+                                    <img src="https://www.sosushiandsound.it/wp-content/uploads/2021/11/all-you-can-eat-milano.jpg" alt="">
                                 </figure>
 
                                 <!-- Name type -->

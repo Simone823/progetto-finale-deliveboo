@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <section class="container">
         <h1 class="fw-bold fs-1 mb-4">La selezione di Deliveboo</h1>
         <!-- Prima Row -->
         <div class="row">
@@ -47,7 +47,7 @@
         </div>
 
 
-    </div>
+    </section>
 </template>
 
 <script>

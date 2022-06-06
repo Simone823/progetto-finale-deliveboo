@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-green p-0">
+    <section class="bg-green p-0 ">
              <div class="container p-0">
                 <div class="row flex-wrap justify-content-center align-items-center p-0">
                     

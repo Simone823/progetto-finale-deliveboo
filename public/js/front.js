@@ -5562,6 +5562,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -43832,7 +43833,7 @@ var render = function () {
                         _c("figure", { staticClass: "types_img" }, [
                           _c("img", {
                             attrs: {
-                              src: "https://www.sosushiandsound.it/wp-content/uploads/2021/11/all-you-can-eat-milano.jpg",
+                              src: "https://blog.cookaround.com/gildabias/wp-content/uploads/2021/01/Sushi-3.jpg",
                               alt: "",
                             },
                           }),

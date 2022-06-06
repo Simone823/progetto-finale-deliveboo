@@ -5383,6 +5383,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -10709,7 +10724,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".link[data-v-b3c5cf30] {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".link[data-v-b3c5cf30] {\n  cursor: pointer;\n}\n.lists_types[data-v-b3c5cf30] {\n  list-style: none;\n  padding: 0;\n  row-gap: 25px;\n}\n.lists_types li .wrapper_card[data-v-b3c5cf30] {\n  height: 300px;\n  position: relative;\n  cursor: pointer;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.lists_types li .wrapper_card[data-v-b3c5cf30]::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: rgba(0, 0, 0, 0.5);\n}\n.lists_types li .wrapper_card:hover .types_img[data-v-b3c5cf30] {\n  overflow: hidden;\n}\n.lists_types li .wrapper_card:hover .types_img img[data-v-b3c5cf30] {\n  transform: scale(1.07);\n  transition: transform 300ms linear;\n}\n.lists_types li .wrapper_card .types_img[data-v-b3c5cf30] {\n  width: 100%;\n  height: 100%;\n  opacity: 0.6;\n}\n.lists_types li .wrapper_card .types_img img[data-v-b3c5cf30] {\n  width: 100%;\n  height: 100%;\n  display: block;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.lists_types li .wrapper_card .type_name[data-v-b3c5cf30] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  z-index: 1;\n  transform: translateY(-50%) translateX(-50%);\n}\n.lists_types li .wrapper_card .type_name h2[data-v-b3c5cf30] {\n  font-weight: 700;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -43136,29 +43151,53 @@ var render = function () {
   return _c(
     "div",
     [
-      _c("MyJumbotron"),
+      _c("MyJumbotron", { staticClass: "mb-4" }),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
-        _c("h3", [_vm._v("Tipologie di ristoranti:")]),
+        _c("h3", { staticClass: "fw-bold fs-1 mb-4" }, [
+          _vm._v("La selezione di Deliveboo"),
+        ]),
         _vm._v(" "),
-        _c(
-          "ul",
-          _vm._l(_vm.types, function (type) {
-            return _c(
-              "router-link",
-              {
-                key: type.id,
-                staticClass: "link",
-                attrs: {
-                  tag: "li",
-                  to: { name: "resturant-type", params: { id: type.id } },
-                },
-              },
-              [_vm._v("\n            " + _vm._s(type.type_name) + "\n        ")]
-            )
-          }),
-          1
-        ),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "ul",
+            { staticClass: "lists_types d-flex flex-wrap" },
+            _vm._l(_vm.types, function (type) {
+              return _c(
+                "li",
+                { key: type.id, staticClass: "col-12 col-sm-6 px-3" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "wrapper_card",
+                      attrs: {
+                        tag: "li",
+                        to: { name: "resturant-type", params: { id: type.id } },
+                      },
+                    },
+                    [
+                      _c("figure", { staticClass: "types_img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "https://www.sosushiandsound.it/wp-content/uploads/2021/11/all-you-can-eat-milano.jpg",
+                            alt: "",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "type_name" }, [
+                        _c("h2", [_vm._v(_vm._s(type.type_name))]),
+                      ]),
+                    ]
+                  ),
+                ],
+                1
+              )
+            }),
+            0
+          ),
+        ]),
       ]),
     ],
     1

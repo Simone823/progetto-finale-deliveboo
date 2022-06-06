@@ -2,11 +2,11 @@
 
     <div>
         <!-- Jumbotron -->
-       <MyJumbotron class="mb-4"/>
+       <MyJumbotron class="pb-4 "/>
         <!-- MySelection -->
-        <MySelection class="mb-4"/>
+        <MySelection class="pb-4 pt-4"/>
         <!-- Sezione Piatti -->
-       <section class="bg-pink">
+       <section class="bg-pink pb-4">
             <div class="container">
                 <!-- Title -->
                 <h3 class="fw-bold fs-1 pb-4 pt-4">I tuoi piatti preferiti, consegnati da noi.</h3>
@@ -19,7 +19,8 @@
                             <router-link class="wrapper_card" tag="li" :to="{ name: 'resturant-type', params: { id: type.id } }">
                                 <!-- Type image -->
                                 <figure class="types_img">
-                                    <img src="https://www.sosushiandsound.it/wp-content/uploads/2021/11/all-you-can-eat-milano.jpg" alt="">
+                                    <img :src="`storage/${type.type_image}`" alt="">
+                                    <!-- <img src="https://blog.cookaround.com/gildabias/wp-content/uploads/2021/01/Sushi-3.jpg" alt=""> -->
                                 </figure>
 
                                 <!-- Name type -->
@@ -32,7 +33,10 @@
                 </div>
             </div>
        </section>
-       
+       <!-- MyOther -->
+        <MyOther class="pb-5 pt-5"/>
+       <!-- MyNews -->
+       <MyNews class="pb-4 pt-4"/>
     </div>
     
 </template>
@@ -41,12 +45,16 @@
 
 import MyJumbotron from '../components/MyJumbotron.vue';
 import MySelection from '../components/MySelection.vue';
+import MyOther from '../components/MyOther.vue';
+import MyNews from '../components/MyNews.vue';
 
 export default {
 
     components: {
         MyJumbotron,
         MySelection,
+        MyOther,
+        MyNews,
     },
 
     data() {

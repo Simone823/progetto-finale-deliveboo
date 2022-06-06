@@ -43507,7 +43507,7 @@ var render = function () {
                         _c("figure", { staticClass: "types_img" }, [
                           _c("img", {
                             attrs: {
-                              src: "https://blog.cookaround.com/gildabias/wp-content/uploads/2021/01/Sushi-3.jpg",
+                              src: "storage/" + type.type_image,
                               alt: "",
                             },
                           }),

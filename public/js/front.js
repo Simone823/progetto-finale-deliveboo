@@ -43506,7 +43506,7 @@ var render = function () {
                         _c("figure", { staticClass: "types_img" }, [
                           _c("img", {
                             attrs: {
-                              src: "https://www.sosushiandsound.it/wp-content/uploads/2021/11/all-you-can-eat-milano.jpg",
+                              src: _vm.required("storage/" + type.type_image),
                               alt: "",
                             },
                           }),

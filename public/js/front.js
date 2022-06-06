@@ -5478,6 +5478,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -43506,7 +43507,7 @@ var render = function () {
                         _c("figure", { staticClass: "types_img" }, [
                           _c("img", {
                             attrs: {
-                              src: _vm.required("storage/" + type.type_image),
+                              src: "https://blog.cookaround.com/gildabias/wp-content/uploads/2021/01/Sushi-3.jpg",
                               alt: "",
                             },
                           }),

@@ -45,10 +45,8 @@
                 <h6 class="fw-bold">Ingredienti</h6>
                 <div>
                     <textarea placeholder="Inserisci gli ingredienti separandoli con una virgola"
-                    id="ingredients" type="text" class="form-control @error('ingredients') is-invalid @enderror" minlength="5" rows="3"
-                    name="ingredients">
-                    {{ old('ingredients') }}
-                    </textarea>
+                    id="ingredients" type="text" class="form-control @error('ingredients') is-invalid @enderror" rows="3" required
+                    name="ingredients">{{ old('ingredients') }}</textarea>
                     
                     @error('ingredients')
                     <span class="invalid-feedback" role="alert">

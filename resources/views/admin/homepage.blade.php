@@ -88,13 +88,13 @@
           <div class="d-flex justify-content-between gap-2 m-3 mb-4 flex-wrap">
             @foreach ($user->types as $type)
 
-            <a href="#" class="animated-button1 text-reset">
+            <div class="animated-button1 text-reset">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
               {{$type->type_name}}
-            </a>
+            </div>
 
             @endforeach
           </div>

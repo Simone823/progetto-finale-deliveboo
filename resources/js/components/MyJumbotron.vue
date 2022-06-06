@@ -1,7 +1,7 @@
 <template>
     <section class="bg-green p-0 ">
              <div class="container p-0">
-                <div class="row flex-wrap justify-content-center align-items-center p-0">
+                <div class="row flex-wrap justify-content-center align-items-center p-0 m-0">
                     
                     <div class="col-12 col-md-6 col-sx py-sm-2 px-4">
                         <h4 class="jumbotron_title fs-1 ">I piatti che vuoi, a casa tua.</h4>

@@ -5,6 +5,15 @@
 @section('content')
 <div class="lost-psw container-md d-flex justify-content-center align-items-center">
     <div class="row justify-content-center">
+
+        {{-- TURN BACK --}}
+        <div class="col-11 col-sm-8 pb-3 align-self-end">
+            <a href="{{url('/')}}" class="text-reset text-decoration-none">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                <span class="text-hover-purple">Torna alla homepage</span>
+            </a>
+        </div>
+        
         <div class="col-11 col-sm-8">
             <div class="card p-2 p-sm-4">
                 <h2 class="fw-bold text-center ps-2 pe-2">Invia la mail per reimpostare la password</h2>

@@ -8,13 +8,12 @@
 
                         <div class="input_wrapper mt-4">
                             <label for="address" class="text-muted fs-5 pb-2 pt-2" class-form-label>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</label>
-                            <div class="d-flex align-items-start gap-2 ">
+                            <div class="d-flex align-items-start gap-2 mb-2">
                                 <div class="d-flex flex-column flex-grow-1">
-                                    <input class="address form-control" v-model="inputAddress" type="text" id="address" name="address" placeholder="Inserisci il tuo indirizzo completo">
+                                    <input required class="address form-control" v-model="inputAddress" type="text" id="address" name="address" placeholder="Inserisci il tuo indirizzo completo">
                                     <div class="invalid-feedback">
                                         Please provide a valid city.
                                     </div>
-                                    <p class="pt-2 pb-2 text-muted mb-0"><a href="#"><span class="link">Accedi</span></a> per visualizzare i tuoi indirizzi recenti.</p>
                                 </div>
                                 <!-- TODO disabilitare il bottone -->
                                 <router-link tag="button" :to="inputAddress != '' ? '/city-resturants' : '/' "

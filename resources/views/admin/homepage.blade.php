@@ -13,7 +13,7 @@
             
       {{-- Business image --}}
       <figure id="user_image_wrapper">
-        <img class="user_image" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="user_img">
+        <img class="user_image" src="{{asset('storage/'.$user->business_image)}}" alt="user_img">
       </figure>
             
             

@@ -6,7 +6,7 @@
 {{-- @dd($user->types[0]); --}}
 
 {{-- Wrapper referenze utente (ristorante) --}}
-<div class="wrapper_references_user container-md align-self-start d-md-flex pt-3 gap-3">
+<div class="wrapper_references_user container-md align-self-start d-md-flex p-3 p-sm-4 p-md-4 gap-3">
     
   {{-- INFO USER --}}
     <div class="references-info col-12 col-md-6">

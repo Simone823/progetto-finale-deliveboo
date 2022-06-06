@@ -1,5 +1,5 @@
 <nav id="navbar_auth" class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container-md">
+    <div class="container-md pe-0">
 
         {{-- LOGO --}}
         <a class="ms-3 ms-md-0 navbar-brand" href="{{ url('/') }}">
@@ -18,7 +18,7 @@
 
         {{-- MENU ESTESO --}}
         <div class="d-none d-md-flex justify-content-end align-items-center">
-            <ul class="navbar-nav flex-md-row gap-3">            
+            <ul class="navbar-nav flex-md-row gap-2">            
                 
                 <!-- Authentication Links -->
                 @guest
@@ -77,18 +77,18 @@
                                     </span>
                                 </a>
                             </li>
+                            {{-- logout --}}
+                            <li class="nav-item text-center">
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <button class="btn-standard btn-green_1 fw-bold">
+                                        <i class="me-2 fa-solid fa-right-from-bracket"></i>
+                                        {{ __('Logout') }}
+                                    </button>
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
-                    {{-- Dropdown logout --}}
-                    <div class="nav-item text-center">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <button class="btn-standard btn-green_1 fw-bold">
-                                <i class="me-2 fa-solid fa-right-from-bracket"></i>
-                                {{ __('Logout') }}
-                            </button>
-                        </a>
-                    </div>
                     <div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf

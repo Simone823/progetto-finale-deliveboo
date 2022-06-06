@@ -25,7 +25,7 @@
             <div class="form-group row mb-2 flex-column">
                 <h6 class="fw-bold">Nome del piatto</h6>
                 <div>
-                    <input placeholder="Nome del piatto"
+                    <input required placeholder="Nome del piatto"
                     id="name" type="text" class="form-control
                     @error('name') is-invalid @enderror"
                     name="name" value="{{ old('name') }}"
@@ -45,8 +45,7 @@
                 <h6 class="fw-bold">Ingredienti</h6>
                 <div>
                     <textarea placeholder="Inserisci gli ingredienti separandoli con una virgola"
-                    id="ingredients" type="text" class="form-control 
-                    @error('ingredients') is-invalid @enderror" rows="3"
+                    id="ingredients" type="text" class="form-control @error('ingredients') is-invalid @enderror" minlength="5" rows="3"
                     name="ingredients">
                     {{ old('ingredients') }}
                     </textarea>
@@ -64,7 +63,7 @@
             <div class="form-group row mb-2 flex-column">
                 <h6 class="fw-bold">Prezzo</h6>
                 <div>
-                    <input placeholder="Inserisci il prezzo in formato: XX.XX"
+                    <input required placeholder="Inserisci il prezzo in formato: XX.XX"
                     id="price" type="text" class="form-control
                     @error('price') is-invalid @enderror"
                     name="price" value="{{ old('price') }}"

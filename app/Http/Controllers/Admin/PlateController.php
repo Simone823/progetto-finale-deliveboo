@@ -20,9 +20,10 @@ class PlateController extends Controller
     {
         //salvo in una variabile l'id dell'utente loggato
         $id_user = Auth::id();
+
         //prendo dalla tabella plates i piatti corrispondenti all'id dell'utente loggato
         $plates = Plate::where('user_id', '=' ,$id_user)
-            ->orderBy('name', 'ASC')
+            ->orderBy('id', 'DESC')
             ->paginate(6);
 
         $user = User::where('id', '=' , $id_user)->first();

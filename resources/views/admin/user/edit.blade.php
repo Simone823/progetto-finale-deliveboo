@@ -8,6 +8,14 @@ Deliveboo - {{$user->business_name}}
 <div class="register-wrapper modify-wrapper container-md pt-4 d-flex">
     <div class="col-10 col-sm-8 col-md-6 m-auto m-md-0">
         
+        {{-- TURN BACK --}}
+        <div class="turn-back-wrapper pb-3 align-self-end">
+            <a href="{{route('admin.homepage')}}" class="text-reset text-decoration-none">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                <span>Torna alla dashboard</span>
+            </a>
+        </div>
+
         <h1 class="fw-bold mb-4">{{$user->business_name}}</h1>
         
         <form method="POST" action="{{ route('admin.user.update', $user) }}" enctype="multipart/form-data">
@@ -16,6 +24,7 @@ Deliveboo - {{$user->business_name}}
 
             {{-- Method --}}
             @method('PUT')
+
 
             {{-- Image wrapper business_image --}}
             <div class="wrapper_image d-flex justify-content-center d-md-none">
@@ -175,17 +184,10 @@ Deliveboo - {{$user->business_name}}
             </div>
         
             {{-- Button register --}}
-            <div class="form-group mb-0 pb-5 d-flex gap-3">
+            <div class="form-group mb-0 pb-5">
                 <button type="submit" class="btn-standard btn-green_1">
                     {{ __('Invia') }}
                 </button>
-
-                <div class="turn-back-wrapper align-self-end">
-                    <a href="{{route('admin.homepage')}}" class="text-reset text-decoration-none">
-                        <i class="fa-solid fa-arrow-left-long"></i>
-                        <span>Torna alla dashboard</span>
-                    </a>
-                </div>
             </div>
         </form>
     </div>

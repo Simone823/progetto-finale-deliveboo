@@ -1,32 +1,38 @@
 <template>
 
     <div>
+        <!-- Jumbotron -->
        <MyJumbotron class="mb-4"/>
-        <div class="container">
+        <!-- MySelection -->
+        <MySelection class="mb-4"/>
+        <!-- Sezione Piatti -->
+       <section class="bg-pink">
+            <div class="container">
+                <!-- Title -->
+                <h3 class="fw-bold fs-1 pb-4 pt-4">I tuoi piatti preferiti, consegnati da noi.</h3>
 
-            <!-- Title -->
-            <h3 class="fw-bold fs-1 mb-4">La selezione di Deliveboo</h3>
+                <div class="row">
+                    <!-- Lists types -->
+                    <ul class="lists_types d-flex flex-wrap">
+                        <li v-for="type in types" :key="type.id" class="col-12 col-md-4 col-sm-6 px-3">
 
-            <div class="row">
-                <!-- Lists types -->
-                <ul class="lists_types d-flex flex-wrap">
-                    <li v-for="type in types" :key="type.id" class="col-12 col-sm-6 px-3">
+                            <router-link class="wrapper_card" tag="li" :to="{ name: 'resturant-type', params: { id: type.id } }">
+                                <!-- Type image -->
+                                <figure class="types_img">
+                                    <img src="https://www.sosushiandsound.it/wp-content/uploads/2021/11/all-you-can-eat-milano.jpg" alt="">
+                                </figure>
 
-                        <router-link class="wrapper_card" tag="li" :to="{ name: 'resturant-type', params: { id: type.id } }">
-                            <!-- Type image -->
-                            <figure class="types_img">
-                                <img src="https://www.sosushiandsound.it/wp-content/uploads/2021/11/all-you-can-eat-milano.jpg" alt="">
-                            </figure>
-
-                            <!-- Name type -->
-                            <div class="type_name">
-                                <h2>{{type.type_name}}</h2>
-                            </div>
-                        </router-link>
-                    </li>
-                </ul>
+                                <!-- Name type -->
+                                <div class="type_name">
+                                    <h2>{{type.type_name}}</h2>
+                                </div>
+                            </router-link>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+       </section>
+       
     </div>
     
 </template>
@@ -34,11 +40,13 @@
 <script>
 
 import MyJumbotron from '../components/MyJumbotron.vue';
+import MySelection from '../components/MySelection.vue';
 
 export default {
 
     components: {
-        MyJumbotron
+        MyJumbotron,
+        MySelection,
     },
 
     data() {
@@ -74,6 +82,10 @@ export default {
         cursor: pointer;
     }
 
+    .bg-pink{
+        background-color: #ffeae4;
+    }
+
     .lists_types {
         list-style: none;
         padding: 0;
@@ -82,7 +94,7 @@ export default {
         li {
 
             .wrapper_card {
-                height: 300px;
+                height: 175px;
                 position: relative;
                 cursor: pointer;
                 border-radius: 5px;
@@ -96,7 +108,7 @@ export default {
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    background-color: rgba(0, 0, 0, 0.5);
+                    background-color: rgba(0, 0, 0, 0.1);
                 }
 
                 &:hover {
@@ -114,7 +126,6 @@ export default {
                 .types_img {
                     width: 100%;
                     height: 100%;
-                    opacity: 0.6;
             
                     img {
                         width: 100%;
@@ -135,6 +146,7 @@ export default {
                     h2 {
                         font-weight: 700;
                         color: white;
+                        filter: drop-shadow(2px 0px 11px #000000);
                     }
                 }
             }

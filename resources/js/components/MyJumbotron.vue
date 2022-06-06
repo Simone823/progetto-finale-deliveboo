@@ -3,27 +3,33 @@
              <div class="container p-0">
                 <div class="row flex-wrap justify-content-center align-items-center p-0">
                     
-                    <div class="col-12 col-sm-6 col-sx py-sm-2 px-4">
-                        <h4 class="jumbotron_title fs-2 ">I piatti che vuoi, a casa tua.</h4>
-                        <label for="address" class="text-white fs-5" class-form-label>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</label>
-                        <div class="d-flex align-items-start gap-2 ">
-                            <div class="d-flex flex-column flex-grow-1">
-                                <input class="address form-control" v-model="inputAddress" type="text" id="address" name="address" placeholder="Inserisci il tuo indirizzo completo">
-                                <div class="invalid-feedback">
-                                    Please provide a valid city.
+                    <div class="col-12 col-md-6 col-sx py-sm-2 px-4">
+                        <h4 class="jumbotron_title fs-1 ">I piatti che vuoi, a casa tua.</h4>
+
+                        <div class="input_wrapper mt-4">
+                            <label for="address" class="text-muted fs-5 pb-2 pt-2" class-form-label>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</label>
+                            <div class="d-flex align-items-start gap-2 ">
+                                <div class="d-flex flex-column flex-grow-1">
+                                    <input class="address form-control" v-model="inputAddress" type="text" id="address" name="address" placeholder="Inserisci il tuo indirizzo completo">
+                                    <div class="invalid-feedback">
+                                        Please provide a valid city.
+                                    </div>
+                                    <p class="pt-2 pb-2 text-muted mb-0"><a href="#"><span class="link">Accedi</span></a> per visualizzare i tuoi indirizzi recenti.</p>
                                 </div>
+                                <!-- TODO disabilitare il bottone -->
+                                <router-link tag="button" :to="inputAddress != '' ? '/city-resturants' : '/' "
+                                    class="btn btn-green_1">
+                                        Cerca
+                                </router-link>
                             </div>
-                            <!-- TODO disabilitare il bottone -->
-                            <router-link tag="button" :to="inputAddress != '' ? '/city-resturants' : '/' "
-                                class="btn btn-white">
-                                    Cerca
-                            </router-link>
                         </div>
+
+                   
                     </div>
 
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-md-6">
                         <div class="d-flex justify-content-center align-items-center">
-                            <img class="jumbotron_image" :src="require('/public/img/motocycle.png')" alt="">
+                            <img class="jumbotron_image" :src="require('/public/img/homepage_pic.png')" alt="">
                         </div>
                             
                     </div>
@@ -47,6 +53,14 @@
 </script>
 
 <style lang="scss" scoped>
+
+    a{
+        text-decoration: none;
+    }
+
+    .link{
+        color: #00CCBC
+    }
     .bg-green{
         background-color:#00CCBC;
         position: relative;
@@ -62,19 +76,25 @@
 
         .jumbotron_title{
             color: #3e235d;
-            font-weight: 800;
+            font-weight: 600;
         }
 
 
 
         .jumbotron_image{
-            width: 60%;
+            width: 80%;
             display: block;
             z-index: 999;
         }
 
         .col-sx{
             z-index: 999;
+        }
+
+        .input_wrapper{
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px 25px;
         }
     }
 </style>

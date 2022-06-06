@@ -12506,6 +12506,53 @@ img {
   color: #00CCBC;
 }
 
+.radio-visibility {
+  background: #454857;
+  padding: 0;
+  border-radius: 3px;
+  max-width: 74px;
+  box-shadow: inset 0 0 0 3px rgba(35, 33, 45, 0.3), 0 0 0 3px rgba(185, 185, 185, 0.3);
+  position: relative;
+}
+
+.radio-visibility input {
+  width: 35px;
+  height: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 4px 8px;
+  background: #454857;
+  color: rgba(189, 189, 189, 0.7411764706);
+  font-size: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  transition: all 200ms linear;
+}
+
+.radio-visibility input:checked {
+  color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1803921569);
+  text-shadow: 0 1px 0px rgba(121, 72, 95, 0.4784313725);
+}
+
+.radio-visibility input:before {
+  content: attr(label);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.radio-visibility .radio-yes:checked {
+  background-image: linear-gradient(180deg, #95d891, #74bbad);
+}
+
+.radio-visibility .radio-no:checked {
+  background-image: linear-gradient(180deg, red, #801515);
+}
+
 .animated-button1 {
   background: linear-gradient(-30deg, #00CCBC 50%, #00C2B3 50%);
   padding: 5px 10px;

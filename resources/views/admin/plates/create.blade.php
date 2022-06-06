@@ -8,10 +8,10 @@
     <div class="col-10 col-sm-8 col-md-6 m-auto m-md-0">
 
         {{-- TURN BACK --}}
-        <div class="turn-back-wrapper pb-3 align-self-end">
+        <div class="pb-3 align-self-end">
             <a href="{{route('admin.homepage')}}" class="text-reset text-decoration-none">
                 <i class="fa-solid fa-arrow-left-long"></i>
-                <span>Torna alla dashboard</span>
+                <span class="text-hover-purple">Torna alla dashboard</span>
             </a>
         </div>
         

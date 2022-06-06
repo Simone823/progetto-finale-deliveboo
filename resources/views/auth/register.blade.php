@@ -5,6 +5,14 @@
 @section('content')
 <div class="col-12 register-wrapper container-md pt-4 d-block d-md-flex">
     <div class="col-10 col-sm-8 col-md-6 m-auto m-md-0">
+
+        {{-- TURN BACK --}}
+        <div class="pb-3 align-self-end">
+            <a href="{{url('/')}}" class="text-reset text-decoration-none">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                <span class="text-hover-purple">Torna alla homepage</span>
+            </a>
+        </div>
         
         <h1 class="fw-bold mb-4">Diventa un partner di Deliveboo</h1>
         
@@ -169,7 +177,7 @@
         
         
             {{-- Business image input--}}
-            <div class="form-group mb-4">
+            <div class="form-group mb-3">
                 <h6 class="fw-bold">Immagine del ristorante</h6>
         
                 <div class="col-lg-8">

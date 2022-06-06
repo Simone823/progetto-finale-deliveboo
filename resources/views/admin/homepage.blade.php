@@ -13,7 +13,7 @@
             
       {{-- Business image --}}
       <figure id="user_image_wrapper">
-        <img class="user_image" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="user_img">
+        <img class="user_image" src="{{asset('storage/'.$user->business_image)}}" alt="user_img">
       </figure>
             
             
@@ -130,7 +130,7 @@
                           
               <div class="carousel-item {{ $key == count($lastPlates) - 1 ? 'active' : ''}}">
 
-                <img src="{{$plate->image ? asset('storage/'.$plate->image) : asset('img/placeholder_plate.png')}}" class="d-block w-100">
+                <img src="{{asset('storage/'.$plate->image)}}" class="d-block w-100">
                 
                 <div class="carousel-caption">
                   <h5 class="caption-text">{{ $plate->name }}</h5>

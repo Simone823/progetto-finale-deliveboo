@@ -20,12 +20,7 @@
 
                     {{-- Plate image --}}
                     <figure class="plate_image">
-                        @if($plate->image == null)
-                            <img src="{{asset('img/placeholder_plate.png')}}" alt="">
-
-                            @else
-                                <img src="{{asset('storage/'.$plate->image)}}" alt="">
-                        @endif
+                        <img src="{{asset('storage/'.$plate->image)}}" alt="">
                     </figure>
 
                     {{-- Description card body --}}

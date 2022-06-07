@@ -262,7 +262,7 @@
                             </div>
                             <!-- TODO gestire il prezzo dinamicamente  -->
                             <div class="add-cart d-flex justify-content-center">
-                                <button class="btn btn-green_1 py-2 px-5">Aggiungi per {{menuPlate.price}}&euro;</button>
+                                <button @click="addToCart(menuPlate)" class="btn btn-green_1 py-2 px-5">Aggiungi per {{menuPlate.price}}&euro;</button>
                             </div>
                         </div>
                     </div>
@@ -287,16 +287,18 @@ export default {
             logo: require('/public/img/logo_white.svg'),
             authUser: window.authUser,
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+
+            cartShop: [],
         }
     },
     methods: {
         fetchResturantInfo(){
             axios.get(`/api/resturant-menu/${this.$route.params.id}`)
             .then( res => {
-                console.log(res);
+                // console.log(res);
                 this.resturant = res.data.user[0];
                 this.menuPlates = res.data.user_plates;
-                console.log(this.menuPlates);
+                // console.log(this.menuPlates);
             })
             .catch( err => {
                 console.warn(err);
@@ -310,8 +312,50 @@ export default {
         },
         closePlateInfo(){
             this.activeElement = undefined;
+        },
+
+        addToCart(index) {
+
+            if(typeof(Storage) !== undefined) {
+               
+                const {id, name, image, price} = index;
+
+                const plate = {
+                    id: id,
+                    name: name,
+                    image: image,
+                    price: price,
+                    quantity: 1,
+                };
+
+                if(JSON.parse(localStorage.getItem('cartShop')) === null) {
+                    this.cartShop.push(plate);
+                    localStorage.setItem('cartShop', JSON.stringify(this.cartShop));
+                    window.location.reload();
+                } else {
+
+                    const localItems = JSON.parse(localStorage.getItem('cartShop'));
+                    localItems.map(data=>{
+                        if(plate.id == data.id) {
+                            plate.quantity = data.quantity + 1;
+                            plate.price = plate.price * plate.quantity; 
+                        } else {
+                            this.cartShop.push(data);
+                        }    
+                    });
+
+                    this.cartShop.push(plate);
+                    window.location.reload();
+                    localStorage.setItem('cartShop', JSON.stringify(this.cartShop));
+                }
+
+
+            } else {
+                alert('storage non funziona nel tuo browser');
+            }
         }
     },
+
     mounted() {
         this.fetchResturantInfo();
     },

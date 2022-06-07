@@ -256,13 +256,13 @@
                         <div class="cart-management">
                             <div class="plates-number d-flex justify-content-center align-items-center gap-5 py-5">
                                 <!-- TODO gestione da sistemare con dei metodi  -->
-                                <button class="number-button">-</button>
-                                <span>N</span>
-                                <button class="number-button">+</button>
+                                <button @click="decrementQuantity()" class="number-button">-</button>
+                                <span>{{quantity}}</span>
+                                <button @click="incrementQuantity()" class="number-button">+</button>
                             </div>
                             <!-- TODO gestire il prezzo dinamicamente  -->
                             <div class="add-cart d-flex justify-content-center">
-                                <button @click="addToCart(menuPlate)" class="btn btn-green_1 py-2 px-5">Aggiungi per {{menuPlate.price}}&euro;</button>
+                                <button @click="addToCart(menuPlate)" class="btn btn-green_1 py-2 px-5">Aggiungi per {{menuPlate.price * quantity}}&euro;</button>
                             </div>
                         </div>
                     </div>
@@ -288,7 +288,11 @@ export default {
             authUser: window.authUser,
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
 
+            // Cart shop
             cartShop: [],
+
+            // Quantità piatti
+            quantity: 1,
         }
     },
     methods: {
@@ -312,20 +316,37 @@ export default {
         },
         closePlateInfo(){
             this.activeElement = undefined;
+            this.quantity = 1;
         },
 
-        addToCart(index) {
+        // Increment plate quantity
+        incrementQuantity() {
+            this.quantity++;
+        },
+
+        // decrement plate quantity
+        decrementQuantity() {
+
+            // Se this.quantity è maggiore di 1
+            if(this.quantity > 1) {
+                this.quantity--;
+            }
+        },
+
+        // Function add to cart and update quantity shop localstorage
+        addToCart(plateObject) {
 
             if(typeof(Storage) !== undefined) {
                
-                const {id, name, image, price} = index;
+                // destruturazione plate
+                const {id, name, image, price} = plateObject;
 
                 const plate = {
                     id: id,
                     name: name,
                     image: image,
                     price: price,
-                    quantity: 1,
+                    quantity: this.quantity,
                 };
 
                 if(JSON.parse(localStorage.getItem('cartShop')) === null) {
@@ -337,8 +358,7 @@ export default {
                     const localItems = JSON.parse(localStorage.getItem('cartShop'));
                     localItems.map(data=>{
                         if(plate.id == data.id) {
-                            plate.quantity = data.quantity + 1;
-                            plate.price = plate.price * plate.quantity; 
+                            plate.quantity += data.quantity;
                         } else {
                             this.cartShop.push(data);
                         }    
@@ -348,8 +368,7 @@ export default {
                     window.location.reload();
                     localStorage.setItem('cartShop', JSON.stringify(this.cartShop));
                 }
-
-
+                
             } else {
                 alert('storage non funziona nel tuo browser');
             }

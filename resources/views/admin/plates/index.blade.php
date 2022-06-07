@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'DELIVEBOO DB | PIATTI')
+@section('metaTitle', 'deliveboo - Piatti')
 
 @section('content')
 {{-- Section plates index--}}
-<div id="section_plates_index" class="wrapper_cards_plate container py-5 px-3">
+<div id="section_plates_index" class="wrapper_cards_plate container pt-4 pb-4">
 
     {{-- Title --}}
     <h3 class="mb-4 text-violet fw-bold fs-3">Elenco dei piatti del ristorante: {{$user->business_name}}</h3>

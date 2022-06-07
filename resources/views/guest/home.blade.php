@@ -10,18 +10,19 @@
     <title>Deliveboo</title>
 </head>
 <body>
-
             
    
 
     {{-- faccio il div con l'id per Vue --}}
     <div id="root"></div>
+
     {{-- controllo che l'utente sia loggato --}}
     @if (Auth::check())
         <script>window.authUser={!! json_encode(Auth::user()); !!};</script>
     @else
         <script>window.authUser=null;</script>
     @endif
+    
     {{-- collego il file js --}}
     <script src="{{ asset('js/front.js') }}"></script>
 </body>

@@ -131,7 +131,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="/" @click.prevent="logout">
+                                    <a class="dropdown-item dropdown-item text-center" href="/" @click.prevent="logout">
                                         <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
                                         Logout
                                     </a>    

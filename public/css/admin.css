@@ -12270,6 +12270,10 @@ img {
   }
 }
 
+.text-hover-purple:hover {
+  color: #99006B;
+}
+
 #burger-icon label {
   display: flex;
   flex-direction: column;
@@ -12865,14 +12869,6 @@ img {
 
 .modify-wrapper .image-modify {
   transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
-}
-
-.modify-wrapper .turn-back-wrapper {
-  cursor: pointer;
-}
-
-.modify-wrapper .turn-back-wrapper:hover {
-  color: #99006B;
 }
 
 .wrapper_references_user .references-info #user_image_wrapper {

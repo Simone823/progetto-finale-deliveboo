@@ -8,10 +8,10 @@
     <div class="col-10 col-sm-8 col-md-6 m-auto m-md-0">
 
         {{-- TURN BACK --}}
-        <div class="turn-back-wrapper pb-3 align-self-end">
+        <div class="pb-3 align-self-end">
             <a href="{{route('admin.homepage')}}" class="text-reset text-decoration-none">
                 <i class="fa-solid fa-arrow-left-long"></i>
-                <span>Torna alla dashboard</span>
+                <span class="text-hover-purple">Torna alla dashboard</span>
             </a>
         </div>
         
@@ -25,7 +25,7 @@
             <div class="form-group row mb-2 flex-column">
                 <h6 class="fw-bold">Nome del piatto</h6>
                 <div>
-                    <input placeholder="Nome del piatto"
+                    <input required placeholder="Nome del piatto"
                     id="name" type="text" class="form-control
                     @error('name') is-invalid @enderror"
                     name="name" value="{{ old('name') }}"
@@ -45,11 +45,8 @@
                 <h6 class="fw-bold">Ingredienti</h6>
                 <div>
                     <textarea placeholder="Inserisci gli ingredienti separandoli con una virgola"
-                    id="ingredients" type="text" class="form-control 
-                    @error('ingredients') is-invalid @enderror" rows="3"
-                    name="ingredients">
-                    {{ old('ingredients') }}
-                    </textarea>
+                    id="ingredients" type="text" class="form-control @error('ingredients') is-invalid @enderror" rows="3" required
+                    name="ingredients">{{ old('ingredients') }}</textarea>
                     
                     @error('ingredients')
                     <span class="invalid-feedback" role="alert">
@@ -64,7 +61,7 @@
             <div class="form-group row mb-2 flex-column">
                 <h6 class="fw-bold">Prezzo</h6>
                 <div>
-                    <input placeholder="Inserisci il prezzo in formato: XX.XX"
+                    <input required placeholder="Inserisci il prezzo in formato: XX.XX"
                     id="price" type="text" class="form-control
                     @error('price') is-invalid @enderror"
                     name="price" value="{{ old('price') }}"

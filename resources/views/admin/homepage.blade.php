@@ -6,7 +6,7 @@
 {{-- @dd($user->types[0]); --}}
 
 {{-- Wrapper referenze utente (ristorante) --}}
-<div class="wrapper_references_user container-md align-self-start d-md-flex pt-3 gap-3">
+<div class="wrapper_references_user container-md align-self-start d-md-flex p-3 p-sm-4 p-md-4 gap-3">
     
   {{-- INFO USER --}}
     <div class="references-info col-12 col-md-6">
@@ -88,13 +88,13 @@
           <div class="d-flex justify-content-between gap-2 m-3 mb-4 flex-wrap">
             @foreach ($user->types as $type)
 
-            <a href="#" class="animated-button1 text-reset">
+            <div class="animated-button1 text-reset">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
               {{$type->type_name}}
-            </a>
+            </div>
 
             @endforeach
           </div>

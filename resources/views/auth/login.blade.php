@@ -35,6 +35,14 @@
             
             <div class="col-12 col-md-6 p-3 d-flex justify-content-center align-items-center">
                 <div class="form-wrapper">
+
+                    {{-- TURN BACK --}}
+                    <div class="pb-3 align-self-end">
+                        <a href="{{url('/')}}" class="text-reset text-decoration-none">
+                            <i class="fa-solid fa-arrow-left-long"></i>
+                            <span class="text-hover-purple">Torna alla homepage</span>
+                        </a>
+                    </div>
                     
                     <h1 class="fw-bold">Ti diamo il benvenuto su Deliveboo</h1>
                     <p>Sfrutta i dati a disposizione per far crescere il tuo business. Monitora le vendite, controlla i tuoi progressi e attira nuovi clienti con offerte speciali.</p>
@@ -101,7 +109,7 @@
                         {{-- PASSWORD DIMENTICATA --}}
                         <div class="forgot-psw">
                             @if (Route::has('password.request'))
-                            <a class="text-reset text-decoration-none" href="{{ route('password.request') }}">
+                            <a class="text-reset text-decoration-none text-hover-underline" href="{{ route('password.request') }}">
                                 {{ __('Password dimenticata?') }}
                             </a>
                             @endif

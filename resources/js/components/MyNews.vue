@@ -63,7 +63,7 @@
 
 
     .bg-pizza{
-        background-image: url('/img/pizza.jpg');
+        background-image: url('/img/MyNews/pizza.png');
         clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
     }
 

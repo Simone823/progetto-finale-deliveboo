@@ -206,26 +206,61 @@
             </section>
             <!-- sezione che contiene il menù del ristorante -->
             <section id="resturant-menu" class="pt-4">
-                <div class="container-custom px-3 px-md-4 px-lg-5 py-2 py-sm-2 py-md-4">
-                    <h3 class="mb-3 fs-2 fw-bold">Il nostro menù</h3>
-                    <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
-                    <div class="cards-wrapper row justify-content-start">
-                        <div class="card-menu col-12 col-md-6 col-lg-4 gap-2 mb-4"
-                            v-for="(menuPlate,index) in menuPlates" :key="index"
-                            v-on:click="viewPlate(index)">
-                            <div class="card-wrapper p-3 d-flex justify-content-between">
-                                <div class="card-body flex-grow-1 p-0">
-                                    <h5 class="card-title fw-bold mb-3">{{ menuPlate.name }}</h5>
-                                    <span class="fs-5">{{ menuPlate.price }}&euro;</span>
+                <div class="container-custom px-3 px-md-4 px-lg-5 py-2 py-sm-2 py-md-4 row">
+                    <div class="col-8">
+                        <h3 class="mb-3 fs-2 fw-bold">Il nostro menù</h3>
+                        <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
+                        <div class="cards-wrapper row justify-content-start">
+                            <div class="card-menu col-12 col-md-6 col-lg-4 gap-2 mb-4"
+                                v-for="(menuPlate,index) in menuPlates" :key="index"
+                                v-on:click="viewPlate(index)">
+                                <div class="card-wrapper p-3 d-flex justify-content-between">
+                                    <div class="card-body flex-grow-1 p-0">
+                                        <h5 class="card-title fw-bold mb-3">{{ menuPlate.name }}</h5>
+                                        <span class="fs-5">{{ menuPlate.price }}&euro;</span>
+                                    </div>
+                                    <div class="align-self-center justify-content-center">
+                                        <figure class="post-card-img m-0">
+                                            <!-- TODO inserire immagine -->
+                                            <img v-if="menuPlate.image" :src="`/storage/${menuPlate.image}`" alt="">
+                                            <img v-else :src="require('/public/img/placeholder_plate.png')" alt="">
+                                        </figure>
+                                    </div>
+                                    
                                 </div>
-                                <div class="align-self-center justify-content-center">
-                                    <figure class="post-card-img m-0">
-                                        <!-- TODO inserire immagine -->
-                                        <img v-if="menuPlate.image" :src="`/storage/${menuPlate.image}`" alt="">
-                                        <img v-else :src="require('/public/img/placeholder_plate.png')" alt="">
-                                    </figure>
-                                </div>
-                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARRELLO  -->
+                    <div class="cart-component col-4 align-self-start p-4">
+                        <div v-if="cart.length == 0" class="text-center">
+                            Il carrello è vuoto
+                        </div>
+                        <div v-else>
+                            <h3>Il tuo ordine</h3>
+                            <div v-for="item in cart" :key="item.id"
+                                class="d-flex justify-content-start align-items-center py-4 gap-3">
+                                <!-- <figure>
+                                    <img :src="item.image" alt="">
+                                </figure> -->
+                                <span>x{{ item.quantity }}</span><span class="item-name">{{ item.name }}</span>
+                                <span class="flex-grow-1 fs-5">{{ item.price * item.quantity }}&euro;</span>
+                                <button class="btn btn-danger text-white" @click="removeItemFromCart(item.id)">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                            <div class="d-flex justify-content-start align-items-center py-4 gap-3 tot-wrapper">
+                                <span class="flex-grow-1 fs-5 tot-cart">Totale:</span>
+                                <span class="fs-4">{{ getTotal() }}&euro;</span>
+                                <button class="btn btn-danger text-white" @click="removeAllItemsFromCart()">
+                                    Clear Cart
+                                </button>
+                            </div>
+                            <div>
+                                <!-- TODO aggiungere braintree per il checkput -->
+                                <button class="btn btn-green_1 pay-button">
+                                    Vai al pagamento
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -256,13 +291,13 @@
                         <div class="cart-management">
                             <div class="plates-number d-flex justify-content-center align-items-center gap-5 py-5">
                                 <!-- TODO gestione da sistemare con dei metodi  -->
-                                <button class="number-button">-</button>
-                                <span>N</span>
-                                <button class="number-button">+</button>
+                                <button :disabled="menuPlate.quantity < 1 ? true : false" class="minus-button" @click="menuPlate.quantity > 0 ? menuPlate.quantity-- : menuPlate.quantity = 0">-</button>
+                                <span>{{ menuPlate.quantity }}</span>
+                                <button class="plus-button" @click="menuPlate.quantity++">+</button>
                             </div>
                             <!-- TODO gestire il prezzo dinamicamente  -->
                             <div class="add-cart d-flex justify-content-center">
-                                <button class="btn btn-green_1 py-2 px-5">Aggiungi per {{menuPlate.price}}&euro;</button>
+                                <button :disabled="menuPlate.quantity < 1 ? true : false" class="btn btn-green_1 py-2 px-5" @click="addItemToCart(menuPlate.id); updateQuantity(menuPlate.id, menuPlate.quantity); closePlateInfo()">Aggiungi per {{menuPlate.price * menuPlate.quantity}}&euro;</button>
                             </div>
                         </div>
                     </div>
@@ -287,6 +322,9 @@ export default {
             logo: require('/public/img/logo_white.svg'),
             authUser: window.authUser,
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            // variabili per carrello
+            plates: JSON.parse(localStorage.getItem("plates")),
+            cart: JSON.parse(localStorage.getItem("cart")),
         }
     },
     methods: {
@@ -297,6 +335,10 @@ export default {
                 this.resturant = res.data.user[0];
                 this.menuPlates = res.data.user_plates;
                 console.log(this.menuPlates);
+                localStorage.setItem("plates", JSON.stringify(this.menuPlates));
+                if(!localStorage.getItem("cart")){
+                    localStorage.setItem("cart","[]");
+                }
             })
             .catch( err => {
                 console.warn(err);
@@ -307,13 +349,66 @@ export default {
         viewPlate(i){
             this.activeElement = i;
             this.ingredients = this.menuPlates[i].ingredients.split(',');
+            this.counter = 0
         },
         closePlateInfo(){
             this.activeElement = undefined;
-        }
+        },
+        // methods per carrello 
+        // AGGIUNGO UN ELEMENTO AL CARRELLO
+        addItemToCart(plateId){
+            let plate = this.plates.find(function(plate){
+                return plate.id == plateId;
+            });
+
+            if(this.cart.length == 0){
+                this.cart.push(plate);
+            }else{
+                let res = this.cart.find(element => element.id == plateId);
+                if(res === undefined){
+                    this.cart.push(plate);
+                }
+            }
+
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+        },
+        // ELIMINO UN ELEMENTO DAL CARRELLO
+        removeItemFromCart(plateId){
+            let temp = this.cart.filter(item => item.id  != plateId);
+            localStorage.setItem("cart", JSON.stringify(temp));
+            window.location.reload();
+        },
+        removeAllItemsFromCart(){
+            localStorage.clear("cart", JSON.stringify(this.cart));
+            // TODO da rivedere questo ricaricamento
+            window.location.reload();
+        },
+        // QUANTITÀ DEL PRODOTTO
+        updateQuantity(plateId, quantity){
+            for(let plate of this.cart){
+                if(plate.id == plateId){
+                    plate.quantity = quantity;
+                }
+            }
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+        },
+        //TOTALE
+        getTotal(){
+            let sumItem;
+            let sum = 0;
+            for(let i = 0; i < this.cart.length; i++){
+                sumItem = this.cart[i].price * this.cart[i].quantity;
+                console.log(sumItem);
+                sum += sumItem; 
+                console.log(sum)  
+            }
+            return sum;
+        },
     },
     mounted() {
         this.fetchResturantInfo();
+        console.log(this.counter);
+        // localStorage.removeItem("cart", JSON.stringify(this.cart));
     },
 }
 </script>
@@ -436,8 +531,8 @@ export default {
     }
 
     .info-plate-card{
+        display: none;
         position: relative;
-        outline: none;
         border-radius: 8px;
         max-width: 560px;
         width: 90%;
@@ -503,4 +598,32 @@ export default {
             border-bottom: 1px solid rgb(209, 209, 209);
         }
 
+    .cart-component{
+        background-color: white;
+        border: 1px solid #cacaca63;
+        border-radius: 5px;
+        min-height: 60px;
+    }
+
+    .pay-button{
+        width: 100%;
+        padding: 10px 10px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .item-name{
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: 500;
+    }
+
+    .tot-cart{
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.8);
+        font-weight: 600;
+    }
+    .tot-wrapper{
+        border-top: 1px solid #cacaca63;
+    }
 </style>

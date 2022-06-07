@@ -10878,7 +10878,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "section[data-v-2dc8c56c] {\n  background-color: #F9FAFA;\n}\nsection .col-50[data-v-2dc8c56c] {\n  height: 175px;\n  background-size: cover;\n  background-position: center;\n  overflow: hidden;\n  position: relative;\n}\nsection .col-50 .text_wrapper[data-v-2dc8c56c] {\n  z-index: 999;\n  background-color: white;\n}\nsection .store_badge[data-v-2dc8c56c] {\n  height: 35px;\n}\n.bg-pizza[data-v-2dc8c56c] {\n  background-image: url(\"/img/pizza.jpg\");\n  -webkit-clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);\n          clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);\n}\n.bg-app[data-v-2dc8c56c] {\n  background-image: url(\"/img/app_deliveboo.png\");\n  -webkit-clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);\n          clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);\n}", ""]);
+exports.push([module.i, "section[data-v-2dc8c56c] {\n  background-color: #F9FAFA;\n}\nsection .col-50[data-v-2dc8c56c] {\n  height: 175px;\n  background-size: cover;\n  background-position: center;\n  overflow: hidden;\n  position: relative;\n}\nsection .col-50 .text_wrapper[data-v-2dc8c56c] {\n  z-index: 999;\n  background-color: white;\n}\nsection .store_badge[data-v-2dc8c56c] {\n  height: 35px;\n}\n.bg-pizza[data-v-2dc8c56c] {\n  background-image: url(\"/img/MyNews/pizza.png\");\n  -webkit-clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);\n          clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);\n}\n.bg-app[data-v-2dc8c56c] {\n  background-image: url(\"/img/app_deliveboo.png\");\n  -webkit-clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);\n          clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);\n}", ""]);
 
 // exports
 
@@ -10916,7 +10916,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-5c6f8025] {\n  text-decoration: none;\n}\n.link[data-v-5c6f8025] {\n  cursor: pointer;\n  color: #32a8ab;\n}\n.card_wrapper[data-v-5c6f8025] {\n  height: 150px;\n  width: 100%;\n  background-size: cover;\n  background-position: center;\n  border-radius: 5px;\n  overflow: hidden;\n  position: relative;\n}\n.card_wrapper .card_title[data-v-5c6f8025] {\n  filter: drop-shadow(2px 0px 11px #000000);\n}\n.card_text[data-v-5c6f8025] {\n  max-width: 650px;\n}\n.bg-hamburger[data-v-5c6f8025] {\n  background-image: url(\"/img/MySelection/hamburger.jpg\");\n}\n.bg-dessert[data-v-5c6f8025] {\n  background-image: url(\"/img/MySelection/dessert.jpg\");\n}\n.bg-salad[data-v-5c6f8025] {\n  background-image: url(\"/img/MySelection/salad.jpg\");\n}\n.bg-gyoza[data-v-5c6f8025] {\n  background-image: url(\"/img/MySelection/gyoza.jpg\");\n}", ""]);
+exports.push([module.i, "a[data-v-5c6f8025] {\n  text-decoration: none;\n}\n.link[data-v-5c6f8025] {\n  cursor: pointer;\n  color: #32a8ab;\n}\n.card_wrapper[data-v-5c6f8025] {\n  height: 150px;\n  width: 100%;\n  background-size: cover;\n  background-position: center;\n  border-radius: 5px;\n  overflow: hidden;\n  position: relative;\n}\n.card_wrapper .card_title[data-v-5c6f8025] {\n  filter: drop-shadow(2px 0px 11px #000000);\n}\n.card_text[data-v-5c6f8025] {\n  max-width: 650px;\n}\n.bg-hamburger[data-v-5c6f8025] {\n  background-image: url(\"/img/MySelection/fried.png\");\n}\n.bg-dessert[data-v-5c6f8025] {\n  background-image: url(\"/img/MySelection/dessert.png\");\n}\n.bg-salad[data-v-5c6f8025] {\n  background-image: url(\"/img/MySelection/salad.png\");\n}\n.bg-gyoza[data-v-5c6f8025] {\n  background-image: url(\"/img/MySelection/gyoza.png\");\n}", ""]);
 
 // exports
 
@@ -60572,7 +60572,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni\Desktop\Boolean\Progetto_finale\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

@@ -188,14 +188,14 @@
             <!-- sezioni che contiene le info del ristorante selezionato -->
             <section id="resturant-info">
                 <!-- container che contiene l'immagine del ristorante e le sue info principale  -->
-                <div class="container-custom row px-2 px-md-4 px-lg-5 flex-wrap">
-                    <figure class="resturant-img col-12 col-md-4 m-0 p-0">
+                <div class="container-custom row p-0 p-sm-3 p-md-4 px-lg-5 flex-wrap">
+                    <figure class="resturant-img col-12 col-sm-5 col-md-4 m-0 p-0">
                         <!-- TODO aggiungere immagine -->
                         <img v-if="resturant.business_image" :src="`/storage/${resturant.business_image}`" alt="">
                         <img v-else :src="require('/public/img/placeholder_restaurants.png')" alt="">
                     </figure>
                     <!-- info ristorante prese dal DB  -->
-                    <div class="resturant-details col-12 col-md-4">
+                    <div class="resturant-details col-12 col-sm-7 col-md-4 flex-grow-1 p-3 p-md-0 px-md-3 px-lg-4">
                         <h1 class="resturant-name">{{ resturant.business_name }}</h1>
                         <p class="m-0 fs-5">Di {{ `${ resturant.name + ' ' + resturant.surname }` }}</p>
                         <p class="m-0 fs-6">In {{ `${ resturant.business_address + ' (' + resturant.business_city + ') '}` }}</p>
@@ -206,8 +206,8 @@
             </section>
             <!-- sezione che contiene il menù del ristorante -->
             <section id="resturant-menu" class="pt-4">
-                <div class="container-custom px-2 px-md-4 px-lg-5">
-                    <h3 class="mb-3 fs-2">Il nostro menù</h3>
+                <div class="container-custom px-3 px-md-4 px-lg-5 py-2 py-sm-2 py-md-4">
+                    <h3 class="mb-3 fs-2 fw-bold">Il nostro menù</h3>
                     <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
                     <div class="cards-wrapper row justify-content-start">
                         <div class="card-menu col-12 col-md-6 col-lg-4 gap-2 mb-4"
@@ -327,12 +327,12 @@ export default {
         margin: 0 auto;
     }
 
-    // .container-fluid{
-    //     border-bottom: 1px solid #cacaca63;
-    //     box-shadow: 0px 4px 10px #cacaca63;
-    //     position: relative;
-    //     z-index: 10;
-    // }
+    #resturant-info{
+        border-bottom: 1px solid #cacaca63;
+        box-shadow: 0px 4px 10px #cacaca63;
+        position: relative;
+        z-index: 10;
+    }
 
     #resturant-menu{
         background-color: #f9fafa;
@@ -344,12 +344,18 @@ export default {
     }
 
     .resturant-img{
-        height: 385px;
+        height: 350px;
+        border-radius: 5px;
+        overflow: hidden;
         img{
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
+        }
+
+        @media only screen and (max-width:574px){
+            border-radius:0px;
         }
     }
 

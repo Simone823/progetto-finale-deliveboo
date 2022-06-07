@@ -45,6 +45,19 @@
     }
 }
 
+
+//BTN DISABLE
+.btn-disable{
+    background-color: #ddd;
+    color: black;
+    transition: all 250ms linear;
+
+    &:hover{
+        cursor: no-drop;
+    }
+}
+
+
 // BTN WHITE
 .btn-white{
     background-color: $white;

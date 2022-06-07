@@ -16,17 +16,18 @@
                                     </div>
                                 </div>
                                 <!-- TODO disabilitare il bottone -->
-                                <router-link tag="button" :to="inputAddress != '' ? '/city-resturants' : '/' "
-                                    class="btn btn-green_1">
+                                <a :href="inputAddress != '' ? '/city-resturants' : '/' ">
+                                    <button class="btn-standard" :disabled="inputAddress == ''" :class="inputAddress == '' ? 'btn-disable' : 'btn-green_1'">
                                         Cerca
-                                </router-link>
+                                    </button>
+                                </a>
                             </div>
                         </div>
 
                    
                     </div>
 
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 align-self-end">
                         <div class="d-flex justify-content-center align-items-center">
                             <img class="jumbotron_image" :src="require('/public/img/homepage_pic.png')" alt="">
                         </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'Deliveboo - Registration')
+@section('metaTitle', 'Deliveboo - Registrazione')
 
 @section('content')
 <div class="col-12 register-wrapper container-md pt-4 d-block d-md-flex">

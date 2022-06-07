@@ -37,5 +37,9 @@
         </section>
 
     </main>
+
+    <footer>
+        @extends('layouts.footer')
+    </footer> 
 </body>
 </html>

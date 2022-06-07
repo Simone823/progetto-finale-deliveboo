@@ -25,5 +25,10 @@
     
     {{-- collego il file js --}}
     <script src="{{ asset('js/front.js') }}"></script>
+
+
+    <footer>
+        @extends('layouts.footer')
+    </footer> 
 </body>
 </html>

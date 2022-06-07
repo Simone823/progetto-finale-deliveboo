@@ -8,7 +8,8 @@
                 <div class="container-fluid p-0">
                     <figure class="resturant-img col-12 col-md-4 p-0 m-0">
                         <!-- TODO aggiungere immagine -->
-                        <img src="https://i.picsum.photos/id/292/3852/2556.jpg?hmac=cPYEh0I48Xpek2DPFLxTBhlZnKVhQCJsbprR-Awl9lo" alt="">
+                        <img v-if="resturant.business_image" :src="`/storage/${resturant.business_image}`" alt="">
+                        <img v-else :src="require('/public/img/placeholder_restaurants.png')" alt="">
                     </figure>
                     <!-- info ristorante prese dal DB  -->
                     <div class="resturant-details container p-4 px-md-4 py-md-5">
@@ -37,7 +38,8 @@
                                 <div class="align-self-center justify-content-center">
                                     <figure class="post-card-img m-0">
                                         <!-- TODO inserire immagine -->
-                                        <img src="https://i.picsum.photos/id/431/5398/3599.jpg?hmac=bc325kFqsm626RGhgs-XwG_GFqd4x3VmXtramO12qL8" alt="">
+                                        <img v-if="menuPlate.image" :src="`/storage/${menuPlate.image}`" alt="">
+                                        <img v-else :src="require('/public/img/placeholder_plate.png')" alt="">
                                     </figure>
                                 </div>
                                 
@@ -53,7 +55,8 @@
                     v-for="(menuPlate,index) in menuPlates" :key="index">
                     <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">X</button>
                     <figure class="info-plate-img">
-                        <img src="https://i.picsum.photos/id/431/5398/3599.jpg?hmac=bc325kFqsm626RGhgs-XwG_GFqd4x3VmXtramO12qL8" alt="">
+                        <img v-if="menuPlate.image" :src="`/storage/${menuPlate.image}`" alt="">
+                        <img v-else :src="require('/public/img/placeholder_plate.png')" alt="">
                     </figure>
                     <div class="info-plate-body p-5">
                         <h1>{{ menuPlate.name }}</h1>

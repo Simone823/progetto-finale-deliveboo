@@ -5141,7 +5141,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MyJumbotron",
   data: function data() {
@@ -5608,6 +5607,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -43009,7 +43011,7 @@ var render = function () {
         "div",
         {
           staticClass:
-            "row flex-wrap justify-content-center align-items-center p-0",
+            "row flex-wrap justify-content-center align-items-center p-0 m-0",
         },
         [
           _c("div", { staticClass: "col-12 col-md-6 col-sx py-sm-2 px-4" }, [
@@ -43033,7 +43035,7 @@ var render = function () {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "d-flex align-items-start gap-2 " },
+                { staticClass: "d-flex align-items-start gap-2 mb-2" },
                 [
                   _c("div", { staticClass: "d-flex flex-column flex-grow-1" }, [
                     _c("input", {
@@ -43047,6 +43049,7 @@ var render = function () {
                       ],
                       staticClass: "address form-control",
                       attrs: {
+                        required: "",
                         type: "text",
                         id: "address",
                         name: "address",
@@ -43068,8 +43071,6 @@ var render = function () {
                         "\n                                    Please provide a valid city.\n                                "
                       ),
                     ]),
-                    _vm._v(" "),
-                    _vm._m(0),
                   ]),
                   _vm._v(" "),
                   _c(
@@ -43115,19 +43116,7 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "pt-2 pb-2 text-muted mb-0" }, [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("span", { staticClass: "link" }, [_vm._v("Accedi")]),
-      ]),
-      _vm._v(" per visualizzare i tuoi indirizzi recenti."),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -43887,7 +43876,25 @@ var render = function () {
     _c("main", [
       _c("section", { attrs: { id: "resturant-info" } }, [
         _c("div", { staticClass: "container-fluid p-0" }, [
-          _vm._m(0),
+          _c(
+            "figure",
+            { staticClass: "resturant-img col-12 col-md-4 p-0 m-0" },
+            [
+              _vm.resturant.business_image
+                ? _c("img", {
+                    attrs: {
+                      src: "/storage/" + _vm.resturant.business_image,
+                      alt: "",
+                    },
+                  })
+                : _c("img", {
+                    attrs: {
+                      src: __webpack_require__(/*! /public/img/placeholder_restaurants.png */ "./public/img/placeholder_restaurants.png"),
+                      alt: "",
+                    },
+                  }),
+            ]
+          ),
           _vm._v(" "),
           _c(
             "div",
@@ -43973,7 +43980,30 @@ var render = function () {
                         ]),
                       ]),
                       _vm._v(" "),
-                      _vm._m(1, true),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "align-self-center justify-content-center",
+                        },
+                        [
+                          _c("figure", { staticClass: "post-card-img m-0" }, [
+                            menuPlate.image
+                              ? _c("img", {
+                                  attrs: {
+                                    src: "/storage/" + menuPlate.image,
+                                    alt: "",
+                                  },
+                                })
+                              : _c("img", {
+                                  attrs: {
+                                    src: __webpack_require__(/*! /public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png"),
+                                    alt: "",
+                                  },
+                                }),
+                          ]),
+                        ]
+                      ),
                     ]
                   ),
                 ]
@@ -44019,7 +44049,18 @@ var render = function () {
                 [_vm._v("X")]
               ),
               _vm._v(" "),
-              _vm._m(2, true),
+              _c("figure", { staticClass: "info-plate-img" }, [
+                menuPlate.image
+                  ? _c("img", {
+                      attrs: { src: "/storage/" + menuPlate.image, alt: "" },
+                    })
+                  : _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! /public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png"),
+                        alt: "",
+                      },
+                    }),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "info-plate-body p-5" }, [
                 _c("h1", [_vm._v(_vm._s(menuPlate.name))]),
@@ -44043,7 +44084,7 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "cart-management" }, [
-                  _vm._m(3, true),
+                  _vm._m(0, true),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -44071,55 +44112,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "figure",
-      { staticClass: "resturant-img col-12 col-md-4 p-0 m-0" },
-      [
-        _c("img", {
-          attrs: {
-            src: "https://i.picsum.photos/id/292/3852/2556.jpg?hmac=cPYEh0I48Xpek2DPFLxTBhlZnKVhQCJsbprR-Awl9lo",
-            alt: "",
-          },
-        }),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "align-self-center justify-content-center" },
-      [
-        _c("figure", { staticClass: "post-card-img m-0" }, [
-          _c("img", {
-            attrs: {
-              src: "https://i.picsum.photos/id/431/5398/3599.jpg?hmac=bc325kFqsm626RGhgs-XwG_GFqd4x3VmXtramO12qL8",
-              alt: "",
-            },
-          }),
-        ]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("figure", { staticClass: "info-plate-img" }, [
-      _c("img", {
-        attrs: {
-          src: "https://i.picsum.photos/id/431/5398/3599.jpg?hmac=bc325kFqsm626RGhgs-XwG_GFqd4x3VmXtramO12qL8",
-          alt: "",
-        },
-      }),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -59604,6 +59596,28 @@ module.exports = "/images/homepage_pic.png?789ae1678c9264e6925bbc7a6a1d380f";
 
 /***/ }),
 
+/***/ "./public/img/placeholder_plate.png":
+/*!******************************************!*\
+  !*** ./public/img/placeholder_plate.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/placeholder_plate.png?d21deffc6f8119db2a0294b14d4c1967";
+
+/***/ }),
+
+/***/ "./public/img/placeholder_restaurants.png":
+/*!************************************************!*\
+  !*** ./public/img/placeholder_restaurants.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/placeholder_restaurants.png?cef9dab22f50ec9496e575acf3f13598";
+
+/***/ }),
+
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -60558,7 +60572,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giovanni\Desktop\Boolean\Progetto_finale\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

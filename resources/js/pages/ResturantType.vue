@@ -1,5 +1,7 @@
 <template>
-    <div class="container">
+    <div>
+        <MyHeader />
+        <div class="container">
         <!-- faccio un controllo per vedere se l'array contiene ristoranti -->
         <div v-if="resturantsType.length == 0">
             <p>Per questa tipologia non ci sono ristoranti</p>
@@ -13,15 +15,18 @@
             </div>
         </div>
     </div>
+    </div>
 </template>
 
 <script>
 import ResturantTypeCard from '../components/ResturantTypeCard.vue'
+import MyHeader from '../components/MyHeader.vue'
 
 export default {
 
     components: {
         ResturantTypeCard,
+        MyHeader,
     },
 
     data(){

@@ -1,5 +1,7 @@
 <template>
-    <div class="container">
+    <div>
+        <MyHeader />
+        <div class="container">
         <!-- TODO passare il nome della città  -->
         <h1>Ristoranti a: *** </h1> 
         <div class="row flex-column flex-md-row py-4">
@@ -71,11 +73,16 @@
             </div>
         </div>
     </div>
+    </div>
 </template>
 
 <script>
+import MyHeader from '../components/MyHeader.vue'
 
 export default {
+    components:{
+        MyHeader,
+    },
 
     data() {
         return{

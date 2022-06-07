@@ -3,7 +3,7 @@
         <h1 class="fw-bold fs-1 mb-4">La selezione di Deliveboo</h1>
         <!-- Prima Row -->
         <div class="row">
-            <div class="col-6 col-sm-4 pt-2 pb-2">
+            <div class="col-12 col-sm-4 pt-2 pb-2">
                 <div class="card_wrapper d-flex justify-content-center align-items-center bg-hamburger">
                     <h1 class=" fw-bold fs-sm-3 text-white text-center card_title">Comfort Food</h1>
                 </div>
@@ -13,7 +13,7 @@
                 <a href="#"><span class="link">Scopri Comfort food</span></a>
             </div>
 
-            <div class="col-6 col-sm-8 pt-2 pb-2">
+            <div class="col-12 col-sm-8 pt-2 pb-2">
                 <div class="card_wrapper d-flex justify-content-center align-items-center bg-dessert">
                     <h1 class=" fw-bold fs-sm-3 text-white card_title text-center">Dolci e Dessert</h1>
                 </div>
@@ -25,7 +25,7 @@
         </div>
         <!-- Seconda Row -->
         <div class="row">
-            <div class="col-6 col-sm-8 pt-2 pb-2">
+            <div class="col-12 col-sm-8 pt-2 pb-2">
                 <div class="card_wrapper d-flex justify-content-center align-items-center bg-salad">
                     <h1 class=" fw-bold fs-sm-3 text-white card_title text-center">Perfetti da condividere</h1>
                 </div>
@@ -35,7 +35,7 @@
                 <a href="#"><span class="link">Scopri Perfetti da condividere</span></a>
             </div>
 
-            <div class="col-6 col-sm-4 pt-2 pb-2">
+            <div class="col-12 col-sm-4 pt-2 pb-2">
                 <div class="card_wrapper d-flex justify-content-center align-items-center bg-gyoza">
                     <h1 class=" fw-bold fs-sm-3 text-white text-center card_title">Esclusiva Deliveboo</h1>
                 </div>

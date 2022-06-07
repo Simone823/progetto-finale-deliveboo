@@ -1,6 +1,6 @@
 <template>
     <div>
-        
+        <MyHeader />
         <main>
             <!-- sezioni che contiene le info del ristorante selezionato -->
             <section id="resturant-info">
@@ -90,8 +90,12 @@
 </template>
 
 <script>
+import MyHeader from '../components/MyHeader.vue'
 
 export default {
+    components:{
+        MyHeader,
+    },
 
     data() {
         return {

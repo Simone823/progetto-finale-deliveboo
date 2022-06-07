@@ -5108,6 +5108,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -43041,7 +43052,32 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", [
+    _c(
+      "nav",
+      {
+        staticClass: "navbar navbar-expand-lg navbar-light",
+        attrs: { id: "navbar_guest" },
+      },
+      [
+        _c("div", { staticClass: "container-md" }, [
+          _c(
+            "a",
+            { staticClass: "ms-3 ms-md-0 navbar-brand", attrs: { href: "/" } },
+            [
+              _c("img", {
+                attrs: {
+                  id: "header_logo_deliveboo",
+                  src: _vm.logo,
+                  alt: "Deliveboo",
+                },
+              }),
+            ]
+          ),
+        ]),
+      ]
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

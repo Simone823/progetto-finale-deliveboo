@@ -1,5 +1,16 @@
 <template>
     <div>
+        <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light">
+        <div class="container-md">
+            <!-- LOGO  -->
+            <a class="ms-3 ms-md-0 navbar-brand" href="/">
+                <img id="header_logo_deliveboo" :src="logo" alt="Deliveboo">
+            </a>
+
+            
+                    
+            </div>
+    </nav>
 
     </div>
 </template>

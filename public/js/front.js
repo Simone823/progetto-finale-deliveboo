@@ -5368,6 +5368,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MyJumbotron",
   data: function data() {
@@ -5389,6 +5390,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -6129,7 +6133,9 @@ __webpack_require__.r(__webpack_exports__);
       resturant: [],
       menuPlates: [],
       ingredients: [],
-      logo: __webpack_require__(/*! /public/img/logo_white.svg */ "./public/img/logo_white.svg")
+      logo: __webpack_require__(/*! /public/img/logo_white.svg */ "./public/img/logo_white.svg"),
+      authUser: window.authUser,
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
   methods: {
@@ -44049,27 +44055,37 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c(
-                    "router-link",
+                    "a",
                     {
-                      staticClass: "btn btn-green_1",
                       attrs: {
-                        tag: "button",
-                        to: _vm.inputAddress != "" ? "/city-resturants" : "/",
+                        href: _vm.inputAddress != "" ? "/city-resturants" : "/",
                       },
                     },
                     [
-                      _vm._v(
-                        "\n                                    Cerca\n                            "
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn-standard",
+                          class:
+                            _vm.inputAddress == ""
+                              ? "btn-disable"
+                              : "btn-green_1",
+                          attrs: { disabled: _vm.inputAddress == "" },
+                        },
+                        [
+                          _vm._v(
+                            "\n                                    Cerca\n                                "
+                          ),
+                        ]
                       ),
                     ]
                   ),
-                ],
-                1
+                ]
               ),
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-12 col-md-6" }, [
+          _c("div", { staticClass: "col-12 col-md-6 align-self-end" }, [
             _c(
               "div",
               {
@@ -44129,35 +44145,49 @@ var staticRenderFns = [
         _c("div", { staticClass: "row" }, [
           _c(
             "div",
-            { staticClass: "d-flex align-items-center stripes_wrapper mb-2" },
+            {
+              staticClass:
+                "d-flex flex-wrap align-items-center stripes_wrapper",
+            },
             [
-              _c("div", { staticClass: "col-6 bg-pizza col-50" }),
+              _c("div", { staticClass: "col-12 col-sm-6 bg-pizza col-50" }),
               _vm._v(" "),
-              _c("div", { staticClass: "col-6 ps-5 pt-5 pb-5 text_wrapper " }, [
-                _c("h3", { staticClass: "fw-bold fs-4" }, [
-                  _vm._v("Deliveboo for Work"),
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Clienti o colleghi affamati? Il nostro team di esperti ti aiuterà"
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("button", { staticClass: "btn btn-green_1" }, [
-                  _c("span", { staticClass: "text-white fw-bold fs-6 p-1" }, [
-                    _vm._v("Contattaci"),
+              _c(
+                "div",
+                { staticClass: "col-12 col-sm-6 text_wrapper pt-4 ps-sm-5" },
+                [
+                  _c("h3", { staticClass: "fw-bold fs-4" }, [
+                    _vm._v("Deliveboo for Work"),
                   ]),
-                ]),
-              ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Clienti o colleghi affamati? Il nostro team di esperti ti aiuterà"
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "btn btn-green_1" }, [
+                    _c("span", { staticClass: "text-white fw-bold fs-6 p-1" }, [
+                      _vm._v("Contattaci"),
+                    ]),
+                  ]),
+                ]
+              ),
             ]
           ),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "d-flex align-items-center stripes_wrapper mb-2" },
+            {
+              staticClass:
+                "d-flex align-items-center stripes_wrapper mb-2 flex-wrap pt-5",
+            },
             [
-              _c("div", { staticClass: "col-6 pt-5 pb-5 text_wrapper " }, [
+              _c("div", {
+                staticClass: "d-block d-sm-none col-12 bg-app col-50",
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-12 col-sm-6 text_wrapper pt-4" }, [
                 _c("h3", { staticClass: "fw-bold fs-4" }, [
                   _vm._v("Hai già la nostra app?"),
                 ]),
@@ -44169,21 +44199,25 @@ var staticRenderFns = [
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "d-flex gap-2 " }, [
-                  _c("div", { staticClass: "col-12 col-sm-6" }, [
+                  _c("div", { staticClass: "col-12 col-sm-6 col-md-12" }, [
                     _c("img", {
                       staticClass: "store_badge mb-1",
-                      attrs: { src: "img/MyNews/android.png", alt: "" },
+                      staticStyle: { cursor: "pointer" },
+                      attrs: { src: "img/MyNews/android.png", alt: "android" },
                     }),
                     _vm._v(" "),
                     _c("img", {
                       staticClass: "store_badge mb-1",
-                      attrs: { src: "img/MyNews/apple.png", alt: "" },
+                      staticStyle: { cursor: "pointer" },
+                      attrs: { src: "img/MyNews/apple.png", alt: "apple" },
                     }),
                   ]),
                 ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-6 bg-app col-50" }),
+              _c("div", {
+                staticClass: "d-none d-sm-block col-6 bg-app col-50",
+              }),
             ]
           ),
         ]),
@@ -44266,7 +44300,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-6 col-sm-4 pt-2 pb-2" }, [
+        _c("div", { staticClass: "col-12 col-sm-4 pt-2 pb-2" }, [
           _c(
             "div",
             {
@@ -44298,7 +44332,7 @@ var staticRenderFns = [
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-6 col-sm-8 pt-2 pb-2" }, [
+        _c("div", { staticClass: "col-12 col-sm-8 pt-2 pb-2" }, [
           _c(
             "div",
             {
@@ -44332,7 +44366,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-6 col-sm-8 pt-2 pb-2" }, [
+        _c("div", { staticClass: "col-12 col-sm-8 pt-2 pb-2" }, [
           _c(
             "div",
             {
@@ -44364,7 +44398,7 @@ var staticRenderFns = [
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-6 col-sm-4 pt-2 pb-2" }, [
+        _c("div", { staticClass: "col-12 col-sm-4 pt-2 pb-2" }, [
           _c(
             "div",
             {

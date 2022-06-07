@@ -197,10 +197,10 @@
                     <!-- info ristorante prese dal DB  -->
                     <div class="resturant-details col-12 col-sm-7 col-md-4 flex-grow-1 p-3 p-md-0 px-md-3 px-lg-4">
                         <h1 class="resturant-name">{{ resturant.business_name }}</h1>
-                        <p class="m-0 fs-5">Di {{ `${ resturant.name + ' ' + resturant.surname }` }}</p>
-                        <p class="m-0 fs-6">In {{ `${ resturant.business_address + ' (' + resturant.business_city + ') '}` }}</p>
-                        <span class="fs-6">CAP: {{resturant.business_cap}} / P.Iva: {{resturant.p_iva }}</span>
-                        <span class="d-block fs-6">Email: {{ resturant.email }}</span>
+                        <p class="m-0 fs-5"><i class="fa-solid fa-user me-3 fs-6"></i>Di {{ `${ resturant.name + ' ' + resturant.surname }` }}</p>
+                        <p class="m-0 fs-6"><i class="fa-solid fa-location-dot me-3 fs-6"></i>In {{ `${ resturant.business_address + ' (' + resturant.business_city + ') '}` }}</p>
+                        <span class="fs-6"><i class="fa-solid fa-circle-info me-3 fs-6"></i>CAP: {{resturant.business_cap}} / P.Iva: {{resturant.p_iva }}</span>
+                        <span class="d-block fs-6"><i class="fa-solid fa-address-book me-3 fs-6"></i>Email: {{ resturant.email }}</span>
                     </div>
                 </div>
             </section>
@@ -332,6 +332,11 @@ export default {
         box-shadow: 0px 4px 10px #cacaca63;
         position: relative;
         z-index: 10;
+
+            .fa-solid{
+                color: #b0b0b0;
+            }
+
     }
 
     #resturant-menu{

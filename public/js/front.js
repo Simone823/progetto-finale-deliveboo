@@ -5850,6 +5850,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
 //
 //
 //
@@ -6135,7 +6137,8 @@ __webpack_require__.r(__webpack_exports__);
       ingredients: [],
       logo: __webpack_require__(/*! /public/img/logo_white.svg */ "./public/img/logo_white.svg"),
       authUser: window.authUser,
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      cartShop: []
     };
   },
   methods: {
@@ -6143,10 +6146,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/resturant-menu/".concat(this.$route.params.id)).then(function (res) {
-        console.log(res);
+        // console.log(res);
         _this.resturant = res.data.user[0];
-        _this.menuPlates = res.data.user_plates;
-        console.log(_this.menuPlates);
+        _this.menuPlates = res.data.user_plates; // console.log(this.menuPlates);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -6159,6 +6161,44 @@ __webpack_require__.r(__webpack_exports__);
     },
     closePlateInfo: function closePlateInfo() {
       this.activeElement = undefined;
+    },
+    addToCart: function addToCart(index) {
+      var _this2 = this;
+
+      if ((typeof Storage === "undefined" ? "undefined" : _typeof(Storage)) !== undefined) {
+        var id = index.id,
+            name = index.name,
+            image = index.image,
+            price = index.price;
+        var plate = {
+          id: id,
+          name: name,
+          image: image,
+          price: price,
+          quantity: 1
+        };
+
+        if (JSON.parse(localStorage.getItem('cartShop')) === null) {
+          this.cartShop.push(plate);
+          localStorage.setItem('cartShop', JSON.stringify(this.cartShop));
+          window.location.reload();
+        } else {
+          var localItems = JSON.parse(localStorage.getItem('cartShop'));
+          localItems.map(function (data) {
+            if (plate.id == data.id) {
+              plate.quantity = data.quantity + 1;
+              plate.price = plate.price * plate.quantity;
+            } else {
+              _this2.cartShop.push(data);
+            }
+          });
+          this.cartShop.push(plate);
+          window.location.reload();
+          localStorage.setItem('cartShop', JSON.stringify(this.cartShop));
+        }
+      } else {
+        alert('storage non funziona nel tuo browser');
+      }
     }
   },
   mounted: function mounted() {
@@ -11315,7 +11355,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "section[data-v-2dc8c56c] {\n  background-color: #F9FAFA;\n}\nsection .col-50[data-v-2dc8c56c] {\n  height: 175px;\n  background-size: cover;\n  background-position: center;\n  overflow: hidden;\n  position: relative;\n}\nsection .col-50 .text_wrapper[data-v-2dc8c56c] {\n  z-index: 999;\n  background-color: white;\n}\nsection .store_badge[data-v-2dc8c56c] {\n  height: 35px;\n}\n.bg-pizza[data-v-2dc8c56c] {\n  background-image: url(\"/img/MyNews/pizza.png\");\n  -webkit-clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);\n          clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);\n}\n.bg-app[data-v-2dc8c56c] {\n  background-image: url(\"/img/app_deliveboo.png\");\n  -webkit-clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);\n          clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);\n}", ""]);
+exports.push([module.i, "section[data-v-2dc8c56c] {\n  background-color: #F9FAFA;\n}\nsection .col-50[data-v-2dc8c56c] {\n  height: 175px;\n  background-size: cover;\n  background-position: center;\n  overflow: hidden;\n  position: relative;\n}\n@media (max-width: 575px) {\nsection .col-50[data-v-2dc8c56c] {\n    height: 130px;\n}\n}\nsection .col-50 .text_wrapper[data-v-2dc8c56c] {\n  z-index: 999;\n  background-color: white;\n}\nsection .store_badge[data-v-2dc8c56c] {\n  height: 35px;\n}\n.bg-pizza[data-v-2dc8c56c] {\n  background-image: url(\"/img/MyNews/pizza.png\");\n  -webkit-clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);\n          clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);\n}\n.bg-app[data-v-2dc8c56c] {\n  background-image: url(\"/img/app_deliveboo.png\");\n  -webkit-clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);\n          clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);\n}", ""]);
 
 // exports
 
@@ -45434,7 +45474,14 @@ var render = function () {
                     [
                       _c(
                         "button",
-                        { staticClass: "btn btn-green_1 py-2 px-5" },
+                        {
+                          staticClass: "btn btn-green_1 py-2 px-5",
+                          on: {
+                            click: function ($event) {
+                              return _vm.addToCart(menuPlate)
+                            },
+                          },
+                        },
                         [
                           _vm._v(
                             "Aggiungi per " + _vm._s(menuPlate.price) + "€"
@@ -62257,7 +62304,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

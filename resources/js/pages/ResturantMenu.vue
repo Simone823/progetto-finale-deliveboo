@@ -285,6 +285,8 @@ export default {
             menuPlates: [],
             ingredients: [],
             logo: require('/public/img/logo_white.svg'),
+            authUser: window.authUser,
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         }
     },
     methods: {

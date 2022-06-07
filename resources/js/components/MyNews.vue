@@ -50,6 +50,10 @@
                 overflow: hidden;
                 position: relative;
 
+                @media (max-width:575px){
+                    height: 130px;
+                }
+
                 .text_wrapper{
                     z-index: 999;
                     background-color: white;

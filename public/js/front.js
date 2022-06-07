@@ -5695,6 +5695,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -43877,12 +43880,19 @@ var render = function () {
             "figure",
             { staticClass: "resturant-img col-12 col-md-4 p-0 m-0" },
             [
-              _c("img", {
-                attrs: {
-                  src: "/storage/" + _vm.resturant.business_image,
-                  alt: "",
-                },
-              }),
+              _vm.resturant.business_image
+                ? _c("img", {
+                    attrs: {
+                      src: "/storage/" + _vm.resturant.business_image,
+                      alt: "",
+                    },
+                  })
+                : _c("img", {
+                    attrs: {
+                      src: __webpack_require__(/*! /public/img/placeholder_restaurants.png */ "./public/img/placeholder_restaurants.png"),
+                      alt: "",
+                    },
+                  }),
             ]
           ),
           _vm._v(" "),
@@ -43978,12 +43988,19 @@ var render = function () {
                         },
                         [
                           _c("figure", { staticClass: "post-card-img m-0" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "/storage/" + menuPlate.image,
-                                alt: "",
-                              },
-                            }),
+                            menuPlate.image
+                              ? _c("img", {
+                                  attrs: {
+                                    src: "/storage/" + menuPlate.image,
+                                    alt: "",
+                                  },
+                                })
+                              : _c("img", {
+                                  attrs: {
+                                    src: __webpack_require__(/*! /public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png"),
+                                    alt: "",
+                                  },
+                                }),
                           ]),
                         ]
                       ),
@@ -44033,9 +44050,16 @@ var render = function () {
               ),
               _vm._v(" "),
               _c("figure", { staticClass: "info-plate-img" }, [
-                _c("img", {
-                  attrs: { src: "/storage/" + menuPlate.image, alt: "" },
-                }),
+                menuPlate.image
+                  ? _c("img", {
+                      attrs: { src: "/storage/" + menuPlate.image, alt: "" },
+                    })
+                  : _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! /public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png"),
+                        alt: "",
+                      },
+                    }),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "info-plate-body p-5" }, [
@@ -59569,6 +59593,28 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 module.exports = "/images/homepage_pic.png?789ae1678c9264e6925bbc7a6a1d380f";
+
+/***/ }),
+
+/***/ "./public/img/placeholder_plate.png":
+/*!******************************************!*\
+  !*** ./public/img/placeholder_plate.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/placeholder_plate.png?d21deffc6f8119db2a0294b14d4c1967";
+
+/***/ }),
+
+/***/ "./public/img/placeholder_restaurants.png":
+/*!************************************************!*\
+  !*** ./public/img/placeholder_restaurants.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/placeholder_restaurants.png?cef9dab22f50ec9496e575acf3f13598";
 
 /***/ }),
 

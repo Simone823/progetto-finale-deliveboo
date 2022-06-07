@@ -6138,7 +6138,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       logo: __webpack_require__(/*! /public/img/logo_white.svg */ "./public/img/logo_white.svg"),
       authUser: window.authUser,
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-      cartShop: []
+      // Cart shop
+      cartShop: [],
+      // Quantità piatti
+      quantity: 1
     };
   },
   methods: {
@@ -6161,21 +6164,35 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     },
     closePlateInfo: function closePlateInfo() {
       this.activeElement = undefined;
+      this.quantity = 1;
     },
-    addToCart: function addToCart(index) {
+    // Increment plate quantity
+    incrementQuantity: function incrementQuantity() {
+      this.quantity++;
+    },
+    // decrement plate quantity
+    decrementQuantity: function decrementQuantity() {
+      // Se this.quantity è maggiore di 1
+      if (this.quantity > 1) {
+        this.quantity--;
+      }
+    },
+    // Function add to cart and update quantity shop localstorage
+    addToCart: function addToCart(plateObject) {
       var _this2 = this;
 
       if ((typeof Storage === "undefined" ? "undefined" : _typeof(Storage)) !== undefined) {
-        var id = index.id,
-            name = index.name,
-            image = index.image,
-            price = index.price;
+        // destruturazione plate
+        var id = plateObject.id,
+            name = plateObject.name,
+            image = plateObject.image,
+            price = plateObject.price;
         var plate = {
           id: id,
           name: name,
           image: image,
           price: price,
-          quantity: 1
+          quantity: this.quantity
         };
 
         if (JSON.parse(localStorage.getItem('cartShop')) === null) {
@@ -6186,8 +6203,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           var localItems = JSON.parse(localStorage.getItem('cartShop'));
           localItems.map(function (data) {
             if (plate.id == data.id) {
-              plate.quantity = data.quantity + 1;
-              plate.price = plate.price * plate.quantity;
+              plate.quantity += data.quantity;
             } else {
               _this2.cartShop.push(data);
             }
@@ -45466,7 +45482,42 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "cart-management" }, [
-                  _vm._m(11, true),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "plates-number d-flex justify-content-center align-items-center gap-5 py-5",
+                    },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "number-button",
+                          on: {
+                            click: function ($event) {
+                              return _vm.decrementQuantity()
+                            },
+                          },
+                        },
+                        [_vm._v("-")]
+                      ),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(_vm.quantity))]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "number-button",
+                          on: {
+                            click: function ($event) {
+                              return _vm.incrementQuantity()
+                            },
+                          },
+                        },
+                        [_vm._v("+")]
+                      ),
+                    ]
+                  ),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -45484,7 +45535,9 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "Aggiungi per " + _vm._s(menuPlate.price) + "€"
+                            "Aggiungi per " +
+                              _vm._s(menuPlate.price * _vm.quantity) +
+                              "€"
                           ),
                         ]
                       ),
@@ -45753,25 +45806,6 @@ var staticRenderFns = [
             ]
           ),
         ]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "plates-number d-flex justify-content-center align-items-center gap-5 py-5",
-      },
-      [
-        _c("button", { staticClass: "number-button" }, [_vm._v("-")]),
-        _vm._v(" "),
-        _c("span", [_vm._v("N")]),
-        _vm._v(" "),
-        _c("button", { staticClass: "number-button" }, [_vm._v("+")]),
       ]
     )
   },

@@ -92,19 +92,19 @@
     // Sezione Background
 
     .bg-hamburger{
-        background-image: url('/img/MySelection/hamburger.jpg');
+        background-image: url('/img/MySelection/fried.png');
     }
     
     .bg-dessert{
-        background-image: url('/img/MySelection/dessert.jpg');
+        background-image: url('/img/MySelection/dessert.png');
     }
 
      .bg-salad{
-        background-image: url('/img/MySelection/salad.jpg');
+        background-image: url('/img/MySelection/salad.png');
     }
 
      .bg-gyoza{
-        background-image: url('/img/MySelection/gyoza.jpg');
+        background-image: url('/img/MySelection/gyoza.png');
     }
 
 </style>

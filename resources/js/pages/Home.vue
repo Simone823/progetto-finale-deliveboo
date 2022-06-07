@@ -1,6 +1,7 @@
 <template>
 
     <div>
+        <MyHeader />
         <!-- Jumbotron -->
        <MyJumbotron class="pb-4 "/>
         <!-- MySelection -->
@@ -47,6 +48,7 @@ import MyJumbotron from '../components/MyJumbotron.vue';
 import MySelection from '../components/MySelection.vue';
 import MyOther from '../components/MyOther.vue';
 import MyNews from '../components/MyNews.vue';
+import MyHeader from '../components/MyHeader.vue'
 
 export default {
 
@@ -55,6 +57,7 @@ export default {
         MySelection,
         MyOther,
         MyNews,
+        MyHeader,
     },
 
     data() {

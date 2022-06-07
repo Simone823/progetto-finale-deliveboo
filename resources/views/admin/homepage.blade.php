@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'Deliveboo - dashboard')
+@section('metaTitle', 'Deliveboo - Dashboard')
 
 @section('content')
 {{-- @dd($user->types[0]); --}}

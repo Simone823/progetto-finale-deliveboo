@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('metaTitle', 'Deliveboo - new plate')
+@section('metaTitle', 'Deliveboo - Nuovo piatto')
 
 @section('content')
 

@@ -6218,9 +6218,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         // console.log(res);
         _this.resturant = res.data.user[0];
         _this.menuPlates = res.data.user_plates;
-        console.log('menuplate res data:', res.data.user_plates);
-        console.log('menuplate:', _this.menuPlates); // console.log(this.menuPlates);
-
         localStorage.setItem("plates", JSON.stringify(res.data.user_plates));
 
         if (!localStorage.getItem("cart")) {
@@ -6228,7 +6225,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }
 
         _this.plates = JSON.parse(localStorage.getItem("plates"));
-        console.log('plates axios', _this.plates);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -6247,7 +6243,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     // AGGIUNGO UN ELEMENTO AL CARRELLO
     addItemToCart: function addItemToCart(plateId) {
       var plate = this.plates.find(function (plate) {
-        console.log('plate:', plate);
         return plate.id == plateId;
       });
 
@@ -6299,26 +6294,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     },
     //TOTALE
     getTotal: function getTotal() {
-      var sumItem;
+      var sumItem; //somma dello stesso prodotto ripetuto
+
       var sum = 0;
 
       for (var i = 0; i < this.cart.length; i++) {
         sumItem = this.cart[i].price * this.cart[i].quantity;
-        sum += sumItem;
+        sum += sumItem; //somma totale
       }
 
       return sum;
     }
   },
-  watch: {
-    activeElement: function activeElement(newVal, oldVal) {
-      console.log('new-old', newVal, '-', oldVal);
-    }
-  },
   mounted: function mounted() {
-    this.fetchResturantInfo(); // localStorage.removeItem("cart", JSON.stringify(this.cart));
-
-    console.log('plates', this.plates);
+    this.fetchResturantInfo(); // localStorage.removeItem("cart", JSON.stringify(this.cart));        
   }
 });
 

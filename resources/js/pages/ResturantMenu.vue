@@ -370,15 +370,11 @@ export default {
                 // console.log(res);
                 this.resturant = res.data.user[0];
                 this.menuPlates = res.data.user_plates;
-                console.log('menuplate res data:', res.data.user_plates);
-                console.log('menuplate:', this.menuPlates); 
-                // console.log(this.menuPlates);
                 localStorage.setItem("plates", JSON.stringify(res.data.user_plates));
                 if(!localStorage.getItem("cart")){
                     localStorage.setItem("cart","[]");
                 }
                 this.plates = JSON.parse(localStorage.getItem("plates"));
-                console.log('plates axios',this.plates);
             })
             .catch( err => {
                 console.warn(err);
@@ -398,7 +394,6 @@ export default {
         // AGGIUNGO UN ELEMENTO AL CARRELLO
         addItemToCart(plateId){
             let plate = this.plates.find(function(plate){
-                console.log('plate:',plate)
                 return plate.id == plateId;
             });
 
@@ -435,26 +430,19 @@ export default {
         },
         //TOTALE
         getTotal(){
-            let sumItem;
+            let sumItem; //somma dello stesso prodotto ripetuto
             let sum = 0;
             for(let i = 0; i < this.cart.length; i++){
                 sumItem = this.cart[i].price * this.cart[i].quantity;
-                sum += sumItem;  
+                sum += sumItem;  //somma totale
             }
             return sum;
         },
     },
-    watch: {
-        activeElement(newVal, oldVal) {
-            console.log('new-old', newVal,'-',oldVal);
-        }
 
-    },
     mounted() {
         this.fetchResturantInfo();
-        // localStorage.removeItem("cart", JSON.stringify(this.cart));
-        console.log('plates',this.plates)
-        
+        // localStorage.removeItem("cart", JSON.stringify(this.cart));        
     },
 }
 </script>

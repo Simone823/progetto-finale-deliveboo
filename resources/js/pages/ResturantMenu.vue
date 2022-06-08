@@ -241,6 +241,9 @@
                                 <h2 class="card-text">{{item.name}}</h2>
                                 <p class="card-text mb-0">{{item.price}}</p>
                                 <p class="card-text">{{item.quantity}}</p>
+                                <button @click="removeFromCart(item)" class="btn btn-warning">
+                                    Rimuovi dal carrello
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -391,6 +394,21 @@ export default {
             } else {
                 alert('storage non funziona nel tuo browser');
             }
+        },
+
+        // Function remove plate from localStorage
+        removeFromCart(plateObject) {
+
+            let plates = [];
+
+            JSON.parse(localStorage.getItem('cartShop')).map(data=>{
+                if(data.id != plateObject.id) {
+                    plates.push(data);
+                }
+            });
+
+            localStorage.setItem('cartShop', JSON.stringify(plates));
+            window.location.reload();
         }
     },
 

@@ -6144,6 +6144,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6233,6 +6236,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       } else {
         alert('storage non funziona nel tuo browser');
       }
+    },
+    // Function remove plate from localStorage
+    removeFromCart: function removeFromCart(plateObject) {
+      var plates = [];
+      JSON.parse(localStorage.getItem('cartShop')).map(function (data) {
+        if (data.id != plateObject.id) {
+          plates.push(data);
+        }
+      });
+      localStorage.setItem('cartShop', JSON.stringify(plates));
+      window.location.reload();
     }
   },
   mounted: function mounted() {
@@ -45456,6 +45470,23 @@ var render = function () {
                         _c("p", { staticClass: "card-text" }, [
                           _vm._v(_vm._s(item.quantity)),
                         ]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-warning",
+                            on: {
+                              click: function ($event) {
+                                return _vm.removeFromCart(item)
+                              },
+                            },
+                          },
+                          [
+                            _vm._v(
+                              "\n                                Rimuovi dal carrello\n                            "
+                            ),
+                          ]
+                        ),
                       ]
                     )
                   }),

@@ -233,7 +233,8 @@
                     </div>
                     <!-- CARRELLO  -->
                     <div class="cart-component col-4 align-self-start p-4">
-                        <div v-if="cart == undefined" class="text-center">
+                        <div>{{ cart.length }}</div>
+                        <div v-if="cart.length == 0" class="text-center">
                             Il carrello è vuoto
                         </div>
                         <div v-else>
@@ -339,6 +340,8 @@ export default {
                 if(!localStorage.getItem("cart")){
                     localStorage.setItem("cart","[]");
                 }
+
+                console.log('carrello:',this.cart);
             })
             .catch( err => {
                 console.warn(err);
@@ -379,7 +382,8 @@ export default {
             window.location.reload();
         },
         removeAllItemsFromCart(){
-            localStorage.clear("cart", JSON.stringify(this.cart));
+            let temp = [];
+            localStorage.setItem("cart", JSON.stringify(temp));
             // TODO da rivedere questo ricaricamento
             window.location.reload();
         },
@@ -398,9 +402,7 @@ export default {
             let sum = 0;
             for(let i = 0; i < this.cart.length; i++){
                 sumItem = this.cart[i].price * this.cart[i].quantity;
-                console.log(sumItem);
-                sum += sumItem; 
-                console.log(sum)  
+                sum += sumItem;  
             }
             return sum;
         },

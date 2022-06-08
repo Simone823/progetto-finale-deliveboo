@@ -6167,6 +6167,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6196,6 +6197,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         if (!localStorage.getItem("cart")) {
           localStorage.setItem("cart", "[]");
         }
+
+        console.log('carrello:', _this.cart);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -6240,7 +6243,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       window.location.reload();
     },
     removeAllItemsFromCart: function removeAllItemsFromCart() {
-      localStorage.clear("cart", JSON.stringify(this.cart)); // TODO da rivedere questo ricaricamento
+      var temp = [];
+      localStorage.setItem("cart", JSON.stringify(temp)); // TODO da rivedere questo ricaricamento
 
       window.location.reload();
     },
@@ -6272,9 +6276,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       for (var i = 0; i < this.cart.length; i++) {
         sumItem = this.cart[i].price * this.cart[i].quantity;
-        console.log(sumItem);
         sum += sumItem;
-        console.log(sum);
       }
 
       return sum;
@@ -45483,7 +45485,9 @@ var render = function () {
               "div",
               { staticClass: "cart-component col-4 align-self-start p-4" },
               [
-                _vm.cart == undefined
+                _c("div", [_vm._v(_vm._s(_vm.cart.length))]),
+                _vm._v(" "),
+                _vm.cart.length == 0
                   ? _c("div", { staticClass: "text-center" }, [
                       _vm._v(
                         "\n                        Il carrello è vuoto\n                    "

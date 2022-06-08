@@ -8,17 +8,33 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-//delete plate pop up
+
+
+
 const btn_delete = document.querySelectorAll('.btn-plate-delete');
 const pop_up = document.getElementById('pop-up-delete');
 const btn_no = document.querySelector('.btn-no');
+const btn_si = document.querySelector('.btn-si');
+const plate_name_delete = document.getElementsByClassName('plate-name-delete')[0];
+
 
 btn_delete.forEach( el => {
     el.addEventListener('click', function(e){
-        pop_up.classList.remove('d-none');       
-    });
-});
+
+        const name_plate = e.path[2].children[1].children[0].innerHTML;
+        
+        plate_name_delete.innerHTML = name_plate;
+        
+        pop_up.classList.remove('d-none');
+
+        const form = e.path[2].children[4];
+
+        btn_si.addEventListener('click', function(){
+            form.submit();
+        })    
+    })
+})
 
 btn_no.addEventListener('click', function(e){
     pop_up.classList.add('d-none');
-});
+})

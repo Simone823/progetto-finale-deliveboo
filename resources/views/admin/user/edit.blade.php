@@ -50,37 +50,40 @@ Deliveboo - {{$user->business_name}}
             
 
             {{-- Business name --}}
-            <div class="form-group row mb-2 flex-column">
+            <div class="form w-100 mb-3">
+                <input required placeholder=" " id="business_name" type="text" class="form__input @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name', $user->business_name) }}" autocomplete="business_name" autocomplete="off">
+
+                <label for="business_name" class="form__label">Nome del ristorante</label>
                 
-                <div class="">
-                    <input required placeholder="Nome del ristorante" id="business_name" type="text" class="form-control @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name', $user->business_name) }}" autocomplete="business_name" autofocus>
-                    
-                    @error('business_name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-            </div>
-            
-            {{-- Business address --}}
-            <div class="form-group row mb-2 flex-column">   
-                <div class="">
-                    <input required placeholder="Indirizzo e numero civico del ristorante" id="business_address" type="text" class="form-control @error('business_address') is-invalid @enderror" name="business_address" value="{{ old('business_address', $user->business_address) }}" autocomplete="business_address" autofocus>
-                
-                    @error('business_address')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror            
-                </div>         
+                @error('business_name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
 
+            
+            {{-- Business address --}}
+            <div class="form w-100 mb-3">
+                <input required placeholder=" " id="business_address" type="text" class="form__input @error('business_address') is-invalid @enderror" name="business_address" value="{{ old('business_address', $user->business_address) }}" autocomplete="off">
+
+                <label for="business_address" class="form__label">Indirizzo del ristorante</label>
+            
+                @error('business_address')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror            
+            </div>
+
+
             {{-- CITY - CAP --}}
-            <div class="row mb-2">
+            <div class="d-block d-sm-flex mb-3 w-100 gap-3">
                 {{-- Business city --}}
-                <div class="form-group col-6">
-                    <input required placeholder="Città o paese" id="business_city" type="text" class="form-control @error('business_city') is-invalid @enderror" name="business_city" value="{{ old('business_city', $user->business_city) }}" autocomplete="business_city" autofocus>
+                <div class="form col-12 col-sm-5 mb-3 mb-sm-0 flex-grow-1">
+                    <input required placeholder=" " id="business_city" type="text" class="form__input @error('business_city') is-invalid @enderror" name="business_city" value="{{ old('business_city', $user->business_city) }}" autocomplete="off">
+
+                    <label for="business_city" class="form__label">Città o paese</label>
         
                     @error('business_city')
                     <span class="invalid-feedback" role="alert">
@@ -90,8 +93,10 @@ Deliveboo - {{$user->business_name}}
                 </div>
             
                 {{-- Business cap --}}
-                <div class="form-group col-6">
-                    <input required placeholder="CAP" id="business_cap" type="number" class="form-control @error('business_cap') is-invalid @enderror" name="business_cap" value="{{ old('business_cap', $user->business_cap) }}" autocomplete="business_cap" autofocus>
+                <div class="form col-12 col-sm-5 flex-grow-1">
+                    <input required placeholder=" " id="business_cap" type="number" class="form__input @error('business_cap') is-invalid @enderror" name="business_cap" value="{{ old('business_cap', $user->business_cap) }}" autocomplete="off">
+
+                    <label for="business_cap" class="form__label">CAP</label>
                     
                     @error('business_cap')
                     <span class="invalid-feedback" role="alert">
@@ -102,24 +107,24 @@ Deliveboo - {{$user->business_name}}
             </div>
             
             {{-- Partita iva --}}
-            <div class="form-group row mb-2 flex-column">
-        
-                <div class="">
-                    <input disabled placeholder="Partita Iva" id="p_iva" type="text" class="text-uppercase form-control @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva', $user->p_iva) }}" autocomplete="p_iva" autofocus>
-        
-                    @error('p_iva')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+            <div class="form w-100 mb-2">
+                <input disabled placeholder=" " id="p_iva" type="text" class="text-uppercase form__input @error('p_iva') is-invalid @enderror" name="p_iva" value="{{ old('p_iva', $user->p_iva) }}" autocomplete="off">
+
+                <label for="p_iva" class="form__label">Partita IVA</label>
+    
+                @error('p_iva')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
+
               
 
             {{-- Tipologia ristorante --}}
-            <div class="types row pt-2 mb-2">
+            <div class="types row mb-3">
                 {{-- Info--}}
-                <h6 class="fw-bolder">Tipo di cucina (min 1)</h6>
+                <h6 class="fw-bolder text-violet">Tipo di cucina (min 1)</h6>
                 {{-- Form checkbox --}}
 
                 <div class="btn-type d-flex flex-wrap" role="group">
@@ -140,11 +145,13 @@ Deliveboo - {{$user->business_name}}
 
 
             {{-- NOME - COGNOME --}}
-            <div class="row mb-2">                
+            <div class="d-block d-sm-flex mb-3 w-100 gap-3">                
                 {{-- Name --}}
-                <div class="form-group col-6">
+                <div class="form col-12 col-sm-5 mb-3 mb-sm-0 flex-grow-1">
             
-                    <input required placeholder="Nome" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $user->name) }}" autocomplete="name" autofocus>
+                    <input required placeholder=" " id="name" type="text" class="form__input @error('name') is-invalid @enderror" name="name" value="{{ old('name', $user->name) }}" autocomplete="off">
+
+                    <label for="name" class="form__label">Nome</label>
         
                     @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -155,9 +162,11 @@ Deliveboo - {{$user->business_name}}
                 </div>
             
                 {{-- Surname --}}
-                <div class="form-group col-6">
+                <div class="form col-12 col-sm-5 flex-grow-1">
             
-                    <input required placeholder="Cognome" id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname', $user->surname) }}" autocomplete="surname" autofocus>
+                    <input required placeholder=" " id="surname" type="text" class="form__input @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname', $user->surname) }}" autocomplete="off">
+
+                    <label for="surname" class="form__label">Cognome</label>
         
                     @error('surname')
                     <span class="invalid-feedback" role="alert">
@@ -170,18 +179,18 @@ Deliveboo - {{$user->business_name}}
         
         
             {{-- Email --}}
-            <div class="form-group row mb-2 flex-column">
-        
-                <div class="">
-                    <input required placeholder="Indirizzo email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" autocomplete="email">
-        
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
+            <div class="form w-100 mb-3">
+                <input required placeholder=" " id="email" type="email" class="form__input @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" autocomplete="off">
+
+                <label for="email" class="form__label">Email</label>
+    
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
+
         
             {{-- Button register --}}
             <div class="form-group mb-0 pb-5">

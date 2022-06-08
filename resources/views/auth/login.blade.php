@@ -53,38 +53,33 @@
             
                         
                         {{-- Email --}}
-                        <div class="form-group mb-2 flex-column">
-                            <label for="email" class="fw-bold col-md-4 col-form-label text-md-right">
-                                {{ __('Email') }}
-                            </label>
+                        <div class="form w-100 mb-3">
+                            <input placeholder=" " id="email" type="email" class="form__input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="off">
+
+                            <label for="email" class="form__label">Email</label>
                             
-                            <div class="">
-                                <input placeholder="Indirizzo E-mail" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
-                                
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         
+                        
                         {{-- Passowrd --}}
-                        <div class="form-group mb-2 flex-column">
-                            <label for="password" class="fw-bold col-md-4 col-form-label text-md-right">
-                                {{ __('Password') }}
-                            </label>
+                        <div class="form w-100 mb-3">
+                            <input placeholder=" " id="password" type="password" class="form__input @error('password') is-invalid @enderror" name="password" autocomplete="off">
+
+                            <label for="password" class="form__label">Password</label>
                             
-                            <div class="">
-                                <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
-                                
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
+
+                        
                         
                         {{-- Remember check --}}
                         <div class="form-group mb-3 flex-column align-items-center">

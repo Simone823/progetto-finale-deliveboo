@@ -8,7 +8,7 @@
 @if($plate->user_id == Auth::id())
     
 
-@section('metaTitle', 'DELIVEBOO DB | '. $plate->name)
+@section('metaTitle', 'Deliveboo - '. $plate->name)
 
     @section('content')
 

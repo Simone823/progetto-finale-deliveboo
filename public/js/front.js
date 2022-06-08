@@ -6251,10 +6251,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       window.location.reload();
     },
     removeAllItemsFromCart: function removeAllItemsFromCart() {
-      var temp = [];
-      localStorage.setItem("cart", JSON.stringify(temp)); // TODO da rivedere questo ricaricamento
-
-      window.location.reload();
+      this.cart = [];
+      localStorage.setItem("cart", JSON.stringify(this.cart));
     },
     // QUANTITÀ DEL PRODOTTO
     updateQuantity: function updateQuantity(plateId, quantity) {
@@ -6292,7 +6290,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   mounted: function mounted() {
     this.fetchResturantInfo();
-    console.log(this.counter); // localStorage.removeItem("cart", JSON.stringify(this.cart));
+    console.log(this.counter);
+    localStorage.removeItem("cart", JSON.stringify(this.cart));
   }
 });
 
@@ -62556,7 +62555,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

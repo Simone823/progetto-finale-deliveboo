@@ -390,10 +390,8 @@ export default {
             window.location.reload();
         },
         removeAllItemsFromCart(){
-            let temp = [];
-            localStorage.setItem("cart", JSON.stringify(temp));
-            // TODO da rivedere questo ricaricamento
-            window.location.reload();
+            this.cart = [];
+            localStorage.setItem("cart", JSON.stringify(this.cart));
         },
         // QUANTITÀ DEL PRODOTTO
         updateQuantity(plateId, quantity){
@@ -418,7 +416,7 @@ export default {
     mounted() {
         this.fetchResturantInfo();
         console.log(this.counter);
-        // localStorage.removeItem("cart", JSON.stringify(this.cart));
+        localStorage.removeItem("cart", JSON.stringify(this.cart));
     },
 }
 </script>

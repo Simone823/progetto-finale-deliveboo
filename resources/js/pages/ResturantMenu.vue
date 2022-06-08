@@ -204,6 +204,8 @@
                     </div>
                 </div>
             </section>
+
+
             <!-- sezione che contiene il menù del ristorante -->
             <section id="resturant-menu" class="pt-4">
                 <div class="container-custom px-3 px-md-4 px-lg-5 py-2 py-sm-2 py-md-4">
@@ -230,7 +232,21 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="card" v-if="localCartShop">
+                        <h1>{{localCartShop.length}}</h1>
+                        <ul>
+                            <li class="d-flex align-items-center gap-3 justify-content-center" v-for="item in localCartShop" :key="item.id">
+                                <h2 class="card-text">{{item.name}}</h2>
+                                <p class="card-text mb-0">{{item.price}}</p>
+                                <p class="card-text">{{item.quantity}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </section>
+
             <!-- TODO quando sono sull'elemento active si deve bloccare la possibilità di scrollare la pagina  -->
             <!-- gestione del componente(piatto) attivo -->
             <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper d-flex justify-content-center align-items-center'] ">
@@ -262,13 +278,13 @@
                             </div>
                             <!-- TODO gestire il prezzo dinamicamente  -->
                             <div class="add-cart d-flex justify-content-center">
-                                <button @click="addToCart(menuPlate)" class="btn btn-green_1 py-2 px-5">Aggiungi per {{menuPlate.price * quantity}}&euro;</button>
+                                <button @click="addToCart(menuPlate)" class="btn btn-green_1 py-2 w-50">Aggiungi per {{menuPlate.price * quantity}}&euro;</button>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
+
         </main>
         
     </div>
@@ -293,6 +309,9 @@ export default {
 
             // Quantità piatti
             quantity: 1,
+
+            // Local storage cart shop
+            localCartShop: JSON.parse(localStorage.getItem('cartShop')),
         }
     },
     methods: {

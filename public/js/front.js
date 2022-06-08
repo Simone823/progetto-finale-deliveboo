@@ -6193,7 +6193,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       ingredients: [],
       logo: __webpack_require__(/*! /public/img/logo_white.svg */ "./public/img/logo_white.svg"),
       // variabili per carrello
-      plates: JSON.parse(localStorage.getItem("plates")),
+      plates: '',
       cart: JSON.parse(localStorage.getItem("cart"))
     };
   },
@@ -6215,15 +6215,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       var _this = this;
 
       axios.get("/api/resturant-menu/".concat(this.$route.params.id)).then(function (res) {
-        console.log(res);
+        // console.log(res);
         _this.resturant = res.data.user[0];
-        _this.menuPlates = res.data.user_plates; // console.log(this.menuPlates);
-
-        localStorage.setItem("plates", JSON.stringify(_this.menuPlates));
+        _this.menuPlates = res.data.user_plates;
+        localStorage.setItem("plates", JSON.stringify(res.data.user_plates));
 
         if (!localStorage.getItem("cart")) {
           localStorage.setItem("cart", "[]");
         }
+
+        _this.plates = JSON.parse(localStorage.getItem("plates"));
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -6293,19 +6294,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     },
     //TOTALE
     getTotal: function getTotal() {
-      var sumItem;
+      var sumItem; //somma dello stesso prodotto ripetuto
+
       var sum = 0;
 
       for (var i = 0; i < this.cart.length; i++) {
         sumItem = this.cart[i].price * this.cart[i].quantity;
-        sum += sumItem;
+        sum += sumItem; //somma totale
       }
 
       return sum;
     }
   },
   mounted: function mounted() {
-    this.fetchResturantInfo(); // localStorage.removeItem("cart", JSON.stringify(this.cart));
+    this.fetchResturantInfo(); // localStorage.removeItem("cart", JSON.stringify(this.cart));        
   }
 });
 

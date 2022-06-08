@@ -344,7 +344,7 @@ export default {
             ingredients: [],
             logo: require('/public/img/logo_white.svg'),
             // variabili per carrello
-            plates: JSON.parse(localStorage.getItem("plates")),
+            plates: '',
             cart: JSON.parse(localStorage.getItem("cart")),
         }
     },
@@ -367,14 +367,14 @@ export default {
         fetchResturantInfo(){
             axios.get(`/api/resturant-menu/${this.$route.params.id}`)
             .then( res => {
-                console.log(res);
+                // console.log(res);
                 this.resturant = res.data.user[0];
                 this.menuPlates = res.data.user_plates;
-                // console.log(this.menuPlates);
-                localStorage.setItem("plates", JSON.stringify(this.menuPlates));
+                localStorage.setItem("plates", JSON.stringify(res.data.user_plates));
                 if(!localStorage.getItem("cart")){
                     localStorage.setItem("cart","[]");
                 }
+                this.plates = JSON.parse(localStorage.getItem("plates"));
             })
             .catch( err => {
                 console.warn(err);
@@ -430,18 +430,19 @@ export default {
         },
         //TOTALE
         getTotal(){
-            let sumItem;
+            let sumItem; //somma dello stesso prodotto ripetuto
             let sum = 0;
             for(let i = 0; i < this.cart.length; i++){
                 sumItem = this.cart[i].price * this.cart[i].quantity;
-                sum += sumItem;  
+                sum += sumItem;  //somma totale
             }
             return sum;
         },
     },
+
     mounted() {
         this.fetchResturantInfo();
-        // localStorage.removeItem("cart", JSON.stringify(this.cart));
+        // localStorage.removeItem("cart", JSON.stringify(this.cart));        
     },
 }
 </script>

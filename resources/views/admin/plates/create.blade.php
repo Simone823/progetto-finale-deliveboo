@@ -77,7 +77,7 @@
 
 
             {{-- visibile --}}
-            <div class="form-group mb-2">
+            <div class="form-group mb-3">
                 <h6 class="fw-bold">Disponibile</h6>          
   
                 <div class="radio-visibility @error('visibility') is-invalid @enderror">
@@ -93,7 +93,7 @@
 
 
             {{-- plate image input--}}
-            <div class="form-group mb-2">
+            <div class="form-group mb-3">
                 <h6 class="fw-bold">Immagine del piatto</h6>
         
                 <div class="col-lg-8">
@@ -113,7 +113,7 @@
                 <button type="submit" class="btn-standard btn-green_1">
                     Aggiungi
                 </button>
-            </div>
+            </div>            
 
         </form>
     </div>

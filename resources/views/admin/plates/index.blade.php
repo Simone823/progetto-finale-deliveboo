@@ -7,7 +7,7 @@
 <div id="section_plates_index" class="wrapper_cards_plate container pt-4 pb-4">
 
     {{-- Title --}}
-    <h3 class="mb-4 text-violet fw-bold fs-3">Elenco dei piatti del ristorante: {{$user->business_name}}</h3>
+    <h3 class="mb-4 text-violet fw-bold fs-3">Elenco piatti: {{$user->business_name}}</h3>
 
     {{-- Row --}}
     <div class="row gy-5">
@@ -21,33 +21,57 @@
                     {{-- Plate image --}}
                     <figure class="plate_image">
                         @if($plate->image == null)
-                            <img src="{{asset('img/placeholder_plate.png')}}" alt="">
+                            <img src="{{asset('img/placeholder_plate.png')}}" alt="default">
 
                             @else
-                                <img src="{{asset('storage/'.$plate->image)}}" alt="">
+                                <img src="{{asset('storage/'.$plate->image)}}" alt="img">
                         @endif
                     </figure>
 
                     {{-- Description card body --}}
-                    <div class="description card-body text-violet fw-bolder">
-                        <h5 class="card-title fw-bold">{{$plate->name}}</h5>
-                        <p class="card-text">{{$plate->ingredients}}</p>
-                        <p class="card-text">Visibile: {{$plate->visibility == 1 ? 'SI' : 'NO'}}</p>
+                    <div class="description card-body pt-2 text-violet fw-bolder d-flex flex-column">
+                        
+                        <h4 class="card-title fw-bold mb-4">{{$plate->name}}</h4>
+
+                        <div class="card-text flex-grow-1 mt-2 mb-2">
+                            <div class="icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                            @php
+                                $ingredients = explode(",", $plate->ingredients);
+                            @endphp
+                           
+                           <ul class="pt-2 ms-2">
+                            @foreach ($ingredients as $ingredient)
+                                <li>
+                                    {{ $ingredient }}
+                                </li>                                
+                            @endforeach
+                           </ul>
+
+                        </div>
+
+                        <div class="d-flex gap-1">
+                            <h6>Disponibile:</h6>
+                            <img class="plate-available {{ $plate->visibility == 1 ? 'd-none' : '' }}" src="{{ asset('img/cross.png') }}" alt="check">
+                            <img class="plate-available {{ $plate->visibility == 1 ? '' : 'd-none' }}" src="{{ asset('img/check.png') }}" alt="check">
+                        </div>
+
                     </div>
                     
                     {{-- Buttons --}}
-                    <div class="btn_wrapper d-flex flex-wrap gap-3 justify-content-center mb-4">
-                        <a class="btn btn-green_1 btn-hover-violet" href="{{ route('admin.plates.show', $plate->id) }}">Visualizza</a>
-                        <a class="btn btn-green_1 btn-hover-violet" href="{{ route('admin.plates.edit', $plate->id) }}">Modifica</a>
-                        <form onsubmit="return confirm('Sei sicuro di voler eliminare ({{$plate->name}}) dal tuo database?')" action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-
-                            <button class="btn btn-green_1 btn-hover-violet" type="submit">
-                                Elimina
-                            </button>
-                        </form>
+                    <div class="btn_wrapper d-flex flex-wrap gap-2 justify-content-center mb-3">
+                        <a class="text-reset btn-standard btn-violet-gray text-decoration-none" href="{{ route('admin.plates.edit', $plate->id) }}"><i class="fa-solid fa-pen"></i></a>
+                        <a class="text-reset btn-standard btn-green_1 text-decoration-none" href="{{ route('admin.plates.show', $plate->id) }}">Visualizza</a>
                     </div>
+
+
+                    <form class="position-absolute form-delete-plate" action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+
+                        <button class="btn-plate-delete" type="submit">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         @endforeach

@@ -45483,7 +45483,7 @@ var render = function () {
               "div",
               { staticClass: "cart-component col-4 align-self-start p-4" },
               [
-                _vm.cart.length == 0
+                _vm.cart == undefined
                   ? _c("div", { staticClass: "text-center" }, [
                       _vm._v(
                         "\n                        Il carrello è vuoto\n                    "

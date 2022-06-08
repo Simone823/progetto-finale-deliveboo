@@ -233,7 +233,7 @@
                     </div>
                     <!-- CARRELLO  -->
                     <div class="cart-component col-4 align-self-start p-4">
-                        <div v-if="cart.length == 0" class="text-center">
+                        <div v-if="cart == undefined" class="text-center">
                             Il carrello è vuoto
                         </div>
                         <div v-else>

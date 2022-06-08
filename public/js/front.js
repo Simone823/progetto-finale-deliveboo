@@ -6193,7 +6193,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       ingredients: [],
       logo: __webpack_require__(/*! /public/img/logo_white.svg */ "./public/img/logo_white.svg"),
       // variabili per carrello
-      plates: JSON.parse(localStorage.getItem("plates")),
+      plates: '',
       cart: JSON.parse(localStorage.getItem("cart"))
     };
   },
@@ -6215,15 +6215,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       var _this = this;
 
       axios.get("/api/resturant-menu/".concat(this.$route.params.id)).then(function (res) {
-        console.log(res);
+        // console.log(res);
         _this.resturant = res.data.user[0];
-        _this.menuPlates = res.data.user_plates; // console.log(this.menuPlates);
+        _this.menuPlates = res.data.user_plates;
+        console.log('menuplate res data:', res.data.user_plates);
+        console.log('menuplate:', _this.menuPlates); // console.log(this.menuPlates);
 
-        localStorage.setItem("plates", JSON.stringify(_this.menuPlates));
+        localStorage.setItem("plates", JSON.stringify(res.data.user_plates));
 
         if (!localStorage.getItem("cart")) {
           localStorage.setItem("cart", "[]");
         }
+
+        _this.plates = JSON.parse(localStorage.getItem("plates"));
+        console.log('plates axios', _this.plates);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -6242,6 +6247,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     // AGGIUNGO UN ELEMENTO AL CARRELLO
     addItemToCart: function addItemToCart(plateId) {
       var plate = this.plates.find(function (plate) {
+        console.log('plate:', plate);
         return plate.id == plateId;
       });
 
@@ -6304,8 +6310,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       return sum;
     }
   },
+  watch: {
+    activeElement: function activeElement(newVal, oldVal) {
+      console.log('new-old', newVal, '-', oldVal);
+    }
+  },
   mounted: function mounted() {
     this.fetchResturantInfo(); // localStorage.removeItem("cart", JSON.stringify(this.cart));
+
+    console.log('plates', this.plates);
   }
 });
 

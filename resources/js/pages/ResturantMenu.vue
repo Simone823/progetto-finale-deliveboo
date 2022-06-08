@@ -204,14 +204,15 @@
                     </div>
                 </div>
             </section>
+
             <!-- sezione che contiene il menù del ristorante -->
             <section id="resturant-menu" class="pt-4">
                 <div class="container-custom px-3 px-md-4 px-lg-5 py-2 py-sm-2 py-md-4 row">
-                    <div class="col-8">
+                    <div class="col-12 col-md-6 col-lg-8 col-xxxl-10">
                         <h3 class="mb-3 fs-2 fw-bold">Il nostro menù</h3>
                         <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
                         <div class="cards-wrapper row justify-content-start">
-                            <div class="card-menu col-12 col-md-6 col-lg-4 gap-2 mb-4"
+                            <div class="card-menu col-12 col-lg-6 col-xxl-5 col-xxxl-4 gap-2 mb-4 flex-grow-1"
                                 v-for="(menuPlate,index) in menuPlates" :key="index"
                                 v-on:click="viewPlate(index)">
                                 <div class="card-wrapper p-3 d-flex justify-content-between">
@@ -231,12 +232,14 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- CARRELLO  -->
-                    <div class="cart-component col-4 align-self-start p-4">
-                        <div>{{ cart.length }}</div>
+                    <div class="cart-component col-12 col-md-6 col-lg-4 col-xxxl-2 align-self-start p-4">       
+                        <!-- se l'array carrello è vuoto... -->
                         <div v-if="cart.length == 0" class="text-center">
                             Il carrello è vuoto
                         </div>
+                        <!-- se l'array carrello contiene elementi li mostra  -->
                         <div v-else>
                             <h3>Il tuo ordine</h3>
                             <div v-for="item in cart" :key="item.id"
@@ -257,18 +260,18 @@
                                     Clear Cart
                                 </button>
                             </div>
-                            <div>
-                                <!-- TODO aggiungere braintree per il checkput -->
-                                <button class="btn btn-green_1 pay-button">
-                                    Vai al pagamento
-                                </button>
-                            </div>
+                        </div>
+                        <div>
+                            <!-- TODO aggiungere braintree per il checkput -->
+                            <button :disabled="cart.length == 0 ? true : false" :class="[cart.length == 0 ? 'disabled' : 'btn-green_1', 'btn pay-button']">
+                                Vai al pagamento
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- TODO quando sono sull'elemento active si deve bloccare la possibilità di scrollare la pagina  -->
-            <!-- gestione del componente(piatto) attivo -->
+
+            <!--INFO PIATTO - gestione del componente(piatto) attivo -->
             <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper d-flex justify-content-center align-items-center'] ">
                 <div :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "
                     v-for="(menuPlate,index) in menuPlates" :key="index">
@@ -277,6 +280,7 @@
                         <img v-if="menuPlate.image" :src="`/storage/${menuPlate.image}`" alt="">
                         <img v-else :src="require('/public/img/placeholder_plate.png')" alt="">
                     </figure>
+
                     <!-- card body  -->
                     <div class="info-plate-body p-5">
                         <h1>{{ menuPlate.name }}</h1>
@@ -288,17 +292,23 @@
                                 </li>
                             </ul>
                         </div>
+
                         <!-- card footer  -->
                         <div class="cart-management">
                             <div class="plates-number d-flex justify-content-center align-items-center gap-5 py-5">
-                                <!-- TODO gestione da sistemare con dei metodi  -->
-                                <button :disabled="menuPlate.quantity < 1 ? true : false" class="minus-button" @click="menuPlate.quantity > 0 ? menuPlate.quantity-- : menuPlate.quantity = 0">-</button>
-                                <span>{{ menuPlate.quantity }}</span>
-                                <button class="plus-button" @click="menuPlate.quantity++">+</button>
+                                <!-- diminuisci la quantità -->
+                                <button :disabled="menuPlate.quantity < 1 ? true : false" :class="[menuPlate.quantity < 1 ? 'disabled' : '', 'minus-button quantity-buttons']" @click="menuPlate.quantity > 0 ? menuPlate.quantity-- : menuPlate.quantity = 0">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <span class="fs-4">{{ menuPlate.quantity }}</span>
+                                <!-- aumenta la quantità -->
+                                <button class="plus-button quantity-buttons" @click="menuPlate.quantity++">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
                             </div>
                             <!-- TODO gestire il prezzo dinamicamente  -->
                             <div class="add-cart d-flex justify-content-center">
-                                <button :disabled="menuPlate.quantity < 1 ? true : false" class="btn btn-green_1 py-2 px-5" @click="addItemToCart(menuPlate.id); updateQuantity(menuPlate.id, menuPlate.quantity); closePlateInfo()">Aggiungi per {{menuPlate.price * menuPlate.quantity}}&euro;</button>
+                                <button :disabled="menuPlate.quantity < 1 ? true : false" :class="[menuPlate.quantity < 1 ? 'disabled' : 'btn-green_1', 'btn py-2 px-5']" @click="addItemToCart(menuPlate.id); updateQuantity(menuPlate.id, menuPlate.quantity); closePlateInfo()">Aggiungi per {{menuPlate.price * menuPlate.quantity}}&euro;</button>
                             </div>
                         </div>
                     </div>
@@ -335,13 +345,11 @@ export default {
                 console.log(res);
                 this.resturant = res.data.user[0];
                 this.menuPlates = res.data.user_plates;
-                console.log(this.menuPlates);
+                // console.log(this.menuPlates);
                 localStorage.setItem("plates", JSON.stringify(this.menuPlates));
                 if(!localStorage.getItem("cart")){
                     localStorage.setItem("cart","[]");
                 }
-
-                console.log('carrello:',this.cart);
             })
             .catch( err => {
                 console.warn(err);
@@ -607,6 +615,26 @@ export default {
         min-height: 60px;
     }
 
+    .quantity-buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        font-size: 18px;
+        color: #00CCBC;
+        border: 2px solid #00CCBC;
+        background-color: white;
+
+        &.disabled{
+            color: #b0b0b0;
+            border: 2px solid #b0b0b0;
+            opacity: 0.5;
+            background-color: white;
+        }
+    }
+
     .pay-button{
         width: 100%;
         padding: 10px 10px;
@@ -627,5 +655,22 @@ export default {
     }
     .tot-wrapper{
         border-top: 1px solid #cacaca63;
+    }
+
+    .disabled{
+        background-color: #b0b0b0;
+        opacity: 0.5;
+    }
+
+    @media screen and (min-width: 2150px){
+        .col-xxxl-2{
+            width: 30%;
+        }
+        .col-xxxl-10{
+            width: 70%;
+        }
+        .col-xxxl-4{
+            width: 33.33333%;
+        }
     }
 </style>

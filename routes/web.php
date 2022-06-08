@@ -43,3 +43,6 @@ route::get('{any}', function(){
     return view('guest.home');
 })->where('any','.*');
 
+// Rotta pagamento
+Route::get('/payment/make', 'PaymentsController@make')->name('payament.make');
+

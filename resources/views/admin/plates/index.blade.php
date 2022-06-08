@@ -63,13 +63,13 @@
                         <a class="text-reset btn-standard btn-violet-gray text-decoration-none" href="{{ route('admin.plates.edit', $plate->id) }}"><i class="fa-solid fa-pen"></i></a>
                     </div>
 
-
-                    <form class="position-absolute form-delete-plate" action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
+                    {{-- DELETE --}}
+                    <form class="position-absolute form-delete-plate top-0 end-0" action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
 
                         <button class="btn-plate-delete" type="submit">
-                            <i class="fa-solid fa-trash"></i>
+                            <i class="icon-delete fa-solid fa-trash"></i>
                         </button>
                     </form>
                 </div>

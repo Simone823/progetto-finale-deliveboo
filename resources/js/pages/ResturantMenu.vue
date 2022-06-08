@@ -1,8 +1,8 @@
 <template>
     <div>
         <!-- navbar customizzata  -->
-        <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light">
-            <div class="container-custom px-2 px-md-4 px-lg-5  d-flex justify-content-between align-items-center">
+        <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light pb-0 pb-md-2">
+            <div class="container-custom px-2 px-md-4 px-lg-5  d-flex justify-content-between align-items-center flex-wrap">
                 <!-- LOGO  -->
                 <a class="ms-3 ms-md-0 navbar-brand" href="/">
                     <img id="header_logo_deliveboo" :src="logo" alt="Deliveboo">
@@ -51,7 +51,7 @@
                                 </li>
                                     
                                 <li>
-                                    <a class="dropdown-item" href="/" @click.prevent="logout">
+                                    <a class="dropdown-item" href="/home" @click.prevent="logout">
                                         <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
                                         Logout
                                     </a>    
@@ -132,7 +132,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item dropdown-item text-center" href="/" @click.prevent="logout">
+                                    <a class="dropdown-item dropdown-item text-center" href="/home" @click.prevent="logout">
                                         <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
                                         Logout
                                     </a>    
@@ -334,19 +334,36 @@ export default {
 
     data() {
         return {
+            // per la gestione del logout nella navbar
+            authUser: window.authUser,
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            // --
             activeElement: undefined,
             resturant: [],
             menuPlates: [],
             ingredients: [],
             logo: require('/public/img/logo_white.svg'),
-            authUser: window.authUser,
-            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             // variabili per carrello
             plates: JSON.parse(localStorage.getItem("plates")),
             cart: JSON.parse(localStorage.getItem("cart")),
         }
     },
     methods: {
+        // LOGOUT
+        logout:function(){
+            axios.post('logout').then(response => {
+                if (response.status === 302 || 401) {
+                    // console.log('logout');
+                    window.location.reload();
+                }
+                else {
+                // throw error and go to catch block
+                }
+            }).catch(error => {
+                console.log(error);
+            });
+        },
+        //chiamata che ritorna il ristorante specifico, e il menù del ristorante
         fetchResturantInfo(){
             axios.get(`/api/resturant-menu/${this.$route.params.id}`)
             .then( res => {

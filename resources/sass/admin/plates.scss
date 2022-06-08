@@ -19,6 +19,10 @@
             }
         }
 
+        .card-body li{
+            font-size: 16px;
+        }
+
         .card-text{
             border-top: 2px solid $violet;
             position: relative;
@@ -44,6 +48,44 @@
             color: white;
         }
 
+        //BTN PLATE DELETE
+        .btn-plate-delete{
+            
+            
+            top: 0;
+            right: 0;
+            
+            cursor: pointer;
+
+            .icon-delete{
+                clip-path: polygon(100% 0, 0 0, 100% 100%);
+                background-color: red;
+                width: 60px;
+                height: 60px;
+                font-size: 15px;
+                color: white;
+                transition: all 400ms linear;
+
+
+
+                position: absolute;
+                right: 0;
+                top: 0;
+                transition: all 200ms linear;
+
+                &:hover{
+                    font-size: 50px;
+                }
+            }
+            
+            &:hover{
+                width: 200%;
+                height: 200%;
+                background-color: rgba($color: red, $alpha: 0.7);
+
+            }
+        }
+
     }
 }
 
@@ -55,6 +97,7 @@
     top: 50vh;
     left: 50vw;
     transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 1px 9999px rgba($color: #000000, $alpha: 0.75);
 
 }
 

@@ -364,21 +364,3 @@
   color: $violet;
   background-color: white;
 }
-
-//BTN PLATE DELETE
-.btn-plate-delete{
-    clip-path: polygon(100% 0, 0 0, 100% 100%);
-    border: none;
-    font-size: 15px;
-    background-color: red;
-    color: white;
-    width: 60px;
-    height: 60px;
-    position: relative;
-
-    .icon-delete{
-        position: absolute;
-        right: 11px;
-        top: 11px;
-    }
-}

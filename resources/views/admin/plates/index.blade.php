@@ -64,9 +64,9 @@
                     </div>
 
                     {{-- CESTINO --}}
-                    <button class="btn-plate-delete position-absolute top-0 end-0">
+                    <div class="btn-plate-delete position-absolute">
                         <i class="icon-delete fa-solid fa-trash"></i>
-                    </button>
+                    </div>
 
                     {{-- FORM DELETE --}}
                     <form class="form-delete-plate" action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">

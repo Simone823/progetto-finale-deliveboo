@@ -261,8 +261,6 @@
 
 
 //STYLE INPUT
-
-
 .form {
   position: relative;
   height: 2.2rem;
@@ -305,6 +303,16 @@
   }
 }
 
+.form-area{
+    height: 5rem;
+
+    &__label {
+        background-color: transparent;
+        color: transparent;
+        transition: none;
+    }
+}
+
 
 .form__input:focus ~ .form__label,
 .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
@@ -314,4 +322,5 @@
   font-weight: bold;
   padding: 0 5px;
   color: $violet;
+  background-color: white;
 }

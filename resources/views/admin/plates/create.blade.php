@@ -22,58 +22,58 @@
             @csrf
 
             {{-- NOME PIATTO --}}
-            <div class="form-group row mb-2 flex-column">
-                <h6 class="fw-bold">Nome del piatto</h6>
-                <div>
-                    <input required placeholder="Nome del piatto"
-                    id="name" type="text" class="form-control
-                    @error('name') is-invalid @enderror"
-                    name="name" value="{{ old('name') }}"
-                    autocomplete="name">
-                    
-                    @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div> 
-            </div>
+            <div class="form w-100 mb-3">
+                <input required placeholder=" "
+                id="name" type="text" class="form__input
+                @error('name') is-invalid @enderror"
+                name="name" value="{{ old('name') }}"
+                autocomplete="off">
+
+                <label for="name" class="form__label">Nome del piatto</label>
+                
+                @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div> 
+
 
 
             {{-- IGREDIENTI --}}
-            <div class="form-group row mb-2 flex-column">
-                <h6 class="fw-bold">Ingredienti</h6>
-                <div>
-                    <textarea placeholder="Inserisci gli ingredienti separandoli con una virgola"
-                    id="ingredients" type="text" class="form-control @error('ingredients') is-invalid @enderror" rows="3" required
-                    name="ingredients">{{ old('ingredients') }}</textarea>
-                    
-                    @error('ingredients')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>                
-            </div>
+            <div class="form form-area w-100 mb-3">
+                <textarea placeholder="Inserisci gli ingredienti separandoli con una virgola"
+                id="ingredients" type="text" class="form__input @error('ingredients') is-invalid @enderror" rows="3" required
+                name="ingredients">{{ old('ingredients') }}</textarea>
+
+                <label for="ingredients" class="form__label form-area__label">Ingredienti</label>
+                
+                @error('ingredients')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>                
+
 
 
             {{-- Prezzo --}}
-            <div class="form-group row mb-2 flex-column">
-                <h6 class="fw-bold">Prezzo</h6>
-                <div>
-                    <input required placeholder="Inserisci il prezzo in formato: XX.XX"
-                    id="price" type="text" class="form-control
-                    @error('price') is-invalid @enderror"
-                    name="price" value="{{ old('price') }}"
-                    autocomplete="price">
-                    
-                    @error('price')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div> 
-            </div>
+            <div class="form w-100 mb-3">
+                <input required placeholder=" "
+                id="price" type=number step=0.01 class="form__input
+                @error('price') is-invalid @enderror"
+                name="price" value="{{ old('price') }}"
+                autocomplete="off">
+
+                <label for="price" class="form__label">Prezzo</label>
+                
+                @error('price')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div> 
+
 
 
             {{-- visibile --}}

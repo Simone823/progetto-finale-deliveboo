@@ -62,19 +62,35 @@
                         <a class="text-reset btn-standard btn-green_1 text-decoration-none" href="{{ route('admin.plates.show', $plate->id) }}">Visualizza</a>
                         <a class="text-reset btn-standard btn-violet-gray text-decoration-none" href="{{ route('admin.plates.edit', $plate->id) }}"><i class="fa-solid fa-pen"></i></a>
                     </div>
+                    <button class="btn-plate-delete">
+                        <i class="icon-delete fa-solid fa-trash"></i>
+                    </button>
 
                     {{-- DELETE --}}
                     <form class="position-absolute form-delete-plate top-0 end-0" action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
 
-                        <button class="btn-plate-delete" type="submit">
-                            <i class="icon-delete fa-solid fa-trash"></i>
-                        </button>
+                        {{-- POP UP --}}
+                        <div id="pop-up-delete" class="d-none col-11 col-sm-8 col-md-6 col-lg-4 col-xl-3 animated-button1 p-4">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div>
+                                <h5 class="fw-bold mb-4">Sicuro di voler eliminare definitivamente questo piatto?</h5>
+            
+                                <div class="text-center d-flex justify-content-evenly">
+                                    <button class="btn-standard btn-pop btn-si" type="submit">SI</button>
+                                    <input type="button" value="NO" class="btn-standard btn-pop btn-no">
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
-            </div>
-        @endforeach
+            </div>             
+            @endforeach
+
 
         {{-- Paginate --}}
         <div class="paginate d-flex justify-content-center">

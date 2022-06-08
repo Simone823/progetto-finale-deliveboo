@@ -48,6 +48,20 @@
 }
 
 
+//-------------POP-UP
+#pop-up-delete{
+    position:fixed;
+    z-index: 990;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
 #section_plate_edit {
     padding-top: 40px;
     padding-bottom: 40px;

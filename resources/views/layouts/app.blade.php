@@ -12,9 +12,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/admin.js') }}" defer></script>
 
-    <!-- Fonts -->
-    
-
     <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 
@@ -40,6 +37,7 @@
 
     <footer>
         @extends('layouts.footer')
-    </footer> 
+    </footer>
+    
 </body>
 </html>

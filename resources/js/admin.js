@@ -7,3 +7,18 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+//delete plate pop up
+const btn_delete = document.querySelectorAll('.btn-plate-delete');
+const pop_up = document.getElementById('pop-up-delete');
+const btn_no = document.querySelector('.btn-no');
+
+btn_delete.forEach( el => {
+    el.addEventListener('click', function(e){
+        pop_up.classList.remove('d-none');       
+    });
+});
+
+btn_no.addEventListener('click', function(e){
+    pop_up.classList.add('d-none');
+});

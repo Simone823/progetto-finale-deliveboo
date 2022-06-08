@@ -6296,8 +6296,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     }
   },
   mounted: function mounted() {
-    this.fetchResturantInfo();
-    console.log(this.counter); // localStorage.removeItem("cart", JSON.stringify(this.cart));
+    this.fetchResturantInfo(); // localStorage.removeItem("cart", JSON.stringify(this.cart));
   }
 });
 

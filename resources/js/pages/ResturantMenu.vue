@@ -424,7 +424,6 @@ export default {
     },
     mounted() {
         this.fetchResturantInfo();
-        console.log(this.counter);
         // localStorage.removeItem("cart", JSON.stringify(this.cart));
     },
 }

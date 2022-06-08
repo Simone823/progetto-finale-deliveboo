@@ -5298,9 +5298,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    yourMethodName: function yourMethodName() {
-      console.log(this.authUser);
-    },
     logout: function logout() {
       axios.post('logout').then(function (response) {
         if (response.status === 302 || 401) {
@@ -5312,9 +5309,6 @@ __webpack_require__.r(__webpack_exports__);
         console.log(error);
       });
     }
-  },
-  mounted: function mounted() {
-    this.yourMethodName();
   }
 });
 
@@ -6189,19 +6183,34 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      // per la gestione del logout nella navbar
+      authUser: window.authUser,
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      // --
       activeElement: undefined,
       resturant: [],
       menuPlates: [],
       ingredients: [],
       logo: __webpack_require__(/*! /public/img/logo_white.svg */ "./public/img/logo_white.svg"),
-      authUser: window.authUser,
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
       // variabili per carrello
       plates: JSON.parse(localStorage.getItem("plates")),
       cart: JSON.parse(localStorage.getItem("cart"))
     };
   },
   methods: {
+    // LOGOUT
+    logout: function logout() {
+      axios.post('logout').then(function (response) {
+        if (response.status === 302 || 401) {
+          // console.log('logout');
+          window.location.reload();
+        } else {// throw error and go to catch block
+        }
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    //chiamata che ritorna il ristorante specifico, e il menù del ristorante
     fetchResturantInfo: function fetchResturantInfo() {
       var _this = this;
 
@@ -45039,7 +45048,7 @@ var render = function () {
     _c(
       "nav",
       {
-        staticClass: "navbar navbar-expand-lg navbar-light",
+        staticClass: "navbar navbar-expand-lg navbar-light pb-0 pb-md-2",
         attrs: { id: "navbar_guest" },
       },
       [
@@ -45047,7 +45056,7 @@ var render = function () {
           "div",
           {
             staticClass:
-              "container-custom px-2 px-md-4 px-lg-5  d-flex justify-content-between align-items-center",
+              "container-custom px-2 px-md-4 px-lg-5  d-flex justify-content-between align-items-center flex-wrap",
           },
           [
             _c(
@@ -45136,7 +45145,7 @@ var render = function () {
                                 "a",
                                 {
                                   staticClass: "dropdown-item",
-                                  attrs: { href: "/" },
+                                  attrs: { href: "/home" },
                                   on: {
                                     click: function ($event) {
                                       $event.preventDefault()
@@ -45238,7 +45247,7 @@ var render = function () {
                                   {
                                     staticClass:
                                       "dropdown-item dropdown-item text-center",
-                                    attrs: { href: "/" },
+                                    attrs: { href: "/home" },
                                     on: {
                                       click: function ($event) {
                                         $event.preventDefault()

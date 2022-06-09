@@ -43,7 +43,7 @@
         </ul>
       </div>
       <div class="name-sviluppatori text-center">
-        <span>Sito web sviluppato a puro scopo educativo da <a href="https://github.com/Simone823" target="_blank">Siomone Daglio</a>, <a href="https://github.com/ilguarnieri" target="_blank">Angelo Guarnieri</a>, <a href="https://github.com/alemica97" target="_blank">Alessandro Micalizzi</a>, <a href="https://github.com/Tredicibrando" target="_blank">Giovanni Nicolosi</a>, ispirato a Deliveroo.</span>
+        <span>Sito web sviluppato a puro scopo educativo da <a href="https://github.com/Simone823" target="_blank">Simone Daglio</a>, <a href="https://github.com/ilguarnieri" target="_blank">Angelo Guarnieri</a>, <a href="https://github.com/alemica97" target="_blank">Alessandro Micalizzi</a>, <a href="https://github.com/Tredicibrando" target="_blank">Giovanni Nicolosi</a>, ispirato a Deliveroo.</span>
     </div>
       </div>
     </div>

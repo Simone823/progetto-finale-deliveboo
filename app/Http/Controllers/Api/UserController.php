@@ -52,6 +52,8 @@ class UserController extends Controller
         //prendo tutti i piatti che hanno lo user_id corrispondente all'id dell'utente
         $user_plates = User::join('plates','plates.user_id','=','users.id')
             ->where('plates.user_id', '=', $id)
+            ->where('plates.visibility', '=', 1)
+            ->orderBy('plates.name', 'asc')
             ->get();
 
         return response()->json([

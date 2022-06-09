@@ -263,9 +263,9 @@
                         </div>
                         <div>
                             <!-- TODO aggiungere braintree per il checkput -->
-                            <button :disabled="cart.length == 0 ? true : false" :class="[cart.length == 0 ? 'disabled' : 'btn-green_1', 'btn pay-button']">
+                            <router-link to="/order/checkout" :disabled="cart.length == 0 ? true : false" :class="[cart.length == 0 ? 'disabled' : 'btn-green_1', 'btn pay-button']">
                                 Vai al pagamento
-                            </button>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -416,7 +416,7 @@ export default {
     mounted() {
         this.fetchResturantInfo();
         console.log(this.counter);
-        localStorage.removeItem("cart", JSON.stringify(this.cart));
+        // localStorage.removeItem("cart", JSON.stringify(this.cart));
     },
 }
 </script>

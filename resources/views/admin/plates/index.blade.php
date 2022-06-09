@@ -96,9 +96,16 @@
             </div>
 
         {{-- Paginate --}}
-        <div class="paginate d-flex justify-content-center">
-            {{$plates->links()}}
+        <div class="pagination p6 d-flex justify-content-center">
+            <ul>
+                @foreach ($plates->links()->elements[0] as $page=>$link)
+                    
+                <a href="{{ $link }}" class="{{ $plates->links()->paginator->currentPage() == $page ? 'is-active' : '' }}"><li></li></a>
+
+                @endforeach
+            </ul>
         </div>
+
     </div>
 </div>
 

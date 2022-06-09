@@ -73,6 +73,10 @@
                         </button>
                     </div>
                 </div>
+
+                <div class="button">
+                    <a href="/checkout" class="btn btn-info">Vai al Pagamento</a>
+                </div>
             </div>
         </div>
 

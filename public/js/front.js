@@ -5928,6 +5928,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -45371,6 +45375,8 @@ var render = function () {
                 2
               )
             : _vm._e(),
+          _vm._v(" "),
+          _vm._m(1),
         ]),
       ]),
     ],
@@ -45565,6 +45571,16 @@ var staticRenderFns = [
             }),
           ]
         ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "button" }, [
+      _c("a", { staticClass: "btn btn-info", attrs: { href: "/checkout" } }, [
+        _vm._v("Vai al Pagamento"),
       ]),
     ])
   },

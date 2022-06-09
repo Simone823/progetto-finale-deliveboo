@@ -3,8 +3,8 @@
         <MyHeader />
         <div class="container">
         <!-- TODO passare il nome della città  -->
-        <h1>Ristoranti a: *** </h1> 
-        <div class="row flex-column flex-md-row py-4">
+        <h5 class="pt-4 m-0">Scegli la tipologia di ristorante:</h5> 
+        <div class="row flex-column flex-md-row py-5">
 
             <!-- checkboxe sidebar -->
             <aside class="col-12 col-md-3">
@@ -21,7 +21,7 @@
                 <div v-if="checkedTypes.length != 0" class="types-wrapper pb-4 px-md-0 d-flex gap-4 flex-wrap justify-content-center justify-content-md-start">
                     <!-- stampo il nome delle tipologie che vengono selezionare -->
                     <div v-for="(el,index) in checkedTypes" :key="index">
-                        <span>#{{el.type_name}}</span>
+                        <span class="badge rounded-pill btn-green_1 text-light">#{{el.type_name}}</span>
                     </div>
                 </div>
 
@@ -31,18 +31,20 @@
                     <div class="card col-12 col-md-4 col-lg-3 text-center" 
                         v-for="resturant in resturants" :key="resturant.id">
                             <figure class="post-card-img">
-                                <img :src="resturant.business_image" alt="">
+                                <img v-if="resturant.business_image" :src="`/storage/${resturant.business_image}`" class="card-img-top" alt="...">
+                                <img v-else :src="require('/public/img/placeholder_restaurants.png')" alt="">
                             </figure>
-                            <div class="post-card-body">
-                                <h3>{{ resturant.business_name }}</h3>
+                            <div class="card-body">
+                                <h5 class="card-title fs-5 mt-1 mb-1 whitespace">{{ resturant.business_name }}</h5>
                                 <div class="info-wrapper">
-                                    <p>Di: {{ resturant.name }} {{ resturant.surname }}</p>
-                                    <p>In: {{ resturant.business_address }}</p>
+                                    <p class="mb-1">{{ resturant.name }} {{ resturant.surname }}</p>
+                                    <p class="text-muted">{{ resturant.business_address }}</p>
                                 </div>
                             </div>
+                            
                             <div class="button-wrapper">
-                                <router-link tag="button" class="btn btn-green_1" :to="{ name: 'resturant-menu', params: { id: resturant.id } }">
-                                    View this Resturant
+                                <router-link tag="button" class="btn btn-green_1 mb-3" :to="{ name: 'resturant-menu', params: { id: resturant.id } }">
+                                    Vai al ristorante
                                 </router-link>
                             </div>        
                     </div>
@@ -54,18 +56,19 @@
                     <div class="card col-12 col-md-4 col-lg-3 text-center" 
                         v-for="(selectedRestuantType, index) in selectedResturantsTypes" :key="index">     
                             <figure class="post-card-img">
-                                <img :src="selectedRestuantType.business_image" alt="">
+                                <img v-if="selectedRestuantType.business_image" :src="`/storage/${selectedRestuantType.business_image}`" class="card-img-top" alt="...">
+                                <img v-else :src="require('/public/img/placeholder_restaurants.png')" alt="">
                             </figure>
-                            <div class="post-card-body">
-                                <h3>{{ selectedRestuantType.business_name }}</h3>
+                            <div class="card-body">
+                                <h5 class="card-title fs-5 mt-1 mb-1 whitespace">{{ selectedRestuantType.business_name }}</h5>
                                 <div class="info-wrapper">
-                                    <p>Di: {{ selectedRestuantType.name }} {{ selectedRestuantType.surname }}</p>
-                                    <p>In: {{ selectedRestuantType.business_address }}</p>
+                                    <p class="mb-1">{{ selectedRestuantType.name }} {{ selectedRestuantType.surname }}</p>
+                                    <p class="text-muted">{{ selectedRestuantType.business_address }}</p>
                                 </div>
                             </div>
                             <div class="button-wrapper">
-                                <router-link tag="button" class="btn btn-green_1" :to="{ name: 'resturant-menu', params: { id: selectedRestuantType.user_id } }">
-                                    View this Resturant
+                                <router-link tag="button" class="btn btn-green_1 mb-3" :to="{ name: 'resturant-menu', params: { id: selectedRestuantType.user_id } }">
+                                    Vai al ristorante
                                 </router-link>
                             </div>   
                     </div>
@@ -146,5 +149,11 @@ export default {
 </script>
 
 <style lang"scss" scoped>
+    .bg-green_1{
+        background-color: #00ccbc;
+    }
 
+    .whitespace{
+        white-space: nowrap;
+    }
 </style>

@@ -44,5 +44,5 @@ route::get('{any}', function(){
 })->where('any','.*');
 
 // Rotta pagamento
-Route::get('/payment/make', 'PaymentsController@make')->name('payament.make');
+Route::get('/payment/make', 'PaymentsController@make')->name('payment.make');
 

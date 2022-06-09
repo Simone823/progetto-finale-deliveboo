@@ -29,6 +29,11 @@ const routes = [
         path: '/resturant-menu/:id',
         name: 'resturant-menu',
         component: ResturantMenu,
+    },
+    {
+        path: '/order/checkout',
+        name: 'order-checkout',
+        component: MyCheckout,
     }
 ];
 

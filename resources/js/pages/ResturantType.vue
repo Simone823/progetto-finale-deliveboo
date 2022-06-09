@@ -9,7 +9,7 @@
                 </div>
                 <!-- stampo tutte le card che contengono le info. dei ristoranti con la determinata tipologia  -->
                 <div v-else>
-                    <h4 class="fw-bold">Hai scelto la categoria: <span class="badge rounded-pill bg-green_1 text-light"> {{ typeName }}</span></h4>
+                    <h5 class="">Hai scelto la categoria: <span class="badge rounded-pill bg-green_1 text-light"> {{ typeName }}</span></h5>
                     <div class="row">
                         <div class="cards-wrapper d-flex flex-wrap gap-3 justify-content-center mt-5 mb-5">
                             <ResturantTypeCard v-for="resturantType in resturantsType" :key="resturantType.user_id"

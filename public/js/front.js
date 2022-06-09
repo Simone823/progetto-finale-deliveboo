@@ -5666,6 +5666,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -44750,9 +44753,11 @@ var render = function () {
       _c("MyHeader"),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
-        _c("h1", [_vm._v("Ristoranti a: *** ")]),
+        _c("h5", { staticClass: "pt-4 m-0" }, [
+          _vm._v("Scegli la tipologia di ristorante:"),
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row flex-column flex-md-row py-4" }, [
+        _c("div", { staticClass: "row flex-column flex-md-row py-5" }, [
           _c("aside", { staticClass: "col-12 col-md-3" }, [
             _c(
               "ul",
@@ -44829,7 +44834,14 @@ var render = function () {
                   },
                   _vm._l(_vm.checkedTypes, function (el, index) {
                     return _c("div", { key: index }, [
-                      _c("span", [_vm._v("#" + _vm._s(el.type_name))]),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "badge rounded-pill btn-green_1 text-light",
+                        },
+                        [_vm._v("#" + _vm._s(el.type_name))]
+                      ),
                     ])
                   }),
                   0
@@ -44850,28 +44862,43 @@ var render = function () {
                       },
                       [
                         _c("figure", { staticClass: "post-card-img" }, [
-                          _c("img", {
-                            attrs: { src: resturant.business_image, alt: "" },
-                          }),
+                          resturant.business_image
+                            ? _c("img", {
+                                staticClass: "card-img-top",
+                                attrs: {
+                                  src: "/storage/" + resturant.business_image,
+                                  alt: "...",
+                                },
+                              })
+                            : _c("img", {
+                                attrs: {
+                                  src: __webpack_require__(/*! /public/img/placeholder_restaurants.png */ "./public/img/placeholder_restaurants.png"),
+                                  alt: "",
+                                },
+                              }),
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "post-card-body" }, [
-                          _c("h3", [_vm._v(_vm._s(resturant.business_name))]),
+                        _c("div", { staticClass: "card-body" }, [
+                          _c(
+                            "h5",
+                            {
+                              staticClass:
+                                "card-title fs-5 mt-1 mb-1 whitespace",
+                            },
+                            [_vm._v(_vm._s(resturant.business_name))]
+                          ),
                           _vm._v(" "),
                           _c("div", { staticClass: "info-wrapper" }, [
-                            _c("p", [
+                            _c("p", { staticClass: "mb-1" }, [
                               _vm._v(
-                                "Di: " +
-                                  _vm._s(resturant.name) +
+                                _vm._s(resturant.name) +
                                   " " +
                                   _vm._s(resturant.surname)
                               ),
                             ]),
                             _vm._v(" "),
-                            _c("p", [
-                              _vm._v(
-                                "In: " + _vm._s(resturant.business_address)
-                              ),
+                            _c("p", { staticClass: "text-muted" }, [
+                              _vm._v(_vm._s(resturant.business_address)),
                             ]),
                           ]),
                         ]),
@@ -44883,7 +44910,7 @@ var render = function () {
                             _c(
                               "router-link",
                               {
-                                staticClass: "btn btn-green_1",
+                                staticClass: "btn btn-green_1 mb-3",
                                 attrs: {
                                   tag: "button",
                                   to: {
@@ -44894,7 +44921,7 @@ var render = function () {
                               },
                               [
                                 _vm._v(
-                                  "\n                                View this Resturant\n                            "
+                                  "\n                                Vai al ristorante\n                            "
                                 ),
                               ]
                             ),
@@ -44924,37 +44951,50 @@ var render = function () {
                         },
                         [
                           _c("figure", { staticClass: "post-card-img" }, [
-                            _c("img", {
-                              attrs: {
-                                src: selectedRestuantType.business_image,
-                                alt: "",
-                              },
-                            }),
+                            selectedRestuantType.business_image
+                              ? _c("img", {
+                                  staticClass: "card-img-top",
+                                  attrs: {
+                                    src:
+                                      "/storage/" +
+                                      selectedRestuantType.business_image,
+                                    alt: "...",
+                                  },
+                                })
+                              : _c("img", {
+                                  attrs: {
+                                    src: __webpack_require__(/*! /public/img/placeholder_restaurants.png */ "./public/img/placeholder_restaurants.png"),
+                                    alt: "",
+                                  },
+                                }),
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "post-card-body" }, [
-                            _c("h3", [
-                              _vm._v(
-                                _vm._s(selectedRestuantType.business_name)
-                              ),
-                            ]),
+                          _c("div", { staticClass: "card-body" }, [
+                            _c(
+                              "h5",
+                              {
+                                staticClass:
+                                  "card-title fs-5 mt-1 mb-1 whitespace",
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(selectedRestuantType.business_name)
+                                ),
+                              ]
+                            ),
                             _vm._v(" "),
                             _c("div", { staticClass: "info-wrapper" }, [
-                              _c("p", [
+                              _c("p", { staticClass: "mb-1" }, [
                                 _vm._v(
-                                  "Di: " +
-                                    _vm._s(selectedRestuantType.name) +
+                                  _vm._s(selectedRestuantType.name) +
                                     " " +
                                     _vm._s(selectedRestuantType.surname)
                                 ),
                               ]),
                               _vm._v(" "),
-                              _c("p", [
+                              _c("p", { staticClass: "text-muted" }, [
                                 _vm._v(
-                                  "In: " +
-                                    _vm._s(
-                                      selectedRestuantType.business_address
-                                    )
+                                  _vm._s(selectedRestuantType.business_address)
                                 ),
                               ]),
                             ]),
@@ -44967,7 +45007,7 @@ var render = function () {
                               _c(
                                 "router-link",
                                 {
-                                  staticClass: "btn btn-green_1",
+                                  staticClass: "btn btn-green_1 mb-3",
                                   attrs: {
                                     tag: "button",
                                     to: {
@@ -44980,7 +45020,7 @@ var render = function () {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                View this Resturant\n                            "
+                                    "\n                                Vai al ristorante\n                            "
                                   ),
                                 ]
                               ),
@@ -46199,7 +46239,7 @@ var render = function () {
                 ]),
               ])
             : _c("div", [
-                _c("h4", { staticClass: "fw-bold" }, [
+                _c("h5", {}, [
                   _vm._v("Hai scelto la categoria: "),
                   _c(
                     "span",
@@ -62723,7 +62763,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni\Desktop\Boolean\Progetto_finale\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

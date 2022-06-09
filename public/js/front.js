@@ -62468,6 +62468,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/OrderCreate.vue":
+/*!********************************************!*\
+  !*** ./resources/js/pages/OrderCreate.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/pages/OrderCreate.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/pages/ResturantMenu.vue":
 /*!**********************************************!*\
   !*** ./resources/js/pages/ResturantMenu.vue ***!
@@ -62658,10 +62690,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_ResturantType_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/ResturantType.vue */ "./resources/js/pages/ResturantType.vue");
 /* harmony import */ var _pages_CityResturants_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/CityResturants.vue */ "./resources/js/pages/CityResturants.vue");
 /* harmony import */ var _pages_ResturantMenu_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/ResturantMenu.vue */ "./resources/js/pages/ResturantMenu.vue");
+/* harmony import */ var _pages_OrderCreate_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/OrderCreate.vue */ "./resources/js/pages/OrderCreate.vue");
  // importo l'istanza router esportata da index.js 
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
 
 
 
@@ -62683,6 +62717,10 @@ var routes = [{
   path: '/resturant-menu/:id',
   name: 'resturant-menu',
   component: _pages_ResturantMenu_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+}, {
+  path: '/order/create',
+  name: 'order-create',
+  component: _pages_OrderCreate_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
 }]; //istanza del router
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({

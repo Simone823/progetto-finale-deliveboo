@@ -2,19 +2,24 @@
     <div>
         <MyHeader />
         <div class="container">
-        <!-- faccio un controllo per vedere se l'array contiene ristoranti -->
-        <div v-if="resturantsType.length == 0">
-            <p>Per questa tipologia non ci sono ristoranti</p>
-        </div>
-        <!-- stampo tutte le card che contengono le info. dei ristoranti con la determinata tipologia  -->
-        <div v-else>
-            <h1>Ristoranti #{{ typeName }}</h1>
-            <div class="cards-wrapper d-flex flex-wrap gap-3 justify-content-center">
-                <ResturantTypeCard v-for="resturantType in resturantsType" :key="resturantType.user_id"
-                    :resturantType="resturantType" />
+            <div class="row pt-5 pb-5">
+                 <!-- faccio un controllo per vedere se l'array contiene ristoranti -->
+                <div v-if="resturantsType.length == 0">
+                    <p>Per questa tipologia non ci sono ristoranti</p>
+                </div>
+                <!-- stampo tutte le card che contengono le info. dei ristoranti con la determinata tipologia  -->
+                <div v-else>
+                    <h1 class="fw-bold fs-1">{{ typeName }}</h1>
+                    <div class="row">
+                        <div class="cards-wrapper d-flex flex-wrap gap-3 justify-content-center">
+                            <ResturantTypeCard v-for="resturantType in resturantsType" :key="resturantType.user_id"
+                                :resturantType="resturantType" />
+                        </div>                
+                    </div>
+                
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </template>
 
@@ -60,5 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+// .height{
+//     padding: 50px 0;
+// }
 </style>

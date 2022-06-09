@@ -1,7 +1,8 @@
 <template>
 <!-- :src="resturantType.business_image" -->
     <div class="card col-12 col-md-4 col-lg-3 p-0 ms-4 me-4" style="width: 18rem;">
-        <img src="https://picsum.photos/600/250" class="card-img-top" alt="...">
+        <img v-if="resturantType.business_image" :src="`/storage/${resturantType.business_image}`" class="card-img-top" alt="...">
+            <img v-else :src="require('/public/img/placeholder_restaurants.png')" alt="">
             <div class="card-body">
                 <h5 class="card-title fs-5 mt-1 mb-1">{{ resturantType.business_name }}</h5>
             </div>
@@ -32,8 +33,6 @@ export default {
 
 <style lang="scss" scoped>
     .card{
-        box-shadow: 0px 0px 19px 10px rgba(0,0,0,0.16);
-        -webkit-box-shadow: 0px 0px 19px 10px rgba(0,0,0,0.16);
-        -moz-box-shadow: 0px 0px 19px 10px rgba(0,0,0,0.16);
+        filter: drop-shadow(0px 0px 8px rgba( #000000,0.2));
     }
 </style>

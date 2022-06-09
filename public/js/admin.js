@@ -53436,6 +53436,25 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+var btn_delete = document.querySelectorAll('.btn-plate-delete');
+var pop_up = document.getElementById('pop-up-delete');
+var btn_no = document.querySelector('.btn-no');
+var btn_si = document.querySelector('.btn-si');
+var plate_name_delete = document.getElementsByClassName('plate-name-delete')[0];
+btn_delete.forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    var name_plate = e.path[2].children[1].children[0].innerHTML;
+    plate_name_delete.innerHTML = name_plate;
+    pop_up.classList.remove('d-none');
+    var form = e.path[2].children[4];
+    btn_si.addEventListener('click', function () {
+      form.submit();
+    });
+  });
+});
+btn_no.addEventListener('click', function (e) {
+  pop_up.classList.add('d-none');
+});
 
 /***/ }),
 
@@ -53513,9 +53532,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\admin.js */"./resources/js/admin.js");
-__webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\sass\front.scss */"./resources/sass/front.scss");
+__webpack_require__(/*! C:\Users\Giovanni\Desktop\Boolean\Progetto_finale\progetto-finale-deliveboo\resources\js\admin.js */"./resources/js/admin.js");
+__webpack_require__(/*! C:\Users\Giovanni\Desktop\Boolean\Progetto_finale\progetto-finale-deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni\Desktop\Boolean\Progetto_finale\progetto-finale-deliveboo\resources\sass\front.scss */"./resources/sass/front.scss");
 
 
 /***/ })

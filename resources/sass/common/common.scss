@@ -185,9 +185,9 @@ img{
     margin: auto 5px;
     text-align: center;
     position: relative;
-    background-color: rgba(#e1ffa5, 0.4);
+    background-color: rgba($violet, 0.4);
 }
   
 .p6 .is-active{
-    background-color: #e1ffa5;
+    background-color: $violet;
 }

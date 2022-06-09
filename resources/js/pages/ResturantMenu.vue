@@ -208,6 +208,8 @@
             <!-- sezione che contiene il menù del ristorante -->
             <section id="resturant-menu" class="pt-4">
                 <div class="container-custom px-3 px-md-4 px-lg-5 py-2 py-sm-2 py-md-4 row">
+
+                    <!-- Menu piatti wrapper -->
                     <div class="col-12 col-md-6 col-lg-8 col-xxxl-10">
                         <h3 class="mb-3 fs-2 fw-bold">Il nostro menù</h3>
                         <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
@@ -456,6 +458,11 @@ export default {
     .container-custom{
         max-width: 2048px;
         margin: 0 auto;
+
+        .cards-wrapper {
+            height: 550px;
+            overflow-y: auto;
+        }
     }
 
     #resturant-info{

@@ -199,9 +199,6 @@ export default {
     },
 
     methods: {
-        yourMethodName() {
-            console.log(this.authUser);
-        },
         logout:function(){
             axios.post('logout').then(response => {
                 if (response.status === 302 || 401) {
@@ -215,9 +212,6 @@ export default {
                 console.log(error);
             });
         }
-    },
-    mounted() {
-        this.yourMethodName();
     }
 }
 </script>

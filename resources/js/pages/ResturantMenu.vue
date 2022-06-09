@@ -265,9 +265,9 @@
                         </div>
                         <div>
                             <!-- TODO aggiungere braintree per il checkput -->
-                            <button :disabled="cart.length == 0 ? true : false" :class="[cart.length == 0 ? 'disabled' : 'btn-green_1', 'btn pay-button']">
-                                Vai al pagamento
-                            </button>
+                            <router-link to="/order/create" :disabled="cart.length == 0 ? true : false" :class="[cart.length == 0 ? 'disabled' : 'btn-green_1', 'btn pay-button']">
+                                Checkout
+                            </router-link>
                         </div>
                     </div>
                 </div>

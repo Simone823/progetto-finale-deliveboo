@@ -43,3 +43,5 @@ route::get('{any}', function(){
     return view('guest.home');
 })->where('any','.*');
 
+Route::get('checkout', 'CheckoutController@checkout');
+Route::post('checkout', 'CheckoutController@afterpayment')->name('checkout.credit-card');

@@ -416,11 +416,13 @@ export default {
         removeItemFromCart(plateId){
             this.cart = this.cart.filter(item => item.id  != plateId);
             localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', this.getTotal());
             // window.location.reload();
         },
         removeAllItemsFromCart(){
             this.cart = [];
             localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', 0);
             // localStorage.removeItem("cart", JSON.stringify(this.cart));
         },
         // QUANTITÀ DEL PRODOTTO

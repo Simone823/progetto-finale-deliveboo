@@ -6271,11 +6271,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.cart = this.cart.filter(function (item) {
         return item.id != plateId;
       });
-      localStorage.setItem("cart", JSON.stringify(this.cart)); // window.location.reload();
+      localStorage.setItem("cart", JSON.stringify(this.cart));
+      localStorage.setItem('total', this.getTotal()); // window.location.reload();
     },
     removeAllItemsFromCart: function removeAllItemsFromCart() {
       this.cart = [];
-      localStorage.setItem("cart", JSON.stringify(this.cart)); // localStorage.removeItem("cart", JSON.stringify(this.cart));
+      localStorage.setItem("cart", JSON.stringify(this.cart));
+      localStorage.setItem('total', 0); // localStorage.removeItem("cart", JSON.stringify(this.cart));
     },
     // QUANTITÀ DEL PRODOTTO
     updateQuantity: function updateQuantity(plateId, quantity) {

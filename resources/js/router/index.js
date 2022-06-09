@@ -8,6 +8,7 @@ import Home from '../pages/Home.vue';
 import ResturantType from '../pages/ResturantType.vue';
 import CityResturants from '../pages/CityResturants.vue';
 import ResturantMenu from '../pages/ResturantMenu.vue';
+import MyCheckout from '../pages/MyCheckout.vue';
 //faccio un array che conterrà le rotte
 const routes = [
     {

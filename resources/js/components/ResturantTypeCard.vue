@@ -1,23 +1,21 @@
 <template>
-
-    <div class="card col-12 col-md-4 col-lg-3 text-center">
-        <figure class="post-card-img">
-            <img :src="resturantType.business_image" alt="">
-        </figure>
-        <div class="post-card-body">
-            <h3>{{ resturantType.business_name }}</h3>
-            <div class="info-wrapper">
-                <p>Di: {{ resturantType.name }} {{ resturantType.surname }}</p>
-                <p>In: {{ resturantType.business_address }}</p>
+<!-- :src="resturantType.business_image" -->
+    <div class="card col-12 col-md-4 col-lg-3 p-0 ms-4 me-4" style="width: 18rem;">
+        <img src="https://picsum.photos/600/250" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title fs-5 mt-1 mb-1">{{ resturantType.business_name }}</h5>
             </div>
-        </div>
-        <div class="button-wrapper">
-            <router-link tag="button" class="btn btn-green_1" :to="{ name: 'resturant-menu', params: { id: resturantType.user_id } }">
-                View this Resturant
-            </router-link>
-        </div> 
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ resturantType.name }} {{ resturantType.surname }}</li>
+                <li class="list-group-item">{{ resturantType.business_address }}</li>
+            </ul>
+            <div class="card-body">
+                <router-link tag="button" class="btn btn-green_1 mt-2 mb-2" :to="{ name: 'resturant-menu', params: { id: resturantType.user_id } }">
+                    Vai al ristorante
+                </router-link>
+            </div>
     </div>
-
+    
 </template>
 
 <script>
@@ -34,7 +32,8 @@ export default {
 
 <style lang="scss" scoped>
     .card{
-        border: 1px solid black;
-        padding: 15px;
+        box-shadow: 0px 0px 19px 10px rgba(0,0,0,0.16);
+        -webkit-box-shadow: 0px 0px 19px 10px rgba(0,0,0,0.16);
+        -moz-box-shadow: 0px 0px 19px 10px rgba(0,0,0,0.16);
     }
 </style>

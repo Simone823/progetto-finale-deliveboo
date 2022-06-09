@@ -1,8 +1,8 @@
 <template>
     <div>
         <!-- navbar customizzata  -->
-        <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light">
-            <div class="container-custom px-2 px-md-4 px-lg-5  d-flex justify-content-between align-items-center">
+        <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light pb-0 pb-md-2">
+            <div class="container-custom px-2 px-md-4 px-lg-5  d-flex justify-content-between align-items-center flex-wrap">
                 <!-- LOGO  -->
                 <a class="ms-3 ms-md-0 navbar-brand" href="/">
                     <img id="header_logo_deliveboo" :src="logo" alt="Deliveboo">
@@ -51,7 +51,7 @@
                                 </li>
                                     
                                 <li>
-                                    <a class="dropdown-item" href="/" @click.prevent="logout">
+                                    <a class="dropdown-item" href="/home" @click.prevent="logout">
                                         <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
                                         Logout
                                     </a>    
@@ -132,7 +132,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item dropdown-item text-center" href="/" @click.prevent="logout">
+                                    <a class="dropdown-item dropdown-item text-center" href="/home" @click.prevent="logout">
                                         <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
                                         Logout
                                     </a>    
@@ -273,7 +273,15 @@
 
             <!--INFO PIATTO - gestione del componente(piatto) attivo -->
             <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper d-flex justify-content-center align-items-center'] ">
-                <div :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "
+                <!-- se l'id degli elementi nel carrello non corrispondono all'id del ristorante visualizzato  -->
+                <div v-if="cart.length > 0 && resturant.id !== cart[0].user_id" 
+                    :class=" [ activeElement != undefined ? 'active' : '','add-cart-error'] ">
+                    <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">X</button>
+                    <p>Non puoi fare acquisti da ristoranti diversi!</p>
+                </div>
+                <!-- se gli id corrispondono sarà possibile aggiungere i piatti al carrello  -->
+                <div v-else
+                    :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "
                     v-for="(menuPlate,index) in menuPlates" :key="index">
                     <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">X</button>
                     <figure class="info-plate-img">
@@ -326,30 +334,47 @@ export default {
 
     data() {
         return {
+            // per la gestione del logout nella navbar
+            authUser: window.authUser,
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            // --
             activeElement: undefined,
             resturant: [],
             menuPlates: [],
             ingredients: [],
             logo: require('/public/img/logo_white.svg'),
-            authUser: window.authUser,
-            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             // variabili per carrello
-            plates: JSON.parse(localStorage.getItem("plates")),
+            plates: '',
             cart: JSON.parse(localStorage.getItem("cart")),
         }
     },
     methods: {
+        // LOGOUT
+        logout:function(){
+            axios.post('logout').then(response => {
+                if (response.status === 302 || 401) {
+                    // console.log('logout');
+                    window.location.reload();
+                }
+                else {
+                // throw error and go to catch block
+                }
+            }).catch(error => {
+                console.log(error);
+            });
+        },
+        //chiamata che ritorna il ristorante specifico, e il menù del ristorante
         fetchResturantInfo(){
             axios.get(`/api/resturant-menu/${this.$route.params.id}`)
             .then( res => {
-                console.log(res);
+                // console.log(res);
                 this.resturant = res.data.user[0];
                 this.menuPlates = res.data.user_plates;
-                // console.log(this.menuPlates);
-                localStorage.setItem("plates", JSON.stringify(this.menuPlates));
+                localStorage.setItem("plates", JSON.stringify(res.data.user_plates));
                 if(!localStorage.getItem("cart")){
                     localStorage.setItem("cart","[]");
                 }
+                this.plates = JSON.parse(localStorage.getItem("plates"));
             })
             .catch( err => {
                 console.warn(err);
@@ -385,13 +410,14 @@ export default {
         },
         // ELIMINO UN ELEMENTO DAL CARRELLO
         removeItemFromCart(plateId){
-            let temp = this.cart.filter(item => item.id  != plateId);
-            localStorage.setItem("cart", JSON.stringify(temp));
-            window.location.reload();
+            this.cart = this.cart.filter(item => item.id  != plateId);
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            // window.location.reload();
         },
         removeAllItemsFromCart(){
             this.cart = [];
             localStorage.setItem("cart", JSON.stringify(this.cart));
+            // localStorage.removeItem("cart", JSON.stringify(this.cart));
         },
         // QUANTITÀ DEL PRODOTTO
         updateQuantity(plateId, quantity){
@@ -404,19 +430,19 @@ export default {
         },
         //TOTALE
         getTotal(){
-            let sumItem;
+            let sumItem; //somma dello stesso prodotto ripetuto
             let sum = 0;
             for(let i = 0; i < this.cart.length; i++){
                 sumItem = this.cart[i].price * this.cart[i].quantity;
-                sum += sumItem;  
+                sum += sumItem;  //somma totale
             }
             return sum;
         },
     },
+
     mounted() {
         this.fetchResturantInfo();
-        console.log(this.counter);
-        localStorage.removeItem("cart", JSON.stringify(this.cart));
+        // localStorage.removeItem("cart", JSON.stringify(this.cart));        
     },
 }
 </script>
@@ -538,14 +564,17 @@ export default {
         }
     }
 
-    .info-plate-card{
+    .add-cart-error{
+        padding: 30px 15px;
+    }
+
+    .info-plate-card, .add-cart-error{
         display: none;
         position: relative;
         border-radius: 8px;
         max-width: 560px;
         width: 90%;
         max-height: 75vh;
-        display: none;
         background-color: white;
         overflow: hidden;
         z-index: 9999;
@@ -588,7 +617,7 @@ export default {
         }
     }
 
-        .info-plate-card.active{
+        .info-plate-card.active, .add-cart-error.active{
             display: block;
             animation: zoom 300ms linear 1;
         }

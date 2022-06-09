@@ -53,6 +53,7 @@ class UserController extends Controller
         $user_plates = User::join('plates','plates.user_id','=','users.id')
             ->where('plates.user_id', '=', $id)
             ->where('plates.visibility', '=', 1)
+            ->orderBy('plates.name', 'asc')
             ->get();
 
         return response()->json([

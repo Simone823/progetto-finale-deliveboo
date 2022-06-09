@@ -375,6 +375,8 @@ export default {
                 localStorage.setItem("plates", JSON.stringify(res.data.user_plates));
                 if(!localStorage.getItem("cart")){
                     localStorage.setItem("cart","[]");
+                } else if(!localStorage.getItem('total')) {
+                    localStorage.setItem('total', 0);
                 }
                 this.plates = JSON.parse(localStorage.getItem("plates"));
             })
@@ -438,6 +440,7 @@ export default {
                 sumItem = this.cart[i].price * this.cart[i].quantity;
                 sum += sumItem;  //somma totale
             }
+            localStorage.setItem('total', sum);
             return sum;
         },
     },

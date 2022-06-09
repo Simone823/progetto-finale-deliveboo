@@ -6226,6 +6226,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         if (!localStorage.getItem("cart")) {
           localStorage.setItem("cart", "[]");
+        } else if (!localStorage.getItem('total')) {
+          localStorage.setItem('total', 0);
         }
 
         _this.plates = JSON.parse(localStorage.getItem("plates"));
@@ -6307,6 +6309,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         sum += sumItem; //somma totale
       }
 
+      localStorage.setItem('total', sum);
       return sum;
     }
   },

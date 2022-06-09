@@ -9,47 +9,47 @@
 
                 <!-- Dati utente -->
                 <div class="col-12 col-md-6">
-                    <form action="">
+                    <form @submit.prevent="handleSubmit(sendForm())" methods="post">
                         <!-- Guest name -->
                         <div class="form-group d-flex align-items-center flex-column mb-3">
-                            <label class="col-form-label fs-5" for="name">Nome</label>
-                            <input type="text" class="form-control" id="guest_name" name="guest_name" value="" placeholder="Inserisci il tuo nome">
+                            <label class="col-form-label fs-5" for="guest_name">Nome</label>
+                            <input v-model="form.guest_name" type="text" class="form-control" id="guest_name" name="guest_name" value="" placeholder="Inserisci il tuo nome">
                         </div>
 
                         <!-- Guest surname -->
                         <div class="form-group d-flex align-items-center flex-column mb-3">
-                            <label class="col-form-label fs-5" for="name">Cognome</label>
-                            <input type="text" class="form-control" id="guest_surname" name="guest_name" value="" placeholder="Inserisci il tuo cognome">
+                            <label class="col-form-label fs-5" for="guest_surname">Cognome</label>
+                            <input v-model="form.guest_surname" type="text" class="form-control" id="guest_surname" name="guest_name" value="" placeholder="Inserisci il tuo cognome">
                         </div>
 
                         <!-- Guest email -->
                         <div class="form-group d-flex align-items-center flex-column mb-3">
-                            <label class="col-form-label fs-5" for="name">Email</label>
-                            <input type="text" class="form-control" id="guest_email" name="guest_email" value="" placeholder="Inserisci la tua e-mail">
+                            <label class="col-form-label fs-5" for="guest_email">Email</label>
+                            <input v-model="form.guest_email" type="text" class="form-control" id="guest_email" name="guest_email" value="" placeholder="Inserisci la tua e-mail">
                         </div>
 
                         <!-- Guest city -->
                         <div class="form-group d-flex align-items-center flex-column mb-3">
-                            <label class="col-form-label fs-5" for="name">Città</label>
-                            <input type="text" class="form-control" id="guest_city" name="guest_city" value="" placeholder="Inserisci la tua città">
+                            <label class="col-form-label fs-5" for="guest_city">Città</label>
+                            <input v-model="form.guest_city" type="text" class="form-control" id="guest_city" name="guest_city" value="" placeholder="Inserisci la tua città">
                         </div>
 
                         <!-- Guest cap -->
                         <div class="form-group d-flex align-items-center flex-column mb-3">
-                            <label class="col-form-label fs-5" for="name">CAP</label>
-                            <input type="text" class="form-control" id="guest_cap" name="guest_cap" value="" placeholder="Inserisci il CAP">
+                            <label class="col-form-label fs-5" for="guest_cap">CAP</label>
+                            <input v-model="form.guest_cap" type="text" class="form-control" id="guest_cap" name="guest_cap" value="" placeholder="Inserisci il CAP">
                         </div>
 
                         <!-- Guest address -->
                         <div class="form-group d-flex align-items-center flex-column mb-3">
-                            <label class="col-form-label fs-5" for="name">Indirizzo</label>
-                            <input type="text" class="form-control" id="guest_address" name="guest_address" value="" placeholder="Inserisci la via">
+                            <label class="col-form-label fs-5" for="guest_address">Indirizzo</label>
+                            <input v-model="form.guest_address" type="text" class="form-control" id="guest_address" name="guest_address" value="" placeholder="Inserisci la via">
                         </div>
 
                         <!-- Guest phone -->
                         <div class="form-group d-flex align-items-center flex-column mb-3">
-                            <label class="col-form-label fs-5" for="name">Telefono</label>
-                            <input type="text" class="form-control" id="guest_phone" name="guest_phone" value="" placeholder="Inserisci il tuo numero di telefono">
+                            <label class="col-form-label fs-5" for="guest_phone">Telefono</label>
+                            <input v-model="form.guest_phone" type="text" class="form-control" id="guest_phone" name="guest_phone" value="" placeholder="Inserisci il tuo numero di telefono">
                         </div>
                     </form>
                 </div>
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="button">
-                    <a href="/checkout" class="btn btn-info">Vai al Pagamento</a>
+                    <button @click="onSubmit()" type="submit" class="btn btn-info">Vai al pagamento</button>
                 </div>
             </div>
         </div>
@@ -96,6 +96,17 @@ export default {
 
             // Carrello localstorage
             cart: JSON.parse(localStorage.getItem('cart')),
+
+            // Form
+            form: {
+                guest_name: "",
+                guest_surname: "",
+                guest_email: "",
+                guest_city: "",
+                guest_cap: "",
+                guest_address: "",
+                guest_phone: ""
+            },
         }
     },
 
@@ -110,10 +121,24 @@ export default {
             }
             return sum;
         },
-    },
 
-    mounted() {
-    }
+        // Invio form dati utente
+        sendForm() {
+            axios.post('/api/orders', {
+                form: this.form,
+                total: localStorage.getItem('total'),
+                cart: this.cart
+            })
+            .then( res => {
+                console.log(res);
+            })
+        },
+
+        onSubmit() {
+            this.sendForm();
+            console.log(this.form);
+        }
+    },
 }
 </script>
 

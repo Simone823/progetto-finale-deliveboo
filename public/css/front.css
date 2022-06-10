@@ -12417,13 +12417,12 @@ img {
 }
 
 .btn-green_1 {
-  background-color: #00CCBC;
+  background: linear-gradient(180deg, rgb(0, 204, 188) 0%, rgb(0, 128, 117) 100%);
   color: #FFFFFF;
-  transition: all 250ms linear;
 }
 
 .btn-green_1:hover {
-  background-color: #00C2B3;
+  background: linear-gradient(0deg, rgb(0, 204, 188) 0%, rgb(0, 128, 117) 100%);
 }
 
 .btn-disable {
@@ -12487,6 +12486,15 @@ img {
 .btn-no {
   color: white;
   background-image: linear-gradient(180deg, red, #801515);
+}
+
+.btn-delete-red {
+  color: white;
+  background-image: linear-gradient(180deg, red, #801515);
+}
+
+.btn-delete-red:hover {
+  background-image: linear-gradient(180deg, #801515, red);
 }
 
 .radio-visibility {

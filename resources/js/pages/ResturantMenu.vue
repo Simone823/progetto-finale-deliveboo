@@ -265,9 +265,9 @@
                         </div>
                         <div>
                             <!-- TODO aggiungere braintree per il checkput -->
-                            <button :disabled="cart.length == 0 ? true : false" :class="[cart.length == 0 ? 'disabled' : 'btn-green_1', 'btn pay-button']">
-                                Vai al pagamento
-                            </button>
+                            <router-link to="/order/create" :disabled="cart.length == 0 ? true : false" :class="[cart.length == 0 ? 'disabled' : 'btn-green_1', 'btn pay-button']">
+                                Checkout
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -375,6 +375,8 @@ export default {
                 localStorage.setItem("plates", JSON.stringify(res.data.user_plates));
                 if(!localStorage.getItem("cart")){
                     localStorage.setItem("cart","[]");
+                } else if(!localStorage.getItem('total')) {
+                    localStorage.setItem('total', 0);
                 }
                 this.plates = JSON.parse(localStorage.getItem("plates"));
             })
@@ -414,11 +416,13 @@ export default {
         removeItemFromCart(plateId){
             this.cart = this.cart.filter(item => item.id  != plateId);
             localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', this.getTotal());
             // window.location.reload();
         },
         removeAllItemsFromCart(){
             this.cart = [];
             localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', 0);
             // localStorage.removeItem("cart", JSON.stringify(this.cart));
         },
         // QUANTITÀ DEL PRODOTTO
@@ -438,6 +442,7 @@ export default {
                 sumItem = this.cart[i].price * this.cart[i].quantity;
                 sum += sumItem;  //somma totale
             }
+            localStorage.setItem('total', sum);
             return sum;
         },
     },

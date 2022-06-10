@@ -35,6 +35,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     //Rotta resource PlateController
     Route::resource('/plates', 'PlateController');
+
+    Route::get('/orders-received', 'OrderController@index');
 });
 
 // Creo una rotta di fallback che restiturà sempre la rotta indicata nel caso in cui 

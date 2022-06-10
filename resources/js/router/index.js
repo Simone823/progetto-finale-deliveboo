@@ -33,13 +33,13 @@ const routes = [
         component: ResturantMenu,
     },
     {
-        path: '/*',
-        component: NotFound,
-    },
-    {
         path: '/order/create',
         name: 'order-create',
         component: OrderCreate,
+    },
+    {
+        path: '/*',
+        component: NotFound,
     }
 ];
 

@@ -63609,12 +63609,12 @@ var routes = [{
   name: 'resturant-menu',
   component: _pages_ResturantMenu_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
 }, {
-  path: '/*',
-  component: _pages_404_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
-}, {
   path: '/order/create',
   name: 'order-create',
   component: _pages_OrderCreate_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+}, {
+  path: '/*',
+  component: _pages_404_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
 }]; //istanza del router
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({

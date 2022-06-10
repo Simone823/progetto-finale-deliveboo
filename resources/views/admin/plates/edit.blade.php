@@ -39,7 +39,7 @@
                     <h6 class="fw-bold">Immagine del piatto</h6>
                     
                     <div class="col-lg-8">
-                        <input accept="image/*" placeholder="Immagine Piatto" id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image', $plate->image) }}" autofocus>
+                        <input accept="image/*" placeholder="Immagine Piatto" id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image', $plate->image) }}">
 
                         @error('image')
                         <div class="alert alert-danger">{{ $message }}</div>

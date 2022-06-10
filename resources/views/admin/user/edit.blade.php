@@ -38,7 +38,7 @@ Deliveboo - {{$user->business_name}}
                 <h6 class="fw-bold">Immagine del ristorante</h6>
         
                 <div class="col-lg-8">
-                    <input accept="image/*" placeholder="Immagine Ristorante" id="business_image" type="file" class="form-control @error('business_image') is-invalid @enderror" name="business_image" value="{{ old('business_image', $user->business_image) }}" autofocus>
+                    <input accept="image/*" placeholder="Immagine Ristorante" id="business_image" type="file" class="form-control @error('business_image') is-invalid @enderror" name="business_image" value="{{ old('business_image', $user->business_image) }}">
         
                     @error('business_image')
                     <span class="invalid-feedback" role="alert">

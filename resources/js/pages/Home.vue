@@ -78,6 +78,7 @@ export default {
             })
             .catch( err => {
                 console.warn(err);
+                this.$router.push('/404');
             })
         },
     },

@@ -28,3 +28,10 @@ Route::namespace('Api')->group( function () {
     Route::get('/resturant-menu/{user}', 'UserController@showMenu');
 });
 
+Route::namespace('api')
+->name('api.')
+->group(function () {
+    Route::resource('orders', 'OrderController')
+    ->only('index', 'store', 'create');
+});
+

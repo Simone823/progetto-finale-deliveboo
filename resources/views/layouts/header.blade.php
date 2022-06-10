@@ -77,6 +77,13 @@
                                     </span>
                                 </a>
                             </li>
+                            <li>
+                                <a class=" text-decoration-none" href="{{route('admin.orders-received.index')}}">
+                                    <span class="@if(Route::is('admin.orders-received.index'))active @endif navbar_dashboard">
+                                        Ordini ricevuti
+                                    </span>
+                                </a>
+                            </li>
                             {{-- logout --}}
                             <li class="nav-item text-center">
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

@@ -47,6 +47,6 @@ class CheckoutController extends Controller
         // Order save
         $order->save();
 
-        echo 'Payment Has been Received';
+        return redirect()->to('/payment/success');
     }
 }

@@ -60,7 +60,7 @@
             {{-- Prezzo --}}
             <div class="form w-100 mb-3">
                 <input required placeholder=" "
-                id="price" type=number step=0.01 class="form__input
+                id="price" type=number step=0.01 min="0.20" class="form__input
                 @error('price') is-invalid @enderror"
                 name="price" value="{{ old('price') }}"
                 autocomplete="off">

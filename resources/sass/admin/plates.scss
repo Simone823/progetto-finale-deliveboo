@@ -200,7 +200,7 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    background-color: #00000043;
+                    background-color: #00000040;
                 }
     
                 img {
@@ -214,6 +214,9 @@
     
         }
 
+        .order-date{
+            font-size: 10px;
+        }
         .tot-order{
             border-top: 2px solid #3E235D;
         }

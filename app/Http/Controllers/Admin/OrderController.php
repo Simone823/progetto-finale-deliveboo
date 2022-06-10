@@ -19,7 +19,7 @@ class OrderController extends Controller
         //Prendo gli ordini fatti per lo specifico utente loggato
         $orders = Order::where('user_id', '=', $id_user)
             ->orderBy('created_at','desc')
-            ->get();
+            ->paginate(6);
         return view('admin.orders-received.index',compact('orders'));
     }
 

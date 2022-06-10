@@ -12602,7 +12602,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.262745098);
+  background-color: rgba(0, 0, 0, 0.2509803922);
 }
 
 #section_orders_index .card .order-card-header .order_image img {
@@ -12613,6 +12613,10 @@ img {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+#section_orders_index .card .order-date {
+  font-size: 10px;
 }
 
 #section_orders_index .card .tot-order {

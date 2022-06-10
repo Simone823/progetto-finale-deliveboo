@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\OrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,9 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     //Rotta resource PlateController
     Route::resource('/plates', 'PlateController');
+
+    //rotta per ordini ricevuti
+    Route::get('/orders-received', 'OrderController@index')->name('orders-received.index');
 });
 
 Route::get('checkout', 'CheckoutController@checkout');

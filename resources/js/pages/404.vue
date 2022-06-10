@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="error-wrapper d-flex flex-column">
         <MyHeader />
-        <div class="error-page d-flex justify-content-center align-items-center">
-        <div class="container text-center">
-            <h1 class="error-title">404</h1>
-            <p>Page not found!</p>
-        </div>
+        <div class="container flex-grow-1 d-flex justify-content-center align-items-center">
+            <div class="text-center">
+                <h1 class="error-title fw-bolder">404</h1>
+                <p class="fs-4">Page not found!</p>
+            </div>
         </div>
     </div>
 </template>
@@ -21,11 +21,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .error-page{
-        min-height: calc(100vh);
+    .error-wrapper{
+        height: 100vh;
     }
+
     .error-title{
-        font-size: 120px;
-        font-weight: 700;
+        font-size: 80px;
+        color: #00CCBC;
     }
 </style>

@@ -178,6 +178,7 @@ export default {
             // console.log(this.form);
             localStorage.setItem('cart', '[]');
             localStorage.setItem('total', 0);
+            this.cart = [];
         }
     },
 }

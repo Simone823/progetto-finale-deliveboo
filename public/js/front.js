@@ -5978,6 +5978,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
  // import useValidate from '@vee-validate';
 // import {required} from '@vuelidate/validators';
 
@@ -50422,8 +50447,8 @@ var render = function () {
                                               ],
                                               staticClass: "form-control",
                                               class: errors.length
-                                                ? "border border-danger"
-                                                : "",
+                                                ? "border-2 border-danger"
+                                                : "border-2 border-success",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_name",
@@ -50516,6 +50541,9 @@ var render = function () {
                                                 },
                                               ],
                                               staticClass: "form-control",
+                                              class: errors.length
+                                                ? "border-2 border-danger"
+                                                : "border-2 border-success",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_surname",
@@ -50571,253 +50599,473 @@ var render = function () {
                             _vm._v(" "),
                             _c(
                               "div",
-                              {
-                                staticClass:
-                                  "form-group d-flex align-items-center flex-column mb-3",
-                              },
+                              { staticClass: "form-group" },
                               [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "col-form-label fs-5",
-                                    attrs: { for: "guest_email" },
-                                  },
-                                  [_vm._v("Email")]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.guest_email,
-                                      expression: "form.guest_email",
-                                    },
-                                  ],
-                                  staticClass: "form-control",
+                                _c("validationProvider", {
+                                  staticClass:
+                                    "d-flex align-items-center flex-column mb-3",
                                   attrs: {
-                                    type: "text",
-                                    id: "guest_email",
                                     name: "guest_email",
-                                    value: "",
-                                    placeholder: "Inserisci la tua e-mail",
+                                    rules: "required|email|max:255",
                                   },
-                                  domProps: { value: _vm.form.guest_email },
-                                  on: {
-                                    input: function ($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "guest_email",
-                                        $event.target.value
-                                      )
-                                    },
-                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "default",
+                                        fn: function (ref) {
+                                          var errors = ref.errors
+                                          return [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "col-form-label fs-5",
+                                                attrs: { for: "guest_email" },
+                                              },
+                                              [_vm._v("Email")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.guest_email,
+                                                  expression:
+                                                    "form.guest_email",
+                                                },
+                                              ],
+                                              staticClass: "form-control",
+                                              class: errors.length
+                                                ? "border-2 border-danger"
+                                                : "border-2 border-success",
+                                              attrs: {
+                                                type: "text",
+                                                id: "guest_email",
+                                                name: "guest_email",
+                                                value: "",
+                                                placeholder:
+                                                  "Inserisci la tua e-mail",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.guest_email,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "guest_email",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                            _vm._v(" "),
+                                            errors.length
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(errors[0]) +
+                                                        "\n                                "
+                                                    ),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ]
+                                        },
+                                      },
+                                    ],
+                                    null,
+                                    true
+                                  ),
                                 }),
-                              ]
+                              ],
+                              1
                             ),
                             _vm._v(" "),
                             _c(
                               "div",
-                              {
-                                staticClass:
-                                  "form-group d-flex align-items-center flex-column mb-3",
-                              },
+                              { staticClass: "form-group" },
                               [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "col-form-label fs-5",
-                                    attrs: { for: "guest_city" },
-                                  },
-                                  [_vm._v("Città")]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.guest_city,
-                                      expression: "form.guest_city",
-                                    },
-                                  ],
-                                  staticClass: "form-control",
+                                _c("validationProvider", {
+                                  staticClass:
+                                    "d-flex align-items-center flex-column mb-3",
                                   attrs: {
-                                    type: "text",
-                                    id: "guest_city",
                                     name: "guest_city",
-                                    value: "",
-                                    placeholder: "Inserisci la tua città",
+                                    rules: "required|min:3|max:150",
                                   },
-                                  domProps: { value: _vm.form.guest_city },
-                                  on: {
-                                    input: function ($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "guest_city",
-                                        $event.target.value
-                                      )
-                                    },
-                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "default",
+                                        fn: function (ref) {
+                                          var errors = ref.errors
+                                          return [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "col-form-label fs-5",
+                                                attrs: { for: "guest_city" },
+                                              },
+                                              [_vm._v("Città")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.guest_city,
+                                                  expression: "form.guest_city",
+                                                },
+                                              ],
+                                              staticClass: "form-control",
+                                              class: errors.length
+                                                ? "border-2 border-danger"
+                                                : "border-2 border-success",
+                                              attrs: {
+                                                type: "text",
+                                                id: "guest_city",
+                                                name: "guest_city",
+                                                value: "",
+                                                placeholder:
+                                                  "Inserisci la tua città",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.guest_city,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "guest_city",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                            _vm._v(" "),
+                                            errors.length
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(errors[0]) +
+                                                        "\n                                "
+                                                    ),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ]
+                                        },
+                                      },
+                                    ],
+                                    null,
+                                    true
+                                  ),
                                 }),
-                              ]
+                              ],
+                              1
                             ),
                             _vm._v(" "),
                             _c(
                               "div",
-                              {
-                                staticClass:
-                                  "form-group d-flex align-items-center flex-column mb-3",
-                              },
+                              { staticClass: "form-group" },
                               [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "col-form-label fs-5",
-                                    attrs: { for: "guest_cap" },
-                                  },
-                                  [_vm._v("CAP")]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.guest_cap,
-                                      expression: "form.guest_cap",
-                                    },
-                                  ],
-                                  staticClass: "form-control",
+                                _c("validationProvider", {
+                                  staticClass:
+                                    "d-flex align-items-center flex-column mb-3",
                                   attrs: {
-                                    type: "text",
-                                    id: "guest_cap",
                                     name: "guest_cap",
-                                    value: "",
-                                    placeholder: "Inserisci il CAP",
+                                    rules: "required|min:5|max:5|numeric",
                                   },
-                                  domProps: { value: _vm.form.guest_cap },
-                                  on: {
-                                    input: function ($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "guest_cap",
-                                        $event.target.value
-                                      )
-                                    },
-                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "default",
+                                        fn: function (ref) {
+                                          var errors = ref.errors
+                                          return [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "col-form-label fs-5",
+                                                attrs: { for: "guest_cap" },
+                                              },
+                                              [_vm._v("CAP")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.guest_cap,
+                                                  expression: "form.guest_cap",
+                                                },
+                                              ],
+                                              staticClass: "form-control",
+                                              class: errors.length
+                                                ? "border-2 border-danger"
+                                                : "border-2 border-success",
+                                              attrs: {
+                                                type: "text",
+                                                id: "guest_cap",
+                                                name: "guest_cap",
+                                                value: "",
+                                                placeholder: "Inserisci il CAP",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.guest_cap,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "guest_cap",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                            _vm._v(" "),
+                                            errors.length
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(errors[0]) +
+                                                        "\n                                "
+                                                    ),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ]
+                                        },
+                                      },
+                                    ],
+                                    null,
+                                    true
+                                  ),
                                 }),
-                              ]
+                              ],
+                              1
                             ),
                             _vm._v(" "),
                             _c(
                               "div",
-                              {
-                                staticClass:
-                                  "form-group d-flex align-items-center flex-column mb-3",
-                              },
+                              { staticClass: "form-group" },
                               [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "col-form-label fs-5",
-                                    attrs: { for: "guest_adress" },
-                                  },
-                                  [_vm._v("Indirizzo")]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.guest_adress,
-                                      expression: "form.guest_adress",
-                                    },
-                                  ],
-                                  staticClass: "form-control",
+                                _c("validationProvider", {
+                                  staticClass:
+                                    "d-flex align-items-center flex-column mb-3",
                                   attrs: {
-                                    type: "text",
-                                    id: "guest_adress",
                                     name: "guest_adress",
-                                    value: "",
-                                    placeholder: "Inserisci la via",
+                                    rules: "required|min:3|max:255",
                                   },
-                                  domProps: { value: _vm.form.guest_adress },
-                                  on: {
-                                    input: function ($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "guest_adress",
-                                        $event.target.value
-                                      )
-                                    },
-                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "default",
+                                        fn: function (ref) {
+                                          var errors = ref.errors
+                                          return [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "col-form-label fs-5",
+                                                attrs: { for: "guest_adress" },
+                                              },
+                                              [_vm._v("Indirizzo")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.guest_adress,
+                                                  expression:
+                                                    "form.guest_adress",
+                                                },
+                                              ],
+                                              staticClass: "form-control",
+                                              class: errors.length
+                                                ? "border-2 border-danger"
+                                                : "border-2 border-success",
+                                              attrs: {
+                                                type: "text",
+                                                id: "guest_adress",
+                                                name: "guest_adress",
+                                                value: "",
+                                                placeholder: "Inserisci la via",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.guest_adress,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "guest_adress",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                            _vm._v(" "),
+                                            errors.length
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(errors[0]) +
+                                                        "\n                                "
+                                                    ),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ]
+                                        },
+                                      },
+                                    ],
+                                    null,
+                                    true
+                                  ),
                                 }),
-                              ]
+                              ],
+                              1
                             ),
                             _vm._v(" "),
                             _c(
                               "div",
-                              {
-                                staticClass:
-                                  "form-group d-flex align-items-center flex-column mb-3",
-                              },
+                              { staticClass: "form-group" },
                               [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "col-form-label fs-5",
-                                    attrs: { for: "guest_phone" },
-                                  },
-                                  [_vm._v("Telefono")]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.guest_phone,
-                                      expression: "form.guest_phone",
-                                    },
-                                  ],
-                                  staticClass: "form-control",
+                                _c("validationProvider", {
+                                  staticClass:
+                                    "d-flex align-items-center flex-column mb-3",
                                   attrs: {
-                                    type: "text",
-                                    id: "guest_phone",
                                     name: "guest_phone",
-                                    value: "",
-                                    placeholder:
-                                      "Inserisci il tuo numero di telefono",
+                                    rules: "required|numeric|max:15",
                                   },
-                                  domProps: { value: _vm.form.guest_phone },
-                                  on: {
-                                    input: function ($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "guest_phone",
-                                        $event.target.value
-                                      )
-                                    },
-                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "default",
+                                        fn: function (ref) {
+                                          var errors = ref.errors
+                                          return [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "col-form-label fs-5",
+                                                attrs: { for: "guest_phone" },
+                                              },
+                                              [_vm._v("Telefono")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.guest_phone,
+                                                  expression:
+                                                    "form.guest_phone",
+                                                },
+                                              ],
+                                              staticClass: "form-control",
+                                              class: errors.length
+                                                ? "border-2 border-danger"
+                                                : "border-2 border-success",
+                                              attrs: {
+                                                type: "text",
+                                                id: "guest_phone",
+                                                name: "guest_phone",
+                                                value: "",
+                                                placeholder:
+                                                  "Inserisci il tuo numero di telefono",
+                                              },
+                                              domProps: {
+                                                value: _vm.form.guest_phone,
+                                              },
+                                              on: {
+                                                input: function ($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "guest_phone",
+                                                    $event.target.value
+                                                  )
+                                                },
+                                              },
+                                            }),
+                                            _vm._v(" "),
+                                            errors.length
+                                              ? _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                    " +
+                                                        _vm._s(errors[0]) +
+                                                        "\n                                "
+                                                    ),
+                                                  ]
+                                                )
+                                              : _vm._e(),
+                                          ]
+                                        },
+                                      },
+                                    ],
+                                    null,
+                                    true
+                                  ),
                                 }),
-                              ]
+                              ],
+                              1
                             ),
                           ]
                         ),

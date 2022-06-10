@@ -66,7 +66,7 @@
                             <li>
                                 <a class=" text-decoration-none" href="{{route('admin.plates.index')}}">
                                     <span class="@if(Route::is('admin.plates.index'))active @endif navbar_dashboard">
-                                        Tutti i Piatti
+                                        Lista Piatti
                                     </span>
                                 </a>
                             </li>
@@ -145,7 +145,7 @@
                     <li class="nav-item text-center p-2 @if(Route::is('admin.plates.index')) bg-purple @endif">
                         <a class="text-decoration-none" href="{{route('admin.plates.index')}}">
                             <span class="@if(Route::is('admin.plates.index')) active @endif navbar_dashboard">
-                                Tutti i Piatti
+                                Lista Piatti
                             </span>
                         </a>
                     </li>

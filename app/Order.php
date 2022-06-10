@@ -16,7 +16,7 @@ class Order extends Model
         'guest_email',
         'guest_city',
         'guest_cap',
-        'guest_address',
+        'guest_adress',
         'guest_phone',
     ];
 }

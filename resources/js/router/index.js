@@ -8,12 +8,8 @@ import Home from '../pages/Home.vue';
 import ResturantType from '../pages/ResturantType.vue';
 import CityResturants from '../pages/CityResturants.vue';
 import ResturantMenu from '../pages/ResturantMenu.vue';
-<<<<<<< HEAD
 import NotFound from '../pages/404.vue';
-
-=======
 import OrderCreate from '../pages/OrderCreate.vue';
->>>>>>> stripe-prova-2
 //faccio un array che conterrà le rotte
 const routes = [
     {
@@ -37,14 +33,11 @@ const routes = [
         component: ResturantMenu,
     },
     {
-<<<<<<< HEAD
         path: '/*',
         component: NotFound,
-=======
         path: '/order/create',
         name: 'order-create',
         component: OrderCreate,
->>>>>>> stripe-prova-2
     }
 ];
 

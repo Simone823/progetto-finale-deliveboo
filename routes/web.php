@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\OrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,7 +37,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     //Rotta resource PlateController
     Route::resource('/plates', 'PlateController');
 
-    Route::get('/orders-received', 'OrderController@index');
+    //rotta per ordini ricevuti
+    Route::get('/orders-received', 'OrderController@index')->name('orders-received.index');
 });
 
 // Creo una rotta di fallback che restiturà sempre la rotta indicata nel caso in cui 

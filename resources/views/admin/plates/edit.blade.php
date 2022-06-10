@@ -22,17 +22,17 @@
             
             <h1 class="fw-bold mb-4">{{$plate->name}}</h1>
 
+            {{--Image wrapper plate image --}}
+            <div class="wrapper_image d-flex justify-content-center d-md-none">
+                <figure class="image_business figure rounded overflow-hidden">
+                    <img class="img-thumbnail" src="{{$plate->image ? asset('storage/'.$plate->image) : asset('img/placeholder_plate.png')}}" alt="plate">
+                </figure>
+            </div>
 
             <form action="{{ route('admin.plates.update', $plate->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
-                {{--Image wrapper plate image --}}
-                <div class="wrapper_image d-flex justify-content-center d-md-none">
-                    <figure class="image_business figure rounded overflow-hidden">
-                        <img class="img-thumbnail" src="{{$plate->image ? asset('storage/'.$plate->image) : asset('img/placeholder_plate.png')}}" alt="plate">
-                    </figure>
-                </div>
 
                 {{-- image input --}}
                 <div class="form-group mb-4">

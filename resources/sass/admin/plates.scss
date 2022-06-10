@@ -106,8 +106,8 @@
     padding-bottom: 40px;
 
     .card {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        border-radius: 20px;
+        overflow: hidden;
 
         .wrapper_image {
 
@@ -167,3 +167,57 @@
         }
     }
 }
+
+// ------------ORDERS INDEX-----------------
+
+#section_orders_index{
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .card {
+        border-radius: 20px;
+        overflow: hidden;
+        .order-card-header{
+            position: relative;
+            .card-title.order-card-id{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -60%);
+                font-size: 35px;
+                color: white;
+                z-index: 999;
+            }
+            .order_image {
+                width: 100%;
+                height: 200px;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
+    
+                &::after{
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: #00000043;
+                }
+    
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+    
+        }
+
+        .tot-order{
+            border-top: 2px solid #3E235D;
+        }
+        
+    }
+}
+

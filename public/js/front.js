@@ -5940,7 +5940,17 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       // Carrello localstorage
-      cart: JSON.parse(localStorage.getItem('cart'))
+      cart: JSON.parse(localStorage.getItem('cart')),
+      // Form
+      form: {
+        guest_name: "",
+        guest_surname: "",
+        guest_email: "",
+        guest_city: "",
+        guest_cap: "",
+        guest_adress: "",
+        guest_phone: ""
+      }
     };
   },
   methods: {
@@ -5955,9 +5965,23 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return sum;
+    },
+    // Invio form dati utente
+    sendForm: function sendForm() {
+      axios.post('/api/orders', {
+        form: this.form,
+        total: localStorage.getItem('total'),
+        cart: this.cart
+      }).then(function (res) {
+        var data = res.data;
+        console.log(res);
+      });
+    },
+    onSubmit: function onSubmit() {
+      this.sendForm();
+      console.log(this.form);
     }
-  },
-  mounted: function mounted() {}
+  }
 });
 
 /***/ }),
@@ -45295,7 +45319,351 @@ var render = function () {
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _vm._m(0),
+          _c("div", { staticClass: "col-12 col-md-6" }, [
+            _c(
+              "form",
+              {
+                attrs: { methods: "post" },
+                on: {
+                  submit: function ($event) {
+                    $event.preventDefault()
+                    _vm.handleSubmit(_vm.sendForm())
+                  },
+                },
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form-group d-flex align-items-center flex-column mb-3",
+                  },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-form-label fs-5",
+                        attrs: { for: "guest_name" },
+                      },
+                      [_vm._v("Nome")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.guest_name,
+                          expression: "form.guest_name",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        id: "guest_name",
+                        name: "guest_name",
+                        value: "",
+                        placeholder: "Inserisci il tuo nome",
+                      },
+                      domProps: { value: _vm.form.guest_name },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "guest_name", $event.target.value)
+                        },
+                      },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form-group d-flex align-items-center flex-column mb-3",
+                  },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-form-label fs-5",
+                        attrs: { for: "guest_surname" },
+                      },
+                      [_vm._v("Cognome")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.guest_surname,
+                          expression: "form.guest_surname",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        id: "guest_surname",
+                        name: "guest_name",
+                        value: "",
+                        placeholder: "Inserisci il tuo cognome",
+                      },
+                      domProps: { value: _vm.form.guest_surname },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form,
+                            "guest_surname",
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form-group d-flex align-items-center flex-column mb-3",
+                  },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-form-label fs-5",
+                        attrs: { for: "guest_email" },
+                      },
+                      [_vm._v("Email")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.guest_email,
+                          expression: "form.guest_email",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        id: "guest_email",
+                        name: "guest_email",
+                        value: "",
+                        placeholder: "Inserisci la tua e-mail",
+                      },
+                      domProps: { value: _vm.form.guest_email },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "guest_email", $event.target.value)
+                        },
+                      },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form-group d-flex align-items-center flex-column mb-3",
+                  },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-form-label fs-5",
+                        attrs: { for: "guest_city" },
+                      },
+                      [_vm._v("Città")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.guest_city,
+                          expression: "form.guest_city",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        id: "guest_city",
+                        name: "guest_city",
+                        value: "",
+                        placeholder: "Inserisci la tua città",
+                      },
+                      domProps: { value: _vm.form.guest_city },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "guest_city", $event.target.value)
+                        },
+                      },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form-group d-flex align-items-center flex-column mb-3",
+                  },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-form-label fs-5",
+                        attrs: { for: "guest_cap" },
+                      },
+                      [_vm._v("CAP")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.guest_cap,
+                          expression: "form.guest_cap",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        id: "guest_cap",
+                        name: "guest_cap",
+                        value: "",
+                        placeholder: "Inserisci il CAP",
+                      },
+                      domProps: { value: _vm.form.guest_cap },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "guest_cap", $event.target.value)
+                        },
+                      },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form-group d-flex align-items-center flex-column mb-3",
+                  },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-form-label fs-5",
+                        attrs: { for: "guest_adress" },
+                      },
+                      [_vm._v("Indirizzo")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.guest_adress,
+                          expression: "form.guest_adress",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        id: "guest_adress",
+                        name: "guest_adress",
+                        value: "",
+                        placeholder: "Inserisci la via",
+                      },
+                      domProps: { value: _vm.form.guest_adress },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form,
+                            "guest_adress",
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form-group d-flex align-items-center flex-column mb-3",
+                  },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-form-label fs-5",
+                        attrs: { for: "guest_phone" },
+                      },
+                      [_vm._v("Telefono")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.guest_phone,
+                          expression: "form.guest_phone",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        id: "guest_phone",
+                        name: "guest_phone",
+                        value: "",
+                        placeholder: "Inserisci il tuo numero di telefono",
+                      },
+                      domProps: { value: _vm.form.guest_phone },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "guest_phone", $event.target.value)
+                        },
+                      },
+                    }),
+                  ]
+                ),
+              ]
+            ),
+          ]),
           _vm._v(" "),
           _vm.cart
             ? _c(
@@ -45376,215 +45744,28 @@ var render = function () {
               )
             : _vm._e(),
           _vm._v(" "),
-          _vm._m(1),
+          _c("div", { staticClass: "button" }, [
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-info",
+                attrs: { href: "/checkout", type: "submit" },
+                on: {
+                  click: function ($event) {
+                    return _vm.onSubmit()
+                  },
+                },
+              },
+              [_vm._v("Vai al pagamento")]
+            ),
+          ]),
         ]),
       ]),
     ],
     1
   )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-md-6" }, [
-      _c("form", { attrs: { action: "" } }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "form-group d-flex align-items-center flex-column mb-3",
-          },
-          [
-            _c(
-              "label",
-              { staticClass: "col-form-label fs-5", attrs: { for: "name" } },
-              [_vm._v("Nome")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "guest_name",
-                name: "guest_name",
-                value: "",
-                placeholder: "Inserisci il tuo nome",
-              },
-            }),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "form-group d-flex align-items-center flex-column mb-3",
-          },
-          [
-            _c(
-              "label",
-              { staticClass: "col-form-label fs-5", attrs: { for: "name" } },
-              [_vm._v("Cognome")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "guest_surname",
-                name: "guest_name",
-                value: "",
-                placeholder: "Inserisci il tuo cognome",
-              },
-            }),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "form-group d-flex align-items-center flex-column mb-3",
-          },
-          [
-            _c(
-              "label",
-              { staticClass: "col-form-label fs-5", attrs: { for: "name" } },
-              [_vm._v("Email")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "guest_email",
-                name: "guest_email",
-                value: "",
-                placeholder: "Inserisci la tua e-mail",
-              },
-            }),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "form-group d-flex align-items-center flex-column mb-3",
-          },
-          [
-            _c(
-              "label",
-              { staticClass: "col-form-label fs-5", attrs: { for: "name" } },
-              [_vm._v("Città")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "guest_city",
-                name: "guest_city",
-                value: "",
-                placeholder: "Inserisci la tua città",
-              },
-            }),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "form-group d-flex align-items-center flex-column mb-3",
-          },
-          [
-            _c(
-              "label",
-              { staticClass: "col-form-label fs-5", attrs: { for: "name" } },
-              [_vm._v("CAP")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "guest_cap",
-                name: "guest_cap",
-                value: "",
-                placeholder: "Inserisci il CAP",
-              },
-            }),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "form-group d-flex align-items-center flex-column mb-3",
-          },
-          [
-            _c(
-              "label",
-              { staticClass: "col-form-label fs-5", attrs: { for: "name" } },
-              [_vm._v("Indirizzo")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "guest_address",
-                name: "guest_address",
-                value: "",
-                placeholder: "Inserisci la via",
-              },
-            }),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "form-group d-flex align-items-center flex-column mb-3",
-          },
-          [
-            _c(
-              "label",
-              { staticClass: "col-form-label fs-5", attrs: { for: "name" } },
-              [_vm._v("Telefono")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "guest_phone",
-                name: "guest_phone",
-                value: "",
-                placeholder: "Inserisci il tuo numero di telefono",
-              },
-            }),
-          ]
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "button" }, [
-      _c("a", { staticClass: "btn btn-info", attrs: { href: "/checkout" } }, [
-        _vm._v("Vai al Pagamento"),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

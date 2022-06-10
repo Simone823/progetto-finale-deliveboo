@@ -16,8 +16,9 @@ class OrderController extends Controller
     public function index()
     {
         $id_user = Auth::id();
-        // TODO fare un where per confrontare l'id dell'utente loggato con l'id degli utenti nella tabella
-        $orders = Order::all();
+        //Prendo gli ordini fatti per lo specifico utente loggato
+        $orders = Order::where('user_id', '=', $id_user)
+            ->get();
         return view('admin.orders-received.index',compact('orders'));
     }
 

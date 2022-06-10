@@ -6269,7 +6269,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.cart = this.cart.filter(function (item) {
         return item.id != plateId;
       });
-      localStorage.setItem("cart", JSON.stringify(this.cart)); // window.location.reload();
+      localStorage.setItem("cart", JSON.stringify(this.cart));
     },
     removeAllItemsFromCart: function removeAllItemsFromCart() {
       this.cart = [];
@@ -62765,7 +62765,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

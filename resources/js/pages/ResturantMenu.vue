@@ -414,7 +414,6 @@ export default {
         removeItemFromCart(plateId){
             this.cart = this.cart.filter(item => item.id  != plateId);
             localStorage.setItem("cart", JSON.stringify(this.cart));
-            // window.location.reload();
         },
         removeAllItemsFromCart(){
             this.cart = [];

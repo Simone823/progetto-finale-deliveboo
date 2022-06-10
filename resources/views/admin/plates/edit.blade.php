@@ -34,10 +34,11 @@
                     </figure>
                 </div>
 
-                {{-- image --}}
-                <div class="form-group d-flex align-items-center flex-column mb-3">
-                    <label for="image" class="col-form-label fs-5">Immagine</label>
-                    <div class="col-md-6">
+                {{-- image input --}}
+                <div class="form-group mb-4">
+                    <h6 class="fw-bold">Immagine del piatto</h6>
+                    
+                    <div class="col-lg-8">
                         <input accept="image/*" placeholder="Immagine Piatto" id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image', $plate->image) }}" autofocus>
 
                         @error('image')

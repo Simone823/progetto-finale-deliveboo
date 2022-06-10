@@ -42,8 +42,8 @@
 
                         <!-- Guest address -->
                         <div class="form-group d-flex align-items-center flex-column mb-3">
-                            <label class="col-form-label fs-5" for="guest_address">Indirizzo</label>
-                            <input v-model="form.guest_address" type="text" class="form-control" id="guest_address" name="guest_address" value="" placeholder="Inserisci la via">
+                            <label class="col-form-label fs-5" for="guest_adress">Indirizzo</label>
+                            <input v-model="form.guest_adress" type="text" class="form-control" id="guest_adress" name="guest_adress" value="" placeholder="Inserisci la via">
                         </div>
 
                         <!-- Guest phone -->
@@ -104,8 +104,8 @@ export default {
                 guest_email: "",
                 guest_city: "",
                 guest_cap: "",
-                guest_address: "",
-                guest_phone: ""
+                guest_adress: "",
+                guest_phone: "",
             },
         }
     },
@@ -130,6 +130,7 @@ export default {
                 cart: this.cart
             })
             .then( res => {
+                const data = res.data;
                 console.log(res);
             })
         },

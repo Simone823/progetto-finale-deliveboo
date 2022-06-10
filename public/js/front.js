@@ -6003,8 +6003,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
- // import useValidate from '@vee-validate';
-// import {required} from '@vuelidate/validators';
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -6050,10 +6048,10 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     onSubmit: function onSubmit() {
-      console.log(this.v$); // this.sendForm();
-      // console.log(this.form);
-      // localStorage.setItem('cart', []);
-      // localStorage.setItem('total', 0);
+      this.sendForm(); // console.log(this.form);
+
+      localStorage.setItem('cart', []);
+      localStorage.setItem('total', 0);
     }
   }
 });
@@ -50417,7 +50415,7 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_name",
-                                    rules: "required|min:3|max:150",
+                                    rules: "required|min:3|max:150|alpha",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -50479,7 +50477,7 @@ var render = function () {
                                                   "div",
                                                   {
                                                     staticClass:
-                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
                                                   },
                                                   [
                                                     _vm._v(
@@ -50511,7 +50509,7 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_surname",
-                                    rules: "required|min:3|max:150",
+                                    rules: "required|min:3|max:150|alpha",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -50574,7 +50572,7 @@ var render = function () {
                                                   "div",
                                                   {
                                                     staticClass:
-                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
                                                   },
                                                   [
                                                     _vm._v(
@@ -50669,7 +50667,7 @@ var render = function () {
                                                   "div",
                                                   {
                                                     staticClass:
-                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
                                                   },
                                                   [
                                                     _vm._v(
@@ -50701,7 +50699,7 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_city",
-                                    rules: "required|min:3|max:150",
+                                    rules: "required|min:3|max:150|alpha",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -50763,7 +50761,7 @@ var render = function () {
                                                   "div",
                                                   {
                                                     staticClass:
-                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
                                                   },
                                                   [
                                                     _vm._v(
@@ -50856,7 +50854,7 @@ var render = function () {
                                                   "div",
                                                   {
                                                     staticClass:
-                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
                                                   },
                                                   [
                                                     _vm._v(
@@ -50950,7 +50948,7 @@ var render = function () {
                                                   "div",
                                                   {
                                                     staticClass:
-                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
                                                   },
                                                   [
                                                     _vm._v(
@@ -51045,7 +51043,7 @@ var render = function () {
                                                   "div",
                                                   {
                                                     staticClass:
-                                                      "font-bold py-1 px-2 bg-danger text-white rounded",
+                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
                                                   },
                                                   [
                                                     _vm._v(

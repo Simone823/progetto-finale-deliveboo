@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="button">
-                    <button @click="onSubmit()" type="submit" class="btn btn-info">Vai al pagamento</button>
+                    <a href="/checkout" @click="onSubmit()" type="submit" class="btn btn-info">Vai al pagamento</a>
                 </div>
             </div>
         </div>

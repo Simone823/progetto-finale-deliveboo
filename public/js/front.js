@@ -11579,7 +11579,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".error-page[data-v-82158542] {\n  min-height: 100vh;\n}\n.error-title[data-v-82158542] {\n  font-size: 120px;\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, ".error-wrapper[data-v-82158542] {\n  height: 100vh;\n}\n.error-title[data-v-82158542] {\n  font-size: 80px;\n  color: #00CCBC;\n}", ""]);
 
 // exports
 
@@ -44832,7 +44832,12 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("MyHeader"), _vm._v(" "), _vm._m(0)], 1)
+  return _c(
+    "div",
+    { staticClass: "error-wrapper d-flex flex-column" },
+    [_c("MyHeader"), _vm._v(" "), _vm._m(0)],
+    1
+  )
 }
 var staticRenderFns = [
   function () {
@@ -44843,13 +44848,13 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "error-page d-flex justify-content-center align-items-center",
+          "container flex-grow-1 d-flex justify-content-center align-items-center",
       },
       [
-        _c("div", { staticClass: "container text-center" }, [
-          _c("h1", { staticClass: "error-title" }, [_vm._v("404")]),
+        _c("div", { staticClass: "text-center" }, [
+          _c("h1", { staticClass: "error-title fw-bolder" }, [_vm._v("404")]),
           _vm._v(" "),
-          _c("p", [_vm._v("Page not found!")]),
+          _c("p", { staticClass: "fs-4" }, [_vm._v("Page not found!")]),
         ]),
       ]
     )

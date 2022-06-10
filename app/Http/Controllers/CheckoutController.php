@@ -37,6 +37,16 @@ class CheckoutController extends Controller
 
     public function afterPayment()
     {
+
+        // Order
+        $order = Order::orderBy('created_at', 'DESC')->first();
+        
+        // Order status
+        $order->status = 1;
+
+        // Order save
+        $order->save();
+
         echo 'Payment Has been Received';
     }
 }

@@ -20,12 +20,7 @@
 
                     {{-- Plate image --}}
                     <figure class="plate_image">
-                        @if($plate->image == null)
-                            <img src="{{asset('img/placeholder_plate.png')}}" alt="default">
-
-                            @else
-                                <img src="{{asset('storage/'.$plate->image)}}" alt="img">
-                        @endif
+                        <img src="{{$plate->image ? asset('storage/'.$plate->image) : asset('img/placeholder_restaurants.png')}}" alt="">
                     </figure>
 
                     {{-- Description card body --}}
@@ -46,6 +41,11 @@
                                 </li>                                
                             @endforeach
                            </ul>
+
+                           <div class="plate_price">
+                            <h4>{{ $plate->price }}€</h4>
+
+                           </div>
 
                         </div>
 

@@ -138,6 +138,8 @@ export default {
         onSubmit() {
             this.sendForm();
             console.log(this.form);
+            localStorage.setItem('cart', []);
+            localStorage.setItem('total', 0);
         }
     },
 }

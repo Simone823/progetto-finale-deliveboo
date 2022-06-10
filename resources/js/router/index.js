@@ -8,6 +8,8 @@ import Home from '../pages/Home.vue';
 import ResturantType from '../pages/ResturantType.vue';
 import CityResturants from '../pages/CityResturants.vue';
 import ResturantMenu from '../pages/ResturantMenu.vue';
+import NotFound from '../pages/404.vue';
+
 //faccio un array che conterrà le rotte
 const routes = [
     {
@@ -29,6 +31,10 @@ const routes = [
         path: '/resturant-menu/:id',
         name: 'resturant-menu',
         component: ResturantMenu,
+    },
+    {
+        path: '/*',
+        component: NotFound,
     }
 ];
 

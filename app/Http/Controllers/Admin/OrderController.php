@@ -18,6 +18,7 @@ class OrderController extends Controller
         $id_user = Auth::id();
         //Prendo gli ordini fatti per lo specifico utente loggato
         $orders = Order::where('user_id', '=', $id_user)
+            ->orderBy('created_at','desc')
             ->get();
         return view('admin.orders-received.index',compact('orders'));
     }

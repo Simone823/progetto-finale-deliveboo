@@ -17,6 +17,7 @@ class CreateOrderPlateTable extends Migration
             //creazione colonne
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('plate_id');
+            $table->integer('quantity');
 
             //assegnazione FK
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');

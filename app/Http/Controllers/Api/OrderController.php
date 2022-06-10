@@ -38,7 +38,7 @@ class OrderController extends Controller
     {
 
         // $request->validate([
-        //     'guest_name' => 'required|min'
+        //     'guest_name' => 'required'
         // ]);
 
         // Data request all
@@ -71,7 +71,10 @@ class OrderController extends Controller
                 $order->plates()->attach($plate['id']);
             }
 
-            return [$el, $total];
+            return response()->json([
+                'order' => $order,
+                'success' => true
+            ]);
         };
        
     }

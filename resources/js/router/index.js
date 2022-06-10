@@ -35,6 +35,8 @@ const routes = [
     {
         path: '/*',
         component: NotFound,
+    },
+    {
         path: '/order/create',
         name: 'order-create',
         component: OrderCreate,

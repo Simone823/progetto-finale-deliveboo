@@ -12,6 +12,8 @@
                 <h2 class="fw-bold">Modifica {{$plate->name}}</h2>
             </div>
 
+            <div></div>
+
             <div class="card col-12 col-md-8 fw-bolder bkg-white_1 shadow-lg">
                 <form action="{{ route('admin.plates.update', $plate->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf

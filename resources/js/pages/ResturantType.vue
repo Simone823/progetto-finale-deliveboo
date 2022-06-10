@@ -45,6 +45,7 @@ export default {
     methods: {
         fetchResturantsType() {
             //faccio una chiamata API passando come parametro l'id della tipologia cliccata
+            // TODO controllo sull'id nel url
             axios.get(`/api/resturant-type/${ this.$route.params.id }`)
             .then( res => {
                 //salvo i dati della chiamata nell'array

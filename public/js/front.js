@@ -6050,7 +6050,7 @@ __webpack_require__.r(__webpack_exports__);
     onSubmit: function onSubmit() {
       this.sendForm(); // console.log(this.form);
 
-      localStorage.setItem('cart', []);
+      localStorage.setItem('cart', '[]');
       localStorage.setItem('total', 0);
     }
   }
@@ -50444,9 +50444,12 @@ var render = function () {
                                                 },
                                               ],
                                               staticClass: "form-control",
-                                              class: errors.length
-                                                ? "border-2 border-danger"
-                                                : "border-2 border-success",
+                                              class:
+                                                _vm.form.guest_name.length == 0
+                                                  ? "is-invalid"
+                                                  :  true && errors.length
+                                                  ? "is-invalid"
+                                                  : "is-valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_name",
@@ -50540,12 +50543,16 @@ var render = function () {
                                               ],
                                               staticClass: "form-control",
                                               class: errors.length
-                                                ? "border-2 border-danger"
-                                                : "border-2 border-success",
+                                                ? "is-invalid"
+                                                :  true &&
+                                                  _vm.form.guest_surname
+                                                    .length == 0
+                                                ? "is-invalid"
+                                                : "is-valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_surname",
-                                                name: "guest_name",
+                                                name: "guest_surname",
                                                 value: "",
                                                 placeholder:
                                                   "Inserisci il tuo cognome",
@@ -50634,9 +50641,12 @@ var render = function () {
                                                 },
                                               ],
                                               staticClass: "form-control",
-                                              class: errors.length
-                                                ? "border-2 border-danger"
-                                                : "border-2 border-success",
+                                              class:
+                                                _vm.form.guest_email.length == 0
+                                                  ? "is-invalid"
+                                                  :  true && errors.length
+                                                  ? "is-invalid"
+                                                  : "is-valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_email",
@@ -50729,8 +50739,12 @@ var render = function () {
                                               ],
                                               staticClass: "form-control",
                                               class: errors.length
-                                                ? "border-2 border-danger"
-                                                : "border-2 border-success",
+                                                ? "is-invalid"
+                                                :  true &&
+                                                  _vm.form.guest_city.length ==
+                                                    0
+                                                ? "is-invalid"
+                                                : "is-valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_city",
@@ -50823,8 +50837,11 @@ var render = function () {
                                               ],
                                               staticClass: "form-control",
                                               class: errors.length
-                                                ? "border-2 border-danger"
-                                                : "border-2 border-success",
+                                                ? "is-invalid"
+                                                :  true &&
+                                                  _vm.form.guest_cap.length == 0
+                                                ? "is-invalid"
+                                                : "is-valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_cap",
@@ -50917,8 +50934,12 @@ var render = function () {
                                               ],
                                               staticClass: "form-control",
                                               class: errors.length
-                                                ? "border-2 border-danger"
-                                                : "border-2 border-success",
+                                                ? "is-invalid"
+                                                :  true &&
+                                                  _vm.form.guest_adress
+                                                    .length == 0
+                                                ? "is-invalid"
+                                                : "is-valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_adress",
@@ -51011,8 +51032,12 @@ var render = function () {
                                               ],
                                               staticClass: "form-control",
                                               class: errors.length
-                                                ? "border-2 border-danger"
-                                                : "border-2 border-success",
+                                                ? "is-invalid"
+                                                :  true &&
+                                                  _vm.form.guest_phone.length ==
+                                                    0
+                                                ? "is-invalid"
+                                                : "is-valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_phone",

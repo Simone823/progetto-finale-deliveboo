@@ -16,7 +16,7 @@
                             <div class="form-group">
                                 <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_name" rules="required|min:3|max:150|alpha" v-slot="{ errors }">
                                     <label class="col-form-label fs-5" for="guest_name">Nome</label>
-                                    <input v-model="form.guest_name" type="text" class="form-control" :class="errors.length ? 'border-2 border-danger' : 'border-2 border-success' " id="guest_name" name="guest_name" value="" placeholder="Inserisci il tuo nome">
+                                    <input v-model="form.guest_name" type="text" class="form-control" :class="form.guest_name.length == 0 ? 'is-invalid' : 'is-valid' && errors.length ? 'is-invalid' : 'is-valid'" id="guest_name" name="guest_name" value="" placeholder="Inserisci il tuo nome">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
                                         {{errors[0]}}
                                     </div>
@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_surname" rules="required|min:3|max:150|alpha" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_surname">Cognome</label>
-                                    <input v-model="form.guest_surname" type="text" class="form-control" :class="errors.length ? 'border-2 border-danger' : 'border-2 border-success' " id="guest_surname" name="guest_name" value="" placeholder="Inserisci il tuo cognome">
+                                    <input v-model="form.guest_surname" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_surname.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_surname" name="guest_surname" value="" placeholder="Inserisci il tuo cognome">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
                                         {{errors[0]}}
                                     </div>
@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_email" rules="required|email|max:255" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_email">Email</label>
-                                    <input v-model="form.guest_email" type="text" class="form-control" :class="errors.length ? 'border-2 border-danger' : 'border-2 border-success' " id="guest_email" name="guest_email" value="" placeholder="Inserisci la tua e-mail">
+                                    <input v-model="form.guest_email" type="text" class="form-control" :class="form.guest_email.length == 0 ? 'is-invalid' : 'is-valid' && errors.length ? 'is-invalid' : 'is-valid'" id="guest_email" name="guest_email" value="" placeholder="Inserisci la tua e-mail">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
                                         {{errors[0]}}
                                     </div>
@@ -49,7 +49,7 @@
                             <div class="form-group">
                                 <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_city" rules="required|min:3|max:150|alpha" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_city">Città</label>
-                                    <input v-model="form.guest_city" type="text" class="form-control" :class="errors.length ? 'border-2 border-danger' : 'border-2 border-success' " id="guest_city" name="guest_city" value="" placeholder="Inserisci la tua città">
+                                    <input v-model="form.guest_city" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_city.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_city" name="guest_city" value="" placeholder="Inserisci la tua città">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
                                         {{errors[0]}}
                                     </div>
@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_cap" rules="required|min:5|max:5|numeric" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_cap">CAP</label>
-                                    <input v-model="form.guest_cap" type="text" class="form-control" :class="errors.length ? 'border-2 border-danger' : 'border-2 border-success' "  id="guest_cap" name="guest_cap" value="" placeholder="Inserisci il CAP">
+                                    <input v-model="form.guest_cap" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_cap.length == 0 ? 'is-invalid' : 'is-valid' "  id="guest_cap" name="guest_cap" value="" placeholder="Inserisci il CAP">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
                                         {{errors[0]}}
                                     </div>
@@ -71,7 +71,7 @@
                             <div class="form-group">
                                 <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_adress" rules="required|min:3|max:255" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_adress">Indirizzo</label>
-                                    <input v-model="form.guest_adress" type="text" class="form-control" :class="errors.length ? 'border-2 border-danger' : 'border-2 border-success' " id="guest_adress" name="guest_adress" value="" placeholder="Inserisci la via">
+                                    <input v-model="form.guest_adress" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_adress.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_adress" name="guest_adress" value="" placeholder="Inserisci la via">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
                                         {{errors[0]}}
                                     </div>
@@ -82,7 +82,7 @@
                             <div class="form-group">
                                 <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_phone" rules="required|numeric|max:15" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_phone">Telefono</label>
-                                    <input v-model="form.guest_phone" type="text" class="form-control" :class="errors.length ? 'border-2 border-danger' : 'border-2 border-success' " id="guest_phone" name="guest_phone" value="" placeholder="Inserisci il tuo numero di telefono">
+                                    <input v-model="form.guest_phone" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_phone.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_phone" name="guest_phone" value="" placeholder="Inserisci il tuo numero di telefono">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
                                         {{errors[0]}}
                                     </div>
@@ -176,7 +176,7 @@ export default {
         onSubmit() {
             this.sendForm();
             // console.log(this.form);
-            localStorage.setItem('cart', []);
+            localStorage.setItem('cart', '[]');
             localStorage.setItem('total', 0);
         }
     },

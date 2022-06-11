@@ -106,13 +106,13 @@
                         <!-- cart -->
                         <li v-if="authUser == null" class="nav-item">
                             <a class="nav-link dropdown" href="">
-                                <button :class="[tot == 0 ? '' : 'px-4 d-flex align-items-center gap-3 dropdown-label','btn-standard btn-tr-white']">
+                                <button :class="[ tot < 1 ? '' : 'px-4 d-flex align-items-center gap-3 dropdown-label','btn-standard btn-tr-white']">
                                     <i class="fa-solid fa-cart-shopping"></i>  
-                                    <span :class="tot == 0 ? 'd-none' : 'd-block fs-6' ">Tot. {{ tot }}&euro;</span>    
+                                    <span :class="tot < 1 ? 'd-none' : 'd-block fs-6' ">Tot. {{ tot }}&euro;</span>    
                                 </button>
                                 <ul v-if="tot > 0" class="dropdown-items">
                                     <li v-for="el in cart" :key="el.id"
-                                    class="d-flex flex-row justify-content-between align-items-center">
+                                    class="d-flex flex-row justify-content-between align-items-center gap-3">
                                         <span>X{{ el.quantity }}</span>
                                         <span>{{ el.name }}</span>
                                         <span>{{ el.price * el.quantity }}&euro;</span>
@@ -313,11 +313,21 @@ ul{
 }
 
 .delete-el{
-    width: 20px;
-    height: 20px;
-    padding: 1px;
-    font-size: 10px;
-    border-radius: 35%;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    i{
+        color: rgb(207, 0, 0);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        &:hover{
+            color: rgb(234, 35, 35);
+        }
+    }
 }
 
 .empty-cart{

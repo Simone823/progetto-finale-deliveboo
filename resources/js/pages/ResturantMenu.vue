@@ -750,4 +750,9 @@ export default {
             width: 33.33333%;
         }
     }
+    @media screen and (max-width: 768px){
+        .cart-component{
+            box-shadow: 0px -10px 20px 2px #00000052;
+        }
+    }
 </style>

@@ -238,8 +238,11 @@
                     <!-- CARRELLO  -->
                     <div class="cart-component col-12 col-md-6 col-lg-4 col-xxxl-2 align-self-start p-4">       
                         <!-- se l'array carrello è vuoto... -->
-                        <div v-if="cart.length == 0" class="text-center">
-                            Il carrello è vuoto
+                        <div v-if="cart.length == 0" class="d-flex flex-column justify-content-center align-items-center">
+                            <figure class="empty-cart">
+                                <img :src="require('/public/img/shopping-cart.gif')" alt="">
+                            </figure>
+                            <span class="ms-2 p-3 fs-3">Il carrello è vuoto !</span>
                         </div>
                         <!-- se l'array carrello contiene elementi li mostra  -->
                         <div v-else>
@@ -664,6 +667,14 @@ export default {
         border: 2px solid #cacaca63;
         border-radius: 5px;
         min-height: 60px;
+
+        .empty-cart{
+            width: 200px;
+            img{
+                object-fit: cover;
+                object-position: center;
+            }
+        }
     }
 
     .quantity-buttons{

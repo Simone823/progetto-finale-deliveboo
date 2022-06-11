@@ -245,13 +245,15 @@
                         <div v-else>
                             <h3 class="fs-2">Il tuo ordine</h3>
                             <div v-for="item in cart" :key="item.id"
-                                class="d-flex justify-content-start align-items-center py-4 gap-3">
+                                class="d-flex flex-wrap justify-content-end align-items-center py-4 gap-3">
                                 <!-- nome prodotto aggiunto e prezzo singolo prodotto-->
-                                <span class="item-name">{{ item.name }}</span>
-                                <span class="flex-grow-1 fs-5">{{ item.price * item.quantity }}&euro;</span>
+                                <div class="flex-grow-1">
+                                    <span class="item-name fs-4 me-3">{{ item.name }}</span>
+                                    <span class="fs-6 fw-bold">{{ item.price * item.quantity }}&euro;</span>
+                                </div>
                                 <!-- gestione quantità e rimozione prodotto -->
-                                <div class="d-flex flex-wrap-reverse justify-content-center gap-3">
-                                    <div class="control-qty d-flex justify-content-center align-items-center gap-3">
+                                <div class="flex-grow-1 d-flex justify-content-end gap-3">
+                                    <div class="control-qty d-flex align-items-center gap-3">
                                         <button @click="item.quantity > 1 ? item.quantity-- : removeItemFromCart(item.id)">
                                             <i class="fa-solid fa-minus"></i>
                                         </button>
@@ -263,11 +265,11 @@
                                     <button class="btn btn-danger text-white" @click="removeItemFromCart(item.id)">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
-                                    </div>
+                                </div>
                             </div>
                             <!-- totale carrello -->
                             <div class="d-flex justify-content-start align-items-center py-4 gap-3 tot-wrapper">
-                                <span class="flex-grow-1 fs-5 tot-cart">Tot.</span>
+                                <span class="flex-grow-1 fs-4 tot-cart">Tot.</span>
                                 <span class="fs-2">{{ getTotal() }}&euro;</span>
                                 <button class="btn btn-danger text-white" @click="removeAllItemsFromCart()">
                                     Clear Cart
@@ -659,7 +661,7 @@ export default {
 
     .cart-component{
         background-color: white;
-        border: 1px solid #cacaca63;
+        border: 2px solid #cacaca63;
         border-radius: 5px;
         min-height: 60px;
     }
@@ -693,7 +695,7 @@ export default {
 
     .item-name{
         font-size: 18px;
-        color: rgba(0, 0, 0, 0.6);
+        color: black;
         font-weight: 500;
     }
 

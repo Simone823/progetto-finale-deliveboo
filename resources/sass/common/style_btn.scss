@@ -319,7 +319,7 @@
   position: relative;
   height: 2.2rem;
 
-  &__input {
+  &__input, &__invalid, &__valid {
     position: absolute;
     top: 0;
     left: 0;
@@ -343,6 +343,16 @@
         border-color: $violet;
         box-shadow: 0 0 0 0.25rem rgb(62 35 93 / 25%);
     }
+}
+
+&__invalid:focus {
+    border-color: $violet;
+    box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%);
+}
+
+&__valid:focus {
+    border-color: $violet;
+    box-shadow: 0 0 0 0.25rem rgb(0 255 0 / 25%);
 }
 
   &__label {

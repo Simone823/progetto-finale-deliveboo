@@ -90,7 +90,7 @@
                             </div>
 
                             <!-- Button submit -->
-                            <div class="button d-flex align-items-center justify-content-between">
+                            <div class="button d-flex align-items-center justify-content-between flex-wrap">
                                 <button :disabled="cart.length ? false : true" type="submit" class="btn-green_1 btn pay-button">Vai al pagamento</button>
                                 <router-link to="/city-resturants" class="text-reset text-decoration-none" v-if="cart.length == 0">
                                     <i class="fa-solid fa-arrow-left-long"></i>
@@ -155,7 +155,7 @@ export default {
     },
 
     methods: {
-        
+
         //TOTALE
         getTotal(){
             let sumItem;

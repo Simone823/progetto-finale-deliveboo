@@ -51226,7 +51226,7 @@ var render = function () {
                               "div",
                               {
                                 staticClass:
-                                  "button d-flex align-items-center justify-content-between",
+                                  "button d-flex align-items-center justify-content-between flex-wrap",
                               },
                               [
                                 _c(

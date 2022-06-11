@@ -11889,7 +11889,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card[data-v-563fa334] {\n  height: 500px;\n}\n.card .icon_logo[data-v-563fa334] {\n  width: 100px;\n  height: 100px;\n}\n.card .icon_logo img[data-v-563fa334] {\n  width: 100%;\n  height: 100%;\n  display: block;\n}", ""]);
+exports.push([module.i, ".container[data-v-563fa334] {\n  height: 80vh;\n}\n.card[data-v-563fa334] {\n  height: 500px;\n  border: none;\n}\n.card .icon_logo[data-v-563fa334] {\n  width: 100px;\n  height: 100px;\n}\n.card .icon_logo img[data-v-563fa334] {\n  width: 100%;\n  height: 100%;\n  display: block;\n}", ""]);
 
 // exports
 
@@ -51132,7 +51132,7 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_phone",
-                                    rules: "required|numeric|max:15",
+                                    rules: "required|numeric|min:6|max:15",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -51392,31 +51392,38 @@ var render = function () {
     [
       _c("MyHeader"),
       _vm._v(" "),
-      _c("div", { staticClass: "container py-5 px-2" }, [
-        _c("div", { staticClass: "row justify-content-center m-0" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-12 col-md-8 card d-flex justify-content-center align-items-center flex-column gap-3",
-            },
-            [
-              _c("figure", { staticClass: "icon_logo" }, [
-                _c("img", {
-                  attrs: {
-                    src: __webpack_require__(/*! /public/img/check_icon.png */ "./public/img/check_icon.png"),
-                    alt: "",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _vm._m(1),
-            ]
-          ),
-        ]),
-      ]),
+      _c(
+        "div",
+        {
+          staticClass:
+            "container py-5 px-2 d-flex align-items-center justify-content-center",
+        },
+        [
+          _c("div", { staticClass: "row justify-content-center m-0 w-100" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-12 col-md-8 card d-flex justify-content-center align-items-center flex-column gap-3 shadow-lg text-center",
+              },
+              [
+                _c("figure", { staticClass: "icon_logo" }, [
+                  _c("img", {
+                    attrs: {
+                      src: __webpack_require__(/*! /public/img/check_icon.svg */ "./public/img/check_icon.svg"),
+                      alt: "",
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _vm._m(1),
+              ]
+            ),
+          ]),
+        ]
+      ),
     ],
     1
   )
@@ -51426,7 +51433,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "description" }, [
+    return _c("div", { staticClass: "description text-violet" }, [
       _c("h2", { staticClass: "fw-bold" }, [
         _vm._v("Pagamento effettuato con successo!"),
       ]),
@@ -51437,11 +51444,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "button" }, [
-      _c("a", { staticClass: "btn rounded btn-info", attrs: { href: "/" } }, [
-        _vm._v(
-          "\n                        Torna alla HomePage\n                    "
-        ),
-      ]),
+      _c(
+        "a",
+        { staticClass: "btn-green_1 btn pay-button", attrs: { href: "/" } },
+        [
+          _vm._v(
+            "\n                        Torna alla HomePage\n                    "
+          ),
+        ]
+      ),
     ])
   },
 ]
@@ -67995,14 +68006,14 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./public/img/check_icon.png":
+/***/ "./public/img/check_icon.svg":
 /*!***********************************!*\
-  !*** ./public/img/check_icon.png ***!
+  !*** ./public/img/check_icon.svg ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/check_icon.png?aaa5322eec87e5307f7a722b81552d6c";
+module.exports = "/images/check_icon.svg?b4f4d64c895f007221df6f635d88c42c";
 
 /***/ }),
 

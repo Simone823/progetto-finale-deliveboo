@@ -277,8 +277,8 @@
                 <!-- se l'id degli elementi nel carrello non corrispondono all'id del ristorante visualizzato  -->
                 <div v-if="cart.length > 0 && resturant.id !== cart[0].user_id" 
                     :class=" [ activeElement != undefined ? 'active' : '','add-cart-error p-0'] ">
-                    <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">
-                        X
+                    <button class="close-info p-0" @click="closePlateInfo()">
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                     <figure class="info-plate-img">
                         <img :src="require('/public/img/placeholder_restaurants.png')" alt="">

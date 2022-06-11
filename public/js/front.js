@@ -52394,15 +52394,14 @@ var render = function () {
                   _c(
                     "button",
                     {
-                      staticClass:
-                        "close-info d-flex justify-content-center align-items-center",
+                      staticClass: "close-info p-0",
                       on: {
                         click: function ($event) {
                           return _vm.closePlateInfo()
                         },
                       },
                     },
-                    [_vm._v("\n                    X\n                ")]
+                    [_c("i", { staticClass: "fa-solid fa-xmark" })]
                   ),
                   _vm._v(" "),
                   _c("figure", { staticClass: "info-plate-img" }, [
@@ -69726,7 +69725,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

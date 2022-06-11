@@ -110,7 +110,7 @@
                                     <i class="fa-solid fa-cart-shopping"></i>  
                                     <span :class="tot == 0 ? 'd-none' : 'd-block fs-6' ">Tot. {{ tot }}&euro;</span>    
                                 </button>
-                                <ul class="dropdown-items">
+                                <ul v-if="tot > 0" class="dropdown-items">
                                     <li v-for="el in cart" :key="el.id"
                                     class="d-flex flex-row justify-content-between align-items-center">
                                         <span>X{{ el.quantity }}</span>
@@ -120,7 +120,17 @@
                                             <i class="fa-solid fa-trash-can"></i>
                                         </button>
                                     </li>
-                                </ul>                    
+                                </ul>   
+                                <ul v-else class="dropdown-items empty">
+                                    <li class="d-flex justify-content-center">
+                                        <figure class="empty-cart">
+                                            <img :src="require('/public/img/shopping-cart.gif')" alt="">
+                                        </figure>
+                                    </li>
+                                    <li class="text-center">
+                                        <span class="empty-cart-text">Il carrello è vuoto</span>
+                                    </li>
+                                </ul>                  
                             </a>
                         </li>
                     </ul>
@@ -281,6 +291,10 @@ ul{
     transform: scaleY(0);
     transition: transform 300ms;
 
+    &.empty{
+        width: 150px;
+    }
+
     li{
         border-top: 1px solid #3E235D;
         padding: 5px 0;
@@ -296,7 +310,7 @@ ul{
     visibility: visible;
     height: unset;
     transform: scaleY(1) translateY(-9px);
-}
+
 
 .delete-el{
     width: 20px;
@@ -304,5 +318,16 @@ ul{
     padding: 1px;
     font-size: 10px;
     border-radius: 35%;
+}
+
+.empty-cart{
+    width: 70px;
+    img{
+        object-fit: cover;
+        object-position: center;
+    }
+}
+.empty-cart-text{
+    font-size: 12px;
 }
 </style>

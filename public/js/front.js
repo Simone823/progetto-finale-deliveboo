@@ -5301,6 +5301,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -11780,17 +11790,9 @@ defineJQueryPlugin(Toast);
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MyHeader.vue?vue&type=style&index=0&id=a4c8a778&lang=scss&scoped=true& ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "ul[data-v-a4c8a778] {\n  list-style: none;\n  -webkit-margin-before: 0;\n          margin-block-start: 0;\n  -webkit-margin-after: 0;\n          margin-block-end: 0;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n}\n.dropdown[data-v-a4c8a778] {\n  position: relative;\n}\n.dropdown-label[data-v-a4c8a778] {\n  cursor: pointer;\n  width: 100%;\n  display: block;\n  box-sizing: border-box;\n  transition: all 300ms;\n}\n.dropdown-items[data-v-a4c8a778] {\n  background-color: white;\n  border-radius: 5px;\n  border: 1px solid #ddd;\n  font-size: 13px;\n  padding: 10px;\n  opacity: 0;\n  visibility: hidden;\n  min-width: 100%;\n  height: 0;\n  position: absolute;\n  top: 60px;\n  transform-origin: top;\n  transform: scaleY(0);\n  transition: transform 300ms;\n}\n.dropdown-items li[data-v-a4c8a778] {\n  border-top: 1px solid #3E235D;\n  padding: 5px 0;\n}\n.dropdown-items li[data-v-a4c8a778]:first-child {\n  border-top: none;\n}\n.dropdown:hover > .dropdown-items[data-v-a4c8a778] {\n  opacity: 1;\n  visibility: visible;\n  height: unset;\n  transform: scaleY(1) translateY(-9px);\n}\n.delete-el[data-v-a4c8a778] {\n  width: 20px;\n  height: 20px;\n  padding: 1px;\n  font-size: 10px;\n  border-radius: 35%;\n}", ""]);
-
-// exports
-
+throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"}\".\n    ╷\n332 │ }\r\n    │  ^\n    ╵\n  C:\\Users\\alex-\\ProgettiBooleanCLI\\progetto-finale-deliveboo\\resources\\js\\components\\MyHeader.vue 332:2  root stylesheet");
 
 /***/ }),
 
@@ -49214,52 +49216,85 @@ var render = function () {
                             ]
                           ),
                           _vm._v(" "),
-                          _c(
-                            "ul",
-                            { staticClass: "dropdown-items" },
-                            _vm._l(_vm.cart, function (el) {
-                              return _c(
-                                "li",
-                                {
-                                  key: el.id,
-                                  staticClass:
-                                    "d-flex flex-row justify-content-between align-items-center",
-                                },
-                                [
-                                  _c("span", [
-                                    _vm._v("X" + _vm._s(el.quantity)),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("span", [_vm._v(_vm._s(el.name))]),
-                                  _vm._v(" "),
-                                  _c("span", [
-                                    _vm._v(
-                                      _vm._s(el.price * el.quantity) + "€"
-                                    ),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "button",
+                          _vm.tot > 0
+                            ? _c(
+                                "ul",
+                                { staticClass: "dropdown-items" },
+                                _vm._l(_vm.cart, function (el) {
+                                  return _c(
+                                    "li",
                                     {
+                                      key: el.id,
                                       staticClass:
-                                        "btn btn-danger text-white delete-el",
-                                      on: {
-                                        click: function ($event) {
-                                          return _vm.removeItemFromCart(el.id)
-                                        },
-                                      },
+                                        "d-flex flex-row justify-content-between align-items-center",
                                     },
                                     [
-                                      _c("i", {
-                                        staticClass: "fa-solid fa-trash-can",
-                                      }),
+                                      _c("span", [
+                                        _vm._v("X" + _vm._s(el.quantity)),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("span", [_vm._v(_vm._s(el.name))]),
+                                      _vm._v(" "),
+                                      _c("span", [
+                                        _vm._v(
+                                          _vm._s(el.price * el.quantity) + "€"
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass:
+                                            "btn btn-danger text-white delete-el",
+                                          on: {
+                                            click: function ($event) {
+                                              return _vm.removeItemFromCart(
+                                                el.id
+                                              )
+                                            },
+                                          },
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass:
+                                              "fa-solid fa-trash-can",
+                                          }),
+                                        ]
+                                      ),
+                                    ]
+                                  )
+                                }),
+                                0
+                              )
+                            : _c(
+                                "ul",
+                                { staticClass: "dropdown-items empty" },
+                                [
+                                  _c(
+                                    "li",
+                                    {
+                                      staticClass:
+                                        "d-flex justify-content-center",
+                                    },
+                                    [
+                                      _c(
+                                        "figure",
+                                        { staticClass: "empty-cart" },
+                                        [
+                                          _c("img", {
+                                            attrs: {
+                                              src: __webpack_require__(/*! /public/img/shopping-cart.gif */ "./public/img/shopping-cart.gif"),
+                                              alt: "",
+                                            },
+                                          }),
+                                        ]
+                                      ),
                                     ]
                                   ),
+                                  _vm._v(" "),
+                                  _vm._m(7),
                                 ]
-                              )
-                            }),
-                            0
-                          ),
+                              ),
                         ]
                       ),
                     ])
@@ -49314,7 +49349,7 @@ var render = function () {
                             attrs: { "aria-labelledby": "navbarDropdown" },
                           },
                           [
-                            _vm._m(7),
+                            _vm._m(8),
                             _vm._v(" "),
                             _c("li", [
                               _c(
@@ -49353,7 +49388,7 @@ var render = function () {
                       {
                         staticClass: "nav-item text-center dropdown bg-purple",
                       },
-                      [_vm._m(8), _vm._v(" "), _vm._m(9)]
+                      [_vm._m(9), _vm._v(" "), _vm._m(10)]
                     )
                   : _vm._e(),
                 _vm._v(" "),
@@ -49545,6 +49580,16 @@ var staticRenderFns = [
         _vm._v(
           "\n                                Diventa nostro partner     \n                            "
         ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "text-center" }, [
+      _c("span", { staticClass: "empty-cart-text" }, [
+        _vm._v("Il carrello è vuoto"),
       ]),
     ])
   },

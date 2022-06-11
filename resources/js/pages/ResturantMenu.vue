@@ -243,28 +243,40 @@
                         </div>
                         <!-- se l'array carrello contiene elementi li mostra  -->
                         <div v-else>
-                            <h3>Il tuo ordine</h3>
+                            <h3 class="fs-2">Il tuo ordine</h3>
                             <div v-for="item in cart" :key="item.id"
-                                class="d-flex justify-content-start align-items-center py-4 gap-3">
-                                <!-- <figure>
-                                    <img :src="item.image" alt="">
-                                </figure> -->
-                                <span>x{{ item.quantity }}</span><span class="item-name">{{ item.name }}</span>
-                                <span class="flex-grow-1 fs-5">{{ item.price * item.quantity }}&euro;</span>
-                                <button class="btn btn-danger text-white" @click="removeItemFromCart(item.id)">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
+                                class="d-flex flex-wrap justify-content-end align-items-center py-4 gap-3">
+                                <!-- nome prodotto aggiunto e prezzo singolo prodotto-->
+                                <div class="flex-grow-1">
+                                    <span class="item-name fs-4 me-3">{{ item.name }}</span>
+                                    <span class="fs-6 fw-bold">{{ item.price * item.quantity }}&euro;</span>
+                                </div>
+                                <!-- gestione quantità e rimozione prodotto -->
+                                <div class="flex-grow-1 d-flex justify-content-end gap-3">
+                                    <div class="control-qty d-flex align-items-center gap-3">
+                                        <button @click="item.quantity > 1 ? item.quantity-- : removeItemFromCart(item.id)">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span class="fs-4 fw-bold">{{ item.quantity }}</span>
+                                        <button @click="item.quantity++">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <button class="btn btn-danger text-white" @click="removeItemFromCart(item.id)">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
                             </div>
+                            <!-- totale carrello -->
                             <div class="d-flex justify-content-start align-items-center py-4 gap-3 tot-wrapper">
-                                <span class="flex-grow-1 fs-5 tot-cart">Totale:</span>
-                                <span class="fs-4">{{ getTotal() }}&euro;</span>
+                                <span class="flex-grow-1 fs-4 tot-cart">Tot.</span>
+                                <span class="fs-2">{{ getTotal() }}&euro;</span>
                                 <button class="btn btn-danger text-white" @click="removeAllItemsFromCart()">
                                     Clear Cart
                                 </button>
                             </div>
                         </div>
                         <div>
-                            <!-- TODO aggiungere braintree per il checkput -->
                             <router-link to="/order/create" :disabled="cart.length == 0 ? true : false" :class="[cart.length == 0 ? 'disabled' : 'btn-green_1', 'btn pay-button']">
                                 Checkout
                             </router-link>
@@ -649,7 +661,7 @@ export default {
 
     .cart-component{
         background-color: white;
-        border: 1px solid #cacaca63;
+        border: 2px solid #cacaca63;
         border-radius: 5px;
         min-height: 60px;
     }
@@ -683,7 +695,7 @@ export default {
 
     .item-name{
         font-size: 18px;
-        color: rgba(0, 0, 0, 0.6);
+        color: black;
         font-weight: 500;
     }
 
@@ -693,12 +705,38 @@ export default {
         font-weight: 600;
     }
     .tot-wrapper{
-        border-top: 1px solid #cacaca63;
+        border-top: 2px solid #3E235D;
     }
 
     .disabled{
         background-color: #b0b0b0;
         opacity: 0.5;
+    }
+
+    .control-qty{
+        button{
+            background-color: white;
+            width: 28px;
+            height: 28px;
+            border: 3px solid #00CCBC;
+            color: #00CCBC;
+            border-radius: 50%;
+            font-size: 18px;
+            position: relative;
+
+            &:hover{
+                border: 3px solid #3beedf;
+                color: #3beedf;
+                transition: all 250ms;
+            }
+
+            i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
     }
 
     @media screen and (min-width: 2150px){
@@ -710,6 +748,11 @@ export default {
         }
         .col-xxxl-4{
             width: 33.33333%;
+        }
+    }
+    @media screen and (max-width: 768px){
+        .cart-component{
+            box-shadow: 0px -10px 20px 2px #00000052;
         }
     }
 </style>

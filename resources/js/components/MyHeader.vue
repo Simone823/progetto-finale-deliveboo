@@ -269,7 +269,7 @@ ul{
     background-color: white;
     border-radius: 5px;
     border: 1px solid #ddd;
-    font-size: 12px;
+    font-size: 13px;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
@@ -301,8 +301,8 @@ ul{
 .delete-el{
     width: 20px;
     height: 20px;
-    padding: 0;
-    font-size: 8px;
+    padding: 1px;
+    font-size: 10px;
     border-radius: 35%;
 }
 </style>

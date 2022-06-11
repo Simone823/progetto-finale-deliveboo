@@ -11787,7 +11787,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-a4c8a778] {\n  list-style: none;\n  -webkit-margin-before: 0;\n          margin-block-start: 0;\n  -webkit-margin-after: 0;\n          margin-block-end: 0;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n}\n.dropdown[data-v-a4c8a778] {\n  position: relative;\n}\n.dropdown-label[data-v-a4c8a778] {\n  cursor: pointer;\n  width: 100%;\n  display: block;\n  box-sizing: border-box;\n  transition: all 300ms;\n}\n.dropdown-items[data-v-a4c8a778] {\n  background-color: white;\n  border-radius: 5px;\n  border: 1px solid #ddd;\n  font-size: 12px;\n  padding: 10px;\n  opacity: 0;\n  visibility: hidden;\n  min-width: 100%;\n  height: 0;\n  position: absolute;\n  top: 60px;\n  transform-origin: top;\n  transform: scaleY(0);\n  transition: transform 300ms;\n}\n.dropdown-items li[data-v-a4c8a778] {\n  border-top: 1px solid #3E235D;\n  padding: 5px 0;\n}\n.dropdown-items li[data-v-a4c8a778]:first-child {\n  border-top: none;\n}\n.dropdown:hover > .dropdown-items[data-v-a4c8a778] {\n  opacity: 1;\n  visibility: visible;\n  height: unset;\n  transform: scaleY(1) translateY(-9px);\n}\n.delete-el[data-v-a4c8a778] {\n  width: 20px;\n  height: 20px;\n  padding: 0;\n  font-size: 8px;\n  border-radius: 35%;\n}", ""]);
+exports.push([module.i, "ul[data-v-a4c8a778] {\n  list-style: none;\n  -webkit-margin-before: 0;\n          margin-block-start: 0;\n  -webkit-margin-after: 0;\n          margin-block-end: 0;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n}\n.dropdown[data-v-a4c8a778] {\n  position: relative;\n}\n.dropdown-label[data-v-a4c8a778] {\n  cursor: pointer;\n  width: 100%;\n  display: block;\n  box-sizing: border-box;\n  transition: all 300ms;\n}\n.dropdown-items[data-v-a4c8a778] {\n  background-color: white;\n  border-radius: 5px;\n  border: 1px solid #ddd;\n  font-size: 13px;\n  padding: 10px;\n  opacity: 0;\n  visibility: hidden;\n  min-width: 100%;\n  height: 0;\n  position: absolute;\n  top: 60px;\n  transform-origin: top;\n  transform: scaleY(0);\n  transition: transform 300ms;\n}\n.dropdown-items li[data-v-a4c8a778] {\n  border-top: 1px solid #3E235D;\n  padding: 5px 0;\n}\n.dropdown-items li[data-v-a4c8a778]:first-child {\n  border-top: none;\n}\n.dropdown:hover > .dropdown-items[data-v-a4c8a778] {\n  opacity: 1;\n  visibility: visible;\n  height: unset;\n  transform: scaleY(1) translateY(-9px);\n}\n.delete-el[data-v-a4c8a778] {\n  width: 20px;\n  height: 20px;\n  padding: 1px;\n  font-size: 10px;\n  border-radius: 35%;\n}", ""]);
 
 // exports
 
@@ -69630,7 +69630,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

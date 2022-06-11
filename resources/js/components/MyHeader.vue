@@ -111,10 +111,14 @@
                                     <span :class="tot == 0 ? 'd-none' : 'd-block fs-6' ">Tot. {{ tot }}&euro;</span>    
                                 </button>
                                 <ul class="dropdown-items">
-                                    <li v-for="el in cart" :key="el.id">
+                                    <li v-for="el in cart" :key="el.id"
+                                    class="d-flex flex-row justify-content-between align-items-center">
                                         <span>X{{ el.quantity }}</span>
                                         <span>{{ el.name }}</span>
-                                        <span>{{ el.price }}</span>
+                                        <span>{{ el.price * el.quantity }}&euro;</span>
+                                        <button class="btn btn-danger text-white delete-el" @click="removeItemFromCart(el.id)">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
                                     </li>
                                 </ul>                    
                             </a>
@@ -221,7 +225,21 @@ export default {
             }).catch(error => {
                 console.log(error);
             });
-        }
+        },
+        getTotal(){
+            let sumItem;
+            let sum = 0;
+            for(let i = 0; i < this.cart.length; i++){
+                sumItem = this.cart[i].price * this.cart[i].quantity;
+                sum += sumItem;  
+            }
+            return sum;
+        },
+        removeItemFromCart(plateId){
+            this.cart = this.cart.filter(item => item.id  != plateId);
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', this.getTotal());
+        },
     }
 }
 </script>
@@ -249,7 +267,8 @@ ul{
 
 .dropdown-items{
     background-color: white;
-    border-radius: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
     font-size: 12px;
     padding: 10px;
     opacity: 0;
@@ -277,5 +296,13 @@ ul{
     visibility: visible;
     height: unset;
     transform: scaleY(1) translateY(-9px);
+}
+
+.delete-el{
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-size: 8px;
+    border-radius: 35%;
 }
 </style>

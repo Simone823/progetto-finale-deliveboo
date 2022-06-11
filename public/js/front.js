@@ -11977,7 +11977,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "nav > .container-custom[data-v-77c5cfc8] {\n  width: 2048px;\n}\n.container-custom[data-v-77c5cfc8] {\n  max-width: 2048px;\n  margin: 0 auto;\n}\n.container-custom .cards-wrapper[data-v-77c5cfc8] {\n  height: 550px;\n  overflow-y: auto;\n}\n#resturant-info[data-v-77c5cfc8] {\n  border-bottom: 1px solid rgba(202, 202, 202, 0.3882352941);\n  box-shadow: 0px 4px 10px rgba(202, 202, 202, 0.3882352941);\n  position: relative;\n  z-index: 10;\n}\n#resturant-info .fa-solid[data-v-77c5cfc8] {\n  color: #b0b0b0;\n}\n#resturant-menu[data-v-77c5cfc8] {\n  background-color: #f9fafa;\n}\n.resturant-name[data-v-77c5cfc8] {\n  font-size: 40px;\n  font-weight: 700;\n}\n.resturant-img[data-v-77c5cfc8] {\n  height: 350px;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.resturant-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n@media only screen and (max-width: 574px) {\n.resturant-img[data-v-77c5cfc8] {\n    border-radius: 0px;\n}\n}\n.card-wrapper[data-v-77c5cfc8] {\n  cursor: pointer;\n  border-radius: 3px;\n  overflow: hidden;\n  background-color: white;\n  height: 132px;\n  box-shadow: 0px 0px 5px 0px rgba(181, 181, 181, 0.3882352941);\n}\n.card-wrapper[data-v-77c5cfc8]:hover {\n  box-shadow: 0px 12px 17px 10px rgba(181, 181, 181, 0.39);\n  transition: all 300ms;\n}\n.card-wrapper:hover img[data-v-77c5cfc8] {\n  transform: scale(1.1, 1.1);\n  transition: all 500ms;\n}\n.card-wrapper .post-card-img[data-v-77c5cfc8] {\n  width: 100px;\n  height: 100px;\n  flex-shrink: 0;\n  overflow: hidden;\n  border-radius: 3px;\n}\n.card-wrapper .post-card-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-wrapper[data-v-77c5cfc8] {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  z-index: -1;\n  display: none;\n}\n.info-wrapper.active[data-v-77c5cfc8] {\n  z-index: 999;\n}\n.info-wrapper.active[data-v-77c5cfc8]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.552);\n  z-index: 0;\n  -webkit-animation: bkc-data-v-77c5cfc8 300ms linear 1;\n          animation: bkc-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n@keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n.add-cart-error[data-v-77c5cfc8] {\n  padding: 30px 15px;\n}\n.info-plate-card[data-v-77c5cfc8], .add-cart-error[data-v-77c5cfc8] {\n  display: none;\n  position: relative;\n  border-radius: 8px;\n  max-width: 560px;\n  width: 90%;\n  max-height: 75vh;\n  background-color: white;\n  overflow: hidden;\n  z-index: 9999;\n  overflow-y: auto;\n}\n.info-plate-card .close-info[data-v-77c5cfc8], .add-cart-error .close-info[data-v-77c5cfc8] {\n  position: absolute;\n  top: 1vh;\n  right: 1vh;\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  border: none;\n  background-color: white;\n  color: #00CCBC;\n  font-size: 18px;\n  font-weight: 600;\n  opacity: 0.65;\n  z-index: 9999;\n}\n.info-plate-card .close-info[data-v-77c5cfc8]:hover, .add-cart-error .close-info[data-v-77c5cfc8]:hover {\n  opacity: 1;\n  transition: all 300ms;\n}\n.info-plate-card .info-plate-img[data-v-77c5cfc8], .add-cart-error .info-plate-img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 320px;\n  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n  overflow: hidden;\n}\n.info-plate-card .info-plate-img img[data-v-77c5cfc8], .add-cart-error .info-plate-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-plate-card.active[data-v-77c5cfc8], .add-cart-error.active[data-v-77c5cfc8] {\n  display: block;\n  -webkit-animation: zoom-data-v-77c5cfc8 300ms linear 1;\n          animation: zoom-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n@keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n.info-plate-ingredients[data-v-77c5cfc8] {\n  border-bottom: 1px solid rgb(209, 209, 209);\n}\n.cart-component[data-v-77c5cfc8] {\n  background-color: white;\n  border: 2px solid rgba(202, 202, 202, 0.3882352941);\n  border-radius: 5px;\n  min-height: 60px;\n}\n.cart-component .empty-cart[data-v-77c5cfc8] {\n  width: 200px;\n}\n.cart-component .empty-cart img[data-v-77c5cfc8] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.quantity-buttons[data-v-77c5cfc8] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 32px;\n  height: 32px;\n  border-radius: 50%;\n  font-size: 18px;\n  color: #00CCBC;\n  border: 2px solid #00CCBC;\n  background-color: white;\n}\n.quantity-buttons.disabled[data-v-77c5cfc8] {\n  color: #b0b0b0;\n  border: 2px solid #b0b0b0;\n  opacity: 0.5;\n  background-color: white;\n}\n.pay-button[data-v-77c5cfc8] {\n  width: 100%;\n  padding: 10px 10px;\n  font-size: 16px;\n  font-weight: 600;\n}\n.item-name[data-v-77c5cfc8] {\n  font-size: 18px;\n  color: black;\n  font-weight: 500;\n}\n.tot-cart[data-v-77c5cfc8] {\n  font-size: 16px;\n  color: rgba(0, 0, 0, 0.8);\n  font-weight: 600;\n}\n.tot-wrapper[data-v-77c5cfc8] {\n  border-top: 2px solid #3E235D;\n}\n.disabled[data-v-77c5cfc8] {\n  background-color: #b0b0b0;\n  opacity: 0.5;\n}\n.control-qty button[data-v-77c5cfc8] {\n  background-color: white;\n  width: 24px;\n  height: 24px;\n  border: 3px solid #00CCBC;\n  color: #00CCBC;\n  border-radius: 50%;\n  font-size: 16px;\n  position: relative;\n}\n.control-qty button[data-v-77c5cfc8]:hover {\n  border: 3px solid #3beedf;\n  color: #3beedf;\n  transition: all 250ms;\n}\n.control-qty button i[data-v-77c5cfc8] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n@media screen and (min-width: 2150px) {\n.col-xxxl-2[data-v-77c5cfc8] {\n    width: 30%;\n}\n.col-xxxl-10[data-v-77c5cfc8] {\n    width: 70%;\n}\n.col-xxxl-4[data-v-77c5cfc8] {\n    width: 33.33333%;\n}\n}\n@media screen and (max-width: 768px) {\n.cart-component[data-v-77c5cfc8] {\n    box-shadow: 0px -10px 20px 2px rgba(0, 0, 0, 0.3215686275);\n}\n}", ""]);
+exports.push([module.i, "ul[data-v-77c5cfc8], li[data-v-77c5cfc8] {\n  list-style: none;\n}\nnav > .container-custom[data-v-77c5cfc8] {\n  width: 2048px;\n}\n.container-custom[data-v-77c5cfc8] {\n  max-width: 2048px;\n  margin: 0 auto;\n}\n.container-custom .cards-wrapper[data-v-77c5cfc8] {\n  height: 550px;\n  overflow-y: auto;\n}\n#resturant-info[data-v-77c5cfc8] {\n  border-bottom: 1px solid rgba(202, 202, 202, 0.3882352941);\n  box-shadow: 0px 4px 10px rgba(202, 202, 202, 0.3882352941);\n  position: relative;\n  z-index: 10;\n}\n#resturant-info .fa-solid[data-v-77c5cfc8] {\n  color: #b0b0b0;\n}\n#resturant-menu[data-v-77c5cfc8] {\n  background-color: #f9fafa;\n}\n.resturant-name[data-v-77c5cfc8] {\n  font-size: 40px;\n  font-weight: 700;\n}\n.resturant-img[data-v-77c5cfc8] {\n  height: 350px;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.resturant-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n@media only screen and (max-width: 574px) {\n.resturant-img[data-v-77c5cfc8] {\n    border-radius: 0px;\n}\n}\n.card-wrapper[data-v-77c5cfc8] {\n  cursor: pointer;\n  border-radius: 3px;\n  overflow: hidden;\n  background-color: white;\n  height: 132px;\n  box-shadow: 0px 0px 5px 0px rgba(181, 181, 181, 0.3882352941);\n}\n.card-wrapper[data-v-77c5cfc8]:hover {\n  box-shadow: 0px 12px 17px 10px rgba(181, 181, 181, 0.39);\n  transition: all 300ms;\n}\n.card-wrapper:hover img[data-v-77c5cfc8] {\n  transform: scale(1.1, 1.1);\n  transition: all 500ms;\n}\n.card-wrapper .post-card-img[data-v-77c5cfc8] {\n  width: 100px;\n  height: 100px;\n  flex-shrink: 0;\n  overflow: hidden;\n  border-radius: 3px;\n}\n.card-wrapper .post-card-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-wrapper[data-v-77c5cfc8] {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  z-index: -1;\n  display: none;\n}\n.info-wrapper.active[data-v-77c5cfc8] {\n  z-index: 999;\n}\n.info-wrapper.active[data-v-77c5cfc8]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.552);\n  z-index: 0;\n  -webkit-animation: bkc-data-v-77c5cfc8 300ms linear 1;\n          animation: bkc-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n@keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n.add-cart-error[data-v-77c5cfc8] {\n  padding: 30px 15px;\n}\n.info-plate-card[data-v-77c5cfc8], .add-cart-error[data-v-77c5cfc8] {\n  display: none;\n  position: relative;\n  border-radius: 5px;\n  max-width: 500px;\n  width: 85%;\n  max-height: 75vh;\n  background-color: white;\n  overflow: hidden;\n  z-index: 9999;\n  overflow-y: auto;\n}\n.info-plate-card .close-info[data-v-77c5cfc8], .add-cart-error .close-info[data-v-77c5cfc8] {\n  position: absolute;\n  top: 1vh;\n  right: 1vh;\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  border: none;\n  background-color: white;\n  color: #00CCBC;\n  font-size: 18px;\n  font-weight: 600;\n  opacity: 0.65;\n  z-index: 9999;\n}\n.info-plate-card .close-info[data-v-77c5cfc8]:hover, .add-cart-error .close-info[data-v-77c5cfc8]:hover {\n  opacity: 1;\n  transition: all 300ms;\n}\n.info-plate-card .info-plate-img[data-v-77c5cfc8], .add-cart-error .info-plate-img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 320px;\n  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n  overflow: hidden;\n}\n.info-plate-card .info-plate-img img[data-v-77c5cfc8], .add-cart-error .info-plate-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-plate-card .info-plate-body .list-dot[data-v-77c5cfc8], .add-cart-error .info-plate-body .list-dot[data-v-77c5cfc8] {\n  color: #ccc;\n}\n.info-plate-card .info-plate-body .ingredients[data-v-77c5cfc8], .add-cart-error .info-plate-body .ingredients[data-v-77c5cfc8] {\n  font-weight: 600;\n  margin-bottom: 12px;\n  color: #333;\n}\n.info-plate-card.active[data-v-77c5cfc8], .add-cart-error.active[data-v-77c5cfc8] {\n  display: block;\n  -webkit-animation: zoom-data-v-77c5cfc8 300ms linear 1;\n          animation: zoom-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n@keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n.cart-management[data-v-77c5cfc8] {\n  position: -webkit-sticky;\n  position: sticky;\n  width: 100%;\n  left: 0;\n  bottom: 0;\n  background-color: white;\n  border-top: 1px solid rgba(202, 202, 202, 0.3882352941);\n  box-shadow: 5px 0px 10px rgba(202, 202, 202, 0.3882352941);\n}\n.cart-component[data-v-77c5cfc8] {\n  background-color: white;\n  border: 2px solid rgba(202, 202, 202, 0.3882352941);\n  border-radius: 5px;\n  min-height: 60px;\n}\n.cart-component .empty-cart[data-v-77c5cfc8] {\n  width: 200px;\n}\n.cart-component .empty-cart img[data-v-77c5cfc8] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.pay-button[data-v-77c5cfc8] {\n  width: 100%;\n  padding: 10px 10px;\n  font-size: 16px;\n  font-weight: 600;\n}\n.item-name[data-v-77c5cfc8] {\n  font-size: 18px;\n  color: black;\n  font-weight: 500;\n}\n.tot-cart[data-v-77c5cfc8] {\n  font-size: 16px;\n  color: rgba(0, 0, 0, 0.8);\n  font-weight: 600;\n}\n.tot-wrapper[data-v-77c5cfc8] {\n  border-top: 2px solid #3E235D;\n}\n.disabled[data-v-77c5cfc8] {\n  background-color: #b0b0b0;\n  opacity: 0.5;\n}\n.control-qty[data-v-77c5cfc8] {\n  -moz-column-gap: 20%;\n       column-gap: 20%;\n}\n.control-qty button[data-v-77c5cfc8] {\n  background-color: white;\n  width: 24px;\n  height: 24px;\n  border: 3px solid #00CCBC;\n  color: #00CCBC;\n  border-radius: 50%;\n  font-size: 16px;\n  position: relative;\n}\n.control-qty button[data-v-77c5cfc8]:hover {\n  border: 3px solid #3beedf;\n  color: #3beedf;\n  transition: all 250ms;\n}\n.control-qty button i[data-v-77c5cfc8] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.control-qty button.disabled[data-v-77c5cfc8] {\n  color: #b0b0b0;\n  border: 3px solid #b0b0b0;\n  opacity: 0.5;\n  background-color: white;\n}\n@media screen and (min-width: 2150px) {\n.col-xxxl-2[data-v-77c5cfc8] {\n    width: 30%;\n}\n.col-xxxl-10[data-v-77c5cfc8] {\n    width: 70%;\n}\n.col-xxxl-4[data-v-77c5cfc8] {\n    width: 33.33333%;\n}\n}\n@media screen and (max-width: 768px) {\n.cart-component[data-v-77c5cfc8] {\n    box-shadow: 0px -10px 20px 2px rgba(0, 0, 0, 0.3215686275);\n}\n}", ""]);
 
 // exports
 
@@ -52463,27 +52463,35 @@ var render = function () {
                       "div",
                       { staticClass: "info-plate-body px-4 pb-4 pt-1" },
                       [
-                        _c("h1", { staticClass: "info-plate-title" }, [
-                          _vm._v(_vm._s(menuPlate.name)),
-                        ]),
+                        _c(
+                          "h1",
+                          { staticClass: "info-plate-title fs-2 fw-bold" },
+                          [_vm._v(_vm._s(menuPlate.name))]
+                        ),
                         _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "info-plate-ingredients py-5" },
+                          { staticClass: "info-plate-ingredients py-4" },
                           [
-                            _c("span", [_vm._v("Ingredienti:")]),
+                            _c("p", { staticClass: "fs-5 ingredients" }, [
+                              _vm._v("Ingredienti:"),
+                            ]),
                             _vm._v(" "),
                             _c(
                               "ul",
+                              { staticClass: "p-0" },
                               _vm._l(
                                 _vm.ingredients,
                                 function (ingredient, index) {
                                   return _c("li", { key: index }, [
-                                    _vm._v(
-                                      "\n                                " +
-                                        _vm._s(ingredient) +
-                                        "\n                            "
-                                    ),
+                                    _c("i", {
+                                      staticClass:
+                                        "fa-solid fa-circle-dot me-3 list-dot",
+                                    }),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "fs-6" }, [
+                                      _vm._v(_vm._s(ingredient)),
+                                    ]),
                                   ])
                                 }
                               ),
@@ -52491,96 +52499,89 @@ var render = function () {
                             ),
                           ]
                         ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "cart-management p-4 d-flex flex-column gap-3",
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "plates-number control-qty d-flex justify-content-center align-items-center",
+                          },
+                          [
+                            _c(
+                              "button",
+                              {
+                                class: menuPlate.quantity < 1 ? "disabled" : "",
+                                attrs: {
+                                  disabled:
+                                    menuPlate.quantity < 1 ? true : false,
+                                },
+                                on: {
+                                  click: function ($event) {
+                                    menuPlate.quantity > 0
+                                      ? menuPlate.quantity--
+                                      : (menuPlate.quantity = 0)
+                                  },
+                                },
+                              },
+                              [_c("i", { staticClass: "fa-solid fa-minus" })]
+                            ),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "fs-3" }, [
+                              _vm._v(_vm._s(menuPlate.quantity)),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                on: {
+                                  click: function ($event) {
+                                    menuPlate.quantity++
+                                  },
+                                },
+                              },
+                              [_c("i", { staticClass: "fa-solid fa-plus" })]
+                            ),
+                          ]
+                        ),
                         _vm._v(" "),
-                        _c("div", { staticClass: "cart-management" }, [
+                        _c("div", { staticClass: "add-cart flex-grow-1" }, [
                           _c(
-                            "div",
+                            "button",
                             {
-                              staticClass:
-                                "plates-number d-flex justify-content-center align-items-center gap-5 py-5",
+                              class: [
+                                menuPlate.quantity < 1
+                                  ? "disabled"
+                                  : "btn-green_1",
+                                "btn w-100",
+                              ],
+                              attrs: {
+                                disabled: menuPlate.quantity < 1 ? true : false,
+                              },
+                              on: {
+                                click: function ($event) {
+                                  _vm.addItemToCart(menuPlate.id)
+                                  _vm.updateQuantity(
+                                    menuPlate.id,
+                                    menuPlate.quantity
+                                  )
+                                  _vm.closePlateInfo()
+                                },
+                              },
                             },
                             [
-                              _c(
-                                "button",
-                                {
-                                  class: [
-                                    menuPlate.quantity < 1 ? "disabled" : "",
-                                    "minus-button quantity-buttons",
-                                  ],
-                                  attrs: {
-                                    disabled:
-                                      menuPlate.quantity < 1 ? true : false,
-                                  },
-                                  on: {
-                                    click: function ($event) {
-                                      menuPlate.quantity > 0
-                                        ? menuPlate.quantity--
-                                        : (menuPlate.quantity = 0)
-                                    },
-                                  },
-                                },
-                                [_c("i", { staticClass: "fa-solid fa-minus" })]
-                              ),
-                              _vm._v(" "),
-                              _c("span", { staticClass: "fs-4" }, [
-                                _vm._v(_vm._s(menuPlate.quantity)),
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "plus-button quantity-buttons",
-                                  on: {
-                                    click: function ($event) {
-                                      menuPlate.quantity++
-                                    },
-                                  },
-                                },
-                                [_c("i", { staticClass: "fa-solid fa-plus" })]
-                              ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "add-cart d-flex justify-content-center",
-                            },
-                            [
-                              _c(
-                                "button",
-                                {
-                                  class: [
-                                    menuPlate.quantity < 1
-                                      ? "disabled"
-                                      : "btn-green_1",
-                                    "btn py-2 px-5",
-                                  ],
-                                  attrs: {
-                                    disabled:
-                                      menuPlate.quantity < 1 ? true : false,
-                                  },
-                                  on: {
-                                    click: function ($event) {
-                                      _vm.addItemToCart(menuPlate.id)
-                                      _vm.updateQuantity(
-                                        menuPlate.id,
-                                        menuPlate.quantity
-                                      )
-                                      _vm.closePlateInfo()
-                                    },
-                                  },
-                                },
-                                [
-                                  _vm._v(
-                                    "Aggiungi per " +
-                                      _vm._s(
-                                        menuPlate.price * menuPlate.quantity
-                                      ) +
-                                      "€"
-                                  ),
-                                ]
+                              _vm._v(
+                                "Aggiungi per " +
+                                  _vm._s(menuPlate.price * menuPlate.quantity) +
+                                  "€"
                               ),
                             ]
                           ),

@@ -300,33 +300,33 @@
 
                     <!-- card body  -->
                     <div class="info-plate-body px-4 pb-4 pt-1">
-                        <h1 class="info-plate-title">{{ menuPlate.name }}</h1>
-                        <div class="info-plate-ingredients py-5">
-                            <span>Ingredienti:</span>
-                            <ul>
+                        <h1 class="info-plate-title fs-2 fw-bold">{{ menuPlate.name }}</h1>
+                        <div class="info-plate-ingredients py-4">
+                            <p class="fs-5 ingredients">Ingredienti:</p>
+                            <ul class="p-0">
                                 <li v-for="(ingredient,index) in ingredients" :key="index">
-                                    {{ ingredient }}
+                                    <i class="fa-solid fa-circle-dot me-3 list-dot"></i>
+                                    <span class="fs-6">{{ ingredient }}</span>
                                 </li>
                             </ul>
                         </div>
-
-                        <!-- card footer  -->
-                        <div class="cart-management">
-                            <div class="plates-number d-flex justify-content-center align-items-center gap-5 py-5">
-                                <!-- diminuisci la quantità -->
-                                <button :disabled="menuPlate.quantity < 1 ? true : false" :class="[menuPlate.quantity < 1 ? 'disabled' : '', 'minus-button quantity-buttons']" @click="menuPlate.quantity > 0 ? menuPlate.quantity-- : menuPlate.quantity = 0">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <span class="fs-4">{{ menuPlate.quantity }}</span>
-                                <!-- aumenta la quantità -->
-                                <button class="plus-button quantity-buttons" @click="menuPlate.quantity++">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                            <!-- TODO gestire il prezzo dinamicamente  -->
-                            <div class="add-cart d-flex justify-content-center">
-                                <button :disabled="menuPlate.quantity < 1 ? true : false" :class="[menuPlate.quantity < 1 ? 'disabled' : 'btn-green_1', 'btn py-2 px-5']" @click="addItemToCart(menuPlate.id); updateQuantity(menuPlate.id, menuPlate.quantity); closePlateInfo()">Aggiungi per {{menuPlate.price * menuPlate.quantity}}&euro;</button>
-                            </div>
+                    </div>
+                    <!-- card footer  -->
+                    <div class="cart-management p-4 d-flex flex-column gap-3">
+                        <div class="plates-number control-qty d-flex justify-content-center align-items-center">
+                            <!-- diminuisci la quantità -->
+                            <button :disabled="menuPlate.quantity < 1 ? true : false" :class=" menuPlate.quantity < 1 ? 'disabled' : '' " @click="menuPlate.quantity > 0 ? menuPlate.quantity-- : menuPlate.quantity = 0">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <span class="fs-3">{{ menuPlate.quantity }}</span>
+                            <!-- aumenta la quantità -->
+                            <button @click="menuPlate.quantity++">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <!-- TODO gestire il prezzo dinamicamente  -->
+                        <div class="add-cart flex-grow-1">
+                            <button :disabled="menuPlate.quantity < 1 ? true : false" :class="[menuPlate.quantity < 1 ? 'disabled' : 'btn-green_1', 'btn w-100']" @click="addItemToCart(menuPlate.id); updateQuantity(menuPlate.id, menuPlate.quantity); closePlateInfo()">Aggiungi per {{menuPlate.price * menuPlate.quantity}}&euro;</button>
                         </div>
                     </div>
                     
@@ -463,6 +463,10 @@ export default {
 
 <style lang="scss" scoped>
 
+    ul,li{
+        list-style: none;
+    }
+
     nav > .container-custom{
         width: 2048px;
     }
@@ -590,9 +594,9 @@ export default {
     .info-plate-card, .add-cart-error{
         display: none;
         position: relative;
-        border-radius: 8px;
-        max-width: 560px;
-        width: 90%;
+        border-radius: 5px;
+        max-width: 500px;
+        width: 85%;
         max-height: 75vh;
         background-color: white;
         overflow: hidden;
@@ -632,6 +636,18 @@ export default {
                 object-position: center;
             }
         }
+
+        .info-plate-body{
+            .list-dot{
+                color: #ccc;
+            }
+
+            .ingredients{
+                font-weight: 600;
+                margin-bottom: 12px;
+                color: #333;
+            }
+        }
     }
 
         .info-plate-card.active, .add-cart-error.active{
@@ -648,9 +664,15 @@ export default {
             }
         }
 
-        .info-plate-ingredients{
-            border-bottom: 1px solid rgb(209, 209, 209);
-        }
+    .cart-management{
+        position: sticky;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        border-top: 1px solid #cacaca63;
+        box-shadow: 5px 0px 10px #cacaca63;
+    }
 
     .cart-component{
         background-color: white;
@@ -664,26 +686,6 @@ export default {
                 object-fit: cover;
                 object-position: center;
             }
-        }
-    }
-
-    .quantity-buttons{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        font-size: 18px;
-        color: #00CCBC;
-        border: 2px solid #00CCBC;
-        background-color: white;
-
-        &.disabled{
-            color: #b0b0b0;
-            border: 2px solid #b0b0b0;
-            opacity: 0.5;
-            background-color: white;
         }
     }
 
@@ -715,6 +717,8 @@ export default {
     }
 
     .control-qty{
+        column-gap: 20%;
+
         button{
             background-color: white;
             width: 24px;
@@ -736,6 +740,13 @@ export default {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%);
+            }
+
+            &.disabled{
+                color: #b0b0b0;
+                border: 3px solid #b0b0b0;
+                opacity: 0.5;
+                background-color: white;
             }
         }
     }

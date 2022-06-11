@@ -235,7 +235,7 @@
                                 class="d-flex flex-wrap justify-content-end align-items-center py-4 gap-3">
                                 <!-- nome prodotto aggiunto e prezzo singolo prodotto-->
                                 <div class="flex-grow-1">
-                                    <span class="item-name fs-4 me-3">{{ item.name }}</span>
+                                    <span class="item-name fs-5 me-3">{{ item.name }}</span>
                                     <span class="fs-6 fw-bold">{{ item.price * item.quantity }}&euro;</span>
                                 </div>
                                 <!-- gestione quantità e rimozione prodotto -->
@@ -244,7 +244,7 @@
                                         <button @click="item.quantity > 1 ? item.quantity-- : removeItemFromCart(item.id)">
                                             <i class="fa-solid fa-minus"></i>
                                         </button>
-                                        <span class="fs-4 fw-bold">{{ item.quantity }}</span>
+                                        <span class="fs-5 fw-bold">{{ item.quantity }}</span>
                                         <button @click="item.quantity++">
                                             <i class="fa-solid fa-plus"></i>
                                         </button>
@@ -711,12 +711,12 @@ export default {
     .control-qty{
         button{
             background-color: white;
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             border: 3px solid #00CCBC;
             color: #00CCBC;
             border-radius: 50%;
-            font-size: 18px;
+            font-size: 16px;
             position: relative;
 
             &:hover{

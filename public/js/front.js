@@ -5311,6 +5311,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -49117,10 +49118,41 @@ var render = function () {
             { staticClass: "me-3 cart-burger d-flex align-items-center gap-2" },
             [
               _vm.authUser == null
-                ? _c("div", { staticClass: "nav-item" }, [_vm._m(0)])
+                ? _c("div", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      { staticClass: "nav-link dropdown", attrs: { href: "" } },
+                      [
+                        _c(
+                          "button",
+                          {
+                            class: [
+                              _vm.tot < 1
+                                ? ""
+                                : "px-3 d-flex align-items-center gap-3 dropdown-label",
+                              "btn-standard btn-tr-white",
+                            ],
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fa-solid fa-cart-shopping",
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                class: _vm.tot < 1 ? "d-none" : "d-block fs-6",
+                              },
+                              [_vm._v(_vm._s(_vm.tot) + "€")]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ])
                 : _vm._e(),
               _vm._v(" "),
-              _vm._m(1),
+              _vm._m(0),
             ]
           ),
           _vm._v(" "),
@@ -49171,7 +49203,7 @@ var render = function () {
                           attrs: { "aria-labelledby": "navbarDropdown" },
                         },
                         [
-                          _vm._m(2),
+                          _vm._m(1),
                           _vm._v(" "),
                           _c("li", [
                             _c(
@@ -49204,18 +49236,18 @@ var render = function () {
                 _vm._v(" "),
                 _vm.authUser == null
                   ? _c("li", { staticClass: "nav-item dropdown" }, [
-                      _vm._m(3),
+                      _vm._m(2),
                       _vm._v(" "),
-                      _vm._m(4),
+                      _vm._m(3),
                     ])
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.authUser == null
-                  ? _c("li", { staticClass: "nav-item" }, [_vm._m(5)])
+                  ? _c("li", { staticClass: "nav-item" }, [_vm._m(4)])
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.authUser == null
-                  ? _c("li", { staticClass: "nav-item" }, [_vm._m(6)])
+                  ? _c("li", { staticClass: "nav-item" }, [_vm._m(5)])
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.authUser == null
@@ -49233,7 +49265,7 @@ var render = function () {
                               class: [
                                 _vm.tot < 1
                                   ? ""
-                                  : "px-4 d-flex align-items-center gap-3 dropdown-label",
+                                  : "px-md-1 px-lg-2 px-xl-4 d-flex align-items-center gap-3 dropdown-label",
                                 "btn-standard btn-tr-white",
                               ],
                             },
@@ -49248,7 +49280,14 @@ var render = function () {
                                   class:
                                     _vm.tot < 1 ? "d-none" : "d-block fs-6",
                                 },
-                                [_vm._v("Tot. " + _vm._s(_vm.tot) + "€")]
+                                [
+                                  _c(
+                                    "span",
+                                    { staticClass: "d-none d-lg-inline" },
+                                    [_vm._v("Tot.")]
+                                  ),
+                                  _vm._v(" " + _vm._s(_vm.tot) + "€"),
+                                ]
                               ),
                             ]
                           ),
@@ -49329,7 +49368,7 @@ var render = function () {
                                     ]
                                   ),
                                   _vm._v(" "),
-                                  _vm._m(7),
+                                  _vm._m(6),
                                 ]
                               ),
                         ]
@@ -49386,7 +49425,7 @@ var render = function () {
                             attrs: { "aria-labelledby": "navbarDropdown" },
                           },
                           [
-                            _vm._m(8),
+                            _vm._m(7),
                             _vm._v(" "),
                             _c("li", [
                               _c(
@@ -49425,7 +49464,7 @@ var render = function () {
                       {
                         staticClass: "nav-item text-center dropdown bg-purple",
                       },
-                      [_vm._m(9), _vm._v(" "), _vm._m(10)]
+                      [_vm._m(8), _vm._v(" "), _vm._m(9)]
                     )
                   : _vm._e(),
                 _vm._v(" "),
@@ -49471,16 +49510,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-      _c("button", { staticClass: "btn-standard btn-white opacity-100" }, [
-        _c("i", { staticClass: "icon-color fa-solid fa-cart-shopping" }),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

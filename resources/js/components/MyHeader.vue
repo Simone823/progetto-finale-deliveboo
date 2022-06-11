@@ -11,10 +11,11 @@
                 <div class="me-3 cart-burger d-flex align-items-center gap-2">
                     <!-- cart -->
                     <div v-if="authUser == null" class="nav-item">
-                        <a class="nav-link" href="#">
-                            <button class="btn-standard btn-white opacity-100">
-                                <i class="icon-color fa-solid fa-cart-shopping"></i>                          
-                            </button>
+                        <a class="nav-link dropdown" href="">
+                            <button :class="[ tot < 1 ? '' : 'px-3 d-flex align-items-center gap-3 dropdown-label','btn-standard btn-tr-white']">
+                                <i class="fa-solid fa-cart-shopping"></i>  
+                                <span :class="tot < 1 ? 'd-none' : 'd-block fs-6' ">{{ tot }}&euro;</span>    
+                            </button>                 
                         </a>
                     </div>  
         
@@ -106,9 +107,9 @@
                         <!-- cart -->
                         <li v-if="authUser == null" class="nav-item">
                             <a class="nav-link dropdown" href="">
-                                <button :class="[ tot < 1 ? '' : 'px-4 d-flex align-items-center gap-3 dropdown-label','btn-standard btn-tr-white']">
+                                <button :class="[ tot < 1 ? '' : 'px-md-1 px-lg-2 px-xl-4 d-flex align-items-center gap-3 dropdown-label','btn-standard btn-tr-white']">
                                     <i class="fa-solid fa-cart-shopping"></i>  
-                                    <span :class="tot < 1 ? 'd-none' : 'd-block fs-6' ">Tot. {{ tot }}&euro;</span>    
+                                    <span :class="tot < 1 ? 'd-none' : 'd-block fs-6' "><span class="d-none d-lg-inline">Tot.</span> {{ tot }}&euro;</span>    
                                 </button>
                                 <ul v-if="tot > 0" class="dropdown-items">
                                     <li v-for="el in cart" :key="el.id"

@@ -2,6 +2,7 @@
     <div class="page-wrapper">
         <MyHeader />
         <div class="container">
+            <!-- TODO immagine di caricamento api -->
             <div :class="[resturantsType.length == 0 ? 'justify-content-center' : '', 'row pt-5 pb-5']">
                  <!-- faccio un controllo per vedere se l'array contiene ristoranti -->
                 <div v-if="resturantsType.length == 0" class="info-card p-0 m-0">

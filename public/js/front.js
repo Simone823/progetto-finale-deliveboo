@@ -6051,6 +6051,12 @@ __webpack_require__.r(__webpack_exports__);
       localStorage.setItem("cart", JSON.stringify(this.cart));
       localStorage.setItem('total', this.getTotal());
     },
+    // Elimino tutti gli elementi dal carrello
+    removeAllItemsFromCart: function removeAllItemsFromCart() {
+      this.cart = [];
+      localStorage.setItem("cart", JSON.stringify(this.cart));
+      localStorage.setItem('total', 0); // localStorage.removeItem("cart", JSON.stringify(this.cart));
+    },
     // Invio form dati utente
     sendForm: function sendForm() {
       var _this = this;
@@ -6070,6 +6076,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
+    // on submit form
     onSubmit: function onSubmit() {
       this.sendForm(); // console.log(this.form);
     }

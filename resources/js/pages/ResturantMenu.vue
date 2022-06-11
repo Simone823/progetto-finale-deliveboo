@@ -276,9 +276,17 @@
             <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper d-flex justify-content-center align-items-center'] ">
                 <!-- se l'id degli elementi nel carrello non corrispondono all'id del ristorante visualizzato  -->
                 <div v-if="cart.length > 0 && resturant.id !== cart[0].user_id" 
-                    :class=" [ activeElement != undefined ? 'active' : '','add-cart-error'] ">
-                    <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">X</button>
-                    <p>Non puoi fare acquisti da ristoranti diversi!</p>
+                    :class=" [ activeElement != undefined ? 'active' : '','add-cart-error p-0'] ">
+                    <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">
+                        X
+                    </button>
+                    <figure class="info-plate-img">
+                        <img :src="require('/public/img/placeholder_restaurants.png')" alt="">
+                    </figure>
+                    <div class="info-plate-body px-4 pb-4 pt-1 text-center">
+                        <p class="fs-4">Non puoi fare acquisti da ristoranti diversi!</p>
+                        <span class="fs-6">Concludi prima il tuo ordine,<br> oppure svuota il carrello.</span>
+                    </div>
                 </div>
                 <!-- se gli id corrispondono sarà possibile aggiungere i piatti al carrello  -->
                 <div v-else
@@ -291,8 +299,8 @@
                     </figure>
 
                     <!-- card body  -->
-                    <div class="info-plate-body p-5">
-                        <h1>{{ menuPlate.name }}</h1>
+                    <div class="info-plate-body px-4 pb-4 pt-1">
+                        <h1 class="info-plate-title">{{ menuPlate.name }}</h1>
                         <div class="info-plate-ingredients py-5">
                             <span>Ingredienti:</span>
                             <ul>
@@ -604,6 +612,7 @@ export default {
             font-size: 18px;
             font-weight: 600;
             opacity: 0.65;
+            z-index: 9999;
 
             &:hover{
                 opacity: 1;
@@ -614,6 +623,7 @@ export default {
         .info-plate-img{
             width: 100%;
             height: 320px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
             overflow: hidden;
             img{
                 width: 100%;
@@ -621,10 +631,6 @@ export default {
                 object-fit: cover;
                 object-position: center;
             }
-        }
-
-        .info-plate-body{
-            padding: 25px 20px;
         }
     }
 

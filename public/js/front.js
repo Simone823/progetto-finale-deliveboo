@@ -5289,12 +5289,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       authUser: window.authUser,
       logo: __webpack_require__(/*! /public/img/logo_white.svg */ "./public/img/logo_white.svg"),
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      cart: JSON.parse(localStorage.getItem('cart')),
+      tot: localStorage.getItem('total')
     };
   },
   methods: {
@@ -49115,7 +49118,34 @@ var render = function () {
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.authUser == null
-                  ? _c("li", { staticClass: "nav-item" }, [_vm._m(7)])
+                  ? _c("li", { staticClass: "nav-item" }, [
+                      _c(
+                        "a",
+                        { staticClass: "nav-link", attrs: { href: "" } },
+                        [
+                          _c(
+                            "button",
+                            {
+                              class: [
+                                _vm.tot == 0 ? "" : "px-4",
+                                "btn-standard btn-tr-white d-flex align-items-center gap-3",
+                              ],
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fa-solid fa-cart-shopping",
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "span",
+                                { class: _vm.tot == 0 ? "d-none" : "d-block" },
+                                [_vm._v("Tot. " + _vm._s(_vm.tot) + "€")]
+                              ),
+                            ]
+                          ),
+                        ]
+                      ),
+                    ])
                   : _vm._e(),
               ]
             ),
@@ -49167,7 +49197,7 @@ var render = function () {
                             attrs: { "aria-labelledby": "navbarDropdown" },
                           },
                           [
-                            _vm._m(8),
+                            _vm._m(7),
                             _vm._v(" "),
                             _c("li", [
                               _c(
@@ -49206,7 +49236,7 @@ var render = function () {
                       {
                         staticClass: "nav-item text-center dropdown bg-purple",
                       },
-                      [_vm._m(9), _vm._v(" "), _vm._m(10)]
+                      [_vm._m(8), _vm._v(" "), _vm._m(9)]
                     )
                   : _vm._e(),
                 _vm._v(" "),
@@ -49398,16 +49428,6 @@ var staticRenderFns = [
         _vm._v(
           "\n                                Diventa nostro partner     \n                            "
         ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "nav-link", attrs: { href: "" } }, [
-      _c("button", { staticClass: "btn-standard btn-tr-white" }, [
-        _c("i", { staticClass: "fa-solid fa-cart-shopping" }),
       ]),
     ])
   },

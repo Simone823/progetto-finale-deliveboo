@@ -106,8 +106,9 @@
                         <!-- cart -->
                         <li v-if="authUser == null" class="nav-item">
                             <a class="nav-link" href="">
-                                <button class="btn-standard btn-tr-white">
-                                    <i class="fa-solid fa-cart-shopping"></i>                          
+                                <button :class="[tot == 0 ? '' : 'px-4', 'btn-standard btn-tr-white d-flex align-items-center gap-3']">
+                                    <i class="fa-solid fa-cart-shopping"></i>  
+                                    <span :class="tot == 0 ? 'd-none' : 'd-block' ">Tot. {{ tot }}&euro;</span>                        
                                 </button>
                             </a>
                         </li>
@@ -194,6 +195,8 @@ export default {
             authUser: window.authUser,
             logo: require('/public/img/logo_white.svg'),
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            cart: JSON.parse(localStorage.getItem('cart')),
+            tot: localStorage.getItem('total')
         }
             
     },

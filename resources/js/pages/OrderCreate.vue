@@ -155,6 +155,7 @@ export default {
     },
 
     methods: {
+        
         //TOTALE
         getTotal(){
             let sumItem;
@@ -171,6 +172,14 @@ export default {
             this.cart = this.cart.filter(item => item.id  != plateId);
             localStorage.setItem("cart", JSON.stringify(this.cart));
             localStorage.setItem('total', this.getTotal());
+        },
+
+        // Elimino tutti gli elementi dal carrello
+        removeAllItemsFromCart(){
+            this.cart = [];
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', 0);
+            // localStorage.removeItem("cart", JSON.stringify(this.cart));
         },
 
         // Invio form dati utente
@@ -191,6 +200,7 @@ export default {
             })
         },
 
+        // on submit form
         onSubmit() {
             this.sendForm();
             // console.log(this.form);

@@ -11768,12 +11768,13 @@ exports.push([module.i, ".card[data-v-1e670f85] {\n  filter: drop-shadow(0px 0px
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".error-wrapper[data-v-82158542] {\n  height: 100vh;\n}\n.error-title[data-v-82158542] {\n  font-size: 80px;\n  color: #00CCBC;\n}", ""]);
+exports.push([module.i, ".error-wrapper[data-v-82158542] {\n  height: 100vh;\n}\n.title[data-v-82158542] {\n  z-index: 999;\n}\n.title .error-title[data-v-82158542] {\n  font-size: calc(2.5vh + 5vw + 85px);\n  color: #00CCBC;\n}\n.error-wrapper[data-v-82158542] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png")) + ");\n  background-size: cover;\n  background-position: center;\n}\n.error-wrapper[data-v-82158542]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.35);\n  z-index: 0;\n}", ""]);
 
 // exports
 
@@ -11919,6 +11920,33 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/url/escape.js":
+/*!***************************************************!*\
+  !*** ./node_modules/css-loader/lib/url/escape.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
 }
 
 
@@ -49938,10 +49966,12 @@ var staticRenderFns = [
           "container flex-grow-1 d-flex justify-content-center align-items-center",
       },
       [
-        _c("div", { staticClass: "text-center" }, [
+        _c("div", { staticClass: "text-center title" }, [
           _c("h1", { staticClass: "error-title fw-bolder" }, [_vm._v("404")]),
           _vm._v(" "),
-          _c("p", { staticClass: "fs-4" }, [_vm._v("Page not found!")]),
+          _c("p", { staticClass: "fs-4 text-white fw-bold" }, [
+            _vm._v("PAGE NOT FOUND!"),
+          ]),
         ]),
       ]
     )

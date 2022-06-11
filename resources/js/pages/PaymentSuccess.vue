@@ -5,16 +5,30 @@
         <!-- Container  -->
         <div class="container py-5 px-2 d-flex align-items-center justify-content-center">
             <div class="row justify-content-center m-0 w-100">
-                <div class="col-12 col-md-8 card d-flex justify-content-center align-items-center flex-column gap-3 shadow-lg text-center">
+                <div class="col-12 col-md-8 card align-items-center justify-content-center shadow-lg text-center">
 
-                    <!-- Logo check -->
-                    <figure class="icon_logo">
-                        <img :src="require('/public/img/check_icon.svg')" alt="">
-                    </figure>
+                    <!-- Payment -->
+                    <div class="payment mb-5">
+                        <figure class="icon_logo m-auto mb-2">
+                            <img :src="require('/public/img/card.png')" alt="">
+                        </figure>
 
-                    <!-- Description -->
-                    <div class="description text-violet">
-                        <h2 class="fw-bold">Pagamento effettuato con successo!</h2>
+
+                        <div class="description text-violet">
+                            <p class="fw-bold fs-4">Pagamento effettuato con successo!</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Driver -->
+                    <div class="driver">
+                        <figure class="icon_driver m-auto mb-1">
+                            <img :src="require('/public/img/spy.png')" alt="">
+                        </figure>
+
+                        <div class="description text-violet">
+                            <p class="fw-bolder fs-5">Driver in arrivo!</p>
+                        </div>
                     </div>
 
                     <!-- Button -->
@@ -36,11 +50,12 @@ import MyHeader from '../components/MyHeader.vue';
     export default {
         components: {
             MyHeader,
-        }
+        },
     }
 </script>
 
 <style lang="scss" scoped>
+
 
 .container {
     height: 80vh;
@@ -49,10 +64,22 @@ import MyHeader from '../components/MyHeader.vue';
 .card {
     height: 500px;
     border: none;
+    background: url('/public/img/placeholder_plate.png');
 
     .icon_logo {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+
+    .icon_driver {
+        width: 50px;
+        height: 50px;
 
         img {
             width: 100%;

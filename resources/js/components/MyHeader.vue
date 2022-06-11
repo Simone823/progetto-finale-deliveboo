@@ -287,6 +287,7 @@ ul{
     height: 0;
     position: absolute;
     top: 60px;
+    right: 5px;
     transform-origin: top;
     transform: scaleY(0);
     transition: transform 300ms;

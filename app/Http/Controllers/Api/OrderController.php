@@ -68,7 +68,12 @@ class OrderController extends Controller
             
             // Attach plates pivot
             foreach($data['cart'] as $plate) {
-                $order->plates()->attach($plate['id']);
+                $order->plates()->attach(
+                    $plate['id'],
+                    [
+                        'quantity' => $plate['quantity']
+                    ]
+                );
             }
 
             return response()->json([

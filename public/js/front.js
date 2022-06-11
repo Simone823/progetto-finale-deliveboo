@@ -6170,6 +6170,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -11960,7 +11974,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container[data-v-563fa334] {\n  height: 80vh;\n}\n.card[data-v-563fa334] {\n  height: 500px;\n  border: none;\n}\n.card .icon_logo[data-v-563fa334] {\n  width: 100px;\n  height: 100px;\n}\n.card .icon_logo img[data-v-563fa334] {\n  width: 100%;\n  height: 100%;\n  display: block;\n}", ""]);
+exports.push([module.i, ".container[data-v-563fa334] {\n  height: 80vh;\n}\n.card[data-v-563fa334] {\n  height: 500px;\n  border: none;\n  background: url(\"/public/img/placeholder_plate.png\");\n}\n.card .icon_logo[data-v-563fa334] {\n  width: 120px;\n  height: 120px;\n}\n.card .icon_logo img[data-v-563fa334] {\n  width: 100%;\n  height: 100%;\n  display: block;\n}\n.card .icon_driver[data-v-563fa334] {\n  width: 50px;\n  height: 50px;\n}\n.card .icon_driver img[data-v-563fa334] {\n  width: 100%;\n  height: 100%;\n  display: block;\n}", ""]);
 
 // exports
 
@@ -51649,21 +51663,30 @@ var render = function () {
               "div",
               {
                 staticClass:
-                  "col-12 col-md-8 card d-flex justify-content-center align-items-center flex-column gap-3 shadow-lg text-center",
+                  "col-12 col-md-8 card align-items-center justify-content-center shadow-lg text-center",
               },
               [
-                _c("figure", { staticClass: "icon_logo" }, [
-                  _c("img", {
-                    attrs: {
-                      src: __webpack_require__(/*! /public/img/check_icon.svg */ "./public/img/check_icon.svg"),
-                      alt: "",
-                    },
-                  }),
+                _c("div", { staticClass: "payment mb-5" }, [
+                  _c("figure", { staticClass: "icon_logo m-auto mb-2" }, [
+                    _c("img", {
+                      attrs: { src: __webpack_require__(/*! /public/img/card.png */ "./public/img/card.png"), alt: "" },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(0),
                 ]),
                 _vm._v(" "),
-                _vm._m(0),
+                _c("div", { staticClass: "driver" }, [
+                  _c("figure", { staticClass: "icon_driver m-auto mb-1" }, [
+                    _c("img", {
+                      attrs: { src: __webpack_require__(/*! /public/img/spy.png */ "./public/img/spy.png"), alt: "" },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1),
+                ]),
                 _vm._v(" "),
-                _vm._m(1),
+                _vm._m(2),
               ]
             ),
           ]),
@@ -51679,9 +51702,17 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "description text-violet" }, [
-      _c("h2", { staticClass: "fw-bold" }, [
+      _c("p", { staticClass: "fw-bold fs-4" }, [
         _vm._v("Pagamento effettuato con successo!"),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "description text-violet" }, [
+      _c("p", { staticClass: "fw-bolder fs-5" }, [_vm._v("Driver in arrivo!")]),
     ])
   },
   function () {
@@ -68334,14 +68365,14 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./public/img/check_icon.svg":
-/*!***********************************!*\
-  !*** ./public/img/check_icon.svg ***!
-  \***********************************/
+/***/ "./public/img/card.png":
+/*!*****************************!*\
+  !*** ./public/img/card.png ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/check_icon.svg?8459f328ae2e798c3ae72283133a0140";
+module.exports = "/images/card.png?ea239bc0b7afcd130ff5d408b9579715";
 
 /***/ }),
 
@@ -68397,6 +68428,17 @@ module.exports = "/images/placeholder_restaurants.png?a92dd0bdabb802fc25be07d8e0
 /***/ (function(module, exports) {
 
 module.exports = "/images/shopping-cart.gif?3ee99cbc78da22bfbdbe0de63d94f543";
+
+/***/ }),
+
+/***/ "./public/img/spy.png":
+/*!****************************!*\
+  !*** ./public/img/spy.png ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/spy.png?c93989bae4dc01dcbec5d899a71456bd";
 
 /***/ }),
 

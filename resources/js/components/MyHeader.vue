@@ -310,7 +310,7 @@ ul{
     visibility: visible;
     height: unset;
     transform: scaleY(1) translateY(-9px);
-
+}
 
 .delete-el{
     width: 20px;

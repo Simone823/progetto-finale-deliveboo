@@ -6515,22 +6515,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -51707,19 +51691,7 @@ var render = function () {
               ]
             ),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "me-3 cart-burger d-flex align-items-center gap-2",
-              },
-              [
-                _vm.authUser == null
-                  ? _c("div", { staticClass: "nav-item" }, [_vm._m(0)])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm._m(1),
-              ]
-            ),
+            _vm._m(0),
             _vm._v(" "),
             _c("div", { staticClass: "d-none d-md-flex justify-content-end" }, [
               _c(
@@ -51769,7 +51741,7 @@ var render = function () {
                             attrs: { "aria-labelledby": "navbarDropdown" },
                           },
                           [
-                            _vm._m(2),
+                            _vm._m(1),
                             _vm._v(" "),
                             _c("li", [
                               _c(
@@ -51802,22 +51774,18 @@ var render = function () {
                   _vm._v(" "),
                   _vm.authUser == null
                     ? _c("li", { staticClass: "nav-item dropdown" }, [
-                        _vm._m(3),
+                        _vm._m(2),
                         _vm._v(" "),
-                        _vm._m(4),
+                        _vm._m(3),
                       ])
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.authUser == null
+                    ? _c("li", { staticClass: "nav-item" }, [_vm._m(4)])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.authUser == null
                     ? _c("li", { staticClass: "nav-item" }, [_vm._m(5)])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.authUser == null
-                    ? _c("li", { staticClass: "nav-item" }, [_vm._m(6)])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.authUser == null
-                    ? _c("li", { staticClass: "nav-item" }, [_vm._m(7)])
                     : _vm._e(),
                 ]
               ),
@@ -51870,7 +51838,7 @@ var render = function () {
                               attrs: { "aria-labelledby": "navbarDropdown" },
                             },
                             [
-                              _vm._m(8),
+                              _vm._m(6),
                               _vm._v(" "),
                               _c("li", [
                                 _c(
@@ -51910,7 +51878,7 @@ var render = function () {
                           staticClass:
                             "nav-item text-center dropdown bg-purple",
                         },
-                        [_vm._m(9), _vm._v(" "), _vm._m(10)]
+                        [_vm._m(7), _vm._v(" "), _vm._m(8)]
                       )
                     : _vm._e(),
                   _vm._v(" "),
@@ -52158,7 +52126,7 @@ var render = function () {
                         ]),
                         _vm._v(" "),
                         _c("span", { staticClass: "ms-2 p-3 fs-3" }, [
-                          _vm._v("Il carrello è vuoto !"),
+                          _vm._v("Il carrello è vuoto"),
                         ]),
                       ]
                     )
@@ -52559,40 +52527,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-      _c("button", { staticClass: "btn-standard btn-white opacity-100" }, [
-        _c("i", { staticClass: "icon-color fa-solid fa-cart-shopping" }),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass: "d-md-none",
-        attrs: {
-          id: "burger-icon",
-          type: "button",
-          "data-bs-toggle": "collapse",
-          "data-bs-target": "#navbarNav",
-          "aria-controls": "navbarNav",
-          "aria-expanded": "false",
-          "aria-label": "Toggle navigation",
-        },
-      },
+      { staticClass: "me-3 cart-burger d-flex align-items-center gap-2" },
       [
-        _c("label", { attrs: { for: "check" } }, [
-          _c("input", { attrs: { type: "checkbox", id: "check" } }),
-          _vm._v(" "),
-          _c("span"),
-          _vm._v(" "),
-          _c("span"),
-          _vm._v(" "),
-          _c("span"),
-        ]),
+        _c(
+          "div",
+          {
+            staticClass: "d-md-none",
+            attrs: {
+              id: "burger-icon",
+              type: "button",
+              "data-bs-toggle": "collapse",
+              "data-bs-target": "#navbarNav",
+              "aria-controls": "navbarNav",
+              "aria-expanded": "false",
+              "aria-label": "Toggle navigation",
+            },
+          },
+          [
+            _c("label", { attrs: { for: "check" } }, [
+              _c("input", { attrs: { type: "checkbox", id: "check" } }),
+              _vm._v(" "),
+              _c("span"),
+              _vm._v(" "),
+              _c("span"),
+              _vm._v(" "),
+              _c("span"),
+            ]),
+          ]
+        ),
       ]
     )
   },
@@ -52701,16 +52665,6 @@ var staticRenderFns = [
         _vm._v(
           "\n                                Diventa nostro partner     \n                            "
         ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "nav-link", attrs: { href: "" } }, [
-      _c("button", { staticClass: "btn-standard btn-tr-white" }, [
-        _c("i", { staticClass: "fa-solid fa-cart-shopping" }),
       ]),
     ])
   },

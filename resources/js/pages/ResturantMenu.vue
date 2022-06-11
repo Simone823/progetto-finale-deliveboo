@@ -10,15 +10,7 @@
 
                 <!-- cart e burger versione tablet - mobile -->
                 <div class="me-3 cart-burger d-flex align-items-center gap-2">
-                    <!-- cart -->
-                    <div v-if="authUser == null" class="nav-item">
-                        <a class="nav-link" href="#">
-                            <button class="btn-standard btn-white opacity-100">
-                                <i class="icon-color fa-solid fa-cart-shopping"></i>                          
-                            </button>
-                        </a>
-                    </div>  
-        
+                          
                     <!-- BURGER ICON -->
                     <div id="burger-icon" class="d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <label for="check">
@@ -101,14 +93,6 @@
                             <a class="nav-link" href="/register">
                                 <button class="btn-standard btn-white">
                                     Diventa nostro partner     
-                                </button>
-                            </a>
-                        </li>
-                        <!-- cart -->
-                        <li v-if="authUser == null" class="nav-item">
-                            <a class="nav-link" href="">
-                                <button class="btn-standard btn-tr-white">
-                                    <i class="fa-solid fa-cart-shopping"></i>                          
                                 </button>
                             </a>
                         </li>
@@ -242,7 +226,7 @@
                             <figure class="empty-cart">
                                 <img :src="require('/public/img/shopping-cart.gif')" alt="">
                             </figure>
-                            <span class="ms-2 p-3 fs-3">Il carrello è vuoto !</span>
+                            <span class="ms-2 p-3 fs-3">Il carrello è vuoto</span>
                         </div>
                         <!-- se l'array carrello contiene elementi li mostra  -->
                         <div v-else>

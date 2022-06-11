@@ -105,11 +105,18 @@
                         </li>
                         <!-- cart -->
                         <li v-if="authUser == null" class="nav-item">
-                            <a class="nav-link" href="">
-                                <button :class="[tot == 0 ? '' : 'px-4', 'btn-standard btn-tr-white d-flex align-items-center gap-3']">
+                            <a class="nav-link dropdown" href="">
+                                <button :class="[tot == 0 ? '' : 'px-4 d-flex align-items-center gap-3 dropdown-label','btn-standard btn-tr-white']">
                                     <i class="fa-solid fa-cart-shopping"></i>  
-                                    <span :class="tot == 0 ? 'd-none' : 'd-block' ">Tot. {{ tot }}&euro;</span>                        
+                                    <span :class="tot == 0 ? 'd-none' : 'd-block fs-6' ">Tot. {{ tot }}&euro;</span>    
                                 </button>
+                                <ul class="dropdown-items">
+                                    <li v-for="el in cart" :key="el.id">
+                                        <span>X{{ el.quantity }}</span>
+                                        <span>{{ el.name }}</span>
+                                        <span>{{ el.price }}</span>
+                                    </li>
+                                </ul>                    
                             </a>
                         </li>
                     </ul>
@@ -196,7 +203,7 @@ export default {
             logo: require('/public/img/logo_white.svg'),
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             cart: JSON.parse(localStorage.getItem('cart')),
-            tot: localStorage.getItem('total')
+            tot: localStorage.getItem('total'),
         }
             
     },
@@ -221,4 +228,54 @@ export default {
 
 <style lang="scss" scoped>
 
+ul{
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-label{
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    transition: all 300ms;
+}
+
+.dropdown-items{
+    background-color: white;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    min-width: 100%;
+    height: 0;
+    position: absolute;
+    top: 60px;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 300ms;
+
+    li{
+        border-top: 1px solid #3E235D;
+        padding: 5px 0;
+
+        &:first-child{
+            border-top: none;
+        }
+    }
+}
+
+.dropdown:hover > .dropdown-items{
+    opacity: 1;
+    visibility: visible;
+    height: unset;
+    transform: scaleY(1) translateY(-9px);
+}
 </style>

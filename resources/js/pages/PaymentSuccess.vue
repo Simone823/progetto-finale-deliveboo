@@ -3,23 +3,23 @@
         <MyHeader/>
 
         <!-- Container  -->
-        <div class="container py-5 px-2">
-            <div class="row justify-content-center m-0">
-                <div class="col-12 col-md-8 card d-flex justify-content-center align-items-center flex-column gap-3">
+        <div class="container py-5 px-2 d-flex align-items-center justify-content-center">
+            <div class="row justify-content-center m-0 w-100">
+                <div class="col-12 col-md-8 card d-flex justify-content-center align-items-center flex-column gap-3 shadow-lg text-center">
 
                     <!-- Logo check -->
                     <figure class="icon_logo">
-                        <img :src="require('/public/img/check_icon.png')" alt="">
+                        <img :src="require('/public/img/check_icon.svg')" alt="">
                     </figure>
 
                     <!-- Description -->
-                    <div class="description">
+                    <div class="description text-violet">
                         <h2 class="fw-bold">Pagamento effettuato con successo!</h2>
                     </div>
 
                     <!-- Button -->
                     <div class="button">
-                        <a href="/" class="btn rounded btn-info">
+                        <a href="/" class="btn-green_1 btn pay-button">
                             Torna alla HomePage
                         </a>
                     </div>
@@ -42,8 +42,13 @@ import MyHeader from '../components/MyHeader.vue';
 
 <style lang="scss" scoped>
 
+.container {
+    height: 80vh;
+}
+
 .card {
     height: 500px;
+    border: none;
 
     .icon_logo {
         width: 100px;

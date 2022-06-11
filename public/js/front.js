@@ -6003,6 +6003,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -6037,22 +6043,42 @@ __webpack_require__.r(__webpack_exports__);
 
       return sum;
     },
+    // ELIMINO UN ELEMENTO DAL CARRELLO
+    removeItemFromCart: function removeItemFromCart(plateId) {
+      this.cart = this.cart.filter(function (item) {
+        return item.id != plateId;
+      });
+      localStorage.setItem("cart", JSON.stringify(this.cart));
+      localStorage.setItem('total', this.getTotal());
+    },
+    // Elimino tutti gli elementi dal carrello
+    removeAllItemsFromCart: function removeAllItemsFromCart() {
+      this.cart = [];
+      localStorage.setItem("cart", JSON.stringify(this.cart));
+      localStorage.setItem('total', 0); // localStorage.removeItem("cart", JSON.stringify(this.cart));
+    },
     // Invio form dati utente
     sendForm: function sendForm() {
+      var _this = this;
+
       axios.post('/api/orders', {
         form: this.form,
         total: localStorage.getItem('total'),
         cart: this.cart
       }).then(function (res) {
-        var data = res.data; // console.log(res);
+        var data = res.data;
+
+        if (res.status == 200) {
+          localStorage.setItem('cart', '[]');
+          localStorage.setItem('total', 0);
+          _this.cart = [];
+          window.location = '/checkout';
+        }
       });
     },
+    // on submit form
     onSubmit: function onSubmit() {
       this.sendForm(); // console.log(this.form);
-
-      localStorage.setItem('cart', '[]');
-      localStorage.setItem('total', 0);
-      this.cart = [];
     }
   }
 });
@@ -11864,7 +11890,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card[data-v-563fa334] {\n  height: 500px;\n}\n.card .icon_logo[data-v-563fa334] {\n  width: 100px;\n  height: 100px;\n}\n.card .icon_logo img[data-v-563fa334] {\n  width: 100%;\n  height: 100%;\n  display: block;\n}", ""]);
+exports.push([module.i, ".container[data-v-563fa334] {\n  height: 80vh;\n}\n.card[data-v-563fa334] {\n  height: 500px;\n  border: none;\n}\n.card .icon_logo[data-v-563fa334] {\n  width: 100px;\n  height: 100px;\n}\n.card .icon_logo img[data-v-563fa334] {\n  width: 100%;\n  height: 100%;\n  display: block;\n}", ""]);
 
 // exports
 
@@ -50513,7 +50539,7 @@ var render = function () {
     [
       _c("MyHeader"),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "container py-5 px-3" }, [
         _c("div", { staticClass: "row" }, [
           _c(
             "div",
@@ -50533,7 +50559,7 @@ var render = function () {
                             on: {
                               submit: function ($event) {
                                 $event.preventDefault()
-                                handleSubmit(_vm.sendForm())
+                                handleSubmit(_vm.onSubmit())
                               },
                             },
                           },
@@ -50547,7 +50573,8 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_name",
-                                    rules: "required|min:3|max:150|alpha",
+                                    rules:
+                                      "required|min:3|max:150|alpha_spaces",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -50644,7 +50671,8 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_surname",
-                                    rules: "required|min:3|max:150|alpha",
+                                    rules:
+                                      "required|min:3|max:150|alpha_spaces",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -50841,7 +50869,8 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_city",
-                                    rules: "required|min:3|max:150|alpha",
+                                    rules:
+                                      "required|min:3|max:150|alpha_spaces",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -51133,7 +51162,7 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_phone",
-                                    rules: "required|numeric|max:15",
+                                    rules: "required|numeric|min:6|max:15",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -51219,6 +51248,55 @@ var render = function () {
                                     true
                                   ),
                                 }),
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "button d-flex align-items-center justify-content-between flex-wrap",
+                              },
+                              [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn-green_1 btn pay-button",
+                                    attrs: {
+                                      disabled: _vm.cart.length ? false : true,
+                                      type: "submit",
+                                    },
+                                  },
+                                  [_vm._v("Vai al pagamento")]
+                                ),
+                                _vm._v(" "),
+                                _vm.cart.length == 0
+                                  ? _c(
+                                      "router-link",
+                                      {
+                                        staticClass:
+                                          "text-reset text-decoration-none",
+                                        attrs: { to: "/city-resturants" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "fa-solid fa-arrow-left-long",
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "text-hover-purple" },
+                                          [
+                                            _vm._v(
+                                              "Vai alla lista dei ristoranti"
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    )
+                                  : _vm._e(),
                               ],
                               1
                             ),
@@ -51311,22 +51389,6 @@ var render = function () {
                 2
               )
             : _vm._e(),
-          _vm._v(" "),
-          _c("div", { staticClass: "button" }, [
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-info",
-                attrs: { href: "/checkout", type: "submit" },
-                on: {
-                  click: function ($event) {
-                    return _vm.onSubmit()
-                  },
-                },
-              },
-              [_vm._v("Vai al pagamento")]
-            ),
-          ]),
         ]),
       ]),
     ],
@@ -51360,31 +51422,38 @@ var render = function () {
     [
       _c("MyHeader"),
       _vm._v(" "),
-      _c("div", { staticClass: "container py-5 px-2" }, [
-        _c("div", { staticClass: "row justify-content-center m-0" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-12 col-md-8 card d-flex justify-content-center align-items-center flex-column gap-3",
-            },
-            [
-              _c("figure", { staticClass: "icon_logo" }, [
-                _c("img", {
-                  attrs: {
-                    src: __webpack_require__(/*! /public/img/check_icon.png */ "./public/img/check_icon.png"),
-                    alt: "",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _vm._m(1),
-            ]
-          ),
-        ]),
-      ]),
+      _c(
+        "div",
+        {
+          staticClass:
+            "container py-5 px-2 d-flex align-items-center justify-content-center",
+        },
+        [
+          _c("div", { staticClass: "row justify-content-center m-0 w-100" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-12 col-md-8 card d-flex justify-content-center align-items-center flex-column gap-3 shadow-lg text-center",
+              },
+              [
+                _c("figure", { staticClass: "icon_logo" }, [
+                  _c("img", {
+                    attrs: {
+                      src: __webpack_require__(/*! /public/img/check_icon.svg */ "./public/img/check_icon.svg"),
+                      alt: "",
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _vm._m(1),
+              ]
+            ),
+          ]),
+        ]
+      ),
     ],
     1
   )
@@ -51394,7 +51463,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "description" }, [
+    return _c("div", { staticClass: "description text-violet" }, [
       _c("h2", { staticClass: "fw-bold" }, [
         _vm._v("Pagamento effettuato con successo!"),
       ]),
@@ -51405,11 +51474,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "button" }, [
-      _c("a", { staticClass: "btn rounded btn-info", attrs: { href: "/" } }, [
-        _vm._v(
-          "\n                        Torna alla HomePage\n                    "
-        ),
-      ]),
+      _c(
+        "a",
+        { staticClass: "btn-green_1 btn pay-button", attrs: { href: "/" } },
+        [
+          _vm._v(
+            "\n                        Torna alla HomePage\n                    "
+          ),
+        ]
+      ),
     ])
   },
 ]
@@ -67963,14 +68036,14 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./public/img/check_icon.png":
+/***/ "./public/img/check_icon.svg":
 /*!***********************************!*\
-  !*** ./public/img/check_icon.png ***!
+  !*** ./public/img/check_icon.svg ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/check_icon.png?aaa5322eec87e5307f7a722b81552d6c";
+module.exports = "/images/check_icon.svg?b4f4d64c895f007221df6f635d88c42c";
 
 /***/ }),
 
@@ -69325,7 +69398,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

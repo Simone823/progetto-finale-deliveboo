@@ -1,7 +1,7 @@
 <template>
     <div>
         <MyHeader/>
-        <div class="container">
+        <div class="container py-5 px-3">
 
             <!-- Row 1 checkout cart -->
             <div class="row">
@@ -11,10 +11,10 @@
                 <div class="col-12 col-md-6">
                     <ValidationObserver v-slot="{handleSubmit}">
 
-                        <form @submit.prevent="handleSubmit(sendForm())" methods="post">
+                        <form @submit.prevent="handleSubmit(onSubmit())" methods="post">
                             <!-- Guest name -->
                             <div class="form-group">
-                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_name" rules="required|min:3|max:150|alpha" v-slot="{ errors }">
+                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_name" rules="required|min:3|max:150|alpha_spaces" v-slot="{ errors }">
                                     <label class="col-form-label fs-5" for="guest_name">Nome</label>
                                     <input v-model="form.guest_name" type="text" class="form-control" :class="form.guest_name.length == 0 ? 'is-invalid' : 'is-valid' && errors.length ? 'is-invalid' : 'is-valid'" id="guest_name" name="guest_name" value="" placeholder="Inserisci il tuo nome">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
@@ -25,7 +25,7 @@
 
                             <!-- Guest surname -->
                             <div class="form-group">
-                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_surname" rules="required|min:3|max:150|alpha" v-slot="{errors}">
+                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_surname" rules="required|min:3|max:150|alpha_spaces" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_surname">Cognome</label>
                                     <input v-model="form.guest_surname" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_surname.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_surname" name="guest_surname" value="" placeholder="Inserisci il tuo cognome">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
@@ -47,7 +47,7 @@
 
                             <!-- Guest city -->
                             <div class="form-group">
-                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_city" rules="required|min:3|max:150|alpha" v-slot="{errors}">
+                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_city" rules="required|min:3|max:150|alpha_spaces" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_city">Città</label>
                                     <input v-model="form.guest_city" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_city.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_city" name="guest_city" value="" placeholder="Inserisci la tua città">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
@@ -80,13 +80,22 @@
 
                             <!-- Guest phone -->
                             <div class="form-group">
-                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_phone" rules="required|numeric|max:15" v-slot="{errors}">
+                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_phone" rules="required|numeric|min:6|max:15" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_phone">Telefono</label>
                                     <input v-model="form.guest_phone" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_phone.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_phone" name="guest_phone" value="" placeholder="Inserisci il tuo numero di telefono">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
                                         {{errors[0]}}
                                     </div>
                                 </validationProvider>
+                            </div>
+
+                            <!-- Button submit -->
+                            <div class="button d-flex align-items-center justify-content-between flex-wrap">
+                                <button :disabled="cart.length ? false : true" type="submit" class="btn-green_1 btn pay-button">Vai al pagamento</button>
+                                <router-link to="/city-resturants" class="text-reset text-decoration-none" v-if="cart.length == 0">
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                    <span class="text-hover-purple">Vai alla lista dei ristoranti</span>
+                                </router-link>
                             </div>
                         </form>
                     </ValidationObserver>
@@ -112,9 +121,6 @@
                     </div>
                 </div>
 
-                <div class="button">
-                    <a href="/checkout" @click="onSubmit()" type="submit" class="btn btn-info">Vai al pagamento</a>
-                </div>
             </div>
         </div>
 
@@ -149,6 +155,7 @@ export default {
     },
 
     methods: {
+
         //TOTALE
         getTotal(){
             let sumItem;
@@ -160,25 +167,43 @@ export default {
             return sum;
         },
 
+        // ELIMINO UN ELEMENTO DAL CARRELLO
+        removeItemFromCart(plateId){
+            this.cart = this.cart.filter(item => item.id  != plateId);
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', this.getTotal());
+        },
+
+        // Elimino tutti gli elementi dal carrello
+        removeAllItemsFromCart(){
+            this.cart = [];
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', 0);
+            // localStorage.removeItem("cart", JSON.stringify(this.cart));
+        },
+
         // Invio form dati utente
         sendForm() {
             axios.post('/api/orders', {
                 form: this.form,
                 total: localStorage.getItem('total'),
-                cart: this.cart
+                cart: this.cart,
             })
             .then( res => {
                 const data = res.data;
-                // console.log(res);
+                if(res.status == 200) {
+                    localStorage.setItem('cart', '[]');
+                    localStorage.setItem('total', 0);
+                    this.cart = [];
+                    window.location = '/checkout';
+                }
             })
         },
 
+        // on submit form
         onSubmit() {
             this.sendForm();
             // console.log(this.form);
-            localStorage.setItem('cart', '[]');
-            localStorage.setItem('total', 0);
-            this.cart = [];
         }
     },
 }

@@ -6003,6 +6003,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -6037,22 +6043,35 @@ __webpack_require__.r(__webpack_exports__);
 
       return sum;
     },
+    // ELIMINO UN ELEMENTO DAL CARRELLO
+    removeItemFromCart: function removeItemFromCart(plateId) {
+      this.cart = this.cart.filter(function (item) {
+        return item.id != plateId;
+      });
+      localStorage.setItem("cart", JSON.stringify(this.cart));
+      localStorage.setItem('total', this.getTotal());
+    },
     // Invio form dati utente
     sendForm: function sendForm() {
+      var _this = this;
+
       axios.post('/api/orders', {
         form: this.form,
         total: localStorage.getItem('total'),
         cart: this.cart
       }).then(function (res) {
-        var data = res.data; // console.log(res);
+        var data = res.data;
+
+        if (res.status == 200) {
+          localStorage.setItem('cart', '[]');
+          localStorage.setItem('total', 0);
+          _this.cart = [];
+          window.location = '/checkout';
+        }
       });
     },
     onSubmit: function onSubmit() {
       this.sendForm(); // console.log(this.form);
-
-      localStorage.setItem('cart', '[]');
-      localStorage.setItem('total', 0);
-      this.cart = [];
     }
   }
 });
@@ -50483,7 +50502,7 @@ var render = function () {
     [
       _c("MyHeader"),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "container py-5 px-3" }, [
         _c("div", { staticClass: "row" }, [
           _c(
             "div",
@@ -50503,7 +50522,7 @@ var render = function () {
                             on: {
                               submit: function ($event) {
                                 $event.preventDefault()
-                                handleSubmit(_vm.sendForm())
+                                handleSubmit(_vm.onSubmit())
                               },
                             },
                           },
@@ -51192,6 +51211,55 @@ var render = function () {
                               ],
                               1
                             ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "button d-flex align-items-center justify-content-between",
+                              },
+                              [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn-green_1 btn pay-button",
+                                    attrs: {
+                                      disabled: _vm.cart.length ? false : true,
+                                      type: "submit",
+                                    },
+                                  },
+                                  [_vm._v("Vai al pagamento")]
+                                ),
+                                _vm._v(" "),
+                                _vm.cart.length == 0
+                                  ? _c(
+                                      "router-link",
+                                      {
+                                        staticClass:
+                                          "text-reset text-decoration-none",
+                                        attrs: { to: "/city-resturants" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "fa-solid fa-arrow-left-long",
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "text-hover-purple" },
+                                          [
+                                            _vm._v(
+                                              "Vai alla lista dei ristoranti"
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    )
+                                  : _vm._e(),
+                              ],
+                              1
+                            ),
                           ]
                         ),
                       ]
@@ -51281,22 +51349,6 @@ var render = function () {
                 2
               )
             : _vm._e(),
-          _vm._v(" "),
-          _c("div", { staticClass: "button" }, [
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-info",
-                attrs: { href: "/checkout", type: "submit" },
-                on: {
-                  click: function ($event) {
-                    return _vm.onSubmit()
-                  },
-                },
-              },
-              [_vm._v("Vai al pagamento")]
-            ),
-          ]),
         ]),
       ]),
     ],
@@ -69295,7 +69347,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

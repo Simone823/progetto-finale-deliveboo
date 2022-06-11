@@ -1,7 +1,7 @@
 <template>
     <div>
         <MyHeader/>
-        <div class="container">
+        <div class="container py-5 px-3">
 
             <!-- Row 1 checkout cart -->
             <div class="row">
@@ -11,7 +11,7 @@
                 <div class="col-12 col-md-6">
                     <ValidationObserver v-slot="{handleSubmit}">
 
-                        <form @submit.prevent="handleSubmit(sendForm())" methods="post">
+                        <form @submit.prevent="handleSubmit(onSubmit())" methods="post">
                             <!-- Guest name -->
                             <div class="form-group">
                                 <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_name" rules="required|min:3|max:150|alpha" v-slot="{ errors }">
@@ -88,6 +88,15 @@
                                     </div>
                                 </validationProvider>
                             </div>
+
+                            <!-- Button submit -->
+                            <div class="button d-flex align-items-center justify-content-between">
+                                <button :disabled="cart.length ? false : true" type="submit" class="btn-green_1 btn pay-button">Vai al pagamento</button>
+                                <router-link to="/city-resturants" class="text-reset text-decoration-none" v-if="cart.length == 0">
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                    <span class="text-hover-purple">Vai alla lista dei ristoranti</span>
+                                </router-link>
+                            </div>
                         </form>
                     </ValidationObserver>
                 </div>
@@ -112,9 +121,6 @@
                     </div>
                 </div>
 
-                <div class="button">
-                    <a href="/checkout" @click="onSubmit()" type="submit" class="btn btn-info">Vai al pagamento</a>
-                </div>
             </div>
         </div>
 
@@ -160,25 +166,34 @@ export default {
             return sum;
         },
 
+        // ELIMINO UN ELEMENTO DAL CARRELLO
+        removeItemFromCart(plateId){
+            this.cart = this.cart.filter(item => item.id  != plateId);
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', this.getTotal());
+        },
+
         // Invio form dati utente
         sendForm() {
             axios.post('/api/orders', {
                 form: this.form,
                 total: localStorage.getItem('total'),
-                cart: this.cart
+                cart: this.cart,
             })
             .then( res => {
                 const data = res.data;
-                // console.log(res);
+                if(res.status == 200) {
+                    localStorage.setItem('cart', '[]');
+                    localStorage.setItem('total', 0);
+                    this.cart = [];
+                    window.location = '/checkout';
+                }
             })
         },
 
         onSubmit() {
             this.sendForm();
             // console.log(this.form);
-            localStorage.setItem('cart', '[]');
-            localStorage.setItem('total', 0);
-            this.cart = [];
         }
     },
 }

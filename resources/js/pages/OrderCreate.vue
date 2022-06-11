@@ -80,7 +80,7 @@
 
                             <!-- Guest phone -->
                             <div class="form-group">
-                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_phone" rules="required|numeric|max:15" v-slot="{errors}">
+                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_phone" rules="required|numeric|min:6|max:15" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_phone">Telefono</label>
                                     <input v-model="form.guest_phone" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_phone.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_phone" name="guest_phone" value="" placeholder="Inserisci il tuo numero di telefono">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">

@@ -51132,7 +51132,7 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_phone",
-                                    rules: "required|numeric|max:15",
+                                    rules: "required|numeric|min:6|max:15",
                                   },
                                   scopedSlots: _vm._u(
                                     [

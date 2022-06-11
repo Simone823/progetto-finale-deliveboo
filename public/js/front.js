@@ -6484,6 +6484,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -52003,6 +52008,34 @@ var render = function () {
                                 ),
                               ]),
                               _vm._v(" "),
+                              _c("div", { staticClass: "control-qty" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    on: {
+                                      click: function ($event) {
+                                        item.quantity--
+                                      },
+                                    },
+                                  },
+                                  [_vm._v("-")]
+                                ),
+                                _vm._v(" "),
+                                _c("span", [_vm._v(_vm._s(item.quantity))]),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    on: {
+                                      click: function ($event) {
+                                        item.quantity++
+                                      },
+                                    },
+                                  },
+                                  [_vm._v("+")]
+                                ),
+                              ]),
+                              _vm._v(" "),
                               _c(
                                 "button",
                                 {
@@ -68043,7 +68076,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/check_icon.svg?b4f4d64c895f007221df6f635d88c42c";
+module.exports = "/images/check_icon.svg?8459f328ae2e798c3ae72283133a0140";
 
 /***/ }),
 
@@ -69398,7 +69431,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

@@ -251,6 +251,11 @@
                                 </figure> -->
                                 <span>x{{ item.quantity }}</span><span class="item-name">{{ item.name }}</span>
                                 <span class="flex-grow-1 fs-5">{{ item.price * item.quantity }}&euro;</span>
+                                <div class="control-qty">
+                                    <button @click="item.quantity--">-</button>
+                                    <span>{{ item.quantity }}</span>
+                                    <button @click="item.quantity++">+</button>
+                                </div>
                                 <button class="btn btn-danger text-white" @click="removeItemFromCart(item.id)">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>

@@ -292,7 +292,9 @@
                 <div v-else
                     :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "
                     v-for="(menuPlate,index) in menuPlates" :key="index">
-                    <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">X</button>
+                    <button class="close-info p-0" @click="closePlateInfo()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                     <figure class="info-plate-img">
                         <img v-if="menuPlate.image" :src="`/storage/${menuPlate.image}`" alt="">
                         <img v-else :src="require('/public/img/placeholder_plate.png')" alt="">
@@ -605,11 +607,11 @@ export default {
 
         .close-info{
             position: absolute;
-            top: 1vh;
-            right: 1vh;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
+            top: 0;
+            right: 0;
+            width: 65px;
+            height: 65px;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
             border: none;
             background-color: white;
             color: #00CCBC;
@@ -617,6 +619,13 @@ export default {
             font-weight: 600;
             opacity: 0.65;
             z-index: 9999;
+            
+            i{
+                position: absolute;
+                top: 10px;
+                right: 14px;
+                font-size: 25px;
+            }
 
             &:hover{
                 opacity: 1;

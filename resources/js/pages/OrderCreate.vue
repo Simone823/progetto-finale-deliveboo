@@ -14,7 +14,7 @@
                         <form @submit.prevent="handleSubmit(onSubmit())" methods="post">
                             <!-- Guest name -->
                             <div class="form-group">
-                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_name" rules="required|min:3|max:150|alpha" v-slot="{ errors }">
+                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_name" rules="required|min:3|max:150|alpha_spaces" v-slot="{ errors }">
                                     <label class="col-form-label fs-5" for="guest_name">Nome</label>
                                     <input v-model="form.guest_name" type="text" class="form-control" :class="form.guest_name.length == 0 ? 'is-invalid' : 'is-valid' && errors.length ? 'is-invalid' : 'is-valid'" id="guest_name" name="guest_name" value="" placeholder="Inserisci il tuo nome">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
@@ -25,7 +25,7 @@
 
                             <!-- Guest surname -->
                             <div class="form-group">
-                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_surname" rules="required|min:3|max:150|alpha" v-slot="{errors}">
+                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_surname" rules="required|min:3|max:150|alpha_spaces" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_surname">Cognome</label>
                                     <input v-model="form.guest_surname" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_surname.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_surname" name="guest_surname" value="" placeholder="Inserisci il tuo cognome">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
@@ -47,7 +47,7 @@
 
                             <!-- Guest city -->
                             <div class="form-group">
-                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_city" rules="required|min:3|max:150|alpha" v-slot="{errors}">
+                                <validationProvider class="d-flex align-items-center flex-column mb-3" name="guest_city" rules="required|min:3|max:150|alpha_spaces" v-slot="{errors}">
                                     <label class="col-form-label fs-5" for="guest_city">Città</label>
                                     <input v-model="form.guest_city" type="text" class="form-control" :class="errors.length ? 'is-invalid' : 'is-valid' && form.guest_city.length == 0 ? 'is-invalid' : 'is-valid' " id="guest_city" name="guest_city" value="" placeholder="Inserisci la tua città">
                                     <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">

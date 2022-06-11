@@ -50536,7 +50536,8 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_name",
-                                    rules: "required|min:3|max:150|alpha",
+                                    rules:
+                                      "required|min:3|max:150|alpha_spaces",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -50633,7 +50634,8 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_surname",
-                                    rules: "required|min:3|max:150|alpha",
+                                    rules:
+                                      "required|min:3|max:150|alpha_spaces",
                                   },
                                   scopedSlots: _vm._u(
                                     [
@@ -50830,7 +50832,8 @@ var render = function () {
                                     "d-flex align-items-center flex-column mb-3",
                                   attrs: {
                                     name: "guest_city",
-                                    rules: "required|min:3|max:150|alpha",
+                                    rules:
+                                      "required|min:3|max:150|alpha_spaces",
                                   },
                                   scopedSlots: _vm._u(
                                     [

@@ -12783,7 +12783,7 @@ img {
 }
 
 .footer-container {
-  min-height: 0;
+  height: 455px;
   color: white;
 }
 

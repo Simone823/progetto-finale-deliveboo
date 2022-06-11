@@ -6709,6 +6709,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6727,7 +6733,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       //faccio una chiamata API passando come parametro l'id della tipologia cliccata
-      // TODO controllo sull'id nel url
       axios.get("/api/resturant-type/".concat(this.$route.params.id)).then(function (res) {
         //salvo i dati della chiamata nell'array
         _this.resturantsType = res.data.users;
@@ -11922,7 +11927,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".error-wrapper[data-v-82158542] {\n  height: 100vh;\n}\n.title[data-v-82158542] {\n  z-index: 999;\n}\n.title .error-title[data-v-82158542] {\n  font-size: calc(2.5vh + 5vw + 85px);\n  color: #00CCBC;\n}\n.error-wrapper[data-v-82158542] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png")) + ");\n  background-size: cover;\n  background-position: center;\n}\n.error-wrapper[data-v-82158542]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.35);\n  z-index: 0;\n}", ""]);
+exports.push([module.i, ".error-wrapper[data-v-82158542] {\n  height: 100vh;\n}\n.title[data-v-82158542] {\n  z-index: 999;\n}\n.title .error-title[data-v-82158542] {\n  font-size: calc(2.5vh + 5vw + 85px);\n  color: #00CCBC;\n}\n.title p[data-v-82158542] {\n  color: #333;\n}\n.error-wrapper[data-v-82158542] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png")) + ");\n  background-size: cover;\n  background-position: center;\n}\n.error-wrapper[data-v-82158542]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.072);\n  z-index: 0;\n}", ""]);
 
 // exports
 
@@ -11998,7 +12003,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".bg-green_1[data-v-806ba712] {\n  background-color: #00ccbc;\n}", ""]);
+exports.push([module.i, ".bg-green_1[data-v-806ba712] {\n  background-color: #00ccbc;\n}\n.page-wrapper[data-v-806ba712] {\n  min-height: calc(100vh - 455px);\n}\n.info-card[data-v-806ba712] {\n  position: relative;\n  border-radius: 10px;\n  max-width: 500px;\n  width: 85%;\n  max-height: 75vh;\n  background-color: white;\n  overflow: hidden;\n  box-shadow: 0px 0px 20px 3px rgba(205, 205, 205, 0.8901960784);\n}\n.info-card .info-img[data-v-806ba712] {\n  width: 100%;\n  height: 280px;\n  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n  overflow: hidden;\n}\n.info-card .info-img img[data-v-806ba712] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}", ""]);
 
 // exports
 
@@ -50311,9 +50316,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "text-center title" }, [
           _c("h1", { staticClass: "error-title fw-bolder" }, [_vm._v("404")]),
           _vm._v(" "),
-          _c("p", { staticClass: "fs-4 text-white fw-bold" }, [
-            _vm._v("PAGE NOT FOUND!"),
-          ]),
+          _c("p", { staticClass: "fs-4 fw-bold" }, [_vm._v("PAGE NOT FOUND!")]),
         ]),
       ]
     )
@@ -52883,51 +52886,85 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "page-wrapper" },
     [
       _c("MyHeader"),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row pt-5 pb-5" }, [
-          _vm.resturantsType.length == 0
-            ? _c("div", [
-                _c("p", [
-                  _vm._v("Per questa tipologia non ci sono ristoranti"),
-                ]),
-              ])
-            : _c("div", [
-                _c("h5", {}, [
-                  _vm._v("Hai scelto la categoria: "),
-                  _c(
-                    "span",
-                    { staticClass: "badge rounded-pill bg-green_1 text-light" },
-                    [_vm._v(" " + _vm._s(_vm.typeName))]
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "cards-wrapper d-flex flex-wrap gap-3 justify-content-center mt-5 mb-5",
-                    },
-                    _vm._l(_vm.resturantsType, function (resturantType) {
-                      return _c("ResturantTypeCard", {
-                        key: resturantType.user_id,
-                        attrs: { resturantType: resturantType },
-                      })
+        _c(
+          "div",
+          {
+            class: [
+              _vm.resturantsType.length == 0 ? "justify-content-center" : "",
+              "row pt-5 pb-5",
+            ],
+          },
+          [
+            _vm.resturantsType.length == 0
+              ? _c("div", { staticClass: "info-card p-0 m-0" }, [
+                  _c("figure", { staticClass: "info-img" }, [
+                    _c("img", {
+                      attrs: {
+                        src: __webpack_require__(/*! /public/img/placeholder_restaurants.png */ "./public/img/placeholder_restaurants.png"),
+                        alt: "",
+                      },
                     }),
-                    1
-                  ),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(0),
+                ])
+              : _c("div", [
+                  _c("h5", {}, [
+                    _vm._v("Hai scelto la categoria: "),
+                    _c(
+                      "span",
+                      {
+                        staticClass: "badge rounded-pill bg-green_1 text-light",
+                      },
+                      [_vm._v(" " + _vm._s(_vm.typeName))]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "cards-wrapper d-flex flex-wrap gap-3 justify-content-center mt-5 mb-5",
+                      },
+                      _vm._l(_vm.resturantsType, function (resturantType) {
+                        return _c("ResturantTypeCard", {
+                          key: resturantType.user_id,
+                          attrs: { resturantType: resturantType },
+                        })
+                      }),
+                      1
+                    ),
+                  ]),
                 ]),
-              ]),
-        ]),
+          ]
+        ),
       ]),
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "info-plate-body px-4 pb-5 pt-1 text-center" },
+      [
+        _c("p", { staticClass: "fs-4 m-0" }, [
+          _vm._v("Non ci sono ristoranti per questa categoria"),
+        ]),
+      ]
+    )
+  },
+]
 render._withStripped = true
 
 

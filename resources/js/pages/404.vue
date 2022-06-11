@@ -4,7 +4,7 @@
         <div class="container flex-grow-1 d-flex justify-content-center align-items-center">
             <div class="text-center title">
                 <h1 class="error-title fw-bolder">404</h1>
-                <p class="fs-4 text-white fw-bold">PAGE NOT FOUND!</p>
+                <p class="fs-4 fw-bold">PAGE NOT FOUND!</p>
             </div>
         </div>
     </div>
@@ -28,10 +28,14 @@ export default {
 
     .title{
         z-index: 999;
+
         .error-title{
-        font-size: calc(2.5vh + 5vw + 85px);
-        color: #00CCBC;
-    }
+            font-size: calc(2.5vh + 5vw + 85px);
+            color: #00CCBC;
+        }
+        p{
+            color: #333;
+        }
     }
 
     .error-wrapper{
@@ -45,7 +49,7 @@ export default {
             position: absolute;
             top: 0;
             left: 0;
-            background-color: rgba(0, 0, 0, 0.35);
+            background-color: rgba(0, 0, 0, 0.072);
             z-index: 0;
         }
     }

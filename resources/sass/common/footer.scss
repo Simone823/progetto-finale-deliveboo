@@ -2,8 +2,10 @@
     background-color: $footer_black;
 }
   
+
+
   .footer-container{
-      min-height: 0;
+      height: 455px;
       color: white;
 
       @media screen and (max-width:576px) {

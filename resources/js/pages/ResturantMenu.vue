@@ -251,10 +251,14 @@
                                 </figure> -->
                                 <span>x{{ item.quantity }}</span><span class="item-name">{{ item.name }}</span>
                                 <span class="flex-grow-1 fs-5">{{ item.price * item.quantity }}&euro;</span>
-                                <div class="control-qty">
-                                    <button @click="item.quantity--">-</button>
-                                    <span>{{ item.quantity }}</span>
-                                    <button @click="item.quantity++">+</button>
+                                <div class="control-qty d-flex justify-content-center align-items-center gap-2">
+                                    <button @click="item.quantity > 1 ? item.quantity-- : removeItemFromCart(item.id)">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <span class="fs-4 fw-bold">{{ item.quantity }}</span>
+                                    <button @click="item.quantity++">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
                                 </div>
                                 <button class="btn btn-danger text-white" @click="removeItemFromCart(item.id)">
                                     <i class="fa-solid fa-trash-can"></i>
@@ -704,6 +708,25 @@ export default {
     .disabled{
         background-color: #b0b0b0;
         opacity: 0.5;
+    }
+
+    .control-qty{
+        button{
+            background-color: white;
+            width: 28px;
+            height: 28px;
+            border: 3px solid #00CCBC;
+            color: #00CCBC;
+            border-radius: 50%;
+            font-size: 18px;
+            position: relative;
+            i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
     }
 
     @media screen and (min-width: 2150px){

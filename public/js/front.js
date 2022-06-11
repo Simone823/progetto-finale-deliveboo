@@ -11927,7 +11927,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".error-wrapper[data-v-82158542] {\n  height: 100vh;\n}\n.title[data-v-82158542] {\n  z-index: 999;\n}\n.title .error-title[data-v-82158542] {\n  font-size: calc(2.5vh + 5vw + 85px);\n  color: #00CCBC;\n}\n.error-wrapper[data-v-82158542] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png")) + ");\n  background-size: cover;\n  background-position: center;\n}\n.error-wrapper[data-v-82158542]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.35);\n  z-index: 0;\n}", ""]);
+exports.push([module.i, ".error-wrapper[data-v-82158542] {\n  height: 100vh;\n}\n.title[data-v-82158542] {\n  z-index: 999;\n}\n.title .error-title[data-v-82158542] {\n  font-size: calc(2.5vh + 5vw + 85px);\n  color: #00CCBC;\n}\n.title p[data-v-82158542] {\n  color: #333;\n}\n.error-wrapper[data-v-82158542] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png")) + ");\n  background-size: cover;\n  background-position: center;\n}\n.error-wrapper[data-v-82158542]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.072);\n  z-index: 0;\n}", ""]);
 
 // exports
 
@@ -50316,9 +50316,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "text-center title" }, [
           _c("h1", { staticClass: "error-title fw-bolder" }, [_vm._v("404")]),
           _vm._v(" "),
-          _c("p", { staticClass: "fs-4 text-white fw-bold" }, [
-            _vm._v("PAGE NOT FOUND!"),
-          ]),
+          _c("p", { staticClass: "fs-4 fw-bold" }, [_vm._v("PAGE NOT FOUND!")]),
         ]),
       ]
     )

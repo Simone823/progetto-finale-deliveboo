@@ -163,6 +163,13 @@
                             </span>
                         </a>
                     </li>
+                    <li class="nav-item text-center p-2 mb-3  @if(Route::is('admin.orders-received.index')) bg-purple @endif">
+                        <a class=" text-decoration-none" href="{{route('admin.orders-received.index')}}">
+                            <span class="@if(Route::is('admin.orders-received.index'))active @endif navbar_dashboard">
+                                Ordini ricevuti
+                            </span>
+                        </a>
+                    </li>
                     <li class="nav-item text-center mb-3">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <button class="btn-standard btn-green_1 fw-bold">

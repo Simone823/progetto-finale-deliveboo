@@ -9,96 +9,105 @@
 <div class="wrapper_references_user container-md align-self-start d-md-flex p-3 p-sm-4 p-md-4 gap-3">
     
   {{-- INFO USER --}}
-    <div class="references-info col-12 col-md-6">
+    <div class="references-info col-12">
             
       {{-- Business image --}}
       <figure id="user_image_wrapper">
         <img class="user_image" src="{{$user->business_image ? asset('storage/'.$user->business_image) : asset('img/placeholder_restaurants.png')}}" alt="user_img">
       </figure>
-            
-            
-      {{-- BUSINESS NAME --}}
-      <div class="business_header-wrapper d-flex justify-content-between align-items-center">
-        <h3 class="text-uppercase fw-bold">{{$user->business_name}}</h3>
+      
+      {{-- sezione info user + tipologie --}}
+      <div class="d-flex-column d-md-flex gap-3">
 
-        {{-- Modifica dati utente --}}
-        <a href="{{route('admin.user.edit', $user)}}" class="align-self-end animated-button1 text-reset">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <i class="fa-solid fa-pen"></i>
-        </a>
-
-        </div>
-
-        {{-- OTHER INFO --}}
-        <div class="card-body">              
-          <table class="table">
-            <tbody>
-              <tr>
-                <td class="fw-bold">Nome - Cognome</td>
-                <td>{{$user->name}}  {{$user->surname}}</td>
-              </tr>
-              <tr>
-                <td class="fw-bold">E-mail</td>
-                <td>{{ $user->email }}</td>
-              </tr>
-              <tr>
-                <td class="fw-bold">P.iva</td>
-                <td class="text-uppercase">{{$user->p_iva}}</td>
-              </tr>
-              <tr>
-                <td class="fw-bold">Nome ristorante</td>
-                <td>{{ $user->business_name }}</td>
-              </tr>
-              <tr>
-                <td class="fw-bold">Città</td>
-                <td>{{ $user->business_city }}</td>
-              </tr>
-              <tr>
-                <td class="fw-bold">Indirizzo</td>
-                <td>{{ $user->business_address }}</td>
-              </tr>
-              <tr>
-                <td class="fw-bold">CAP</td>
-                <td>{{ $user->business_cap }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-
-        {{-- TIPOLOGIE --}}
-        <div>
+        <div class="col-12 col-md-8">
+          
+          {{-- BUSINESS NAME --}}
           <div class="business_header-wrapper d-flex justify-content-between align-items-center">
-            <h5 class="fw-bold mb-0">Tipo di cucina</h5>
-
+            <h3 class="text-uppercase fw-bold">{{$user->business_name}}</h3>
+  
             {{-- Modifica dati utente --}}
-              <a href="{{route('admin.user.edit', $user)}}" class="align-self-end animated-button1 text-reset">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <i class="fa-solid fa-pen"></i>
-              </a>
+            <a href="{{route('admin.user.edit', $user)}}" class="align-self-end animated-button1 text-reset">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <i class="fa-solid fa-pen"></i>
+            </a>
           </div>
-
-          {{-- lista --}}
-          <div class="d-flex justify-content-between gap-2 m-3 mb-4 flex-wrap">
-            @foreach ($user->types as $type)
-
-            <div class="animated-button1 text-reset">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              {{$type->type_name}}
+  
+  
+            {{-- OTHER INFO --}}
+            <div class="card-body">              
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">Nome - Cognome</td>
+                    <td>{{$user->name}}  {{$user->surname}}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">E-mail</td>
+                    <td>{{ $user->email }}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">P.iva</td>
+                    <td class="text-uppercase">{{$user->p_iva}}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Nome ristorante</td>
+                    <td>{{ $user->business_name }}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Città</td>
+                    <td>{{ $user->business_city }}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Indirizzo</td>
+                    <td>{{ $user->business_address }}</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">CAP</td>
+                    <td>{{ $user->business_cap }}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
-            @endforeach
-          </div>
         </div>
+            
+  
+  
+          {{-- TIPOLOGIE --}}
+          <div class="col-12 col-md-4">
+            <div class="business_header-wrapper d-flex justify-content-between align-items-center">
+              <h5 class="fw-bold mb-0">Tipo di cucina</h5>
+  
+              {{-- Modifica dati utente --}}
+                <a href="{{route('admin.user.edit', $user)}}" class="align-self-end animated-button1 text-reset">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <i class="fa-solid fa-pen"></i>
+                </a>
+            </div>
+  
+            {{-- lista --}}
+            <div class="d-flex justify-content-envely gap-2 m-3 mb-4 flex-wrap">
+              @foreach ($user->types as $type)
+  
+              <div class="animated-button1 text-reset">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                {{$type->type_name}}
+              </div>
+  
+              @endforeach
+            </div>
+          </div>
+
+        </div>
+
 
 
         {{-- PLATES --}}
@@ -175,9 +184,9 @@
 
 
       {{-- STATISTICHE --}}
-      <div class="references-statistiche col-12 col-md-6">
+{{--       <div class="references-statistiche col-12 col-md-6">
           <h1 class="text-center">STATISTICHE</h1>
-      </div>
+      </div> --}}
   </div>
     
 @endsection

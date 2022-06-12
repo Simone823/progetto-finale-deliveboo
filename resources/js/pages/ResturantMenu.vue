@@ -194,10 +194,10 @@
                 <div class="container-custom px-3 px-md-4 px-lg-5 py-2 py-sm-2 py-md-4 row">
 
                     <!-- Menu piatti wrapper -->
-                    <div class="col-12 col-md-6 col-lg-8 col-xxxl-10">
+                    <div class="col-12 col-md-6 col-lg-8 col-xxxl-10 menu-wrapper">
                         <h3 class="mb-3 fs-2 fw-bold">Il nostro menù</h3>
                         <!-- ciclo il componente MenuCard per stampare tutti i piatti  -->
-                        <div class="cards-wrapper row justify-content-start">
+                        <div class="row justify-content-start">
                             <div class="card-menu col-12 col-lg-6 col-xxl-5 col-xxxl-4 gap-2 mb-4 flex-grow-1"
                                 v-for="(menuPlate,index) in menuPlates" :key="index"
                                 v-on:click="viewPlate(index)">
@@ -477,7 +477,7 @@ export default {
         max-width: 2048px;
         margin: 0 auto;
 
-        .cards-wrapper {
+        .menu-wrapper {
             height: 550px;
             overflow-y: auto;
         }

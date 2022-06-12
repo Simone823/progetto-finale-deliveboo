@@ -6052,6 +6052,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -12004,7 +12045,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-77c5cfc8], li[data-v-77c5cfc8] {\n  list-style: none;\n}\nnav > .container-custom[data-v-77c5cfc8] {\n  width: 2048px;\n}\n.container-custom[data-v-77c5cfc8] {\n  max-width: 2048px;\n  margin: 0 auto;\n}\n.container-custom .cards-wrapper[data-v-77c5cfc8] {\n  height: 550px;\n  overflow-y: auto;\n}\n#resturant-info[data-v-77c5cfc8] {\n  border-bottom: 1px solid rgba(202, 202, 202, 0.3882352941);\n  box-shadow: 0px 4px 10px rgba(202, 202, 202, 0.3882352941);\n  position: relative;\n  z-index: 10;\n}\n#resturant-info .fa-solid[data-v-77c5cfc8] {\n  color: #b0b0b0;\n}\n#resturant-menu[data-v-77c5cfc8] {\n  background-color: #f9fafa;\n}\n.resturant-name[data-v-77c5cfc8] {\n  font-size: 40px;\n  font-weight: 700;\n}\n.resturant-img[data-v-77c5cfc8] {\n  height: 350px;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.resturant-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n@media only screen and (max-width: 574px) {\n.resturant-img[data-v-77c5cfc8] {\n    border-radius: 0px;\n}\n}\n.card-wrapper[data-v-77c5cfc8] {\n  cursor: pointer;\n  border-radius: 3px;\n  overflow: hidden;\n  background-color: white;\n  height: 132px;\n  box-shadow: 0px 0px 5px 0px rgba(181, 181, 181, 0.3882352941);\n}\n.card-wrapper[data-v-77c5cfc8]:hover {\n  box-shadow: 0px 12px 17px 10px rgba(181, 181, 181, 0.39);\n  transition: all 300ms;\n}\n.card-wrapper:hover img[data-v-77c5cfc8] {\n  transform: scale(1.1, 1.1);\n  transition: all 500ms;\n}\n.card-wrapper .post-card-img[data-v-77c5cfc8] {\n  width: 100px;\n  height: 100px;\n  flex-shrink: 0;\n  overflow: hidden;\n  border-radius: 3px;\n}\n.card-wrapper .post-card-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-wrapper[data-v-77c5cfc8] {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  z-index: -1;\n  display: none;\n}\n.info-wrapper.active[data-v-77c5cfc8] {\n  z-index: 999;\n}\n.info-wrapper.active[data-v-77c5cfc8]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.552);\n  z-index: 0;\n  -webkit-animation: bkc-data-v-77c5cfc8 300ms linear 1;\n          animation: bkc-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n@keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n.add-cart-error[data-v-77c5cfc8] {\n  padding: 30px 15px;\n}\n.info-plate-card[data-v-77c5cfc8], .add-cart-error[data-v-77c5cfc8] {\n  display: none;\n  position: relative;\n  border-radius: 5px;\n  max-width: 500px;\n  width: 85%;\n  max-height: 75vh;\n  background-color: white;\n  overflow: hidden;\n  z-index: 9999;\n  overflow-y: auto;\n}\n.info-plate-card .close-info[data-v-77c5cfc8], .add-cart-error .close-info[data-v-77c5cfc8] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 65px;\n  height: 65px;\n  -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);\n          clip-path: polygon(100% 0, 0 0, 100% 100%);\n  border: none;\n  background-color: white;\n  color: #00CCBC;\n  font-size: 18px;\n  font-weight: 600;\n  opacity: 0.65;\n  z-index: 9999;\n}\n.info-plate-card .close-info i[data-v-77c5cfc8], .add-cart-error .close-info i[data-v-77c5cfc8] {\n  position: absolute;\n  top: 10px;\n  right: 14px;\n  font-size: 25px;\n}\n.info-plate-card .close-info[data-v-77c5cfc8]:hover, .add-cart-error .close-info[data-v-77c5cfc8]:hover {\n  opacity: 1;\n  transition: all 300ms;\n}\n.info-plate-card .info-plate-img[data-v-77c5cfc8], .add-cart-error .info-plate-img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 320px;\n  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n  overflow: hidden;\n}\n.info-plate-card .info-plate-img img[data-v-77c5cfc8], .add-cart-error .info-plate-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-plate-card .info-plate-body .list-dot[data-v-77c5cfc8], .add-cart-error .info-plate-body .list-dot[data-v-77c5cfc8] {\n  color: #ccc;\n}\n.info-plate-card .info-plate-body .ingredients[data-v-77c5cfc8], .add-cart-error .info-plate-body .ingredients[data-v-77c5cfc8] {\n  font-weight: 600;\n  margin-bottom: 12px;\n  color: #333;\n}\n.info-plate-card.active[data-v-77c5cfc8], .add-cart-error.active[data-v-77c5cfc8] {\n  display: block;\n  -webkit-animation: zoom-data-v-77c5cfc8 300ms linear 1;\n          animation: zoom-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n@keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n.cart-management[data-v-77c5cfc8] {\n  position: -webkit-sticky;\n  position: sticky;\n  width: 100%;\n  left: 0;\n  bottom: 0;\n  background-color: white;\n  border-top: 1px solid rgba(202, 202, 202, 0.3882352941);\n  box-shadow: 5px 0px 10px rgba(202, 202, 202, 0.3882352941);\n}\n.cart-component[data-v-77c5cfc8] {\n  background-color: white;\n  border: 2px solid rgba(202, 202, 202, 0.3882352941);\n  border-radius: 5px;\n  min-height: 60px;\n}\n.cart-component .empty-cart[data-v-77c5cfc8] {\n  width: 200px;\n}\n.cart-component .empty-cart img[data-v-77c5cfc8] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.pay-button[data-v-77c5cfc8] {\n  width: 100%;\n  padding: 10px 10px;\n  font-size: 16px;\n  font-weight: 600;\n}\n.item-name[data-v-77c5cfc8] {\n  font-size: 18px;\n  color: black;\n  font-weight: 500;\n}\n.tot-cart[data-v-77c5cfc8] {\n  font-size: 16px;\n  color: rgba(0, 0, 0, 0.8);\n  font-weight: 600;\n}\n.tot-wrapper[data-v-77c5cfc8] {\n  border-top: 2px solid #3E235D;\n}\n.disabled[data-v-77c5cfc8] {\n  background-color: #b0b0b0;\n  opacity: 0.5;\n}\n.control-qty[data-v-77c5cfc8] {\n  -moz-column-gap: 20%;\n       column-gap: 20%;\n}\n.control-qty button[data-v-77c5cfc8] {\n  background-color: white;\n  width: 24px;\n  height: 24px;\n  border: 3px solid #00CCBC;\n  color: #00CCBC;\n  border-radius: 50%;\n  font-size: 16px;\n  position: relative;\n}\n.control-qty button[data-v-77c5cfc8]:hover {\n  border: 3px solid #3beedf;\n  color: #3beedf;\n  transition: all 250ms;\n}\n.control-qty button i[data-v-77c5cfc8] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.control-qty button.disabled[data-v-77c5cfc8] {\n  color: #b0b0b0;\n  border: 3px solid #b0b0b0;\n  opacity: 0.5;\n  background-color: white;\n}\n@media screen and (min-width: 2150px) {\n.col-xxxl-2[data-v-77c5cfc8] {\n    width: 30%;\n}\n.col-xxxl-10[data-v-77c5cfc8] {\n    width: 70%;\n}\n.col-xxxl-4[data-v-77c5cfc8] {\n    width: 33.33333%;\n}\n}\n@media screen and (max-width: 768px) {\n.cart-component[data-v-77c5cfc8] {\n    box-shadow: 0px -10px 20px 2px rgba(0, 0, 0, 0.3215686275);\n}\n}", ""]);
+exports.push([module.i, "ul[data-v-77c5cfc8], li[data-v-77c5cfc8] {\n  list-style: none;\n}\nnav > .container-custom[data-v-77c5cfc8] {\n  width: 2048px;\n}\n.container-custom[data-v-77c5cfc8] {\n  max-width: 2048px;\n  margin: 0 auto;\n}\n.container-custom .menu-wrapper[data-v-77c5cfc8] {\n  height: 550px;\n  overflow-y: auto;\n}\n#resturant-info[data-v-77c5cfc8] {\n  border-bottom: 1px solid rgba(202, 202, 202, 0.3882352941);\n  box-shadow: 0px 4px 10px rgba(202, 202, 202, 0.3882352941);\n  position: relative;\n  z-index: 10;\n}\n#resturant-info .fa-solid[data-v-77c5cfc8] {\n  color: #b0b0b0;\n}\n#resturant-menu[data-v-77c5cfc8] {\n  background-color: #f9fafa;\n}\n.resturant-name[data-v-77c5cfc8] {\n  font-size: 40px;\n  font-weight: 700;\n}\n.resturant-img[data-v-77c5cfc8] {\n  height: 350px;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.resturant-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n@media only screen and (max-width: 574px) {\n.resturant-img[data-v-77c5cfc8] {\n    border-radius: 0px;\n}\n}\n.card-wrapper[data-v-77c5cfc8] {\n  cursor: pointer;\n  border-radius: 3px;\n  overflow: hidden;\n  background-color: white;\n  height: 132px;\n  box-shadow: 0px 0px 5px 0px rgba(181, 181, 181, 0.3882352941);\n}\n.card-wrapper[data-v-77c5cfc8]:hover {\n  box-shadow: 0px 12px 17px 10px rgba(181, 181, 181, 0.39);\n  transition: all 300ms;\n}\n.card-wrapper:hover img[data-v-77c5cfc8] {\n  transform: scale(1.1, 1.1);\n  transition: all 500ms;\n}\n.card-wrapper .post-card-img[data-v-77c5cfc8] {\n  width: 100px;\n  height: 100px;\n  flex-shrink: 0;\n  overflow: hidden;\n  border-radius: 3px;\n}\n.card-wrapper .post-card-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-wrapper[data-v-77c5cfc8] {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  z-index: -1;\n  display: none;\n}\n.info-wrapper.active[data-v-77c5cfc8] {\n  z-index: 999;\n}\n.info-wrapper.active[data-v-77c5cfc8]::after {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.552);\n  z-index: 0;\n  -webkit-animation: bkc-data-v-77c5cfc8 300ms linear 1;\n          animation: bkc-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n@keyframes bkc-data-v-77c5cfc8 {\nfrom {\n    background-color: transparent;\n}\nto {\n    background-color: rgba(0, 0, 0, 0.552);\n}\n}\n.add-cart-error[data-v-77c5cfc8] {\n  padding: 30px 15px;\n}\n.info-plate-card[data-v-77c5cfc8], .add-cart-error[data-v-77c5cfc8] {\n  display: none;\n  position: relative;\n  border-radius: 5px;\n  max-width: 500px;\n  width: 85%;\n  max-height: 75vh;\n  background-color: white;\n  overflow: hidden;\n  z-index: 9999;\n  overflow-y: auto;\n}\n.info-plate-card .close-info[data-v-77c5cfc8], .add-cart-error .close-info[data-v-77c5cfc8] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 65px;\n  height: 65px;\n  -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);\n          clip-path: polygon(100% 0, 0 0, 100% 100%);\n  border: none;\n  background-color: white;\n  color: #00CCBC;\n  font-size: 18px;\n  font-weight: 600;\n  opacity: 0.65;\n  z-index: 9999;\n}\n.info-plate-card .close-info i[data-v-77c5cfc8], .add-cart-error .close-info i[data-v-77c5cfc8] {\n  position: absolute;\n  top: 10px;\n  right: 14px;\n  font-size: 25px;\n}\n.info-plate-card .close-info[data-v-77c5cfc8]:hover, .add-cart-error .close-info[data-v-77c5cfc8]:hover {\n  opacity: 1;\n  transition: all 300ms;\n}\n.info-plate-card .info-plate-img[data-v-77c5cfc8], .add-cart-error .info-plate-img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 320px;\n  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);\n  overflow: hidden;\n}\n.info-plate-card .info-plate-img img[data-v-77c5cfc8], .add-cart-error .info-plate-img img[data-v-77c5cfc8] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.info-plate-card .info-plate-body .list-dot[data-v-77c5cfc8], .add-cart-error .info-plate-body .list-dot[data-v-77c5cfc8] {\n  color: #ccc;\n}\n.info-plate-card .info-plate-body .ingredients[data-v-77c5cfc8], .add-cart-error .info-plate-body .ingredients[data-v-77c5cfc8] {\n  font-weight: 600;\n  margin-bottom: 12px;\n  color: #333;\n}\n.info-plate-card.active[data-v-77c5cfc8], .add-cart-error.active[data-v-77c5cfc8] {\n  display: block;\n  -webkit-animation: zoom-data-v-77c5cfc8 300ms linear 1;\n          animation: zoom-data-v-77c5cfc8 300ms linear 1;\n}\n@-webkit-keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n@keyframes zoom-data-v-77c5cfc8 {\nfrom {\n    transform: scale(0.3, 0.3);\n}\nto {\n    transform: scale(1, 1);\n}\n}\n.cart-management[data-v-77c5cfc8] {\n  position: -webkit-sticky;\n  position: sticky;\n  width: 100%;\n  left: 0;\n  bottom: 0;\n  background-color: white;\n  border-top: 1px solid rgba(202, 202, 202, 0.3882352941);\n  box-shadow: 5px 0px 10px rgba(202, 202, 202, 0.3882352941);\n}\n.cart-component[data-v-77c5cfc8] {\n  background-color: white;\n  border: 2px solid rgba(202, 202, 202, 0.3882352941);\n  border-radius: 5px;\n  min-height: 60px;\n}\n.cart-component .empty-cart[data-v-77c5cfc8] {\n  width: 200px;\n}\n.cart-component .empty-cart img[data-v-77c5cfc8] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.pay-button[data-v-77c5cfc8] {\n  width: 100%;\n  padding: 10px 10px;\n  font-size: 16px;\n  font-weight: 600;\n}\n.item-name[data-v-77c5cfc8] {\n  font-size: 18px;\n  color: black;\n  font-weight: 500;\n}\n.tot-cart[data-v-77c5cfc8] {\n  font-size: 16px;\n  color: rgba(0, 0, 0, 0.8);\n  font-weight: 600;\n}\n.tot-wrapper[data-v-77c5cfc8] {\n  border-top: 2px solid #3E235D;\n}\n.disabled[data-v-77c5cfc8] {\n  background-color: #b0b0b0;\n  opacity: 0.5;\n}\n.control-qty[data-v-77c5cfc8] {\n  -moz-column-gap: 20%;\n       column-gap: 20%;\n}\n.control-qty button[data-v-77c5cfc8] {\n  background-color: white;\n  width: 24px;\n  height: 24px;\n  border: 3px solid #00CCBC;\n  color: #00CCBC;\n  border-radius: 50%;\n  font-size: 16px;\n  position: relative;\n}\n.control-qty button[data-v-77c5cfc8]:hover {\n  border: 3px solid #3beedf;\n  color: #3beedf;\n  transition: all 250ms;\n}\n.control-qty button i[data-v-77c5cfc8] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.control-qty button.disabled[data-v-77c5cfc8] {\n  color: #b0b0b0;\n  border: 3px solid #b0b0b0;\n  opacity: 0.5;\n  background-color: white;\n}\n@media screen and (min-width: 2150px) {\n.col-xxxl-2[data-v-77c5cfc8] {\n    width: 30%;\n}\n.col-xxxl-10[data-v-77c5cfc8] {\n    width: 70%;\n}\n.col-xxxl-4[data-v-77c5cfc8] {\n    width: 33.33333%;\n}\n}\n@media screen and (max-width: 768px) {\n.cart-component[data-v-77c5cfc8] {\n    box-shadow: 0px -10px 20px 2px rgba(0, 0, 0, 0.3215686275);\n}\n}", ""]);
 
 // exports
 
@@ -50830,35 +50871,23 @@ var render = function () {
                             },
                           },
                           [
-                            _c(
-                              "div",
-                              { staticClass: "form-group" },
-                              [
-                                _c("validationProvider", {
-                                  staticClass:
-                                    "d-flex align-items-center flex-column mb-3",
-                                  attrs: {
-                                    name: "guest_name",
-                                    rules:
-                                      "required|min:3|max:150|alpha_spaces",
-                                  },
-                                  scopedSlots: _vm._u(
-                                    [
-                                      {
-                                        key: "default",
-                                        fn: function (ref) {
-                                          var errors = ref.errors
-                                          return [
-                                            _c(
-                                              "label",
-                                              {
-                                                staticClass:
-                                                  "col-form-label fs-5",
-                                                attrs: { for: "guest_name" },
-                                              },
-                                              [_vm._v("Nome")]
-                                            ),
-                                            _vm._v(" "),
+                            _c("validationProvider", {
+                              staticClass: "mb-3",
+                              attrs: {
+                                name: "guest_name",
+                                rules: "required|min:3|max:150|alpha_spaces",
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function (ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form w-100" },
+                                          [
                                             _c("input", {
                                               directives: [
                                                 {
@@ -50868,20 +50897,20 @@ var render = function () {
                                                   expression: "form.guest_name",
                                                 },
                                               ],
-                                              staticClass: "form-control",
+                                              staticClass: "form__input",
                                               class:
                                                 _vm.form.guest_name.length == 0
-                                                  ? "is-invalid"
-                                                  :  true && errors.length
-                                                  ? "is-invalid"
-                                                  : "is-valid",
+                                                  ? "form__invalid"
+                                                  :  true &&
+                                                    errors.length
+                                                  ? "form__invalid"
+                                                  : "form__valid",
                                               attrs: {
                                                 type: "text",
+                                                value: "",
                                                 id: "guest_name",
                                                 name: "guest_name",
-                                                value: "",
-                                                placeholder:
-                                                  "Inserisci il tuo nome",
+                                                placeholder: " ",
                                               },
                                               domProps: {
                                                 value: _vm.form.guest_name,
@@ -50900,63 +50929,58 @@ var render = function () {
                                               },
                                             }),
                                             _vm._v(" "),
-                                            errors.length
-                                              ? _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "\n                                    " +
-                                                        _vm._s(errors[0]) +
-                                                        "\n                                "
-                                                    ),
-                                                  ]
-                                                )
-                                              : _vm._e(),
-                                          ]
-                                        },
-                                      },
-                                    ],
-                                    null,
-                                    true
-                                  ),
-                                }),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "form-group" },
-                              [
-                                _c("validationProvider", {
-                                  staticClass:
-                                    "d-flex align-items-center flex-column mb-3",
-                                  attrs: {
-                                    name: "guest_surname",
-                                    rules:
-                                      "required|min:3|max:150|alpha_spaces",
-                                  },
-                                  scopedSlots: _vm._u(
-                                    [
-                                      {
-                                        key: "default",
-                                        fn: function (ref) {
-                                          var errors = ref.errors
-                                          return [
                                             _c(
                                               "label",
                                               {
-                                                staticClass:
-                                                  "col-form-label fs-5",
-                                                attrs: { for: "guest_surname" },
+                                                staticClass: "form__label",
+                                                attrs: { for: "guest_name" },
                                               },
-                                              [_vm._v("Cognome")]
+                                              [_vm._v("Nome")]
                                             ),
-                                            _vm._v(" "),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "w-100 font-bold py-1 px-2 del-danger rounded",
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                " +
+                                                _vm._s(
+                                                  errors.length ? errors[0] : ""
+                                                ) +
+                                                "\n                            "
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    },
+                                  },
+                                ],
+                                null,
+                                true
+                              ),
+                            }),
+                            _vm._v(" "),
+                            _c("validationProvider", {
+                              attrs: {
+                                name: "guest_surname",
+                                rules: "required|min:3|max:150|alpha_spaces",
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function (ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form w-100" },
+                                          [
                                             _c("input", {
                                               directives: [
                                                 {
@@ -50967,21 +50991,20 @@ var render = function () {
                                                     "form.guest_surname",
                                                 },
                                               ],
-                                              staticClass: "form-control",
-                                              class: errors.length
-                                                ? "is-invalid"
-                                                :  true &&
-                                                  _vm.form.guest_surname
-                                                    .length == 0
-                                                ? "is-invalid"
-                                                : "is-valid",
+                                              staticClass: "form__input",
+                                              class:
+                                                _vm.form.guest_name.length == 0
+                                                  ? "form__invalid"
+                                                  :  true &&
+                                                    errors.length
+                                                  ? "form__invalid"
+                                                  : "form__valid",
                                               attrs: {
                                                 type: "text",
+                                                value: "",
                                                 id: "guest_surname",
                                                 name: "guest_surname",
-                                                value: "",
-                                                placeholder:
-                                                  "Inserisci il tuo cognome",
+                                                placeholder: " ",
                                               },
                                               domProps: {
                                                 value: _vm.form.guest_surname,
@@ -51000,62 +51023,58 @@ var render = function () {
                                               },
                                             }),
                                             _vm._v(" "),
-                                            errors.length
-                                              ? _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "\n                                    " +
-                                                        _vm._s(errors[0]) +
-                                                        "\n                                "
-                                                    ),
-                                                  ]
-                                                )
-                                              : _vm._e(),
-                                          ]
-                                        },
-                                      },
-                                    ],
-                                    null,
-                                    true
-                                  ),
-                                }),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "form-group" },
-                              [
-                                _c("validationProvider", {
-                                  staticClass:
-                                    "d-flex align-items-center flex-column mb-3",
-                                  attrs: {
-                                    name: "guest_email",
-                                    rules: "required|email|max:255",
-                                  },
-                                  scopedSlots: _vm._u(
-                                    [
-                                      {
-                                        key: "default",
-                                        fn: function (ref) {
-                                          var errors = ref.errors
-                                          return [
                                             _c(
                                               "label",
                                               {
-                                                staticClass:
-                                                  "col-form-label fs-5",
-                                                attrs: { for: "guest_email" },
+                                                staticClass: "form__label",
+                                                attrs: { for: "guest_surname" },
                                               },
-                                              [_vm._v("Email")]
+                                              [_vm._v("Cognome")]
                                             ),
-                                            _vm._v(" "),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "w-100 font-bold py-1 px-2 del-danger rounded",
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                " +
+                                                _vm._s(
+                                                  errors.length ? errors[0] : ""
+                                                ) +
+                                                "\n                            "
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    },
+                                  },
+                                ],
+                                null,
+                                true
+                              ),
+                            }),
+                            _vm._v(" "),
+                            _c("validationProvider", {
+                              attrs: {
+                                name: "guest_email",
+                                rules: "required|email|max:255",
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function (ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form w-100" },
+                                          [
                                             _c("input", {
                                               directives: [
                                                 {
@@ -51066,20 +51085,19 @@ var render = function () {
                                                     "form.guest_email",
                                                 },
                                               ],
-                                              staticClass: "form-control",
+                                              staticClass: "form__input",
                                               class:
-                                                _vm.form.guest_email.length == 0
-                                                  ? "is-invalid"
-                                                  :  true && errors.length
-                                                  ? "is-invalid"
-                                                  : "is-valid",
+                                                _vm.form.guest_name.length == 0
+                                                  ? "form__invalid"
+                                                  :  true &&
+                                                    errors.length
+                                                  ? "form__invalid"
+                                                  : "form__valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_email",
                                                 name: "guest_email",
-                                                value: "",
-                                                placeholder:
-                                                  "Inserisci la tua e-mail",
+                                                placeholder: " ",
                                               },
                                               domProps: {
                                                 value: _vm.form.guest_email,
@@ -51098,63 +51116,58 @@ var render = function () {
                                               },
                                             }),
                                             _vm._v(" "),
-                                            errors.length
-                                              ? _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "\n                                    " +
-                                                        _vm._s(errors[0]) +
-                                                        "\n                                "
-                                                    ),
-                                                  ]
-                                                )
-                                              : _vm._e(),
-                                          ]
-                                        },
-                                      },
-                                    ],
-                                    null,
-                                    true
-                                  ),
-                                }),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "form-group" },
-                              [
-                                _c("validationProvider", {
-                                  staticClass:
-                                    "d-flex align-items-center flex-column mb-3",
-                                  attrs: {
-                                    name: "guest_city",
-                                    rules:
-                                      "required|min:3|max:150|alpha_spaces",
-                                  },
-                                  scopedSlots: _vm._u(
-                                    [
-                                      {
-                                        key: "default",
-                                        fn: function (ref) {
-                                          var errors = ref.errors
-                                          return [
                                             _c(
                                               "label",
                                               {
-                                                staticClass:
-                                                  "col-form-label fs-5",
-                                                attrs: { for: "guest_city" },
+                                                staticClass: "form__label",
+                                                attrs: { for: "guest_email" },
                                               },
-                                              [_vm._v("Città")]
+                                              [_vm._v("Email")]
                                             ),
-                                            _vm._v(" "),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "w-100 font-bold py-1 px-2 del-danger rounded",
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                " +
+                                                _vm._s(
+                                                  errors.length ? errors[0] : ""
+                                                ) +
+                                                "\n                            "
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    },
+                                  },
+                                ],
+                                null,
+                                true
+                              ),
+                            }),
+                            _vm._v(" "),
+                            _c("validationProvider", {
+                              attrs: {
+                                name: "guest_city",
+                                rules: "required|min:3|max:150|alpha_spaces",
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function (ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form w-100" },
+                                          [
                                             _c("input", {
                                               directives: [
                                                 {
@@ -51164,21 +51177,19 @@ var render = function () {
                                                   expression: "form.guest_city",
                                                 },
                                               ],
-                                              staticClass: "form-control",
-                                              class: errors.length
-                                                ? "is-invalid"
-                                                :  true &&
-                                                  _vm.form.guest_city.length ==
-                                                    0
-                                                ? "is-invalid"
-                                                : "is-valid",
+                                              staticClass: "form__input",
+                                              class:
+                                                _vm.form.guest_name.length == 0
+                                                  ? "form__invalid"
+                                                  :  true &&
+                                                    errors.length
+                                                  ? "form__invalid"
+                                                  : "form__valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_city",
                                                 name: "guest_city",
-                                                value: "",
-                                                placeholder:
-                                                  "Inserisci la tua città",
+                                                placeholder: " ",
                                               },
                                               domProps: {
                                                 value: _vm.form.guest_city,
@@ -51197,62 +51208,58 @@ var render = function () {
                                               },
                                             }),
                                             _vm._v(" "),
-                                            errors.length
-                                              ? _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "\n                                    " +
-                                                        _vm._s(errors[0]) +
-                                                        "\n                                "
-                                                    ),
-                                                  ]
-                                                )
-                                              : _vm._e(),
-                                          ]
-                                        },
-                                      },
-                                    ],
-                                    null,
-                                    true
-                                  ),
-                                }),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "form-group" },
-                              [
-                                _c("validationProvider", {
-                                  staticClass:
-                                    "d-flex align-items-center flex-column mb-3",
-                                  attrs: {
-                                    name: "guest_cap",
-                                    rules: "required|min:5|max:5|numeric",
-                                  },
-                                  scopedSlots: _vm._u(
-                                    [
-                                      {
-                                        key: "default",
-                                        fn: function (ref) {
-                                          var errors = ref.errors
-                                          return [
                                             _c(
                                               "label",
                                               {
-                                                staticClass:
-                                                  "col-form-label fs-5",
-                                                attrs: { for: "guest_cap" },
+                                                staticClass: "form__label",
+                                                attrs: { for: "guest_city" },
                                               },
-                                              [_vm._v("CAP")]
+                                              [_vm._v("Città")]
                                             ),
-                                            _vm._v(" "),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "w-100 font-bold py-1 px-2 del-danger rounded",
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                " +
+                                                _vm._s(
+                                                  errors.length ? errors[0] : ""
+                                                ) +
+                                                "\n                            "
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    },
+                                  },
+                                ],
+                                null,
+                                true
+                              ),
+                            }),
+                            _vm._v(" "),
+                            _c("validationProvider", {
+                              attrs: {
+                                name: "guest_cap",
+                                rules: "required|min:5|max:5|numeric",
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function (ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form w-100" },
+                                          [
                                             _c("input", {
                                               directives: [
                                                 {
@@ -51262,19 +51269,19 @@ var render = function () {
                                                   expression: "form.guest_cap",
                                                 },
                                               ],
-                                              staticClass: "form-control",
-                                              class: errors.length
-                                                ? "is-invalid"
-                                                :  true &&
-                                                  _vm.form.guest_cap.length == 0
-                                                ? "is-invalid"
-                                                : "is-valid",
+                                              staticClass: "form__input",
+                                              class:
+                                                _vm.form.guest_name.length == 0
+                                                  ? "form__invalid"
+                                                  :  true &&
+                                                    errors.length
+                                                  ? "form__invalid"
+                                                  : "form__valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_cap",
                                                 name: "guest_cap",
-                                                value: "",
-                                                placeholder: "Inserisci il CAP",
+                                                placeholder: " ",
                                               },
                                               domProps: {
                                                 value: _vm.form.guest_cap,
@@ -51293,62 +51300,58 @@ var render = function () {
                                               },
                                             }),
                                             _vm._v(" "),
-                                            errors.length
-                                              ? _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "\n                                    " +
-                                                        _vm._s(errors[0]) +
-                                                        "\n                                "
-                                                    ),
-                                                  ]
-                                                )
-                                              : _vm._e(),
-                                          ]
-                                        },
-                                      },
-                                    ],
-                                    null,
-                                    true
-                                  ),
-                                }),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "form-group" },
-                              [
-                                _c("validationProvider", {
-                                  staticClass:
-                                    "d-flex align-items-center flex-column mb-3",
-                                  attrs: {
-                                    name: "guest_adress",
-                                    rules: "required|min:3|max:255",
-                                  },
-                                  scopedSlots: _vm._u(
-                                    [
-                                      {
-                                        key: "default",
-                                        fn: function (ref) {
-                                          var errors = ref.errors
-                                          return [
                                             _c(
                                               "label",
                                               {
-                                                staticClass:
-                                                  "col-form-label fs-5",
-                                                attrs: { for: "guest_adress" },
+                                                staticClass: "form__label",
+                                                attrs: { for: "guest_cap" },
                                               },
-                                              [_vm._v("Indirizzo")]
+                                              [_vm._v("CAP")]
                                             ),
-                                            _vm._v(" "),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "w-100 font-bold py-1 px-2 del-danger rounded",
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                " +
+                                                _vm._s(
+                                                  errors.length ? errors[0] : ""
+                                                ) +
+                                                "\n                            "
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    },
+                                  },
+                                ],
+                                null,
+                                true
+                              ),
+                            }),
+                            _vm._v(" "),
+                            _c("validationProvider", {
+                              attrs: {
+                                name: "guest_adress",
+                                rules: "required|min:3|max:255",
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function (ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form w-100" },
+                                          [
                                             _c("input", {
                                               directives: [
                                                 {
@@ -51359,20 +51362,19 @@ var render = function () {
                                                     "form.guest_adress",
                                                 },
                                               ],
-                                              staticClass: "form-control",
-                                              class: errors.length
-                                                ? "is-invalid"
-                                                :  true &&
-                                                  _vm.form.guest_adress
-                                                    .length == 0
-                                                ? "is-invalid"
-                                                : "is-valid",
+                                              staticClass: "form__input",
+                                              class:
+                                                _vm.form.guest_name.length == 0
+                                                  ? "form__invalid"
+                                                  :  true &&
+                                                    errors.length
+                                                  ? "form__invalid"
+                                                  : "form__valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_adress",
                                                 name: "guest_adress",
-                                                value: "",
-                                                placeholder: "Inserisci la via",
+                                                placeholder: " ",
                                               },
                                               domProps: {
                                                 value: _vm.form.guest_adress,
@@ -51391,62 +51393,58 @@ var render = function () {
                                               },
                                             }),
                                             _vm._v(" "),
-                                            errors.length
-                                              ? _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "\n                                    " +
-                                                        _vm._s(errors[0]) +
-                                                        "\n                                "
-                                                    ),
-                                                  ]
-                                                )
-                                              : _vm._e(),
-                                          ]
-                                        },
-                                      },
-                                    ],
-                                    null,
-                                    true
-                                  ),
-                                }),
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "form-group" },
-                              [
-                                _c("validationProvider", {
-                                  staticClass:
-                                    "d-flex align-items-center flex-column mb-3",
-                                  attrs: {
-                                    name: "guest_phone",
-                                    rules: "required|numeric|min:6|max:15",
-                                  },
-                                  scopedSlots: _vm._u(
-                                    [
-                                      {
-                                        key: "default",
-                                        fn: function (ref) {
-                                          var errors = ref.errors
-                                          return [
                                             _c(
                                               "label",
                                               {
-                                                staticClass:
-                                                  "col-form-label fs-5",
-                                                attrs: { for: "guest_phone" },
+                                                staticClass: "form__label",
+                                                attrs: { for: "guest_adress" },
                                               },
-                                              [_vm._v("Telefono")]
+                                              [_vm._v("Indirizzo")]
                                             ),
-                                            _vm._v(" "),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "w-100 font-bold py-1 px-2 del-danger rounded",
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                " +
+                                                _vm._s(
+                                                  errors.length ? errors[0] : ""
+                                                ) +
+                                                "\n                            "
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    },
+                                  },
+                                ],
+                                null,
+                                true
+                              ),
+                            }),
+                            _vm._v(" "),
+                            _c("validationProvider", {
+                              attrs: {
+                                name: "guest_phone",
+                                rules: "required|numeric|min:6|max:15",
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function (ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form w-100" },
+                                          [
                                             _c("input", {
                                               directives: [
                                                 {
@@ -51457,21 +51455,19 @@ var render = function () {
                                                     "form.guest_phone",
                                                 },
                                               ],
-                                              staticClass: "form-control",
-                                              class: errors.length
-                                                ? "is-invalid"
-                                                :  true &&
-                                                  _vm.form.guest_phone.length ==
-                                                    0
-                                                ? "is-invalid"
-                                                : "is-valid",
+                                              staticClass: "form__input",
+                                              class:
+                                                _vm.form.guest_name.length == 0
+                                                  ? "form__invalid"
+                                                  :  true &&
+                                                    errors.length
+                                                  ? "form__invalid"
+                                                  : "form__valid",
                                               attrs: {
                                                 type: "text",
                                                 id: "guest_phone",
                                                 name: "guest_phone",
-                                                value: "",
-                                                placeholder:
-                                                  "Inserisci il tuo numero di telefono",
+                                                placeholder: " ",
                                               },
                                               domProps: {
                                                 value: _vm.form.guest_phone,
@@ -51490,33 +51486,41 @@ var render = function () {
                                               },
                                             }),
                                             _vm._v(" "),
-                                            errors.length
-                                              ? _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "w-100 font-bold py-1 px-2 bg-danger text-white rounded",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "\n                                    " +
-                                                        _vm._s(errors[0]) +
-                                                        "\n                                "
-                                                    ),
-                                                  ]
-                                                )
-                                              : _vm._e(),
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "form__label",
+                                                attrs: { for: "guest_phone" },
+                                              },
+                                              [_vm._v("Telefono")]
+                                            ),
                                           ]
-                                        },
-                                      },
-                                    ],
-                                    null,
-                                    true
-                                  ),
-                                }),
-                              ],
-                              1
-                            ),
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "w-100 font-bold py-1 px-2 del-danger rounded",
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                " +
+                                                _vm._s(
+                                                  errors.length ? errors[0] : ""
+                                                ) +
+                                                "\n                            "
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    },
+                                  },
+                                ],
+                                null,
+                                true
+                              ),
+                            }),
                             _vm._v(" "),
                             _c(
                               "div",
@@ -51566,7 +51570,8 @@ var render = function () {
                               ],
                               1
                             ),
-                          ]
+                          ],
+                          1
                         ),
                       ]
                     },
@@ -51794,7 +51799,7 @@ var render = function () {
     _c(
       "nav",
       {
-        staticClass: "navbar navbar-expand-lg navbar-light pb-0 pb-md-2",
+        staticClass: "navbar navbar-expand-lg navbar-light pb-md-2",
         attrs: { id: "navbar_guest" },
       },
       [
@@ -51802,7 +51807,7 @@ var render = function () {
           "div",
           {
             staticClass:
-              "container-custom px-2 px-md-4 px-lg-5  d-flex justify-content-between align-items-center flex-wrap",
+              "container-custom px-md-4 px-lg-5  d-flex justify-content-between align-items-center flex-wrap",
           },
           [
             _c(
@@ -51879,7 +51884,7 @@ var render = function () {
                                 "a",
                                 {
                                   staticClass: "dropdown-item",
-                                  attrs: { href: "/home" },
+                                  attrs: { href: "/" },
                                   on: {
                                     click: function ($event) {
                                       $event.preventDefault()
@@ -51977,7 +51982,7 @@ var render = function () {
                                   {
                                     staticClass:
                                       "dropdown-item dropdown-item text-center",
-                                    attrs: { href: "/home" },
+                                    attrs: { href: "/" },
                                     on: {
                                       click: function ($event) {
                                         $event.preventDefault()
@@ -52150,87 +52155,94 @@ var render = function () {
               "container-custom px-3 px-md-4 px-lg-5 py-2 py-sm-2 py-md-4 row",
           },
           [
-            _c("div", { staticClass: "col-12 col-md-6 col-lg-8 col-xxxl-10" }, [
-              _c("h3", { staticClass: "mb-3 fs-2 fw-bold" }, [
-                _vm._v("Il nostro menù"),
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "cards-wrapper row justify-content-start" },
-                _vm._l(_vm.menuPlates, function (menuPlate, index) {
-                  return _c(
-                    "div",
-                    {
-                      key: index,
-                      staticClass:
-                        "card-menu col-12 col-lg-6 col-xxl-5 col-xxxl-4 gap-2 mb-4 flex-grow-1",
-                      on: {
-                        click: function ($event) {
-                          return _vm.viewPlate(index)
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-12 col-md-6 col-lg-8 col-xxxl-10 menu-wrapper",
+              },
+              [
+                _c("h3", { staticClass: "mb-3 fs-2 fw-bold" }, [
+                  _vm._v("Il nostro menù"),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "row justify-content-start" },
+                  _vm._l(_vm.menuPlates, function (menuPlate, index) {
+                    return _c(
+                      "div",
+                      {
+                        key: index,
+                        staticClass:
+                          "card-menu col-12 col-lg-6 col-xxl-5 col-xxxl-4 gap-2 mb-4 flex-grow-1",
+                        on: {
+                          click: function ($event) {
+                            return _vm.viewPlate(index)
+                          },
                         },
                       },
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "card-wrapper p-3 d-flex justify-content-between",
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "card-body flex-grow-1 p-0" },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "card-title fw-bold mb-3" },
-                                [_vm._v(_vm._s(menuPlate.name))]
-                              ),
-                              _vm._v(" "),
-                              _c("span", { staticClass: "fs-5" }, [
-                                _vm._v(_vm._s(menuPlate.price) + "€"),
-                              ]),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "align-self-center justify-content-center",
-                            },
-                            [
-                              _c(
-                                "figure",
-                                { staticClass: "post-card-img m-0" },
-                                [
-                                  menuPlate.image
-                                    ? _c("img", {
-                                        attrs: {
-                                          src: "/storage/" + menuPlate.image,
-                                          alt: "",
-                                        },
-                                      })
-                                    : _c("img", {
-                                        attrs: {
-                                          src: __webpack_require__(/*! /public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png"),
-                                          alt: "",
-                                        },
-                                      }),
-                                ]
-                              ),
-                            ]
-                          ),
-                        ]
-                      ),
-                    ]
-                  )
-                }),
-                0
-              ),
-            ]),
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-wrapper p-3 d-flex justify-content-between",
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "card-body flex-grow-1 p-0" },
+                              [
+                                _c(
+                                  "h5",
+                                  { staticClass: "card-title fw-bold mb-3" },
+                                  [_vm._v(_vm._s(menuPlate.name))]
+                                ),
+                                _vm._v(" "),
+                                _c("span", { staticClass: "fs-5" }, [
+                                  _vm._v(_vm._s(menuPlate.price) + "€"),
+                                ]),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "align-self-center justify-content-center",
+                              },
+                              [
+                                _c(
+                                  "figure",
+                                  { staticClass: "post-card-img m-0" },
+                                  [
+                                    menuPlate.image
+                                      ? _c("img", {
+                                          attrs: {
+                                            src: "/storage/" + menuPlate.image,
+                                            alt: "",
+                                          },
+                                        })
+                                      : _c("img", {
+                                          attrs: {
+                                            src: __webpack_require__(/*! /public/img/placeholder_plate.png */ "./public/img/placeholder_plate.png"),
+                                            alt: "",
+                                          },
+                                        }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    )
+                  }),
+                  0
+                ),
+              ]
+            ),
             _vm._v(" "),
             _c(
               "div",

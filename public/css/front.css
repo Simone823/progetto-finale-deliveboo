@@ -12336,6 +12336,12 @@ img {
   background-color: #3E235D;
 }
 
+.del-danger {
+  color: red;
+  position: relative;
+  margin-bottom: 10px;
+}
+
 #navbar_guest {
   background-color: #00CCBC;
   z-index: 999;
@@ -12699,8 +12705,9 @@ img {
   height: 2.2rem;
 }
 
-.form__input {
-  position: absolute;
+.form__input,
+.form__invalid,
+.form__valid {
   top: 0;
   left: 0;
   width: 100%;
@@ -12720,9 +12727,21 @@ img {
   outline: none;
 }
 
-.form__input:focus {
+.form__input:focus,
+.form__invalid:focus,
+.form__valid:focus {
   border-color: #3E235D;
   box-shadow: 0 0 0 0.25rem rgba(62, 35, 93, 0.25);
+}
+
+.form__invalid:focus {
+  border-color: #3E235D;
+  box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25);
+}
+
+.form__valid:focus {
+  border-color: #3E235D;
+  box-shadow: 0 0 0 0.25rem rgba(0, 255, 0, 0.25);
 }
 
 .form__label {

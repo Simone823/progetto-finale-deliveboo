@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use Illuminate\Http\Request;
 use App\Mail\SendGuestOrderMail;
+use App\User;
 use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
@@ -49,8 +50,10 @@ class CheckoutController extends Controller
         // Order save
         $order->save();
 
+        $user = User::where('id', '=', $order->user_id)->first();
+
         // Send email to guest_email controller send guest order mail
-        Mail::to($order->guest_email)->send(new SendGuestOrderMail($order));
+        Mail::to($order->guest_email)->send(new SendGuestOrderMail($order, $user));
 
         return redirect()->to('/payment/success');
     }

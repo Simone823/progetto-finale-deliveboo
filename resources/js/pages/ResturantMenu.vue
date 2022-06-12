@@ -1,8 +1,8 @@
 <template>
     <div>
         <!-- navbar customizzata  -->
-        <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light pb-0 pb-md-2">
-            <div class="container-custom px-2 px-md-4 px-lg-5  d-flex justify-content-between align-items-center flex-wrap">
+        <nav id="navbar_guest" class="navbar navbar-expand-lg navbar-light pb-md-2">
+            <div class="container-custom px-md-4 px-lg-5  d-flex justify-content-between align-items-center flex-wrap">
                 <!-- LOGO  -->
                 <a class="ms-3 ms-md-0 navbar-brand" href="/">
                     <img id="header_logo_deliveboo" :src="logo" alt="Deliveboo">
@@ -43,7 +43,7 @@
                                 </li>
                                     
                                 <li>
-                                    <a class="dropdown-item" href="/home" @click.prevent="logout">
+                                    <a class="dropdown-item" href="/" @click.prevent="logout">
                                         <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
                                         Logout
                                     </a>    
@@ -116,7 +116,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item dropdown-item text-center" href="/home" @click.prevent="logout">
+                                    <a class="dropdown-item dropdown-item text-center" href="/" @click.prevent="logout">
                                         <i class="icon-color me-2 fa-solid fa-right-from-bracket"></i>
                                         Logout
                                     </a>    

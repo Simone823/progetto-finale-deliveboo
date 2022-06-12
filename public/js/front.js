@@ -49261,7 +49261,7 @@ var render = function () {
                         "a",
                         {
                           staticClass: "nav-link dropdown",
-                          attrs: { href: "" },
+                          attrs: { href: "/order/create" },
                         },
                         [
                           _c(

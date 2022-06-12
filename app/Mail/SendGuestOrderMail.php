@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Order;
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -15,15 +16,17 @@ class SendGuestOrderMail extends Mailable
 
     // Ordine
     public $order;
+    public $user;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Order $_order)
+    public function __construct(Order $_order, User $_user)
     {
         $this->order = $_order;
+        $this->user = $_user;
     }
 
     /**

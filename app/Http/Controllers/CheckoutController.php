@@ -50,7 +50,7 @@ class CheckoutController extends Controller
         $order->save();
 
         // Send email to guest_email controller send guest order mail
-        Mail::to($order->guest_email)->send(new SendGuestOrderMail());
+        Mail::to($order->guest_email)->send(new SendGuestOrderMail($order));
 
         return redirect()->to('/payment/success');
     }

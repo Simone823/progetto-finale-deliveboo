@@ -10,15 +10,7 @@
 
                 <!-- cart e burger versione tablet - mobile -->
                 <div class="me-3 cart-burger d-flex align-items-center gap-2">
-                    <!-- cart -->
-                    <div v-if="authUser == null" class="nav-item">
-                        <a class="nav-link" href="#">
-                            <button class="btn-standard btn-white opacity-100">
-                                <i class="icon-color fa-solid fa-cart-shopping"></i>                          
-                            </button>
-                        </a>
-                    </div>  
-        
+                          
                     <!-- BURGER ICON -->
                     <div id="burger-icon" class="d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <label for="check">
@@ -101,14 +93,6 @@
                             <a class="nav-link" href="/register">
                                 <button class="btn-standard btn-white">
                                     Diventa nostro partner     
-                                </button>
-                            </a>
-                        </li>
-                        <!-- cart -->
-                        <li v-if="authUser == null" class="nav-item">
-                            <a class="nav-link" href="">
-                                <button class="btn-standard btn-tr-white">
-                                    <i class="fa-solid fa-cart-shopping"></i>                          
                                 </button>
                             </a>
                         </li>
@@ -238,33 +222,48 @@
                     <!-- CARRELLO  -->
                     <div class="cart-component col-12 col-md-6 col-lg-4 col-xxxl-2 align-self-start p-4">       
                         <!-- se l'array carrello è vuoto... -->
-                        <div v-if="cart.length == 0" class="text-center">
-                            Il carrello è vuoto
+                        <div v-if="cart.length == 0" class="d-flex flex-column justify-content-center align-items-center">
+                            <figure class="empty-cart">
+                                <img :src="require('/public/img/shopping-cart.gif')" alt="">
+                            </figure>
+                            <span class="ms-2 p-3 fs-3">Il carrello è vuoto</span>
                         </div>
                         <!-- se l'array carrello contiene elementi li mostra  -->
                         <div v-else>
-                            <h3>Il tuo ordine</h3>
+                            <h3 class="fs-2">Il tuo ordine</h3>
                             <div v-for="item in cart" :key="item.id"
-                                class="d-flex justify-content-start align-items-center py-4 gap-3">
-                                <!-- <figure>
-                                    <img :src="item.image" alt="">
-                                </figure> -->
-                                <span>x{{ item.quantity }}</span><span class="item-name">{{ item.name }}</span>
-                                <span class="flex-grow-1 fs-5">{{ item.price * item.quantity }}&euro;</span>
-                                <button class="btn btn-danger text-white" @click="removeItemFromCart(item.id)">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
+                                class="d-flex flex-wrap justify-content-end align-items-center py-4 gap-3">
+                                <!-- nome prodotto aggiunto e prezzo singolo prodotto-->
+                                <div class="flex-grow-1">
+                                    <span class="item-name fs-5 me-3">{{ item.name }}</span>
+                                    <span class="fs-6 fw-bold">{{ item.price * item.quantity }}&euro;</span>
+                                </div>
+                                <!-- gestione quantità e rimozione prodotto -->
+                                <div class="flex-grow-1 d-flex justify-content-end gap-3">
+                                    <div class="control-qty d-flex align-items-center gap-3">
+                                        <button @click="item.quantity > 1 ? item.quantity-- : removeItemFromCart(item.id)">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span class="fs-5 fw-bold">{{ item.quantity }}</span>
+                                        <button @click="item.quantity++">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <button class="btn btn-danger text-white" @click="removeItemFromCart(item.id)">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
                             </div>
+                            <!-- totale carrello -->
                             <div class="d-flex justify-content-start align-items-center py-4 gap-3 tot-wrapper">
-                                <span class="flex-grow-1 fs-5 tot-cart">Totale:</span>
-                                <span class="fs-4">{{ getTotal() }}&euro;</span>
+                                <span class="flex-grow-1 fs-4 tot-cart">Tot.</span>
+                                <span class="fs-2">{{ getTotal() }}&euro;</span>
                                 <button class="btn btn-danger text-white" @click="removeAllItemsFromCart()">
                                     Clear Cart
                                 </button>
                             </div>
                         </div>
                         <div>
-                            <!-- TODO aggiungere braintree per il checkput -->
                             <router-link to="/order/create" :disabled="cart.length == 0 ? true : false" :class="[cart.length == 0 ? 'disabled' : 'btn-green_1', 'btn pay-button']">
                                 Checkout
                             </router-link>
@@ -277,49 +276,59 @@
             <div :class=" [activeElement != undefined ? 'active' : '','info-wrapper d-flex justify-content-center align-items-center'] ">
                 <!-- se l'id degli elementi nel carrello non corrispondono all'id del ristorante visualizzato  -->
                 <div v-if="cart.length > 0 && resturant.id !== cart[0].user_id" 
-                    :class=" [ activeElement != undefined ? 'active' : '','add-cart-error'] ">
-                    <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">X</button>
-                    <p>Non puoi fare acquisti da ristoranti diversi!</p>
+                    :class=" [ activeElement != undefined ? 'active' : '','add-cart-error p-0'] ">
+                    <button class="close-info p-0" @click="closePlateInfo()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <figure class="info-plate-img">
+                        <img :src="require('/public/img/placeholder_restaurants.png')" alt="">
+                    </figure>
+                    <div class="info-plate-body px-4 pb-4 pt-1 text-center">
+                        <p class="fs-4">Non puoi fare acquisti da ristoranti diversi!</p>
+                        <span class="fs-6">Concludi prima il tuo ordine,<br> oppure svuota il carrello.</span>
+                    </div>
                 </div>
                 <!-- se gli id corrispondono sarà possibile aggiungere i piatti al carrello  -->
                 <div v-else
                     :class=" [ activeElement != undefined && activeElement == index ? 'active' : '','info-plate-card'] "
                     v-for="(menuPlate,index) in menuPlates" :key="index">
-                    <button class="close-info d-flex justify-content-center align-items-center" @click="closePlateInfo()">X</button>
+                    <button class="close-info p-0" @click="closePlateInfo()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                     <figure class="info-plate-img">
                         <img v-if="menuPlate.image" :src="`/storage/${menuPlate.image}`" alt="">
                         <img v-else :src="require('/public/img/placeholder_plate.png')" alt="">
                     </figure>
 
                     <!-- card body  -->
-                    <div class="info-plate-body p-5">
-                        <h1>{{ menuPlate.name }}</h1>
-                        <div class="info-plate-ingredients py-5">
-                            <span>Ingredienti:</span>
-                            <ul>
+                    <div class="info-plate-body px-4 pb-4 pt-1">
+                        <h1 class="info-plate-title fs-2 fw-bold">{{ menuPlate.name }}</h1>
+                        <div class="info-plate-ingredients py-4">
+                            <p class="fs-5 ingredients">Ingredienti:</p>
+                            <ul class="p-0">
                                 <li v-for="(ingredient,index) in ingredients" :key="index">
-                                    {{ ingredient }}
+                                    <i class="fa-solid fa-circle-dot me-3 list-dot"></i>
+                                    <span class="fs-6">{{ ingredient }}</span>
                                 </li>
                             </ul>
                         </div>
-
-                        <!-- card footer  -->
-                        <div class="cart-management">
-                            <div class="plates-number d-flex justify-content-center align-items-center gap-5 py-5">
-                                <!-- diminuisci la quantità -->
-                                <button :disabled="menuPlate.quantity < 1 ? true : false" :class="[menuPlate.quantity < 1 ? 'disabled' : '', 'minus-button quantity-buttons']" @click="menuPlate.quantity > 0 ? menuPlate.quantity-- : menuPlate.quantity = 0">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <span class="fs-4">{{ menuPlate.quantity }}</span>
-                                <!-- aumenta la quantità -->
-                                <button class="plus-button quantity-buttons" @click="menuPlate.quantity++">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                            <!-- TODO gestire il prezzo dinamicamente  -->
-                            <div class="add-cart d-flex justify-content-center">
-                                <button :disabled="menuPlate.quantity < 1 ? true : false" :class="[menuPlate.quantity < 1 ? 'disabled' : 'btn-green_1', 'btn py-2 px-5']" @click="addItemToCart(menuPlate.id); updateQuantity(menuPlate.id, menuPlate.quantity); closePlateInfo()">Aggiungi per {{menuPlate.price * menuPlate.quantity}}&euro;</button>
-                            </div>
+                    </div>
+                    <!-- card footer  -->
+                    <div class="cart-management p-4 d-flex flex-column gap-3">
+                        <div class="plates-number control-qty d-flex justify-content-center align-items-center">
+                            <!-- diminuisci la quantità -->
+                            <button :disabled="menuPlate.quantity < 1 ? true : false" :class=" menuPlate.quantity < 1 ? 'disabled' : '' " @click="menuPlate.quantity > 0 ? menuPlate.quantity-- : menuPlate.quantity = 0">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <span class="fs-3">{{ menuPlate.quantity }}</span>
+                            <!-- aumenta la quantità -->
+                            <button @click="menuPlate.quantity++">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <!-- TODO gestire il prezzo dinamicamente  -->
+                        <div class="add-cart flex-grow-1">
+                            <button :disabled="menuPlate.quantity < 1 ? true : false" :class="[menuPlate.quantity < 1 ? 'disabled' : 'btn-green_1', 'btn w-100']" @click="addItemToCart(menuPlate.id); updateQuantity(menuPlate.id, menuPlate.quantity); closePlateInfo()">Aggiungi per {{menuPlate.price * menuPlate.quantity}}&euro;</button>
                         </div>
                     </div>
                     
@@ -456,6 +465,10 @@ export default {
 
 <style lang="scss" scoped>
 
+    ul,li{
+        list-style: none;
+    }
+
     nav > .container-custom{
         width: 2048px;
     }
@@ -583,9 +596,9 @@ export default {
     .info-plate-card, .add-cart-error{
         display: none;
         position: relative;
-        border-radius: 8px;
-        max-width: 560px;
-        width: 90%;
+        border-radius: 5px;
+        max-width: 500px;
+        width: 85%;
         max-height: 75vh;
         background-color: white;
         overflow: hidden;
@@ -594,17 +607,25 @@ export default {
 
         .close-info{
             position: absolute;
-            top: 1vh;
-            right: 1vh;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
+            top: 0;
+            right: 0;
+            width: 65px;
+            height: 65px;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
             border: none;
             background-color: white;
             color: #00CCBC;
             font-size: 18px;
             font-weight: 600;
             opacity: 0.65;
+            z-index: 9999;
+            
+            i{
+                position: absolute;
+                top: 10px;
+                right: 14px;
+                font-size: 25px;
+            }
 
             &:hover{
                 opacity: 1;
@@ -615,6 +636,7 @@ export default {
         .info-plate-img{
             width: 100%;
             height: 320px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
             overflow: hidden;
             img{
                 width: 100%;
@@ -625,7 +647,15 @@ export default {
         }
 
         .info-plate-body{
-            padding: 25px 20px;
+            .list-dot{
+                color: #ccc;
+            }
+
+            .ingredients{
+                font-weight: 600;
+                margin-bottom: 12px;
+                color: #333;
+            }
         }
     }
 
@@ -643,34 +673,28 @@ export default {
             }
         }
 
-        .info-plate-ingredients{
-            border-bottom: 1px solid rgb(209, 209, 209);
-        }
+    .cart-management{
+        position: sticky;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        border-top: 1px solid #cacaca63;
+        box-shadow: 5px 0px 10px #cacaca63;
+    }
 
     .cart-component{
         background-color: white;
-        border: 1px solid #cacaca63;
+        border: 2px solid #cacaca63;
         border-radius: 5px;
         min-height: 60px;
-    }
 
-    .quantity-buttons{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        font-size: 18px;
-        color: #00CCBC;
-        border: 2px solid #00CCBC;
-        background-color: white;
-
-        &.disabled{
-            color: #b0b0b0;
-            border: 2px solid #b0b0b0;
-            opacity: 0.5;
-            background-color: white;
+        .empty-cart{
+            width: 200px;
+            img{
+                object-fit: cover;
+                object-position: center;
+            }
         }
     }
 
@@ -683,7 +707,7 @@ export default {
 
     .item-name{
         font-size: 18px;
-        color: rgba(0, 0, 0, 0.6);
+        color: black;
         font-weight: 500;
     }
 
@@ -693,12 +717,47 @@ export default {
         font-weight: 600;
     }
     .tot-wrapper{
-        border-top: 1px solid #cacaca63;
+        border-top: 2px solid #3E235D;
     }
 
     .disabled{
         background-color: #b0b0b0;
         opacity: 0.5;
+    }
+
+    .control-qty{
+        column-gap: 20%;
+
+        button{
+            background-color: white;
+            width: 24px;
+            height: 24px;
+            border: 3px solid #00CCBC;
+            color: #00CCBC;
+            border-radius: 50%;
+            font-size: 16px;
+            position: relative;
+
+            &:hover{
+                border: 3px solid #3beedf;
+                color: #3beedf;
+                transition: all 250ms;
+            }
+
+            i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+            &.disabled{
+                color: #b0b0b0;
+                border: 3px solid #b0b0b0;
+                opacity: 0.5;
+                background-color: white;
+            }
+        }
     }
 
     @media screen and (min-width: 2150px){
@@ -710,6 +769,11 @@ export default {
         }
         .col-xxxl-4{
             width: 33.33333%;
+        }
+    }
+    @media screen and (max-width: 768px){
+        .cart-component{
+            box-shadow: 0px -10px 20px 2px #00000052;
         }
     }
 </style>

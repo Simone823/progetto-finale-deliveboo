@@ -37,9 +37,16 @@ class OrderController extends Controller
     public function store(Request $request)
     {
 
-        // $request->validate([
-        //     'guest_name' => 'required'
-        // ]);
+        // Validazione form
+        $request->validate([
+            'form.guest_name' => 'required|min:3|max:150|regex:/^[a-zA-Z\s]+$/',
+            'form.guest_surname' => 'required|min:3|max:150|regex:/^[a-zA-Z\s]+$/',
+            'form.guest_email' => 'required|email',
+            'form.guest_city' => 'required|min:3|max:150|regex:/^[a-zA-Z\s]+$/',
+            'form.guest_cap' => 'required|digits:5|numeric',
+            'form.guest_adress' => 'required|min:3|max:255',
+            'form.guest_phone' => 'required|min:99999|max:999999999999999|numeric'
+        ]);
 
         // Data request all
         $data = $request->all();
@@ -68,7 +75,12 @@ class OrderController extends Controller
             
             // Attach plates pivot
             foreach($data['cart'] as $plate) {
-                $order->plates()->attach($plate['id']);
+                $order->plates()->attach(
+                    $plate['id'],
+                    [
+                        'quantity' => $plate['quantity']
+                    ]
+                );
             }
 
             return response()->json([

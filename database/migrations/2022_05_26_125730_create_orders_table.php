@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('guest_email', 255);
             $table->string('guest_phone', 15);
             $table->bigInteger('user_id');
-            $table->float('total_price', 5,2);
+            $table->decimal('total_price', 10,2);
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

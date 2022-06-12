@@ -11,10 +11,11 @@
                 <div class="me-3 cart-burger d-flex align-items-center gap-2">
                     <!-- cart -->
                     <div v-if="authUser == null" class="nav-item">
-                        <a class="nav-link" href="#">
-                            <button class="btn-standard btn-white opacity-100">
-                                <i class="icon-color fa-solid fa-cart-shopping"></i>                          
-                            </button>
+                        <a class="nav-link dropdown" href="">
+                            <button :class="[ tot < 1 ? '' : 'px-3 d-flex align-items-center gap-3 dropdown-label','btn-standard btn-tr-white']">
+                                <i class="fa-solid fa-cart-shopping"></i>  
+                                <span :class="tot < 1 ? 'd-none' : 'd-block fs-6' ">{{ tot }}&euro;</span>    
+                            </button>                 
                         </a>
                     </div>  
         
@@ -105,10 +106,32 @@
                         </li>
                         <!-- cart -->
                         <li v-if="authUser == null" class="nav-item">
-                            <a class="nav-link" href="">
-                                <button class="btn-standard btn-tr-white">
-                                    <i class="fa-solid fa-cart-shopping"></i>                          
+                            <a class="nav-link dropdown" href="/order/create">
+                                <button :class="[ tot < 1 ? '' : 'px-md-1 px-lg-2 px-xl-4 d-flex align-items-center gap-3 dropdown-label','btn-standard btn-tr-white']">
+                                    <i class="fa-solid fa-cart-shopping"></i>  
+                                    <span :class="tot < 1 ? 'd-none' : 'd-block fs-6' "><span class="d-none d-lg-inline">Tot.</span> {{ tot }}&euro;</span>    
                                 </button>
+                                <ul v-if="tot > 0" class="dropdown-items">
+                                    <li v-for="el in cart" :key="el.id"
+                                    class="d-flex flex-row justify-content-between align-items-center gap-3">
+                                        <span>X{{ el.quantity }}</span>
+                                        <span>{{ el.name }}</span>
+                                        <span>{{ el.price * el.quantity }}&euro;</span>
+                                        <button class="btn btn-danger text-white delete-el" @click="removeItemFromCart(el.id)">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </li>
+                                </ul>   
+                                <ul v-else class="dropdown-items empty">
+                                    <li class="d-flex justify-content-center">
+                                        <figure class="empty-cart">
+                                            <img :src="require('/public/img/shopping-cart.gif')" alt="">
+                                        </figure>
+                                    </li>
+                                    <li class="text-center">
+                                        <span class="empty-cart-text">Il carrello è vuoto</span>
+                                    </li>
+                                </ul>                  
                             </a>
                         </li>
                     </ul>
@@ -194,6 +217,8 @@ export default {
             authUser: window.authUser,
             logo: require('/public/img/logo_white.svg'),
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            cart: JSON.parse(localStorage.getItem('cart')),
+            tot: localStorage.getItem('total'),
         }
             
     },
@@ -211,11 +236,110 @@ export default {
             }).catch(error => {
                 console.log(error);
             });
-        }
+        },
+        getTotal(){
+            let sumItem;
+            let sum = 0;
+            for(let i = 0; i < this.cart.length; i++){
+                sumItem = this.cart[i].price * this.cart[i].quantity;
+                sum += sumItem;  
+            }
+            return sum;
+        },
+        removeItemFromCart(plateId){
+            this.cart = this.cart.filter(item => item.id  != plateId);
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem('total', this.getTotal());
+        },
     }
 }
 </script>
 
 <style lang="scss" scoped>
 
+ul{
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-label{
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    transition: all 300ms;
+}
+
+.dropdown-items{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    min-width: 100%;
+    height: 0;
+    position: absolute;
+    top: 60px;
+    right: 5px;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 300ms;
+
+    &.empty{
+        width: 150px;
+    }
+
+    li{
+        border-top: 1px solid #3E235D;
+        padding: 5px 0;
+
+        &:first-child{
+            border-top: none;
+        }
+    }
+}
+
+.dropdown:hover > .dropdown-items{
+    opacity: 1;
+    visibility: visible;
+    height: unset;
+    transform: scaleY(1) translateY(-9px);
+}
+
+.delete-el{
+    width: 22px;
+    height: 22px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    i{
+        color: rgb(207, 0, 0);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        &:hover{
+            color: rgb(234, 35, 35);
+        }
+    }
+}
+
+.empty-cart{
+    width: 70px;
+    img{
+        object-fit: cover;
+        object-position: center;
+    }
+}
+.empty-cart-text{
+    font-size: 12px;
+}
 </style>

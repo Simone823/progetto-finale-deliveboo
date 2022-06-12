@@ -94,6 +94,7 @@ class UserSeeder extends Seeder
             $new_user->business_city = $user['business_city'];
             $new_user->business_cap = $user['business_cap'];
             $new_user->business_address = $user['business_address'];
+            $new_user->email_verified_at = now();
 
             // Salvo il nuovo utente
             $new_user->save();

@@ -6070,7 +6070,9 @@ __webpack_require__.r(__webpack_exports__);
         guest_cap: "",
         guest_adress: "",
         guest_phone: ""
-      }
+      },
+      // Errori server validazione form
+      errorsServer: []
     };
   },
   methods: {
@@ -6117,6 +6119,9 @@ __webpack_require__.r(__webpack_exports__);
           _this.cart = [];
           window.location = '/checkout';
         }
+      })["catch"](function (err) {
+        var errorsServer = err.response.data.errors;
+        _this.errorsServer = errorsServer;
       });
     },
     // on submit form
@@ -49256,7 +49261,7 @@ var render = function () {
                         "a",
                         {
                           staticClass: "nav-link dropdown",
-                          attrs: { href: "" },
+                          attrs: { href: "/order/create" },
                         },
                         [
                           _c(
@@ -69833,7 +69838,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alex-\ProgettiBooleanCLI\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi-Boolean\PROGETTO FINALE TEAM 6 (DELIVEBOO)\progetto-finale-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

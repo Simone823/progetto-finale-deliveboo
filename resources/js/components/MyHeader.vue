@@ -106,7 +106,7 @@
                         </li>
                         <!-- cart -->
                         <li v-if="authUser == null" class="nav-item">
-                            <a class="nav-link dropdown" href="">
+                            <a class="nav-link dropdown" href="/order/create">
                                 <button :class="[ tot < 1 ? '' : 'px-md-1 px-lg-2 px-xl-4 d-flex align-items-center gap-3 dropdown-label','btn-standard btn-tr-white']">
                                     <i class="fa-solid fa-cart-shopping"></i>  
                                     <span :class="tot < 1 ? 'd-none' : 'd-block fs-6' "><span class="d-none d-lg-inline">Tot.</span> {{ tot }}&euro;</span>    

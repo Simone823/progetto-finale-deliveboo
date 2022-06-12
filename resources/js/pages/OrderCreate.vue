@@ -151,6 +151,9 @@ export default {
                 guest_adress: "",
                 guest_phone: "",
             },
+
+            // Errori server validazione form
+            errorsServer: [],
         }
     },
 
@@ -197,6 +200,10 @@ export default {
                     this.cart = [];
                     window.location = '/checkout';
                 }
+            })
+            .catch( err => {
+                const errorsServer = err.response.data.errors;
+                this.errorsServer = errorsServer;
             })
         },
 

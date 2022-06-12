@@ -22,8 +22,11 @@
         <ul class="list_plates">
             @foreach ($order->plates as $plate)
                 <li class="plate">
+                    <figure class="plate_image">
+                        <img src="{{asset('storage/'.$plate->image)}}" alt="">
+                    </figure>
+
                     <p>{{$plate->name}}</p>
-                    <p>{{$plate->quantity}}</p>
                 </li>
             @endforeach
         </ul>
@@ -31,7 +34,7 @@
 
     {{-- Total price --}}
     <div class="total_price">
-        <p>{{$order->total_price}}</p>
+        <p>Prezzo totale: {{$order->total_price}}€</p>
     </div>
 </div>
 
@@ -54,16 +57,19 @@
         max-width: 500px;
         margin: 0 auto;
         padding: 15px 10px;
+        margin-top: 30px;
         background-color: #D0EB99;
         color: black;
         text-align: center;
         border-radius: 10px;
+        filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.411));
     }
 
     .logo_deliveboo {
-        width: 180px;
+        width: 220px;
         margin: 0 auto;
         margin-bottom: 25px;
+        filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.349));
     }
 
     .description {
@@ -80,5 +86,39 @@
 
     .list_plates {
         list-style: none;
+    }
+
+    .order_plate {
+        margin: 0 auto;
+        margin-bottom: 10px;
+        max-width: max-content;
+    }
+
+    .plate {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        font-weight: 600;
+    }
+
+    .plate:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    .plate_image {
+        width: 40px;
+        height: 40px;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .plate_image > img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .total_price {
+        font-weight: 600;
     }
 </style>

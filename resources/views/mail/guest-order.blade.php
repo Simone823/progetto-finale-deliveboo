@@ -19,6 +19,7 @@
 
     {{-- Order plate --}}
     <div class="order_plate">
+        <p>Grazie per aver acquistato da: {{$user->business_name}}</p>
         <ul class="list_plates">
             @foreach ($order->plates as $plate)
                 <li class="plate">
@@ -84,15 +85,21 @@
         font-weight: 600;
     }
 
-    .list_plates {
-        list-style: none;
-    }
-
     .order_plate {
         margin: 0 auto;
         margin-bottom: 10px;
-        max-width: max-content;
     }
+    .order_plate > p {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .list_plates {
+        list-style: none;
+        max-width: max-content;
+        margin: 0 auto;
+    }
+
+
 
     .plate {
         display: flex;

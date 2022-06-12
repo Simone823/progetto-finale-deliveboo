@@ -53,7 +53,7 @@
             
                         
                         {{-- Email --}}
-                        <div class="form w-100 mb-3">
+                        <div class="form w-100 mb-4">
                             <input placeholder=" " id="email" type="email" class="form__input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="off">
 
                             <label for="email" class="form__label">Email</label>
@@ -67,7 +67,7 @@
                         
                         
                         {{-- Passowrd --}}
-                        <div class="form w-100 mb-3">
+                        <div class="form w-100 mb-4">
                             <input placeholder=" " id="password" type="password" class="form__input @error('password') is-invalid @enderror" name="password" autocomplete="off">
 
                             <label for="password" class="form__label">Password</label>

@@ -13,8 +13,8 @@
 
                         <form @submit.prevent="handleSubmit(onSubmit())" methods="post">
                             <!-- Guest name -->
-                            <div class="form w-100 mb-5">
-                                <validationProvider name="guest_name" rules="required|max:150|alpha_spaces" v-slot="{ errors }">
+                            <validationProvider class="mb-3" name="guest_name" rules="required|min:3|max:150|alpha_spaces" v-slot="{ errors }">
+                                <div class="form w-100">
                                     
                                     <input v-model="form.guest_name"
                                     type="text"
@@ -26,16 +26,16 @@
 
                                     <label for="guest_name" class="form__label">Nome</label>
 
+                                </div>
+                                <div class="w-100 font-bold py-1 px-2 del-danger rounded">
+                                    {{ errors.length ? errors[0] : ''}}
+                                </div>
+                            </validationProvider>
 
-                                    <div v-if="errors.length" class="w-100 font-bold py-1 px-2 del-danger rounded">
-                                        {{errors[0]}}
-                                    </div>
-                                </validationProvider>
-                            </div>
 
                             <!-- Guest surname -->
-                            <div class="form w-100 mb-5">
-                                <validationProvider name="guest_surname" rules="required|min:3|max:150|alpha_spaces" v-slot="{errors}">
+                            <validationProvider name="guest_surname" rules="required|min:3|max:150|alpha_spaces" v-slot="{errors}">
+                                <div class="form w-100">
 
                                     <input v-model="form.guest_surname" type="text"
                                     class="form__input" :class="form.guest_name.length == 0 ? 'form__invalid' : 'form__valid' && errors.length ? 'form__invalid' : 'form__valid'"
@@ -44,76 +44,79 @@
 
                                     <label for="guest_surname" class="form__label">Cognome</label>
 
-                                    <div v-if="errors.length" class="w-100 font-bold py-1 px-2 del-danger rounded">
-                                        {{errors[0]}}
-                                    </div>
-                                </validationProvider>
-                            </div>
+                                </div>
+                                <div class="w-100 font-bold py-1 px-2 del-danger rounded">
+                                    {{ errors.length ? errors[0] : ''}}
+                                </div>
+                            </validationProvider>
+
 
                             <!-- Guest email -->
-                            <div class="form w-100 mb-5">
-                                <validationProvider name="guest_email" rules="required|email|max:255" v-slot="{errors}">
+                            <validationProvider name="guest_email" rules="required|email|max:255" v-slot="{errors}">
+                                <div class="form w-100">
 
                                     <input v-model="form.guest_email" type="text"
                                     class="form__input" :class="form.guest_name.length == 0 ? 'form__invalid' : 'form__valid' && errors.length ? 'form__invalid' : 'form__valid'" id="guest_email" name="guest_email"  placeholder=" ">
 
                                     <label for="guest_email" class="form__label">Email</label>
 
-                                    <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
-                                        {{errors[0]}}
-                                    </div>
-                                </validationProvider>
-                            </div>
+                                </div>
+                                 <div class="w-100 font-bold py-1 px-2 del-danger rounded">
+                                    {{ errors.length ? errors[0] : ''}}
+                                </div>
+                            </validationProvider>
+
 
                             <!-- Guest city -->
-                            <div class="form w-100 mb-3">
-                                <validationProvider name="guest_city" rules="required|min:3|max:150|alpha_spaces" v-slot="{errors}">
+                            <validationProvider name="guest_city" rules="required|min:3|max:150|alpha_spaces" v-slot="{errors}">
+                                <div class="form w-100">
 
                                     <input v-model="form.guest_city" type="text"
                                     class="form__input" :class="form.guest_name.length == 0 ? 'form__invalid' : 'form__valid' && errors.length ? 'form__invalid' : 'form__valid'" id="guest_city" name="guest_city" placeholder=" ">
 
                                     <label for="guest_city" class="form__label">Città</label>
 
-                                    <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
-                                        {{errors[0]}}
-                                    </div>
-                                </validationProvider>
-                            </div>
+                                </div>
+                                <div class="w-100 font-bold py-1 px-2 del-danger rounded">
+                                    {{ errors.length ? errors[0] : ''}}
+                                </div>
+                            </validationProvider>
+
 
                             <!-- Guest cap -->
-                            <div class="form w-100 mb-3">
-                                <validationProvider name="guest_cap" rules="required|min:5|max:5|numeric" v-slot="{errors}">
+                            <validationProvider name="guest_cap" rules="required|min:5|max:5|numeric" v-slot="{errors}">
+                                <div class="form w-100">
 
                                     <input v-model="form.guest_cap" type="text"
                                     class="form__input" :class="form.guest_name.length == 0 ? 'form__invalid' : 'form__valid' && errors.length ? 'form__invalid' : 'form__valid'" id="guest_cap" name="guest_cap" placeholder=" ">
 
                                     <label for="guest_cap" class="form__label">CAP</label>
 
-                                    <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
-                                        {{errors[0]}}
-                                    </div>
-                                </validationProvider>
-                            </div>
+                                </div>
+                                <div class="w-100 font-bold py-1 px-2 del-danger rounded">
+                                    {{ errors.length ? errors[0] : ''}}
+                                </div>
+                            </validationProvider>
 
                             <!-- Guest address -->
-                            <div class="form w-100 mb-3">
-                                <validationProvider name="guest_adress" rules="required|min:3|max:255" v-slot="{errors}">
+                            <validationProvider name="guest_adress" rules="required|min:3|max:255" v-slot="{errors}">
+                                <div class="form w-100">
 
                                     <input v-model="form.guest_adress" type="text"
                                     class="form__input" :class="form.guest_name.length == 0 ? 'form__invalid' : 'form__valid' && errors.length ? 'form__invalid' : 'form__valid'"  id="guest_adress" name="guest_adress" placeholder=" ">
 
                                     <label for="guest_adress" class="form__label">Indirizzo</label>
 
+                                </div>
+                                <div class="w-100 font-bold py-1 px-2 del-danger rounded">
+                                    {{ errors.length ? errors[0] : ''}}
+                                </div>
+                            </validationProvider>
 
-                                    <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
-                                        {{errors[0]}}
-                                    </div>
-                                </validationProvider>
-                            </div>
 
                             <!-- Guest phone -->
-                            <div class="form w-100 mb-3">
-                                <validationProvider name="guest_phone" rules="required|numeric|min:6|max:15" v-slot="{errors}">
+                            <validationProvider name="guest_phone" rules="required|numeric|min:6|max:15" v-slot="{errors}">
+                                <div class="form w-100">
 
                                     <input v-model="form.guest_phone" type="text"
                                     class="form__input" :class="form.guest_name.length == 0 ? 'form__invalid' : 'form__valid' && errors.length ? 'form__invalid' : 'form__valid'" id="guest_phone" name="guest_phone" placeholder=" ">
@@ -121,11 +124,11 @@
                                     <label for="guest_phone" class="form__label">Telefono</label>
 
 
-                                    <div v-if="errors.length" class="w-100 font-bold py-1 px-2 bg-danger text-white rounded">
-                                        {{errors[0]}}
-                                    </div>
-                                </validationProvider>
-                            </div>
+                                </div>
+                                <div class="w-100 font-bold py-1 px-2 del-danger rounded">
+                                    {{ errors.length ? errors[0] : ''}}
+                                </div>
+                            </validationProvider>
 
                             <!-- Button submit -->
                             <div class="button d-flex align-items-center justify-content-between flex-wrap">

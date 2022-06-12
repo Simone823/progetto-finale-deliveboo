@@ -6070,7 +6070,9 @@ __webpack_require__.r(__webpack_exports__);
         guest_cap: "",
         guest_adress: "",
         guest_phone: ""
-      }
+      },
+      // Errori server validazione form
+      errorsServer: []
     };
   },
   methods: {
@@ -6117,6 +6119,9 @@ __webpack_require__.r(__webpack_exports__);
           _this.cart = [];
           window.location = '/checkout';
         }
+      })["catch"](function (err) {
+        var errorsServer = err.response.data.errors;
+        _this.errorsServer = errorsServer;
       });
     },
     // on submit form

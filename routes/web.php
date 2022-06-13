@@ -26,7 +26,7 @@ Auth::routes(['verify' => true]);
 //!! Modificare il middleware da verified ad auth
 
 // Route middleware auth admin
-Route::middleware('verified')->namespace('Admin')->prefix('admin')->name('admin.')->group( function () {
+Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group( function () {
 
     // Rotta / controller index
     // Route::get('/', 'HomeController@index')->name('logged');

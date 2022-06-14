@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Stripe Payment</title>
+    <title>Deliveboo - Pagamento</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{asset('css/front.css')}}">
 </head>
 <body>
     @php
     $stripe_key = 'pk_test_51L8o3jAgtEHU3c7wR29MLZ7iOgbKxmU9K2zrDNxiOPXlcU80qyEzHQRBzdvBb4OHDwZgeFhY5YVhIBakhgwKhPS900hABDCJ8U';
 
     @endphp
-    <div class="container" style="margin-top:10%;margin-bottom:10%">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="">
-                    <p>You will be charged rs 100</p>
-                </div>
-                <div class="card">
-                    <form action="{{route('checkout.credit-card')}}" method="post" id="payment-form">
-                        @csrf
-                        <div class="form-group">
-                            <div class="card-header">
-                                <label for="card-element">
-                                    Enter your credit card information
-                                </label>
-                            </div>
-                            <div class="card-body">
-                                <div id="card-element">
-                                    <!-- A Stripe Element will be inserted here. -->
+
+    <main class="d-flex justify-content-center align-items-center">
+
+        <div class="main-background"></div>
+        <div class="container" style="margin-top:10%;margin-bottom:10%">
+            <div class="row justify-content-center">
+                <div class="col-11 col-sm-8">
+                    <div class="fw-bolder mb-3">
+                        <h5>Totale da pagare: {{$total}}€</h5>
+                    </div>
+                    <div class="card p-2 p-sm-4">
+                        <form action="{{route('checkout.credit-card')}}" method="post" id="payment-form">
+                            @csrf
+                            <div class="form-group">
+                                <div class="fw-bold text-center ps-2 pe-2">
+                                    <label for="card-element" class="fs-4">
+                                        Inserisci i dati della tua carta di credito
+                                    </label>
                                 </div>
-                                <!-- Used to display form errors. -->
-                                <div id="card-errors" role="alert"></div>
-                                <input type="hidden" name="plan" value="" />
+                                <div class="card-footer border-0">
+                                    <div id="card-element">
+                                        <!-- A Stripe Element will be inserted here. -->
+                                    </div>
+                                    <!-- Used to display form errors. -->
+                                    <div id="card-errors" role="alert"></div>
+                                    <input type="hidden" name="plan" value="" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <button id="card-button" class="btn btn-dark" type="submit" data-secret="{{ $intent }}"> Pay </button>
-                        </div>
-                    </form>
+                            <div class="button">
+                                <button id="card-button" class="btn-standard btn-green_1 w-100" type="submit" data-secret="{{ $intent }}">Paga</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     <script src="https://js.stripe.com/v3/"></script>
     <script>
         // Custom styling can be passed to options when creating an Element.
@@ -55,7 +61,7 @@
             base: {
                 color: '#32325d'
                 , lineHeight: '18px'
-                , fontFamily: '"Helvetica Neue", Helvetica, sans-serif'
+                , fontFamily: '"", Helvetica, sans-serif'
                 , fontSmoothing: 'antialiased'
                 , fontSize: '16px'
                 , '::placeholder': {
@@ -115,5 +121,26 @@
         });
 
     </script>
+
+
+    <style>
+
+        main {
+            height: 100vh;
+        }
+        .main-background{
+            position: absolute;
+            right: 0;
+            left: -20%;
+            height: 100%;
+            top: 0;
+            z-index: -999;
+            background-image: url('img/bg_users.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+    </style>
 </body>
 </html>

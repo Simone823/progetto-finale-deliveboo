@@ -35,7 +35,7 @@ class CheckoutController extends Controller
         ]);
         $intent = $payment_intent->client_secret;
 
-        return view('checkout.credit-card', compact('intent'));
+        return view('checkout.credit-card', compact('intent', 'total'));
     }
 
     public function afterPayment()

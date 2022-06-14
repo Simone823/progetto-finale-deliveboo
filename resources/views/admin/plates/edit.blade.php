@@ -149,12 +149,16 @@
 
     @else
 
-        @section('metaTitle', '404 NOT FOUND')
+        @section('metaTitle', '403 ACCESSO NEGATO')
 
         @section('content')
-            <section class="not_found fw-bold d-flex align-items-center justify-content-center flex-column">
-                <h2 class="fs-2">404</h2>
-                <p class="fs-3 text-uppercase">PAGE NOT FOUND</p>
-            </section>
+        <section class="not_found fw-bold d-flex align-items-center justify-content-center flex-column text-center">
+            <figure class="logo_alert">
+                <img src="{{asset('img/alert.png')}}" alt="">
+            </figure>
+            <h2 class="fs-2">403</h2>
+            <p class="fs-3 text-uppercase">Accesso negato</p>
+        </section>
         @endsection
+
 @endif 
